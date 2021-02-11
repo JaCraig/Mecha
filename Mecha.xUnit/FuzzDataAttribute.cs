@@ -1,5 +1,4 @@
 ﻿using Mecha.Core;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -21,17 +20,6 @@ namespace Mecha.xUnit
         /// <param name="maxDuration">The duration in ms. (overrides the count)</param>
         public FuzzDataAttribute(int count, int maxDuration = int.MaxValue)
         {
-            if (Canister.Builder.Bootstrapper is null)
-            {
-                lock (LockObject)
-                {
-                    if (Canister.Builder.Bootstrapper is null)
-                    {
-                        new ServiceCollection().AddCanisterModules(configure => configure.RegisterMecha().AddAssembly(typeof(FuzzDataAttribute).Assembly));
-                    }
-                }
-            }
-            Manager = Canister.Builder.Bootstrapper?.Resolve<Check>();
             Count = count;
             MaxDuration = maxDuration;
         }
@@ -49,14 +37,6 @@ namespace Mecha.xUnit
         public int MaxDuration { get; }
 
         /// <summary>
-        /// Gets or sets the generator.
-        /// </summary>
-        /// <value>The generator.</value>
-        private Check? Manager { get; }
-
-        private readonly object LockObject = new object();
-
-        /// <summary>
         /// Returns the data to be used to test the theory.
         /// </summary>
         /// <param name="testMethod">The method that is being tested</param>
@@ -66,8 +46,9 @@ namespace Mecha.xUnit
         /// </returns>
         public override IEnumerable<object?[]> GetData(MethodInfo testMethod)
         {
+            var Manager = Check.Default;
             if (Manager is null)
-                throw new ArgumentNullException(nameof(Manager));
+                throw new NullReferenceException($"{nameof(Manager)} is null");
             return Manager.Fuzz(testMethod, MaxDuration, Count);
         }
     }
