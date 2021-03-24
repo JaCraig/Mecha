@@ -3,6 +3,7 @@ using Mecha.Core.Datasources;
 using Mecha.Core.Generator;
 using Mecha.Core.Runner;
 using System;
+using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -22,6 +23,33 @@ namespace Mecha.Core
         {
             DataManager = dataManager;
             GeneratorManager = generatorManager;
+        }
+
+        /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object LockObject = new object();
+
+        /// <summary>
+        /// Gets the default.
+        /// </summary>
+        /// <value>The default.</value>
+        public static Check? Default
+        {
+            get
+            {
+                if (Canister.Builder.Bootstrapper is null)
+                {
+                    lock (LockObject)
+                    {
+                        if (Canister.Builder.Bootstrapper is null)
+                        {
+                            new ServiceCollection().AddCanisterModules(configure => configure.RegisterMecha());
+                        }
+                    }
+                }
+                return Canister.Builder.Bootstrapper?.Resolve<Check>();
+            }
         }
 
         /// <summary>
