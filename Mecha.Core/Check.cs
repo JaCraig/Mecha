@@ -1,6 +1,8 @@
 ﻿using Mecha.Core.Configuration;
 using Mecha.Core.Datasources;
 using Mecha.Core.Generator;
+using Mecha.Core.Runner;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -58,6 +60,11 @@ namespace Mecha.Core
                 DataManager.Save(testMethod, Data);
                 yield return Data;
             }
+        }
+
+        public void Run(MethodInfo runMethod, object? target, out Result Result)
+        {
+            throw new NotImplementedException();
         }
     }
 }

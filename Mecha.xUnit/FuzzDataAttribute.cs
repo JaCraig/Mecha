@@ -54,6 +54,9 @@ namespace Mecha.xUnit
         /// <value>The generator.</value>
         private Check? Manager { get; }
 
+        /// <summary>
+        /// The lock object
+        /// </summary>
         private readonly object LockObject = new object();
 
         /// <summary>
