@@ -10,9 +10,21 @@ namespace Mecha.Core.Runner
     /// <seealso cref="IRunner"/>
     public class DefaultRunner : IRunner
     {
-        public Result Run(MethodInfo runMethod, object? target)
+        /// <summary>
+        /// Runs the specified method on the target class.
+        /// </summary>
+        /// <param name="runMethod">The run method.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>The result.</returns>
+        public Result Run(MethodInfo runMethod, object? target, Options options)
         {
-            throw new NotImplementedException();
+            return new Result()
+            {
+                Output = "Runner not found",
+                Passed = false,
+                Exception = new Exception("Runner not found")
+            };
         }
     }
 }

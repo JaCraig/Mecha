@@ -12,7 +12,8 @@ namespace Mecha.Core.Runner.Interfaces
         /// </summary>
         /// <param name="runMethod">The run method.</param>
         /// <param name="target">The target.</param>
+        /// <param name="options">The options.</param>
         /// <returns>The result.</returns>
-        Result Run(MethodInfo runMethod, object? target);
+        Result Run(MethodInfo runMethod, object? target, Options options);
     }
 }

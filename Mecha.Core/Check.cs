@@ -2,7 +2,6 @@
 using Mecha.Core.Datasources;
 using Mecha.Core.Generator;
 using Mecha.Core.Runner;
-using System;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using System.Reflection;
@@ -19,16 +18,13 @@ namespace Mecha.Core
         /// </summary>
         /// <param name="generatorManager">The generator manager.</param>
         /// <param name="dataManager">The data manager.</param>
-        public Check(GeneratorManager generatorManager, DataManager dataManager)
+        /// <param name="testRunnerManager">The test runner manager.</param>
+        public Check(GeneratorManager generatorManager, DataManager dataManager, TestRunnerManager testRunnerManager)
         {
             DataManager = dataManager;
             GeneratorManager = generatorManager;
+            TestRunnerManager = testRunnerManager;
         }
-
-        /// <summary>
-        /// The lock object
-        /// </summary>
-        private static readonly object LockObject = new object();
 
         /// <summary>
         /// Gets the default.
@@ -65,6 +61,17 @@ namespace Mecha.Core
         public GeneratorManager GeneratorManager { get; }
 
         /// <summary>
+        /// Gets the test runner manager.
+        /// </summary>
+        /// <value>The test runner manager.</value>
+        public TestRunnerManager TestRunnerManager { get; }
+
+        /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object LockObject = new object();
+
+        /// <summary>
         /// Generates data based on the method.
         /// </summary>
         /// <param name="testMethod">The test method.</param>
@@ -90,9 +97,16 @@ namespace Mecha.Core
             }
         }
 
-        public void Run(MethodInfo runMethod, object? target, out Result Result)
+        /// <summary>
+        /// Runs the specified run method.
+        /// </summary>
+        /// <param name="runMethod">The run method.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="options">The options.</param>
+        /// <param name="Result">The result.</param>
+        public void Run(MethodInfo runMethod, object? target, Options options, out Result Result)
         {
-            throw new NotImplementedException();
+            Result = TestRunnerManager.Run(runMethod, target, options);
         }
     }
 }

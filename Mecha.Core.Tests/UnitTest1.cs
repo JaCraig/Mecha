@@ -16,5 +16,10 @@ namespace Mecha.Core.Tests
         public void Test2(int data)
         {
         }
+
+        [Property]
+        public void Test3()
+        {
+        }
     }
 }

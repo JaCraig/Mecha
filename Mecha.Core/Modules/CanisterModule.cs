@@ -19,6 +19,8 @@ using Mecha.Core.Datasources;
 using Mecha.Core.Datasources.Interfaces;
 using Mecha.Core.Generator;
 using Mecha.Core.Generator.Interfaces;
+using Mecha.Core.Runner;
+using Mecha.Core.Runner.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Mecha.Core.Modules
@@ -45,7 +47,9 @@ namespace Mecha.Core.Modules
                          .Register<DataManager>(ServiceLifetime.Singleton)
                          .RegisterAll<IGenerator>(ServiceLifetime.Singleton)
                          .Register<GeneratorManager>(ServiceLifetime.Singleton)
-                         .Register<Check>(ServiceLifetime.Singleton);
+                         .Register<Check>(ServiceLifetime.Singleton)
+                         .Register<TestRunnerManager>(ServiceLifetime.Singleton)
+                         .RegisterAll<IRunner>(ServiceLifetime.Singleton);
         }
     }
 }

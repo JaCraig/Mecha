@@ -11,7 +11,7 @@ namespace Mecha.Core.Runner
         /// Gets or sets the exception.
         /// </summary>
         /// <value>The exception.</value>
-        public Exception Exception { get; set; }
+        public Exception? Exception { get; set; }
 
         /// <summary>
         /// Gets or sets the execution time.
@@ -23,7 +23,7 @@ namespace Mecha.Core.Runner
         /// Gets or sets the output.
         /// </summary>
         /// <value>The output.</value>
-        public string Output { get; set; }
+        public string? Output { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="Result"/> is passed.

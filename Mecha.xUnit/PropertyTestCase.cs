@@ -2,6 +2,7 @@
 using Mecha.Core.Runner;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit.Abstractions;
@@ -20,6 +21,7 @@ namespace Mecha.xUnit
         /// </summary>
         /// <param name="diagnosticMessageSink">The message sink used to send diagnostic messages</param>
         /// <param name="defaultMethodDisplay">Default method display to use (when not customized).</param>
+        /// <param name="methodDisplayOptions">The method display options.</param>
         /// <param name="testMethod">The test method this test case belongs to.</param>
         /// <param name="testMethodArguments">The arguments for the test method.</param>
         public PropertyTestCase(IMessageSink diagnosticMessageSink,
@@ -40,6 +42,12 @@ namespace Mecha.xUnit
         }
 
         /// <summary>
+        /// Gets or sets the cancellation token source.
+        /// </summary>
+        /// <value>The cancellation token source.</value>
+        private CancellationTokenSource CancellationTokenSource { get; set; }
+
+        /// <summary>
         /// Gets the lock object.
         /// </summary>
         /// <value>The lock object.</value>
@@ -52,9 +60,38 @@ namespace Mecha.xUnit
         private Check? Manager { get; set; }
 
         /// <summary>
+        /// Gets or sets the message bus.
+        /// </summary>
+        /// <value>The message bus.</value>
+        private IMessageBus MessageBus { get; set; }
+
+        /// <summary>
+        /// Gets or sets the options.
+        /// </summary>
+        /// <value>The options.</value>
+        private Options? Options { get; set; }
+
+        /// <summary>
+        /// Gets or sets the output helper.
+        /// </summary>
+        /// <value>The output helper.</value>
+        private TestOutputHelper OutputHelper { get; set; }
+
+        /// <summary>
+        /// Gets or sets the test.
+        /// </summary>
+        /// <value>The test.</value>
+        private XunitTest Test { get; set; }
+
+        /// <summary>
+        /// Gets or sets the timer.
+        /// </summary>
+        /// <value>The timer.</value>
+        private ExecutionTimer Timer { get; set; }
+
+        /// <summary>
         /// Initializes the specified output helper.
         /// </summary>
-        /// <param name="outputHelper">The output helper.</param>
         public void Init()
         {
             if (Canister.Builder.Bootstrapper is null)
@@ -81,16 +118,23 @@ namespace Mecha.xUnit
         /// <returns></returns>
         public override Task<RunSummary> RunAsync(IMessageSink diagnosticMessageSink, IMessageBus messageBus, object[] constructorArguments, ExceptionAggregator aggregator, CancellationTokenSource cancellationTokenSource)
         {
-            var Test = new XunitTest(this, this.DisplayName);
-            var Summary = new RunSummary
-            {
-                Total = 1
-            };
-            var OutputHelper = new TestOutputHelper();
+            Test = new XunitTest(this, DisplayName);
+            CancellationTokenSource = cancellationTokenSource;
+            MessageBus = messageBus;
+            OutputHelper = new TestOutputHelper();
             OutputHelper.Initialize(messageBus, Test);
+            var PropertiesAttribute = Method.GetCustomAttributes(typeof(PropertiesAttribute)).FirstOrDefault() as PropertiesAttribute;
+            var PropertyAttribute = Method.GetCustomAttributes(typeof(PropertyAttribute)).FirstOrDefault() as PropertyAttribute;
+            Options = PropertyAttribute is null && PropertiesAttribute is null ? Options.Default : new Options()
+            {
+                GenerationCount = PropertyAttribute?.GenerationCount ?? PropertiesAttribute?.GenerationCount ?? 10,
+                MaxDuration = PropertyAttribute?.MaxDuration ?? PropertiesAttribute?.MaxDuration ?? int.MaxValue,
+                Verbose = PropertyAttribute?.Verbose ?? PropertiesAttribute?.Verbose ?? false
+            };
+            var TempMethod = Method.ToRuntimeMethod();
 
             Init();
-            var Timer = new ExecutionTimer();
+            Timer = new ExecutionTimer();
 
             if (!messageBus.QueueMessage(new TestCaseStarting(this)))
                 cancellationTokenSource.Cancel();
@@ -115,38 +159,38 @@ namespace Mecha.xUnit
         private RunSummary RunTest()
         {
             var RunMethod = TestMethod.Method.ToRuntimeMethod();
-            object Target = null;
+            object? Target = null;
             var TestClass = TestMethod.TestClass.Class.ToRuntimeType();
             if (!TestMethod.Method.IsStatic)
             {
-                Target = Test.CreateTestClass(TestClass, constructorArguments, messageBus, Timer, cancellationTokenSource);
+                Target = Test.CreateTestClass(TestClass, TestMethodArguments, MessageBus, Timer, CancellationTokenSource);
             }
-            Result Result = null;
+            Result? Result = null;
 
-            Timer.Aggregate(() => Manager.Run(RunMethod, Target, out Result));
+            Timer.Aggregate(() => Manager.Run(RunMethod, Target, Options, out Result));
             if (Target is IDisposable disposable)
                 disposable.Dispose();
 
             RunSummary ReturnValue = new RunSummary
             {
                 Time = Result?.ExecutionTime ?? 0,
-                Failed = Result.Passed ? 0 : 1,
+                Failed = Result?.Passed == true ? 0 : 1,
                 Skipped = string.IsNullOrEmpty(SkipReason) ? 0 : 1,
                 Total = 1
             };
-            OutputHelper.WriteLine(Result.Output);
+            OutputHelper.WriteLine(Result?.Output);
 
-            IMessageSinkMessage ResultMessage = Result.Passed
-                ? new TestPassed(Test, Timer.Total, Result.Output)
-                : (IMessageSinkMessage)new TestFailed(Test, Timer.Total, Result.Output, Result.Exception);
+            IMessageSinkMessage ResultMessage = Result?.Passed == true
+                ? new TestPassed(Test, Timer.Total, Result?.Output)
+                : (IMessageSinkMessage)new TestFailed(Test, Timer.Total, Result?.Output, Result?.Exception);
 
             OutputHelper.Uninitialize();
-            messageBus.QueueMessage(ResultMessage);
-            if (!messageBus.QueueMessage(new TestFinished(Test, ReturnValue.Time, Result.Output)))
-                cancellationTokenSource.Cancel();
-            if (!messageBus.QueueMessage(new TestCaseFinished(this, ReturnValue.Time, ReturnValue.Total, ReturnValue.Failed, ReturnValue.Skipped)))
-                cancellationTokenSource.Cancel();
-            return ReturnValue
+            MessageBus.QueueMessage(ResultMessage);
+            if (!MessageBus.QueueMessage(new TestFinished(Test, ReturnValue.Time, Result?.Output)))
+                CancellationTokenSource.Cancel();
+            if (!MessageBus.QueueMessage(new TestCaseFinished(this, ReturnValue.Time, ReturnValue.Total, ReturnValue.Failed, ReturnValue.Skipped)))
+                CancellationTokenSource.Cancel();
+            return ReturnValue;
         }
     }
 }
