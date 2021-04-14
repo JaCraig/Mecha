@@ -27,11 +27,6 @@ namespace Mecha.Core
         }
 
         /// <summary>
-        /// The lock object
-        /// </summary>
-        private static readonly object LockObject = new object();
-
-        /// <summary>
         /// Gets the default.
         /// </summary>
         /// <value>The default.</value>
@@ -72,6 +67,11 @@ namespace Mecha.Core
         public TestRunnerManager TestRunnerManager { get; }
 
         /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object LockObject = new object();
+
+        /// <summary>
         /// Generates data based on the method.
         /// </summary>
         /// <param name="testMethod">The test method.</param>
@@ -90,7 +90,7 @@ namespace Mecha.Core
                 yield return PreviousData[x];
                 --count;
             }
-            foreach (var Data in GeneratorManager.GenerateData(testMethod, new GeneratorOptions { MaxCount = count, MaxDuration = maxDuration }))
+            foreach (var Data in GeneratorManager.GenerateData(testMethod, new GeneratorOptions { MaxCount = count, MaxDuration = maxDuration }, PreviousData))
             {
                 DataManager.Save(testMethod, Data);
                 yield return Data;

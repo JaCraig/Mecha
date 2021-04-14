@@ -1,5 +1,8 @@
-﻿using Mecha.Core.Runner.Interfaces;
+﻿using Mecha.Core.Runner.BaseClasses;
+using Mecha.Core.Runner.Interfaces;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 
 namespace Mecha.Core.Runner
@@ -8,23 +11,39 @@ namespace Mecha.Core.Runner
     /// Default runner
     /// </summary>
     /// <seealso cref="IRunner"/>
-    public class DefaultRunner : IRunner
+    public class DefaultRunner : RunnerBaseClass
     {
         /// <summary>
-        /// Runs the specified method on the target class.
+        /// Finishes the run and converts the list of runs to a finished result.
         /// </summary>
         /// <param name="runMethod">The run method.</param>
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
-        /// <returns>The result.</returns>
-        public Result Run(MethodInfo runMethod, object? target, Options options)
+        /// <param name="results">The results.</param>
+        /// <returns>The result for the run.</returns>
+        protected override Result FinishRun(MethodInfo runMethod, object? target, Options options, List<RunResult> results)
         {
-            return new Result()
+            var ReturnValue = new Result
             {
-                Output = "Runner not found",
-                Passed = false,
-                Exception = new Exception("Runner not found")
+                ExecutionTime = results.Sum(x => x.ElapsedTime)
             };
+            if (results.Any(x => !(x.Exception is null)))
+            {
+                var Exceptions = results.Where(x => !(x.Exception is null)).Select(x => x.Exception).ToArray();
+                ReturnValue.Passed = false;
+                ReturnValue.Exception = new AggregateException("Run failed with the following exceptions", Exceptions);
+                ReturnValue.Output = $"The run failed with the following stats:\n\n{results.Count} generations\n{Exceptions.Length} exceptions";
+            }
+            else
+            {
+                ReturnValue.Passed = true;
+                ReturnValue.Output = $"The run passed with the following stats:\n\n{results.Count} generations";
+            }
+            return ReturnValue;
+        }
+
+        protected override void StartRun(MethodInfo runMethod, object? target, Options options)
+        {
         }
     }
 }

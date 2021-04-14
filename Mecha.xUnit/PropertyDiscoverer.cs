@@ -42,7 +42,9 @@ namespace Mecha.xUnit
         /// <returns>Returns zero or more test cases represented by the test method.</returns>
         public IEnumerable<IXunitTestCase> Discover(ITestFrameworkDiscoveryOptions discoveryOptions, ITestMethod testMethod, IAttributeInfo factAttribute)
         {
-            return new IXunitTestCase[] { new PropertyTestCase(MessageSink, discoveryOptions.MethodDisplayOrDefault(), discoveryOptions.MethodDisplayOptionsOrDefault(), testMethod) };
+            return new IXunitTestCase[] {
+                new PropertyTestCase(MessageSink, discoveryOptions.MethodDisplayOrDefault(), discoveryOptions.MethodDisplayOptionsOrDefault(), testMethod)
+            };
         }
     }
 }

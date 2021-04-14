@@ -37,6 +37,16 @@ namespace Mecha.Core.Datasources
         private const string DataDirectory = "./Mecha/SavedTests/";
 
         /// <summary>
+        /// Clears the specified method's param data.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        public void Clear(MethodInfo method)
+        {
+            var DataDirectoryInfo = GetDirectory(DataDirectory, method);
+            DataDirectoryInfo.Delete();
+        }
+
+        /// <summary>
         /// Retrieves the data for the specified method.
         /// </summary>
         /// <param name="method">The method.</param>

@@ -35,6 +35,15 @@ namespace Mecha.Core.Datasources
         private ISerializer Serializer { get; }
 
         /// <summary>
+        /// Clears the specified method data.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        public void Clear(MethodInfo method)
+        {
+            Datasource.Clear(method);
+        }
+
+        /// <summary>
         /// Reads the specified method's data.
         /// </summary>
         /// <param name="method">The method.</param>
@@ -45,7 +54,7 @@ namespace Mecha.Core.Datasources
         }
 
         /// <summary>
-        /// Saves the specified method.
+        /// Saves the specified method's data.
         /// </summary>
         /// <param name="method">The method.</param>
         /// <param name="data">The data.</param>

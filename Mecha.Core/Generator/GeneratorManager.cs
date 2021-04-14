@@ -58,16 +58,45 @@ namespace Mecha.Core.Generator
         /// Generates the data.
         /// </summary>
         /// <param name="method">The method.</param>
+        /// <param name="options">The options.</param>
+        /// <param name="previousItems">The previous items.</param>
+        /// <returns>The data.</returns>
+        public object?[] GenerateData(MethodInfo method, Options options, List<object?[]> previousItems)
+        {
+            var Parameters = method.GetParameters();
+            if (Parameters.Length == 0)
+                return System.Array.Empty<object?>();
+            var Data = new object?[Parameters.Length];
+            var Finished = false;
+            using var InternalTimer = new Timer(options.MaxDuration);
+            InternalTimer.Elapsed += (sender, e) => Finished = true;
+            InternalTimer?.Start();
+            do
+            {
+                Data = Next(Parameters);
+                if (previousItems.AddIfUnique(Same, Data))
+                    return Data;
+            }
+            while (!Finished);
+            InternalTimer?.Stop();
+            return System.Array.Empty<object?>();
+        }
+
+        /// <summary>
+        /// Generates the data.
+        /// </summary>
+        /// <param name="method">The method.</param>
         /// <param name="generatorOptions">The generator options.</param>
         /// <returns>An IEnumerable that generates data on each pull.</returns>
-        public IEnumerable<object?[]> GenerateData(MethodInfo method, GeneratorOptions generatorOptions)
+        public IEnumerable<object?[]> GenerateData(MethodInfo method, GeneratorOptions generatorOptions, List<object?[]> previousItems)
         {
             var Count = generatorOptions.MaxCount;
             if (Count <= 0)
                 yield break;
             var Parameters = method.GetParameters();
+            if (Parameters.Length == 0)
+                Count = 1;
             var Data = new object?[Parameters.Length];
-            var PreviousItems = new List<object?[]>();
             var Finished = false;
             using var InternalTimer = new Timer(generatorOptions.MaxDuration);
             InternalTimer.Elapsed += (sender, e) => Finished = true;
@@ -75,11 +104,11 @@ namespace Mecha.Core.Generator
             do
             {
                 Data = Next(Parameters);
-                if (PreviousItems.AddIfUnique(Same, Data))
+                if (previousItems.AddIfUnique(Same, Data))
                 {
                     yield return Data;
                     --Count;
-                    if (Count <= 0)
+                    if (Count <= 0 || Finished)
                         break;
                 }
             }
@@ -92,7 +121,7 @@ namespace Mecha.Core.Generator
         /// </summary>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The values.</returns>
-        public object?[] Next(ParameterInfo[] parameters)
+        private object?[] Next(ParameterInfo[] parameters)
         {
             parameters ??= System.Array.Empty<ParameterInfo>();
             object?[] Data = new object?[parameters.Length];

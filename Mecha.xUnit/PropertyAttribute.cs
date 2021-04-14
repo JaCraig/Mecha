@@ -16,18 +16,24 @@ namespace Mecha.xUnit
         /// Gets the number of randomly generated items to create.
         /// </summary>
         /// <value>The number of randomly generated items to create.</value>
-        public int? GenerationCount { get; set; }
+        public int GenerationCount { get; set; } = 10;
 
         /// <summary>
         /// Gets the max duration to run the tests for.
         /// </summary>
         /// <value>The max duration to run the tests for.</value>
-        public int? MaxDuration { get; set; }
+        public int MaxDuration { get; set; } = 1000;
+
+        /// <summary>
+        /// Gets or sets the maximum shrink count.
+        /// </summary>
+        /// <value>The maximum shrink count.</value>
+        public int MaxShrinkCount { get; set; } = 10;
 
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="PropertyAttribute"/> is verbose.
         /// </summary>
         /// <value><c>true</c> if verbose; otherwise, <c>false</c>.</value>
-        public bool? Verbose { get; set; }
+        public bool Verbose { get; set; }
     }
 }

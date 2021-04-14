@@ -92,7 +92,7 @@ namespace Mecha.xUnit
         /// <summary>
         /// Initializes the specified output helper.
         /// </summary>
-        public void Init()
+        public void Init(IMessageBus messageBus, CancellationTokenSource cancellationTokenSource)
         {
             if (Canister.Builder.Bootstrapper is null)
             {
@@ -105,6 +105,27 @@ namespace Mecha.xUnit
                 }
             }
             Manager = Canister.Builder.Bootstrapper?.Resolve<Check>();
+
+            Test = new XunitTest(this, DisplayName);
+            CancellationTokenSource = cancellationTokenSource;
+            MessageBus = messageBus;
+            OutputHelper = new TestOutputHelper();
+            OutputHelper.Initialize(messageBus, Test);
+            var RunTimeMethod = Method.ToRuntimeMethod();
+            var PropertyAttribute = RunTimeMethod.GetCustomAttributes(typeof(PropertyAttribute), true).FirstOrDefault() as PropertyAttribute;
+            Options = new Options()
+            {
+                GenerationCount = PropertyAttribute?.GenerationCount ?? 10,
+                MaxDuration = PropertyAttribute?.MaxDuration ?? int.MaxValue,
+                Verbose = PropertyAttribute?.Verbose ?? false,
+                MaxShrinkCount = PropertyAttribute?.MaxShrinkCount ?? 10
+            };
+            if (Options.GenerationCount == 0)
+                Options.GenerationCount = 10;
+            if (Options.MaxDuration == 0)
+                Options.MaxDuration = 1000;
+            if (Options.MaxShrinkCount == 0)
+                Options.MaxShrinkCount = 10;
         }
 
         /// <summary>
@@ -118,22 +139,9 @@ namespace Mecha.xUnit
         /// <returns></returns>
         public override Task<RunSummary> RunAsync(IMessageSink diagnosticMessageSink, IMessageBus messageBus, object[] constructorArguments, ExceptionAggregator aggregator, CancellationTokenSource cancellationTokenSource)
         {
-            Test = new XunitTest(this, DisplayName);
-            CancellationTokenSource = cancellationTokenSource;
-            MessageBus = messageBus;
-            OutputHelper = new TestOutputHelper();
-            OutputHelper.Initialize(messageBus, Test);
-            var PropertiesAttribute = Method.GetCustomAttributes(typeof(PropertiesAttribute)).FirstOrDefault() as PropertiesAttribute;
-            var PropertyAttribute = Method.GetCustomAttributes(typeof(PropertyAttribute)).FirstOrDefault() as PropertyAttribute;
-            Options = PropertyAttribute is null && PropertiesAttribute is null ? Options.Default : new Options()
-            {
-                GenerationCount = PropertyAttribute?.GenerationCount ?? PropertiesAttribute?.GenerationCount ?? 10,
-                MaxDuration = PropertyAttribute?.MaxDuration ?? PropertiesAttribute?.MaxDuration ?? int.MaxValue,
-                Verbose = PropertyAttribute?.Verbose ?? PropertiesAttribute?.Verbose ?? false
-            };
             var TempMethod = Method.ToRuntimeMethod();
 
-            Init();
+            Init(messageBus, cancellationTokenSource);
             Timer = new ExecutionTimer();
 
             if (!messageBus.QueueMessage(new TestCaseStarting(this)))
@@ -156,6 +164,10 @@ namespace Mecha.xUnit
             }
         }
 
+        /// <summary>
+        /// Runs the test.
+        /// </summary>
+        /// <returns></returns>
         private RunSummary RunTest()
         {
             var RunMethod = TestMethod.Method.ToRuntimeMethod();

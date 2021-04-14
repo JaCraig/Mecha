@@ -25,6 +25,12 @@ namespace Mecha.Core.Datasources.Interfaces
     public interface IDatasource
     {
         /// <summary>
+        /// Clears the specified method's param data.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        void Clear(MethodInfo method);
+
+        /// <summary>
         /// Retrieves the data for the specified method.
         /// </summary>
         /// <param name="method">The method.</param>
