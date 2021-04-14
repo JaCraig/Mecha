@@ -27,6 +27,11 @@ namespace Mecha.Core
         }
 
         /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object LockObject = new object();
+
+        /// <summary>
         /// Gets the default.
         /// </summary>
         /// <value>The default.</value>
@@ -67,11 +72,6 @@ namespace Mecha.Core
         public TestRunnerManager TestRunnerManager { get; }
 
         /// <summary>
-        /// The lock object
-        /// </summary>
-        private static readonly object LockObject = new object();
-
-        /// <summary>
         /// Generates data based on the method.
         /// </summary>
         /// <param name="testMethod">The test method.</param>
@@ -104,9 +104,9 @@ namespace Mecha.Core
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <param name="Result">The result.</param>
-        public void Run(MethodInfo runMethod, object? target, Options options, out Result Result)
+        public void Run(MethodInfo runMethod, object? target, Options? options, out Result Result)
         {
-            Result = TestRunnerManager.Run(runMethod, target, options);
+            Result = TestRunnerManager.Run(runMethod, target, options ?? Options.Default);
         }
     }
 }

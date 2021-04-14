@@ -28,7 +28,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Gets or sets the maximum.
         /// </summary>
         /// <value>The maximum.</value>
-        public static Dictionary<int, object>? Max = new Dictionary<int, object>
+        public static Dictionary<int, object>? Max { get; } = new Dictionary<int, object>
         {
             [typeof(byte).GetHashCode()] = byte.MaxValue,
             [typeof(sbyte).GetHashCode()] = sbyte.MaxValue,
@@ -70,7 +70,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Gets or sets the minimum.
         /// </summary>
         /// <value>The minimum.</value>
-        public static Dictionary<int, object>? Min = new Dictionary<int, object>
+        public static Dictionary<int, object>? Min { get; } = new Dictionary<int, object>
         {
             [typeof(byte).GetHashCode()] = byte.MinValue,
             [typeof(sbyte).GetHashCode()] = sbyte.MinValue,
@@ -111,7 +111,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <summary>
         /// The values
         /// </summary>
-        public static Dictionary<int, object?> Values = new Dictionary<int, object?>
+        public static Dictionary<int, object?> Values { get; } = new Dictionary<int, object?>
         {
             [typeof(byte).GetHashCode()] = default(byte),
             [typeof(sbyte).GetHashCode()] = default(sbyte),

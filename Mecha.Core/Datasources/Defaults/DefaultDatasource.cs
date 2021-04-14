@@ -79,7 +79,7 @@ namespace Mecha.Core.Datasources
 
             for (int x = 0; x < Parameters.Length; ++x)
             {
-                new FileInfo($"{DataDirectoryInfo.FullName}/{x}.json").Write(serializer.Serialize(Parameters[x].ParameterType, paramData[x]));
+                new FileInfo($"{DataDirectoryInfo.FullName}/{x}.json").Write(serializer.Serialize(Parameters[x].ParameterType, paramData[x]) ?? "");
             }
         }
 

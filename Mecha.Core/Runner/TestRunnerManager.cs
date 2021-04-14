@@ -31,8 +31,8 @@ namespace Mecha.Core.Runner
         /// <param name="methodInfo">The method information.</param>
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
-        /// <returns></returns>
-        public Result Run(MethodInfo methodInfo, object target, Options options)
+        /// <returns>Results</returns>
+        public Result Run(MethodInfo methodInfo, object? target, Options options)
         {
             return Runner.Run(methodInfo, target, options);
         }
