@@ -121,7 +121,7 @@ namespace Mecha.Core.Generator
         /// </summary>
         /// <param name="parameters">The parameters.</param>
         /// <returns>The values.</returns>
-        private object?[] Next(ParameterInfo[] parameters)
+        private object?[] Next(ParameterInfo[] parameters, List<object?[]> previousItems)
         {
             parameters ??= System.Array.Empty<ParameterInfo>();
             object?[] Data = new object?[parameters.Length];
@@ -132,7 +132,7 @@ namespace Mecha.Core.Generator
                 LocalGenerators = Random.Shuffle(LocalGenerators).ToArray();
                 Data[i] = System.Array
                     .Find(LocalGenerators, y => y.CanGenerate(Parameter))?
-                    .Next(Parameter);
+                    .Next(Parameter, null, null);
             }
             return Data;
         }

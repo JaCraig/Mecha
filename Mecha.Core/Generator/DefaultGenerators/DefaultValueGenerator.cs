@@ -16,7 +16,7 @@ limitations under the License.
 
 using Fast.Activator;
 using Mecha.Core.Generator.Interfaces;
-using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 
 namespace Mecha.Core.Generator.DefaultGenerators
@@ -31,7 +31,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order => int.MaxValue;
+        public int Order => int.MinValue;
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.
@@ -42,23 +42,25 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
-            return !parameter.HasDefaultValue && parameter.GetCustomAttribute<ValidationAttribute>() is null;
+            return !parameter.HasDefaultValue;
         }
 
         /// <summary>
         /// Generates the next object of the specified parameter type.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
+        /// <param name="min">The minimum.</param>
+        /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo parameter)
+        public object? Next(ParameterInfo parameter, object min, object max)
         {
+            var NotNullable = parameter.GetCustomAttribute<DisallowNullAttribute>();
             var ResultType = parameter.ParameterType;
-            if (!ResultType.IsValueType)
+            if (!ResultType.IsValueType && NotNullable is null)
                 return null;
-            var ResultHash = ResultType.GetHashCode();
-            if (DefaultValueLookup.Values.TryGetValue(ResultHash, out var ReturnValue))
-                return ReturnValue;
-            return FastActivator.CreateInstance(ResultType);
+            return DefaultValueLookup.Values.TryGetValue(ResultType.GetHashCode(), out var ReturnValue)
+                ? ReturnValue
+                : FastActivator.CreateInstance(ResultType);
         }
     }
 }

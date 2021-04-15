@@ -16,6 +16,7 @@ limitations under the License.
 
 using Mecha.Core.Generator.Interfaces;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Reflection;
 
 namespace Mecha.Core.Generator.DefaultGenerators
@@ -33,6 +34,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public DefaultGenerator(Mirage.Random random)
         {
             RandomObj = random;
+            var Methods = RandomObj.GetType().GetMethods();
+            GenericRandMethod = System.Array.Find(Methods, x => x.IsGenericMethod && x.GetParameters().Length == 2);
         }
 
         /// <summary>
@@ -40,6 +43,12 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </summary>
         /// <value>The order.</value>
         public int Order => int.MaxValue;
+
+        /// <summary>
+        /// Gets the generic rand method.
+        /// </summary>
+        /// <value>The generic rand method.</value>
+        private MethodInfo GenericRandMethod { get; }
 
         /// <summary>
         /// Gets the random object.
@@ -64,15 +73,16 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </summary>
         /// <param name="parameter">The parameter.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo parameter)
+        public object? Next(ParameterInfo parameter, object min, object max)
         {
-            var ReturnValue = RandomObj.Next(parameter.ParameterType);
-            var Validation = parameter.GetCustomAttribute<ValidationAttribute>();
-            if (Validation != null)
+            var GenericMethod = GenericRandMethod.MakeGenericMethod(parameter.ParameterType);
+            var ReturnValue = GenericMethod.Invoke(RandomObj, new object[] { min, max });
+            var ValidationRules = parameter.GetCustomAttributes<ValidationAttribute>();
+            if (ValidationRules?.Any() == true)
             {
-                while (!Validation.IsValid(ReturnValue))
+                while (!ValidationRules.All(x => x.IsValid(ReturnValue)))
                 {
-                    ReturnValue = RandomObj.Next(parameter.ParameterType);
+                    ReturnValue = GenericMethod.Invoke(RandomObj, new object[] { min, max });
                 }
             }
             return ReturnValue;

@@ -31,7 +31,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order => int.MaxValue;
+        public int Order => int.MinValue;
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.
@@ -49,8 +49,10 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Generates the next object of the specified parameter type.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
+        /// <param name="min">The minimum.</param>
+        /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object Next(ParameterInfo parameter)
+        public object Next(ParameterInfo parameter, object min, object max)
         {
             return Substitute.For(new Type[] { parameter.ParameterType }, Array.Empty<object>());
         }

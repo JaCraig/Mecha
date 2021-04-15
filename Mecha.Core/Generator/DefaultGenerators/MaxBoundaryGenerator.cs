@@ -15,38 +15,22 @@ limitations under the License.
 */
 
 using Mecha.Core.Generator.Interfaces;
-using System;
 using System.ComponentModel.DataAnnotations;
 using System.Reflection;
 
 namespace Mecha.Core.Generator.DefaultGenerators
 {
     /// <summary>
-    /// Boundary generator
+    /// Max Boundary generator
     /// </summary>
     /// <seealso cref="IGenerator"/>
-    public class BoundaryGenerator : IGenerator
+    public class MaxBoundaryGenerator : IGenerator
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BoundaryGenerator"/> class.
-        /// </summary>
-        /// <param name="random">The random.</param>
-        public BoundaryGenerator(Mirage.Random random)
-        {
-            Random = random;
-        }
-
         /// <summary>
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order => int.MaxValue;
-
-        /// <summary>
-        /// Gets the random.
-        /// </summary>
-        /// <value>The random.</value>
-        private Mirage.Random Random { get; }
+        public int Order => 0;
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.
@@ -58,7 +42,6 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public bool CanGenerate(ParameterInfo parameter)
         {
             return !parameter.HasDefaultValue
-                && parameter.GetCustomAttribute<ValidationAttribute>() == null
                 && (DefaultValueLookup.Max?.ContainsKey(parameter.ParameterType.GetHashCode()) ?? false);
         }
 
@@ -66,11 +49,14 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Generates the next object of the specified parameter type.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
+        /// <param name="min">The minimum.</param>
+        /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object Next(ParameterInfo parameter)
+        public object Next(ParameterInfo parameter, object min, object max)
         {
             var Key = parameter.ParameterType.GetHashCode();
-            return Random.Next<bool>() ? (DefaultValueLookup.Max?[Key] ?? false) : (DefaultValueLookup.Min?[Key] ?? false);
+            var Range = parameter.GetCustomAttribute<RangeAttribute>();
+            return Range?.Maximum ?? DefaultValueLookup.Max?[Key] ?? false;
         }
     }
 }
