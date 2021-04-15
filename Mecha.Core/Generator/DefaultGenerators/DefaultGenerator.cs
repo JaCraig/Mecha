@@ -73,16 +73,16 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </summary>
         /// <param name="parameter">The parameter.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo parameter, object min, object max)
+        public object? Next(ParameterInfo parameter, object? min, object? max)
         {
             var GenericMethod = GenericRandMethod.MakeGenericMethod(parameter.ParameterType);
-            var ReturnValue = GenericMethod.Invoke(RandomObj, new object[] { min, max });
+            var ReturnValue = GenericMethod.Invoke(RandomObj, new object?[] { min, max });
             var ValidationRules = parameter.GetCustomAttributes<ValidationAttribute>();
             if (ValidationRules?.Any() == true)
             {
                 while (!ValidationRules.All(x => x.IsValid(ReturnValue)))
                 {
-                    ReturnValue = GenericMethod.Invoke(RandomObj, new object[] { min, max });
+                    ReturnValue = GenericMethod.Invoke(RandomObj, new object?[] { min, max });
                 }
             }
             return ReturnValue;

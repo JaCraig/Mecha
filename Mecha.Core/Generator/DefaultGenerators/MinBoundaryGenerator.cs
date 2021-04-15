@@ -36,7 +36,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object Next(ParameterInfo parameter, object min, object max)
+        public object Next(ParameterInfo parameter, object? min, object? max)
         {
             var Key = parameter.ParameterType.GetHashCode();
             var Range = parameter.GetCustomAttribute<RangeAttribute>();

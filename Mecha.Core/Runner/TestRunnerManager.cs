@@ -1,5 +1,4 @@
 ﻿using Mecha.Core.Runner.Interfaces;
-using Mirage;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -16,7 +15,7 @@ namespace Mecha.Core.Runner
         /// Initializes a new instance of the <see cref="TestRunnerManager"/> class.
         /// </summary>
         /// <param name="runners">The runners.</param>
-        public TestRunnerManager(IEnumerable<IRunner> runners, Random random)
+        public TestRunnerManager(IEnumerable<IRunner> runners)
         {
             Runner = runners.FirstOrDefault(x => x.GetType() != typeof(DefaultRunner)) ?? runners.FirstOrDefault(x => x.GetType() == typeof(DefaultRunner));
         }

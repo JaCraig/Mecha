@@ -170,6 +170,8 @@ namespace Mecha.xUnit
         /// <returns></returns>
         private RunSummary RunTest()
         {
+            if (Manager is null)
+                return new RunSummary();
             var RunMethod = TestMethod.Method.ToRuntimeMethod();
             object? Target = null;
             var TestClass = TestMethod.TestClass.Class.ToRuntimeType();
@@ -179,10 +181,7 @@ namespace Mecha.xUnit
             }
             Result? Result = null;
 
-            Timer?.Aggregate(async () =>
-            {
-                Result = await Manager.RunAsync(RunMethod, Target, Options).ConfigureAwait(false);
-            });
+            Timer?.Aggregate(async () => Result = await Manager.RunAsync(RunMethod, Target, Options).ConfigureAwait(false));
             if (Target is IDisposable disposable)
                 disposable.Dispose();
 
