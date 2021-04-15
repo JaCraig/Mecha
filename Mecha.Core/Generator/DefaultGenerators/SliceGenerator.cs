@@ -14,20 +14,22 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using Mecha.Core.Generator.Interfaces;
 using System.Reflection;
 
-namespace Mecha.Core.Generator.Interfaces
+namespace Mecha.Core.Generator.DefaultGenerators
 {
     /// <summary>
-    /// Generator interface.
+    /// Slice generator
     /// </summary>
-    public interface IGenerator
+    /// <seealso cref="IGenerator"/>
+    public class SliceGenerator : IGenerator
     {
         /// <summary>
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        int Order { get; }
+        public int Order => 1;
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.
@@ -36,15 +38,21 @@ namespace Mecha.Core.Generator.Interfaces
         /// <returns>
         /// <c>true</c> if this instance can generate the specified parameter; otherwise, <c>false</c>.
         /// </returns>
-        bool CanGenerate(ParameterInfo parameter);
+        public bool CanGenerate(ParameterInfo parameter)
+        {
+            return !parameter.HasDefaultValue
+                && (DefaultValueLookup.Slice?.ContainsKey(parameter.ParameterType.GetHashCode()) ?? false);
+        }
 
         /// <summary>
         /// Generates the next object of the specified parameter type.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
-        /// <param name="min">The minimum.</param>
-        /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        object? Next(ParameterInfo parameter, object? min, object? max);
+        public object? Next(ParameterInfo parameter, object? min, object? max)
+        {
+            var Key = parameter.ParameterType.GetHashCode();
+            return DefaultValueLookup.Slice?[Key](min, max) ?? false;
+        }
     }
 }

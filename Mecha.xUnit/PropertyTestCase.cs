@@ -100,7 +100,7 @@ namespace Mecha.xUnit
                 {
                     if (Canister.Builder.Bootstrapper is null)
                     {
-                        new ServiceCollection().AddCanisterModules(configure => configure?.RegisterMecha()?.AddAssembly(typeof(FuzzDataAttribute).Assembly));
+                        new ServiceCollection().AddCanisterModules(configure => configure?.RegisterMecha()?.AddAssembly(typeof(PropertyAttribute).Assembly));
                     }
                 }
             }
@@ -179,7 +179,10 @@ namespace Mecha.xUnit
             }
             Result? Result = null;
 
-            Timer?.Aggregate(() => Manager?.Run(RunMethod, Target, Options, out Result));
+            Timer?.Aggregate(async () =>
+            {
+                Result = await Manager.RunAsync(RunMethod, Target, Options).ConfigureAwait(false);
+            });
             if (Target is IDisposable disposable)
                 disposable.Dispose();
 

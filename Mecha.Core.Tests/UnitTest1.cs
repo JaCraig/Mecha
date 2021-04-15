@@ -1,4 +1,5 @@
 using Mecha.xUnit;
+using Xunit;
 
 namespace Mecha.Core.Tests
 {
@@ -17,6 +18,7 @@ namespace Mecha.Core.Tests
         [Property(GenerationCount = 3, MaxDuration = 1000)]
         public void Test3(bool value)
         {
+            Assert.False(value);
         }
     }
 }

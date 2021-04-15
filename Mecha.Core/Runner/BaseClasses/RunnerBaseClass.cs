@@ -1,9 +1,13 @@
-﻿using Mecha.Core.Runner.Interfaces;
+﻿using BigBook;
+using Mecha.Core.Generator;
+using Mecha.Core.Runner.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace Mecha.Core.Runner.BaseClasses
 {
@@ -15,9 +19,16 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <summary>
         /// Initializes a new instance of the <see cref="RunnerBaseClass"/> class.
         /// </summary>
-        protected RunnerBaseClass()
+        protected RunnerBaseClass(Mirage.Random random)
         {
+            Random = random;
         }
+
+        /// <summary>
+        /// Gets the random.
+        /// </summary>
+        /// <value>The random.</value>
+        protected Mirage.Random Random { get; }
 
         /// <summary>
         /// Gets or sets the manager.
@@ -32,7 +43,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <returns>The result.</returns>
-        public Result Run(MethodInfo runMethod, object? target, Options options)
+        public Task<Result> RunAsync(MethodInfo runMethod, object? target, Options options)
         {
             Init();
             StartRun(runMethod, target, options);
@@ -54,19 +65,29 @@ namespace Mecha.Core.Runner.BaseClasses
                 TotalTime += CurrentRun.ElapsedTime = TempTimer.ElapsedMilliseconds;
                 Results.Add(CurrentRun);
             }
+            var GeneratedParameters = GenerateArguments(runMethod, options);
             for (var x = PreviousData.Count; x < Count; ++x)
             {
                 if (TotalTime >= options.MaxDuration)
                     break;
                 TempTimer.Restart();
-                var Arguments = GenerateArguments(runMethod, options, PreviousData);
-                if (Arguments.Length != Parameters.Length)
-                    break;
-                PreviousData.Add(Arguments);
-                var CurrentRun = GenerateRun(runMethod, Parameters, target, Arguments);
-                TempTimer.Stop();
-                TotalTime += CurrentRun.ElapsedTime = TempTimer.ElapsedMilliseconds;
-                Results.Add(CurrentRun);
+                var Arguments = new object?[Parameters.Length];
+                for (var y = 0; y < Parameters.Length; ++y)
+                {
+                    Arguments[y] = Random.Next(GeneratedParameters[y].GeneratedValues);
+                }
+                if (PreviousData.AddIfUnique(Same, Arguments))
+                {
+                    var CurrentRun = GenerateRun(runMethod, Parameters, target, Arguments);
+                    TempTimer.Stop();
+                    TotalTime += CurrentRun.ElapsedTime = TempTimer.ElapsedMilliseconds;
+                    Results.Add(CurrentRun);
+                }
+                else
+                {
+                    TempTimer.Stop();
+                    TotalTime += TempTimer.ElapsedMilliseconds;
+                }
             }
             Results = Shrink(Results, options);
             Manager?.DataManager.Clear(runMethod);
@@ -74,7 +95,7 @@ namespace Mecha.Core.Runner.BaseClasses
             {
                 SaveArguments(runMethod, Result.ParametersUsed);
             }
-            return FinishRun(runMethod, target, options, Results);
+            return Task.FromResult(FinishRun(runMethod, target, options, Results));
         }
 
         /// <summary>
@@ -92,11 +113,10 @@ namespace Mecha.Core.Runner.BaseClasses
         /// </summary>
         /// <param name="methodInfo">The method information.</param>
         /// <param name="options">The options.</param>
-        /// <param name="previousData">The previous data.</param>
         /// <returns>The generated arguments.</returns>
-        protected object?[] GenerateArguments(MethodInfo methodInfo, Options options, List<object?[]> previousData)
+        protected ParameterValues[] GenerateArguments(MethodInfo methodInfo, Options options)
         {
-            return Manager?.GeneratorManager.GenerateData(methodInfo, options, previousData) ?? Array.Empty<object>();
+            return Manager?.GeneratorManager.GenerateParameterValues(methodInfo.GetParameters(), options) ?? Array.Empty<ParameterValues>();
         }
 
         /// <summary>
@@ -174,6 +194,28 @@ namespace Mecha.Core.Runner.BaseClasses
         private void Init()
         {
             Manager = Check.Default;
+        }
+
+        /// <summary>
+        /// Determines if the 2 arrays are the same.
+        /// </summary>
+        /// <param name="value1">The value1.</param>
+        /// <param name="value2">The value2.</param>
+        /// <returns>True if they are, false otherwise.</returns>
+        private bool Same(object?[] value1, object?[] value2)
+        {
+            if (value1 is null || value2 is null)
+                return false;
+            if (value1.Length != value2.Length)
+                return false;
+            for (int x = 0; x < value1.Length; ++x)
+            {
+                var Value1 = JsonSerializer.Serialize(value1[x]);
+                var Value2 = JsonSerializer.Serialize(value2[x]);
+                if (Value1 != Value2)
+                    return false;
+            }
+            return true;
         }
     }
 }

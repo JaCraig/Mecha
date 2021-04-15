@@ -15,7 +15,6 @@ limitations under the License.
 */
 
 using BigBook;
-using Mecha.Core.Configuration;
 using Mecha.Core.Generator.Interfaces;
 using Mirage;
 using System.Collections.Generic;
@@ -38,15 +37,9 @@ namespace Mecha.Core.Generator
         /// <param name="random">The random.</param>
         public GeneratorManager(IEnumerable<IGenerator> generators, Random random)
         {
-            Generators = generators;
+            Generators = generators.OrderBy(x => x.Order).ToArray();
             Random = random;
         }
-
-        /// <summary>
-        /// Gets the generators.
-        /// </summary>
-        /// <value>The generators.</value>
-        public IEnumerable<IGenerator> Generators { get; }
 
         /// <summary>
         /// Gets the random.
@@ -55,86 +48,45 @@ namespace Mecha.Core.Generator
         public Random Random { get; }
 
         /// <summary>
-        /// Generates the data.
+        /// Gets the generators.
         /// </summary>
-        /// <param name="method">The method.</param>
-        /// <param name="options">The options.</param>
-        /// <param name="previousItems">The previous items.</param>
-        /// <returns>The data.</returns>
-        public object?[] GenerateData(MethodInfo method, Options options, List<object?[]> previousItems)
-        {
-            var Parameters = method.GetParameters();
-            if (Parameters.Length == 0)
-                return System.Array.Empty<object?>();
-            var Data = new object?[Parameters.Length];
-            var Finished = false;
-            using var InternalTimer = new Timer(options.MaxDuration);
-            InternalTimer.Elapsed += (sender, e) => Finished = true;
-            InternalTimer?.Start();
-            do
-            {
-                Data = Next(Parameters);
-                if (previousItems.AddIfUnique(Same, Data))
-                    return Data;
-            }
-            while (!Finished);
-            InternalTimer?.Stop();
-            return System.Array.Empty<object?>();
-        }
+        /// <value>The generators.</value>
+        private IGenerator[] Generators { get; }
 
         /// <summary>
-        /// Generates the data.
-        /// </summary>
-        /// <param name="method">The method.</param>
-        /// <param name="generatorOptions">The generator options.</param>
-        /// <returns>An IEnumerable that generates data on each pull.</returns>
-        public IEnumerable<object?[]> GenerateData(MethodInfo method, GeneratorOptions generatorOptions, List<object?[]> previousItems)
-        {
-            var Count = generatorOptions.MaxCount;
-            if (Count <= 0)
-                yield break;
-            var Parameters = method.GetParameters();
-            if (Parameters.Length == 0)
-                Count = 1;
-            var Data = new object?[Parameters.Length];
-            var Finished = false;
-            using var InternalTimer = new Timer(generatorOptions.MaxDuration);
-            InternalTimer.Elapsed += (sender, e) => Finished = true;
-            InternalTimer?.Start();
-            do
-            {
-                Data = Next(Parameters);
-                if (previousItems.AddIfUnique(Same, Data))
-                {
-                    yield return Data;
-                    --Count;
-                    if (Count <= 0 || Finished)
-                        break;
-                }
-            }
-            while (!Finished);
-            InternalTimer?.Stop();
-        }
-
-        /// <summary>
-        /// Gets the next set of parameter values.
+        /// Generates the parameter values.
         /// </summary>
         /// <param name="parameters">The parameters.</param>
-        /// <returns>The values.</returns>
-        private object?[] Next(ParameterInfo[] parameters, List<object?[]> previousItems)
+        /// <param name="options">The options.</param>
+        /// <returns>The parameter values</returns>
+        public ParameterValues[] GenerateParameterValues(ParameterInfo[] parameters, Options options)
         {
             parameters ??= System.Array.Empty<ParameterInfo>();
-            object?[] Data = new object?[parameters.Length];
-            IGenerator[] LocalGenerators = Generators.ToArray();
-            for (int i = 0, maxLength = parameters.Length; i < maxLength; i++)
+            var ReturnValue = new ParameterValues[parameters.Length];
+            for (var x = 0; x < parameters.Length; ++x)
             {
-                var Parameter = parameters[i];
-                LocalGenerators = Random.Shuffle(LocalGenerators).ToArray();
-                Data[i] = System.Array
-                    .Find(LocalGenerators, y => y.CanGenerate(Parameter))?
-                    .Next(Parameter, null, null);
+                var CurrentParameter = ReturnValue[x] = new ParameterValues(parameters[x]);
+                bool Finished = false;
+                using var InternalTimer = new Timer(options.MaxDuration);
+                InternalTimer.Elapsed += (sender, e) => Finished = true;
+                InternalTimer.Start();
+                int Index = 0;
+                while (!Finished)
+                {
+                    var Generator = Generators[Index];
+                    Index = (Index + 1) % Generators.Length;
+                    if (!Generator.CanGenerate(CurrentParameter.Parameter))
+                        continue;
+                    var Min = CurrentParameter.GeneratedValues.Count > 0 ? Random.Next(CurrentParameter.GeneratedValues) : null;
+                    var Max = CurrentParameter.GeneratedValues.Count > 0 ? Random.Next(CurrentParameter.GeneratedValues) : null;
+                    var Data = Generator.Next(CurrentParameter.Parameter, Min, Max);
+                    CurrentParameter.GeneratedValues.AddIfUnique(Same, Data);
+                    if (CurrentParameter.GeneratedValues.Count >= options.GenerationCount)
+                        break;
+                }
+                InternalTimer.Stop();
             }
-            return Data;
+            return ReturnValue;
         }
 
         /// <summary>
@@ -143,20 +95,12 @@ namespace Mecha.Core.Generator
         /// <param name="value1">The value1.</param>
         /// <param name="value2">The value2.</param>
         /// <returns>True if they are, false otherwise.</returns>
-        private bool Same(object?[] value1, object?[] value2)
+        private bool Same(object? value1, object? value2)
         {
-            if (value1 is null || value2 is null)
-                return false;
-            if (value1.Length != value2.Length)
-                return false;
-            for (int x = 0; x < value1.Length; ++x)
-            {
-                var Value1 = JsonSerializer.Serialize(value1[x]);
-                var Value2 = JsonSerializer.Serialize(value2[x]);
-                if (Value1 != Value2)
-                    return false;
-            }
-            return true;
+            return (value1 is null && value2 is null)
+                || (!(value1 is null)
+                    && !(value2 is null)
+                    && JsonSerializer.Serialize(value1) == JsonSerializer.Serialize(value2));
         }
     }
 }

@@ -14,6 +14,14 @@ namespace Mecha.Core.Runner
     public class DefaultRunner : RunnerBaseClass
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="DefaultRunner"/> class.
+        /// </summary>
+        /// <param name="random"></param>
+        public DefaultRunner(Mirage.Random random) : base(random)
+        {
+        }
+
+        /// <summary>
         /// Finishes the run and converts the list of runs to a finished result.
         /// </summary>
         /// <param name="runMethod">The run method.</param>
@@ -31,7 +39,7 @@ namespace Mecha.Core.Runner
             {
                 var Exceptions = results.Where(x => !(x.Exception is null)).Select(x => x.Exception).ToArray();
                 ReturnValue.Passed = false;
-                ReturnValue.Exception = new AggregateException("Run failed with the following exceptions", Exceptions);
+                ReturnValue.Exception = Exceptions.Length == 1 ? Exceptions[0] : new AggregateException("Run failed with the following exceptions", Exceptions);
                 ReturnValue.Output = $"The run failed with the following stats:\n\n{results.Count} generations\n{Exceptions.Length} exceptions";
             }
             else

@@ -1,4 +1,6 @@
-﻿namespace Mecha.Core
+﻿using Fast.Activator;
+
+namespace Mecha.Core
 {
     /// <summary>
     /// Main class for breaking the
@@ -17,9 +19,11 @@
         }
 
         public static bool Break<TClass>()
-            where TClass : class, new()
         {
-            return Break(new TClass());
+            var ClassType = typeof(TClass);
+            if (ClassType.IsAbstract && ClassType.IsSealed) //Static class
+                return false;
+            return Break(FastActivator.CreateInstance(ClassType));
         }
     }
 }

@@ -14,13 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook;
 using FileCurator;
 using Mecha.Core.Datasources.Interfaces;
-using Mecha.Core.ExtensionMethods;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json;
 
 namespace Mecha.Core.Datasources
 {
@@ -68,7 +69,7 @@ namespace Mecha.Core.Datasources
                     var Data = new FileInfo($"{Directory.FullName}/{x}.json").Read();
                     TempResult[x] = serializer.Deserialize(Parameters[x].ParameterType, Data);
                 }
-                Results.Add(TempResult);
+                Results.AddIfUnique(Same, TempResult);
             }
             return Results;
         }
@@ -134,6 +135,28 @@ namespace Mecha.Core.Datasources
             }
 
             return directoryName;
+        }
+
+        /// <summary>
+        /// Determines if the 2 arrays are the same.
+        /// </summary>
+        /// <param name="value1">The value1.</param>
+        /// <param name="value2">The value2.</param>
+        /// <returns>True if they are, false otherwise.</returns>
+        private bool Same(object?[] value1, object?[] value2)
+        {
+            if (value1 is null || value2 is null)
+                return false;
+            if (value1.Length != value2.Length)
+                return false;
+            for (int x = 0; x < value1.Length; ++x)
+            {
+                var Value1 = JsonSerializer.Serialize(value1[x]);
+                var Value2 = JsonSerializer.Serialize(value2[x]);
+                if (Value1 != Value2)
+                    return false;
+            }
+            return true;
         }
     }
 }

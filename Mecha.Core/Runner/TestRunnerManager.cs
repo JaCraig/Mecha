@@ -1,7 +1,9 @@
 ﻿using Mecha.Core.Runner.Interfaces;
+using Mirage;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace Mecha.Core.Runner
 {
@@ -14,9 +16,9 @@ namespace Mecha.Core.Runner
         /// Initializes a new instance of the <see cref="TestRunnerManager"/> class.
         /// </summary>
         /// <param name="runners">The runners.</param>
-        public TestRunnerManager(IEnumerable<IRunner> runners)
+        public TestRunnerManager(IEnumerable<IRunner> runners, Random random)
         {
-            Runner = runners.FirstOrDefault(x => x.GetType() != typeof(DefaultRunner)) ?? new DefaultRunner();
+            Runner = runners.FirstOrDefault(x => x.GetType() != typeof(DefaultRunner)) ?? runners.FirstOrDefault(x => x.GetType() == typeof(DefaultRunner));
         }
 
         /// <summary>
@@ -32,9 +34,9 @@ namespace Mecha.Core.Runner
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <returns>Results</returns>
-        public Result Run(MethodInfo methodInfo, object? target, Options options)
+        public Task<Result> RunAsync(MethodInfo methodInfo, object? target, Options options)
         {
-            return Runner.Run(methodInfo, target, options);
+            return Runner.RunAsync(methodInfo, target, options);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Threading.Tasks;
 
 namespace Mecha.Core.Runner.Interfaces
 {
@@ -14,6 +15,6 @@ namespace Mecha.Core.Runner.Interfaces
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <returns>The result.</returns>
-        Result Run(MethodInfo runMethod, object? target, Options options);
+        Task<Result> RunAsync(MethodInfo runMethod, object? target, Options options);
     }
 }
