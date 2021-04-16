@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using BigBook;
+using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Generator.Interfaces;
 using Mirage;
 using System.Collections.Generic;
@@ -97,6 +98,10 @@ namespace Mecha.Core.Generator
         /// <returns>True if they are, false otherwise.</returns>
         private bool Same(object? value1, object? value2)
         {
+            if (value1.IsInfinite() && value2.IsInfinite())
+                return true;
+            if (value1.IsInfinite() || value2.IsInfinite())
+                return false;
             return (value1 is null && value2 is null)
                 || (!(value1 is null)
                     && !(value2 is null)

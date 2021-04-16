@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BigBook;
+using System;
+using System.Collections;
 using System.Reflection;
 
 namespace Mecha.Core.Runner
@@ -55,5 +57,62 @@ namespace Mecha.Core.Runner
         /// </summary>
         /// <value>The target.</value>
         public object? Target { get; set; }
+
+        /// <summary>
+        /// Converts to string.
+        /// </summary>
+        /// <returns>A <see cref="System.String"/> that represents this instance.</returns>
+        public override string ToString()
+        {
+            if (Method is null)
+                return "";
+            var ReturnVal = "";
+            var ShrinkText = "";
+            var ExceptionText = "";
+            if (Method.ReturnType != typeof(void))
+                ReturnVal = $" => {ReturnedValue}";
+            if (!(Exception is null))
+            {
+                ShrinkText = $"\nNumber of shrinks: {ShrinkCount}";
+                ExceptionText = $"\nException: {Exception}";
+            }
+            return $"{Method.Name} ({ParametersUsed.ToString(x => GetValue(x), ", ")}){ReturnVal}{ShrinkText}\nElapsed time: {ElapsedTime}{ExceptionText}";
+        }
+
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        private string GetValue(object? value)
+        {
+            if (value is null)
+                return "null";
+            if (value is string StringValue)
+                return StringValue;
+            if (value is IDictionary IDictionaryValue)
+            {
+                var ReturnValue = "[ ";
+                var Seperator = "";
+                foreach (var Key in IDictionaryValue.Keys)
+                {
+                    ReturnValue += Seperator + "{ " + GetValue(Key) + ": " + GetValue(IDictionaryValue[Key]) + " }";
+                    Seperator = ", ";
+                }
+                return ReturnValue + " ]";
+            }
+            if (value is IEnumerable IEnumerableValue)
+            {
+                var ReturnValue = "[ ";
+                var Seperator = "";
+                foreach (var Value in IEnumerableValue)
+                {
+                    ReturnValue += Seperator + GetValue(Value);
+                    Seperator = ", ";
+                }
+                return ReturnValue + " ]";
+            }
+            return value.ToString();
+        }
     }
 }

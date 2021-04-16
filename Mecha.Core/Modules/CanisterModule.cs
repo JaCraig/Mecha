@@ -21,6 +21,8 @@ using Mecha.Core.Generator;
 using Mecha.Core.Generator.Interfaces;
 using Mecha.Core.Runner;
 using Mecha.Core.Runner.Interfaces;
+using Mecha.Core.Shrinker;
+using Mecha.Core.Shrinker.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Mecha.Core.Modules
@@ -49,7 +51,9 @@ namespace Mecha.Core.Modules
                          .Register<GeneratorManager>(ServiceLifetime.Singleton)
                          .Register<Check>(ServiceLifetime.Singleton)
                          .Register<TestRunnerManager>(ServiceLifetime.Singleton)
-                         .RegisterAll<IRunner>(ServiceLifetime.Singleton);
+                         .RegisterAll<IRunner>(ServiceLifetime.Singleton)
+                         .RegisterAll<IShrinker>(ServiceLifetime.Singleton)
+                         .Register<ShrinkerManager>(ServiceLifetime.Singleton);
         }
     }
 }

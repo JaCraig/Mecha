@@ -19,6 +19,9 @@ using Mecha.Core.Datasources.Interfaces;
 using Mecha.Core.Generator;
 using Mecha.Core.Generator.DefaultGenerators;
 using Mecha.Core.Generator.Interfaces;
+using Mecha.Core.Shrinker;
+using Mecha.Core.Shrinker.Defaults;
+using Mecha.Core.Shrinker.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Mecha.Core.ExtensionMethods
@@ -44,7 +47,11 @@ namespace Mecha.Core.ExtensionMethods
                                 .AddSingleton<IGenerator, DefaultGenerator>()
                                 .AddSingleton<IGenerator, DefaultValueGenerator>()
                                 .AddSingleton<IGenerator, InterfaceGenerator>()
-                                .AddSingleton<IGenerator, ParameterDefaultValueGenerator>();
+                                .AddSingleton<IGenerator, ParameterDefaultValueGenerator>()
+                                .AddSingleton<IGenerator, SliceGenerator>()
+                                .AddSingleton<ShrinkerManager>()
+                                .AddSingleton<IShrinker, NumberShrinker>()
+                                .AddSingleton<IShrinker, StringShrinker>();
         }
     }
 }

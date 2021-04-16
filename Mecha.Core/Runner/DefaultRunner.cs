@@ -1,4 +1,5 @@
-﻿using Mecha.Core.Runner.BaseClasses;
+﻿using BigBook;
+using Mecha.Core.Runner.BaseClasses;
 using Mecha.Core.Runner.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -40,12 +41,12 @@ namespace Mecha.Core.Runner
                 var Exceptions = results.Where(x => !(x.Exception is null)).Select(x => x.Exception).ToArray();
                 ReturnValue.Passed = false;
                 ReturnValue.Exception = Exceptions.Length == 1 ? Exceptions[0] : new AggregateException("Run failed with the following exceptions", Exceptions);
-                ReturnValue.Output = $"The run failed with the following stats:\n\n{results.Count} generations\n{Exceptions.Length} exceptions";
+                ReturnValue.Output = $"The run failed with the following stats:\n\n{results.Count} generations.\n{Exceptions.Length} exceptions.\n\nFailed Tests:\n\n{results.Where(x => !(x.Exception is null)).ToString(x => x.ToString(), "\n\n")}\n\nPassed Tests:\n\n{results.Where(x => x.Exception is null).ToString(x => x.ToString(), "\n\n")}";
             }
             else
             {
                 ReturnValue.Passed = true;
-                ReturnValue.Output = $"The run passed with the following stats:\n\n{results.Count} generations";
+                ReturnValue.Output = $"The run passed with the following stats:\n\n{results.Count} generations\n\nTests:\n\n{results.ToString(x => x.ToString(), "\n\n")}";
             }
             return ReturnValue;
         }

@@ -17,6 +17,7 @@ limitations under the License.
 using BigBook;
 using FileCurator;
 using Mecha.Core.Datasources.Interfaces;
+using Mecha.Core.Generator.DefaultGenerators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,6 +69,8 @@ namespace Mecha.Core.Datasources
                 {
                     var Data = new FileInfo($"{Directory.FullName}/{x}.json").Read();
                     TempResult[x] = serializer.Deserialize(Parameters[x].ParameterType, Data);
+                    if (TempResult[x] is null && DefaultValueLookup.Values.TryGetValue(Parameters[x].ParameterType.GetHashCode(), out var DefaultValue))
+                        TempResult[x] = DefaultValue;
                 }
                 Results.AddIfUnique(Same, TempResult);
             }

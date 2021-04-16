@@ -1,0 +1,60 @@
+﻿using Mecha.Core.Generator.DefaultGenerators;
+using Mecha.Core.Shrinker.Interfaces;
+
+namespace Mecha.Core.Shrinker.Defaults
+{
+    /// <summary>
+    /// Number shrinker
+    /// </summary>
+    /// <seealso cref="IShrinker"/>
+    public class NumberShrinker : IShrinker
+    {
+        /// <summary>
+        /// Determines whether this instance can shrink.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns><c>true</c> if this instance can shrink; otherwise, <c>false</c>.</returns>
+        public bool CanShrink(object? value)
+        {
+            if (value is null)
+                return false;
+            var ValueType = value?.GetType();
+
+            return (ValueType == typeof(byte))
+                || (ValueType == typeof(sbyte))
+                || (ValueType == typeof(short))
+                || (ValueType == typeof(int))
+                || (ValueType == typeof(long))
+                || (ValueType == typeof(ushort))
+                || (ValueType == typeof(uint))
+                || (ValueType == typeof(ulong))
+                || (ValueType == typeof(double))
+                || (ValueType == typeof(float))
+                || (ValueType == typeof(decimal))
+                || (ValueType == typeof(byte?))
+                || (ValueType == typeof(sbyte?))
+                || (ValueType == typeof(short?))
+                || (ValueType == typeof(int?))
+                || (ValueType == typeof(long?))
+                || (ValueType == typeof(ushort?))
+                || (ValueType == typeof(uint?))
+                || (ValueType == typeof(ulong?))
+                || (ValueType == typeof(double?))
+                || (ValueType == typeof(float?))
+                || (ValueType == typeof(decimal?));
+        }
+
+        /// <summary>
+        /// Shrinks the specified value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <returns></returns>
+        public object? Shrink(object? value)
+        {
+            if (value is null)
+                return value;
+            var ValueType = value.GetType().GetHashCode();
+            return DefaultValueLookup.Slice[ValueType](DefaultValueLookup.Values[ValueType], value);
+        }
+    }
+}

@@ -65,7 +65,9 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
-            return !parameter.HasDefaultValue && !parameter.ParameterType.IsInterface;
+            return !parameter.HasDefaultValue
+                && !parameter.ParameterType.IsInterface;
+            //&& !typeof(IEnumerable).IsAssignableFrom(parameter.ParameterType);
         }
 
         /// <summary>
@@ -75,16 +77,40 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object min, object max)
         {
+            object? ReturnValue = null;
             var GenericMethod = GenericRandMethod.MakeGenericMethod(parameter.ParameterType);
-            var ReturnValue = GenericMethod.Invoke(RandomObj, new object[] { min, max });
+            ReturnValue = GetValue(parameter, min, max, GenericMethod);
             var ValidationRules = parameter.GetCustomAttributes<ValidationAttribute>();
             if (ValidationRules?.Any() == true)
             {
                 while (!ValidationRules.All(x => x.IsValid(ReturnValue)))
                 {
-                    ReturnValue = GenericMethod.Invoke(RandomObj, new object[] { min, max });
+                    ReturnValue = GetValue(parameter, min, max, GenericMethod);
                 }
             }
+            return ReturnValue;
+        }
+
+        /// <summary>
+        /// Gets the value.
+        /// </summary>
+        /// <param name="parameter">The parameter.</param>
+        /// <param name="min">The minimum.</param>
+        /// <param name="max">The maximum.</param>
+        /// <param name="GenericMethod">The generic method.</param>
+        /// <returns></returns>
+        private object? GetValue(ParameterInfo parameter, object min, object max, MethodInfo GenericMethod)
+        {
+            object? ReturnValue;
+            if (parameter.ParameterType.IsValueType)
+            {
+                ReturnValue = GenericMethod.Invoke(RandomObj, new object[] { min, max });
+            }
+            else
+            {
+                ReturnValue = RandomObj.Next(parameter.ParameterType);
+            }
+
             return ReturnValue;
         }
     }

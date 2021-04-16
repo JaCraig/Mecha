@@ -149,7 +149,48 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <returns>The shrunk run.</returns>
         protected List<RunResult> Shrink(List<RunResult> runs, Options options)
         {
-            return runs;
+            var FinalRuns = runs.Where(x => x.Exception is null).ToList();
+            var FailedRuns = runs.Where(x => !(x.Exception is null)).ToList();
+            for (var x = 0; x < FailedRuns.Count; ++x)
+            {
+                var CurrentRun = FailedRuns[x];
+                if (CurrentRun is null)
+                    continue;
+                var Parameters = new object?[CurrentRun.ParametersUsed.Length];
+                for (var y = 0; y < CurrentRun.ParametersUsed.Length; ++y)
+                {
+                    Parameters[y] = CurrentRun.ParametersUsed[y];
+                    if (!FinalRuns.Any(x => Same(x.ParametersUsed[y], CurrentRun.ParametersUsed[y]) && x.Exception is null))
+                        Parameters[y] = Manager?.Shrinker.Shrink(CurrentRun.ParametersUsed[y]) ?? CurrentRun.ParametersUsed[y];
+                }
+                if (Same(Parameters, CurrentRun.ParametersUsed))
+                {
+                    FinalRuns.Add(CurrentRun);
+                    continue;
+                }
+                var ShrunkResult = GenerateRun(CurrentRun.Method, CurrentRun.Parameters, CurrentRun.Target, Parameters);
+                if (ShrunkResult.Exception is null)
+                {
+                    FinalRuns.Add(CurrentRun);
+                    continue;
+                }
+                ShrunkResult.ShrinkCount = CurrentRun.ShrinkCount + 1;
+                if (ShrunkResult.ShrinkCount >= options.MaxShrinkCount)
+                {
+                    FinalRuns.Add(ShrunkResult);
+                    continue;
+                }
+                FailedRuns.Add(ShrunkResult);
+            }
+            for (var x = 0; x < FinalRuns.Count; ++x)
+            {
+                var Runs = FinalRuns.FindAll(y => Same(y.ParametersUsed, FinalRuns[x].ParametersUsed));
+                for (var y = 1; y < Runs.Count; ++y)
+                {
+                    FinalRuns.Remove(Runs[y]);
+                }
+            }
+            return FinalRuns;
         }
 
         /// <summary>
@@ -188,21 +229,12 @@ namespace Mecha.Core.Runner.BaseClasses
         }
 
         /// <summary>
-        /// Initializes this instance.
-        /// </summary>
-        /// <returns></returns>
-        private void Init()
-        {
-            Manager = Check.Default;
-        }
-
-        /// <summary>
         /// Determines if the 2 arrays are the same.
         /// </summary>
         /// <param name="value1">The value1.</param>
         /// <param name="value2">The value2.</param>
         /// <returns>True if they are, false otherwise.</returns>
-        private bool Same(object?[] value1, object?[] value2)
+        private static bool Same(object?[] value1, object?[] value2)
         {
             if (value1 is null || value2 is null)
                 return false;
@@ -216,6 +248,32 @@ namespace Mecha.Core.Runner.BaseClasses
                     return false;
             }
             return true;
+        }
+
+        /// <summary>
+        /// Sames the specified value1.
+        /// </summary>
+        /// <param name="value1">The value1.</param>
+        /// <param name="value2">The value2.</param>
+        /// <returns>True if they are the same, false otherwise.</returns>
+        private static bool Same(object? value1, object? value2)
+        {
+            if (value1 is null && value2 is null)
+                return true;
+            if (value1 is null || value2 is null)
+                return false;
+            var Value1 = JsonSerializer.Serialize(value1);
+            var Value2 = JsonSerializer.Serialize(value2);
+            return Value1 == Value2;
+        }
+
+        /// <summary>
+        /// Initializes this instance.
+        /// </summary>
+        /// <returns></returns>
+        private void Init()
+        {
+            Manager = Check.Default;
         }
     }
 }

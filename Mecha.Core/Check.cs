@@ -1,6 +1,7 @@
 ﻿using Mecha.Core.Datasources;
 using Mecha.Core.Generator;
 using Mecha.Core.Runner;
+using Mecha.Core.Shrinker;
 using Microsoft.Extensions.DependencyInjection;
 using Mirage;
 using System.Reflection;
@@ -19,12 +20,15 @@ namespace Mecha.Core
         /// <param name="generatorManager">The generator manager.</param>
         /// <param name="dataManager">The data manager.</param>
         /// <param name="testRunnerManager">The test runner manager.</param>
-        public Check(GeneratorManager generatorManager, DataManager dataManager, TestRunnerManager testRunnerManager, Random random)
+        /// <param name="random">The random.</param>
+        /// <param name="shrinker">The shrinker.</param>
+        public Check(GeneratorManager generatorManager, DataManager dataManager, TestRunnerManager testRunnerManager, Random random, ShrinkerManager shrinker)
         {
             DataManager = dataManager;
             GeneratorManager = generatorManager;
             TestRunnerManager = testRunnerManager;
             Random = random;
+            Shrinker = shrinker;
         }
 
         /// <summary>
@@ -66,6 +70,12 @@ namespace Mecha.Core
         /// </summary>
         /// <value>The random.</value>
         public Random Random { get; }
+
+        /// <summary>
+        /// Gets the shrinker.
+        /// </summary>
+        /// <value>The shrinker.</value>
+        public ShrinkerManager Shrinker { get; }
 
         /// <summary>
         /// Gets the test runner manager.
