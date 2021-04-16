@@ -146,6 +146,7 @@ namespace Mecha.Core.Runner.BaseClasses
         {
             var FinalRuns = runs.Where(x => x.Exception is null).ToList();
             var FailedRuns = runs.Where(x => !(x.Exception is null)).ToList();
+            var TempTimer = new Stopwatch();
             for (var x = 0; x < FailedRuns.Count; ++x)
             {
                 var CurrentRun = FailedRuns[x];
@@ -163,9 +164,11 @@ namespace Mecha.Core.Runner.BaseClasses
                     FinalRuns.Add(CurrentRun);
                     continue;
                 }
-                var ShrunkResult = GenerateRun(CurrentRun.Method, CurrentRun.Parameters, CurrentRun.Target, Parameters);
+                var ShrunkResult = GenerateRun(CurrentRun.Method, CurrentRun.Parameters, CurrentRun.Target, Parameters, TempTimer);
+                ShrunkResult.ElapsedTime += CurrentRun.ElapsedTime;
                 if (ShrunkResult.Exception is null)
                 {
+                    CurrentRun.ElapsedTime = ShrunkResult.ElapsedTime;
                     FinalRuns.Add(CurrentRun);
                     continue;
                 }
