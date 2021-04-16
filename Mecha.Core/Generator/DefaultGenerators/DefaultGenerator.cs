@@ -75,7 +75,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </summary>
         /// <param name="parameter">The parameter.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo parameter, object min, object max)
+        public object? Next(ParameterInfo parameter, object? min, object? max)
         {
             object? ReturnValue = null;
             var GenericMethod = GenericRandMethod.MakeGenericMethod(parameter.ParameterType);

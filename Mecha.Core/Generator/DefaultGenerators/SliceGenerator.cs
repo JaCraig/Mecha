@@ -52,7 +52,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
             var Key = parameter.ParameterType.GetHashCode();
-            return DefaultValueLookup.Slice?[Key](min, max) ?? false;
+            return DefaultValueLookup.Slice?[Key](min!, max!) ?? false;
         }
     }
 }

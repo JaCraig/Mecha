@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Timers;
 
 namespace Mecha.Core.Runner.BaseClasses
 {
@@ -52,23 +53,20 @@ namespace Mecha.Core.Runner.BaseClasses
             var Count = options.GenerationCount;
             var TempTimer = new Stopwatch();
             var PreviousData = ReloadArguments(runMethod);
-            decimal TotalTime = 0;
             for (var x = 0; x < PreviousData.Count; ++x)
             {
-                if (TotalTime >= options.MaxDuration)
-                    break;
                 if (PreviousData[x].Length != Parameters.Length)
                     continue;
-                TempTimer.Restart();
-                var CurrentRun = GenerateRun(runMethod, Parameters, target, PreviousData[x]);
-                TempTimer.Stop();
-                TotalTime += CurrentRun.ElapsedTime = TempTimer.ElapsedMilliseconds;
-                Results.Add(CurrentRun);
+                Results.Add(GenerateRun(runMethod, Parameters, target, PreviousData[x], TempTimer));
             }
+            bool Finished = false;
+            using var InternalTimer = new Timer(options.MaxDuration);
+            InternalTimer.Elapsed += (sender, e) => Finished = true;
+            InternalTimer.Start();
             var GeneratedParameters = GenerateArguments(runMethod, options);
             for (var x = PreviousData.Count; x < Count; ++x)
             {
-                if (TotalTime >= options.MaxDuration)
+                if (Finished)
                     break;
                 TempTimer.Restart();
                 var Arguments = new object?[Parameters.Length];
@@ -78,17 +76,14 @@ namespace Mecha.Core.Runner.BaseClasses
                 }
                 if (PreviousData.AddIfUnique(Same, Arguments))
                 {
-                    var CurrentRun = GenerateRun(runMethod, Parameters, target, Arguments);
-                    TempTimer.Stop();
-                    TotalTime += CurrentRun.ElapsedTime = TempTimer.ElapsedMilliseconds;
-                    Results.Add(CurrentRun);
+                    Results.Add(GenerateRun(runMethod, Parameters, target, Arguments, TempTimer));
                 }
                 else
                 {
-                    TempTimer.Stop();
-                    TotalTime += TempTimer.ElapsedMilliseconds;
+                    --x;
                 }
             }
+            InternalTimer.Stop();
             Results = Shrink(Results, options);
             Manager?.DataManager.Clear(runMethod);
             foreach (var Result in Results.Where(x => !(x.Exception is null)))
@@ -208,8 +203,9 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="target">The target.</param>
         /// <param name="arguments">The arguments.</param>
         /// <returns>The run's result.</returns>
-        private static RunResult GenerateRun(MethodInfo runMethod, ParameterInfo[] parameters, object? target, object?[] arguments)
+        private static RunResult GenerateRun(MethodInfo runMethod, ParameterInfo[] parameters, object? target, object?[] arguments, Stopwatch timer)
         {
+            timer.Restart();
             var CurrentRun = new RunResult
             {
                 Method = runMethod,
@@ -225,6 +221,8 @@ namespace Mecha.Core.Runner.BaseClasses
             {
                 CurrentRun.Exception = e;
             }
+            timer.Stop();
+            CurrentRun.ElapsedTime = timer.ElapsedMilliseconds;
             return CurrentRun;
         }
 
