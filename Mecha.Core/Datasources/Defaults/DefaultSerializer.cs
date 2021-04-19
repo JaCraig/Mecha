@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using Mecha.Core.Datasources.Interfaces;
+using Mecha.Core.ExtensionMethods;
 using System;
 using System.Text.Json;
 
@@ -47,6 +48,8 @@ namespace Mecha.Core.Datasources
         /// <returns>The serialized value used for storage.</returns>
         public string? Serialize(Type objectType, object? data)
         {
+            if (data.IsInfinite())
+                data = 0;
             return JsonSerializer.Serialize(data, objectType);
         }
     }

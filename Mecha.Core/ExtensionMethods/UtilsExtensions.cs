@@ -1,4 +1,8 @@
-﻿namespace Mecha.Core.ExtensionMethods
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Mecha.Core.ExtensionMethods
 {
     /// <summary>
     /// Utils extensions
@@ -20,6 +24,36 @@
             if (ValueType == typeof(double) || ValueType == typeof(double?))
                 return !double.IsFinite((double)value);
             return false;
+        }
+
+        /// <summary>
+        /// Timeouts the after.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="task">The task.</param>
+        /// <param name="timeout">The timeout.</param>
+        /// <returns></returns>
+        /// <exception cref="OperationCanceledException"></exception>
+        public static async Task<T> TimeoutAfter<T>(this Task<T> task, TimeSpan timeout)
+        {
+            using (var Source = new CancellationTokenSource())
+            {
+                var DelayTask = Task.Delay(timeout, Source.Token);
+
+                var ResultTask = await Task.WhenAny(task, DelayTask).ConfigureAwait(false);
+                if (ResultTask == DelayTask)
+                {
+                    // Operation cancelled
+                    throw new OperationCanceledException();
+                }
+                else
+                {
+                    // Cancel the timer task so that it does not fire
+                    Source.Cancel();
+                }
+
+                return await task.ConfigureAwait(false);
+            }
         }
     }
 }

@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using System.Text.Json;
 using System.Threading.Tasks;
 using System.Timers;
 
@@ -48,47 +47,50 @@ namespace Mecha.Core.Runner.BaseClasses
         {
             Init();
             StartRun(runMethod, target, options);
-            var Results = new List<RunResult>();
-            var Parameters = runMethod.GetParameters();
             var Count = options.GenerationCount;
             var TempTimer = new Stopwatch();
-            var PreviousData = ReloadArguments(runMethod);
-            for (var x = 0; x < PreviousData.Count; ++x)
-            {
-                if (PreviousData[x].Length != Parameters.Length)
-                    continue;
-                Results.Add(GenerateRun(runMethod, Parameters, target, PreviousData[x], TempTimer));
-            }
             bool Finished = false;
-            using var InternalTimer = new Timer(options.MaxDuration);
-            InternalTimer.Elapsed += (sender, e) => Finished = true;
-            InternalTimer.Start();
+
+            var Results = ReloadTests(runMethod).ConvertAll(x => new RunResult(runMethod, target, x));
             var GeneratedParameters = GenerateArguments(runMethod, options);
-            for (var x = PreviousData.Count; x < Count; ++x)
+            using (var InternalTimer = new Timer(options.MaxDuration))
             {
-                if (Finished)
-                    break;
-                TempTimer.Restart();
-                var Arguments = new object?[Parameters.Length];
-                for (var y = 0; y < Parameters.Length; ++y)
+                InternalTimer.Elapsed += (sender, e) => Finished = true;
+                InternalTimer.Start();
+                for (var x = Results.Count; x < Count; ++x)
                 {
-                    Arguments[y] = Random.Next(GeneratedParameters[y].GeneratedValues);
+                    if (Finished)
+                        break;
+                    var Arguments = new object?[GeneratedParameters.Length];
+                    for (var y = 0; y < GeneratedParameters.Length; ++y)
+                    {
+                        Arguments[y] = Random.Next(GeneratedParameters[y].GeneratedValues);
+                    }
+                    if (!Results.AddIfUnique((val1, val2) => val1.Same(val2), new RunResult(runMethod, target, Arguments)))
+                        --x;
                 }
-                if (PreviousData.AddIfUnique(Same, Arguments))
-                {
-                    Results.Add(GenerateRun(runMethod, Parameters, target, Arguments, TempTimer));
-                }
-                else
-                {
-                    --x;
-                }
+                InternalTimer.Stop();
             }
-            InternalTimer.Stop();
+
+            Finished = false;
+            using (var InternalTimer = new Timer(options.MaxDuration))
+            {
+                InternalTimer.Elapsed += (sender, e) => Finished = true;
+                InternalTimer.Start();
+                for (var x = 0; x < Results.Count; ++x)
+                {
+                    if (Finished)
+                        break;
+                    Results[x].Run(TempTimer);
+                }
+                InternalTimer.Stop();
+            }
+
             Results = Shrink(Results, options);
             Manager?.DataManager.Clear(runMethod);
             foreach (var Result in Results.Where(x => !(x.Exception is null)))
             {
-                SaveArguments(runMethod, Result.ParametersUsed);
+                SaveArguments(runMethod, Result.Parameters.ToArray(x => x?.Value));
             }
             return Task.FromResult(FinishRun(runMethod, target, options, Results));
         }
@@ -119,7 +121,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// </summary>
         /// <param name="methodInfo">The method information.</param>
         /// <returns></returns>
-        protected List<object?[]> ReloadArguments(MethodInfo methodInfo)
+        protected List<object?[]> ReloadTests(MethodInfo methodInfo)
         {
             return Manager?.DataManager.Read(methodInfo) ?? new List<object?[]>();
         }
@@ -152,37 +154,20 @@ namespace Mecha.Core.Runner.BaseClasses
                 var CurrentRun = FailedRuns[x];
                 if (CurrentRun is null)
                     continue;
-                var Parameters = new object?[CurrentRun.ParametersUsed.Length];
-                for (var y = 0; y < CurrentRun.ParametersUsed.Length; ++y)
+                var CopiedRun = CurrentRun.Copy();
+                while (CurrentRun.Shrink(Manager?.Shrinker, FinalRuns, options))
                 {
-                    Parameters[y] = CurrentRun.ParametersUsed[y];
-                    if (!FinalRuns.Any(x => Same(x.ParametersUsed[y], CurrentRun.ParametersUsed[y]) && x.Exception is null))
-                        Parameters[y] = Manager?.Shrinker.Shrink(CurrentRun.ParametersUsed[y]) ?? CurrentRun.ParametersUsed[y];
+                    if (CurrentRun.Run(TempTimer))
+                    {
+                        break;
+                    }
+                    CopiedRun = CurrentRun.Copy();
                 }
-                if (Same(Parameters, CurrentRun.ParametersUsed))
-                {
-                    FinalRuns.Add(CurrentRun);
-                    continue;
-                }
-                var ShrunkResult = GenerateRun(CurrentRun.Method, CurrentRun.Parameters, CurrentRun.Target, Parameters, TempTimer);
-                ShrunkResult.ElapsedTime += CurrentRun.ElapsedTime;
-                if (ShrunkResult.Exception is null)
-                {
-                    CurrentRun.ElapsedTime = ShrunkResult.ElapsedTime;
-                    FinalRuns.Add(CurrentRun);
-                    continue;
-                }
-                ShrunkResult.ShrinkCount = CurrentRun.ShrinkCount + 1;
-                if (ShrunkResult.ShrinkCount >= options.MaxShrinkCount)
-                {
-                    FinalRuns.Add(ShrunkResult);
-                    continue;
-                }
-                FailedRuns.Add(ShrunkResult);
+                FinalRuns.Add(CopiedRun);
             }
             for (var x = 0; x < FinalRuns.Count; ++x)
             {
-                var Runs = FinalRuns.FindAll(y => Same(y.ParametersUsed, FinalRuns[x].ParametersUsed));
+                var Runs = FinalRuns.FindAll(y => FinalRuns[x].Same(y));
                 for (var y = 1; y < Runs.Count; ++y)
                 {
                     FinalRuns.Remove(Runs[y]);
@@ -198,75 +183,6 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         protected abstract void StartRun(MethodInfo runMethod, object? target, Options options);
-
-        /// <summary>
-        /// Generates the run.
-        /// </summary>
-        /// <param name="runMethod">The run method.</param>
-        /// <param name="target">The target.</param>
-        /// <param name="arguments">The arguments.</param>
-        /// <returns>The run's result.</returns>
-        private static RunResult GenerateRun(MethodInfo runMethod, ParameterInfo[] parameters, object? target, object?[] arguments, Stopwatch timer)
-        {
-            timer.Restart();
-            var CurrentRun = new RunResult
-            {
-                Method = runMethod,
-                Parameters = parameters,
-                Target = target,
-                ParametersUsed = arguments
-            };
-            try
-            {
-                CurrentRun.ReturnedValue = CurrentRun.Method.Invoke(CurrentRun.Target, CurrentRun.ParametersUsed);
-            }
-            catch (Exception e)
-            {
-                CurrentRun.Exception = e;
-            }
-            timer.Stop();
-            CurrentRun.ElapsedTime = timer.ElapsedMilliseconds;
-            return CurrentRun;
-        }
-
-        /// <summary>
-        /// Determines if the 2 arrays are the same.
-        /// </summary>
-        /// <param name="value1">The value1.</param>
-        /// <param name="value2">The value2.</param>
-        /// <returns>True if they are, false otherwise.</returns>
-        private static bool Same(object?[] value1, object?[] value2)
-        {
-            if (value1 is null || value2 is null)
-                return false;
-            if (value1.Length != value2.Length)
-                return false;
-            for (int x = 0; x < value1.Length; ++x)
-            {
-                var Value1 = JsonSerializer.Serialize(value1[x]);
-                var Value2 = JsonSerializer.Serialize(value2[x]);
-                if (Value1 != Value2)
-                    return false;
-            }
-            return true;
-        }
-
-        /// <summary>
-        /// Sames the specified value1.
-        /// </summary>
-        /// <param name="value1">The value1.</param>
-        /// <param name="value2">The value2.</param>
-        /// <returns>True if they are the same, false otherwise.</returns>
-        private static bool Same(object? value1, object? value2)
-        {
-            if (value1 is null && value2 is null)
-                return true;
-            if (value1 is null || value2 is null)
-                return false;
-            var Value1 = JsonSerializer.Serialize(value1);
-            var Value2 = JsonSerializer.Serialize(value2);
-            return Value1 == Value2;
-        }
 
         /// <summary>
         /// Initializes this instance.

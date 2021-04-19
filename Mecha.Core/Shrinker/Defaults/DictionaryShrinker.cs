@@ -8,7 +8,7 @@ namespace Mecha.Core.Shrinker.Defaults
     /// List shrinker
     /// </summary>
     /// <seealso cref="IShrinker"/>
-    public class ListShrinker : IShrinker
+    public class DictionaryShrinker : IShrinker
     {
         /// <summary>
         /// Determines whether this instance can shrink.
@@ -21,7 +21,7 @@ namespace Mecha.Core.Shrinker.Defaults
                 return false;
             var ValueType = value?.GetType();
 
-            return typeof(IList).IsAssignableFrom(ValueType);
+            return typeof(IDictionary).IsAssignableFrom(ValueType);
         }
 
         /// <summary>
@@ -33,16 +33,16 @@ namespace Mecha.Core.Shrinker.Defaults
         {
             if (value is null)
                 return value;
-            var Val = (IList)value;
+            var Val = (IDictionary)value;
             if (Val.Count == 0)
                 return value;
-            Val = CopyList(Val);
-            if (Val.Count > 10)
+            Val = CopyDictionary(Val);
+            var Keys = Val.Keys;
+            if (Keys.Count > 10)
             {
-                return RemoveItems(Val, Val.Count / 5);
+                return RemoveItems(Val, Keys, Keys.Count / 5);
             }
-            Val.RemoveAt(Val.Count - 1);
-            return Val;
+            return RemoveItems(Val, Keys, 1);
         }
 
         /// <summary>
@@ -50,25 +50,33 @@ namespace Mecha.Core.Shrinker.Defaults
         /// </summary>
         /// <param name="Val">The value.</param>
         /// <returns></returns>
-        private static IList CopyList(IList Val)
+        private static IDictionary CopyDictionary(IDictionary Val)
         {
-            IList NewVal = (IList)FastActivator.CreateInstance(Val.GetType());
-            foreach (var Item in Val)
-                NewVal.Add(Item);
+            IDictionary NewVal = (IDictionary)FastActivator.CreateInstance(Val.GetType());
+            foreach (var Item in Val.Keys)
+                NewVal.Add(Item, Val[Item]);
             return NewVal;
         }
 
         /// <summary>
         /// Removes the items.
         /// </summary>
-        /// <param name="val">The value.</param>
+        /// <param name="Val">The value.</param>
+        /// <param name="Keys">The keys.</param>
         /// <param name="count">The count.</param>
         /// <returns></returns>
-        private static IList RemoveItems(IList val, int count)
+        private static IDictionary RemoveItems(IDictionary Val, ICollection Keys, int count)
         {
-            for (var x = 0; x < count; ++x)
-                val.RemoveAt(val.Count - 1);
-            return val;
+            foreach (var Key in Keys)
+            {
+                --count;
+                Val.Remove(Key);
+
+                if (count <= 0)
+                    break;
+            }
+
+            return Val;
         }
     }
 }

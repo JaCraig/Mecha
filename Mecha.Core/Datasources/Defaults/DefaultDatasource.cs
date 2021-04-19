@@ -105,7 +105,7 @@ namespace Mecha.Core.Datasources
         /// <returns>The directory specified.</returns>
         private static DirectoryInfo GetDirectory(string dataDirectory, MethodInfo method)
         {
-            return new DirectoryInfo(RemoveIllegalDirectoryNameCharacters($"{dataDirectory}{method.DeclaringType.Namespace}/{method.DeclaringType.GetName().Replace(method.DeclaringType.Namespace + ".", "")}/{method.Name}"));
+            return new DirectoryInfo(RemoveIllegalDirectoryNameCharacters($"{dataDirectory}{method.DeclaringType.Namespace}/{RemoveIllegalDirectoryNameCharacters(method.DeclaringType.GetName().Replace(method.DeclaringType.Namespace + ".", "").Replace(".", ""))}/{method.Name}"));
         }
 
         /// <summary>
@@ -131,6 +131,12 @@ namespace Mecha.Core.Datasources
             if (string.IsNullOrEmpty(directoryName))
                 return directoryName;
             var InvalidChars = System.IO.Path.GetInvalidPathChars();
+            for (int i = 0, maxLength = InvalidChars.Length; i < maxLength; i++)
+            {
+                char Char = InvalidChars[i];
+                directoryName = directoryName.Replace(Char, replacementChar);
+            }
+            InvalidChars = new char[] { '<', '>' };
             for (int i = 0, maxLength = InvalidChars.Length; i < maxLength; i++)
             {
                 char Char = InvalidChars[i];
