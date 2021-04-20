@@ -42,7 +42,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
-            return !parameter.HasDefaultValue && parameter.ParameterType.IsInterface;
+            return !parameter.HasDefaultValue && (parameter.ParameterType.IsInterface || parameter.ParameterType.IsAbstract);
         }
 
         /// <summary>

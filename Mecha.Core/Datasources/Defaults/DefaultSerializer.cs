@@ -37,7 +37,11 @@ namespace Mecha.Core.Datasources
         {
             if (string.IsNullOrWhiteSpace(data))
                 return null;
-            return JsonSerializer.Deserialize(data, objectType);
+            try
+            {
+                return JsonSerializer.Deserialize(data, objectType);
+            }
+            catch { return null; }
         }
 
         /// <summary>
@@ -50,7 +54,11 @@ namespace Mecha.Core.Datasources
         {
             if (data.IsInfinite())
                 data = 0;
-            return JsonSerializer.Serialize(data, objectType);
+            try
+            {
+                return JsonSerializer.Serialize(data, objectType);
+            }
+            catch { return ""; }
         }
     }
 }

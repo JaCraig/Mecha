@@ -1,4 +1,5 @@
-﻿using Mecha.Core;
+﻿using BigBook;
+using Mecha.Core;
 using Mecha.Core.Runner;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -57,7 +58,7 @@ namespace Mecha.xUnit
         /// Gets the manager.
         /// </summary>
         /// <value>The manager.</value>
-        private Check? Manager { get; set; }
+        private Mech? Manager { get; set; }
 
         /// <summary>
         /// Gets or sets the message bus.
@@ -104,7 +105,7 @@ namespace Mecha.xUnit
                     }
                 }
             }
-            Manager = Canister.Builder.Bootstrapper?.Resolve<Check>();
+            Manager = Canister.Builder.Bootstrapper?.Resolve<Mech>();
 
             Test = new XunitTest(this, DisplayName);
             CancellationTokenSource = cancellationTokenSource;
@@ -181,7 +182,7 @@ namespace Mecha.xUnit
             }
             Result? Result = null;
 
-            Timer?.Aggregate(async () => Result = await Manager.RunAsync(RunMethod, Target, Options).ConfigureAwait(false));
+            Timer?.Aggregate(() => Result = AsyncHelper.RunSync(() => Manager.RunAsync(RunMethod, Target, Options)));
             if (Target is IDisposable disposable)
                 disposable.Dispose();
 
@@ -192,7 +193,7 @@ namespace Mecha.xUnit
                 Skipped = string.IsNullOrEmpty(SkipReason) ? 0 : 1,
                 Total = 1
             };
-            OutputHelper?.WriteLine(Result?.Output);
+            OutputHelper?.WriteLine(Result?.Output ?? "");
 
             IMessageSinkMessage ResultMessage = Result?.Passed == true
                 ? new TestPassed(Test, Timer?.Total ?? 0, Result?.Output)

@@ -49,7 +49,7 @@ namespace Mecha.Core.Modules
                          .Register<DataManager>(ServiceLifetime.Singleton)
                          .RegisterAll<IGenerator>(ServiceLifetime.Singleton)
                          .Register<GeneratorManager>(ServiceLifetime.Singleton)
-                         .Register<Check>(ServiceLifetime.Singleton)
+                         .Register<Mech>(ServiceLifetime.Singleton)
                          .Register<TestRunnerManager>(ServiceLifetime.Singleton)
                          .RegisterAll<IRunner>(ServiceLifetime.Singleton)
                          .RegisterAll<IShrinker>(ServiceLifetime.Singleton)

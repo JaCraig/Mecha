@@ -1,6 +1,7 @@
 using Mecha.xUnit;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -16,6 +17,12 @@ namespace Mecha.Core.Tests
 
     public class TestClass
     {
+        public bool FileStreamTest(System.IO.FileStream stream)
+        {
+            stream?.Read(new byte[100], 0, 100);
+            return true;
+        }
+
         public void Method1()
         {
         }
@@ -24,11 +31,18 @@ namespace Mecha.Core.Tests
         {
         }
 
+        [DoNotBreak]
         public bool Method3(string value)
         {
             if (value is null)
                 throw new ArgumentNullException(nameof(value));
             return false;
+        }
+
+        public bool StreamTest(System.IO.Stream stream)
+        {
+            stream?.Read(new byte[100], 0, 100);
+            return true;
         }
     }
 
@@ -86,6 +100,19 @@ namespace Mecha.Core.Tests
         public void Test5(string value, Dictionary<int, string> dictionary)
         {
             Assert.True(dictionary.ContainsKey(1));
+        }
+
+        [Property(GenerationCount = 10, MaxDuration = 1000)]
+        public async Task Test6(HttpClient httpClient)
+        {
+            if (httpClient is null)
+                return;
+            try
+            {
+                var Result = await httpClient.GetAsync("https://www.google.com").ConfigureAwait(false);
+                Assert.True(Result.IsSuccessStatusCode);
+            }
+            catch { }
         }
     }
 }

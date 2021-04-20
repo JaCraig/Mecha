@@ -49,9 +49,15 @@ namespace Mecha.Core.ExtensionMethods
                                 .AddSingleton<IGenerator, InterfaceGenerator>()
                                 .AddSingleton<IGenerator, ParameterDefaultValueGenerator>()
                                 .AddSingleton<IGenerator, SliceGenerator>()
+                                .AddSingleton<IGenerator, NegationGenerator>()
+                                .AddSingleton<IGenerator, FileStreamGenerator>()
+                                .AddSingleton<IGenerator, HttpClientGenerator>()
+                                .AddSingleton<IGenerator, StreamGenerator>()
                                 .AddSingleton<ShrinkerManager>()
                                 .AddSingleton<IShrinker, NumberShrinker>()
-                                .AddSingleton<IShrinker, StringShrinker>();
+                                .AddSingleton<IShrinker, StringShrinker>()
+                                .AddSingleton<IShrinker, ListShrinker>()
+                                .AddSingleton<IShrinker, DictionaryShrinker>();
         }
     }
 }

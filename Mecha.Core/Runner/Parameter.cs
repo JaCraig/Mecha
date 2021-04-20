@@ -81,8 +81,10 @@ namespace Mecha.Core.Runner
         /// </summary>
         /// <param name="shrinker">The shrinker.</param>
         /// <param name="results">The results.</param>
-        public bool Shrink(ShrinkerManager shrinker, List<RunResult> results)
+        public bool Shrink(ShrinkerManager? shrinker, List<RunResult> results)
         {
+            if (shrinker is null)
+                return false;
             if (results.Any(x => x.Parameters.Any(y => Same(y, this))))
                 return false;
 
@@ -132,9 +134,11 @@ namespace Mecha.Core.Runner
                 return true;
             if (value1.IsInfinite() || value2.IsInfinite())
                 return false;
-            var Value1 = JsonSerializer.Serialize(value1);
-            var Value2 = JsonSerializer.Serialize(value2);
-            return Value1 == Value2;
+            try
+            {
+                return JsonSerializer.Serialize(value1) == JsonSerializer.Serialize(value2);
+            }
+            catch { return false; }
         }
     }
 }

@@ -109,6 +109,39 @@ namespace Mecha.Core.Generator.DefaultGenerators
         };
 
         /// <summary>
+        /// Gets the negate.
+        /// </summary>
+        /// <value>The negate.</value>
+        public static Dictionary<int, Func<object, object>>? Negate { get; } = new Dictionary<int, Func<object, object>>
+        {
+            [typeof(byte).GetHashCode()] = (value) => -(byte)value,
+            [typeof(sbyte).GetHashCode()] = (value) => -(sbyte)value,
+            [typeof(short).GetHashCode()] = (value) => -(short)value,
+            [typeof(int).GetHashCode()] = (value) => -(int)value,
+            [typeof(long).GetHashCode()] = (value) => -(long)value,
+            [typeof(ushort).GetHashCode()] = (value) => -(ushort)value,
+            [typeof(uint).GetHashCode()] = (value) => -(uint)value,
+            [typeof(double).GetHashCode()] = (value) => -(double)value,
+            [typeof(float).GetHashCode()] = (value) => -(float)value,
+            [typeof(decimal).GetHashCode()] = (value) => -(decimal)value,
+            [typeof(bool).GetHashCode()] = (value) => !(bool)value,
+            [typeof(char).GetHashCode()] = (value) => -(char)value,
+
+            [typeof(byte?).GetHashCode()] = (value) => -(byte)value,
+            [typeof(sbyte?).GetHashCode()] = (value) => -(sbyte)value,
+            [typeof(short?).GetHashCode()] = (value) => -(short)value,
+            [typeof(int?).GetHashCode()] = (value) => -(int)value,
+            [typeof(long?).GetHashCode()] = (value) => -(long)value,
+            [typeof(ushort?).GetHashCode()] = (value) => -(ushort)value,
+            [typeof(uint?).GetHashCode()] = (value) => -(uint)value,
+            [typeof(double?).GetHashCode()] = (value) => -(double)value,
+            [typeof(float?).GetHashCode()] = (value) => -(float)value,
+            [typeof(decimal?).GetHashCode()] = (value) => -(decimal)value,
+            [typeof(bool?).GetHashCode()] = (value) => !(bool)value,
+            [typeof(char?).GetHashCode()] = (value) => -(char)value,
+        };
+
+        /// <summary>
         /// Slices the items and gets the mid point between the two values.
         /// </summary>
         /// <value>The mid point between the two values.</value>

@@ -102,10 +102,14 @@ namespace Mecha.Core.Generator
                 return true;
             if (value1.IsInfinite() || value2.IsInfinite())
                 return false;
-            return (value1 is null && value2 is null)
-                || (!(value1 is null)
-                    && !(value2 is null)
-                    && JsonSerializer.Serialize(value1) == JsonSerializer.Serialize(value2));
+            try
+            {
+                return (value1 is null && value2 is null)
+                    || (!(value1 is null)
+                        && !(value2 is null)
+                        && JsonSerializer.Serialize(value1) == JsonSerializer.Serialize(value2));
+            }
+            catch { return false; }
         }
     }
 }

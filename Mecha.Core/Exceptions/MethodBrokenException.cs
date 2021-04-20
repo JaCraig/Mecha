@@ -11,7 +11,7 @@ namespace Mecha.Core.Exceptions
         /// <summary>
         /// Initializes a new instance of the <see cref="MethodBrokenException"/> class.
         /// </summary>
-        public MethodBrokenException() : base()
+        public MethodBrokenException()
         {
         }
 
@@ -19,7 +19,7 @@ namespace Mecha.Core.Exceptions
         /// Initializes a new instance of the <see cref="MethodBrokenException"/> class.
         /// </summary>
         /// <param name="message">The message that describes the error.</param>
-        public MethodBrokenException(string message) : base(message)
+        public MethodBrokenException(string? message) : base(message)
         {
         }
 
@@ -31,7 +31,7 @@ namespace Mecha.Core.Exceptions
         /// The exception that is the cause of the current exception, or a null reference ( <see
         /// langword="Nothing"/> in Visual Basic) if no inner exception is specified.
         /// </param>
-        public MethodBrokenException(string message, Exception innerException) : base(message, innerException)
+        public MethodBrokenException(string? message, Exception? innerException) : base(message, innerException)
         {
         }
     }

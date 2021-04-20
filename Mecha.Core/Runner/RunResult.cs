@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace Mecha.Core.Runner
 {
@@ -127,13 +128,15 @@ namespace Mecha.Core.Runner
         /// Runs the specified timer.
         /// </summary>
         /// <param name="timer">The timer.</param>
-        public bool Run(Stopwatch timer)
+        public async Task<bool> RunAsync(Stopwatch timer)
         {
             bool Result;
             timer.Restart();
             try
             {
                 ReturnedValue = Method.Invoke(Target, Parameters.ToArray(x => x?.Value));
+                if (ReturnedValue is Task awaitableReturnValue)
+                    await awaitableReturnValue.ConfigureAwait(false);
                 Result = true;
             }
             catch (Exception e)
@@ -142,7 +145,7 @@ namespace Mecha.Core.Runner
                 {
                     if (!Parameters.Any(x => x.ParameterInfo.Name == argument.ParamName))
                     {
-                        Exception = e.InnerException;
+                        Exception = e.InnerException ?? e;
                         Result = false;
                     }
                     else
@@ -152,7 +155,7 @@ namespace Mecha.Core.Runner
                 }
                 else
                 {
-                    Exception = e.InnerException;
+                    Exception = e.InnerException ?? e;
                     Result = false;
                 }
             }
@@ -184,7 +187,7 @@ namespace Mecha.Core.Runner
         /// <param name="shrinker">The shrinker.</param>
         /// <param name="results">The results.</param>
         /// <returns>True if it is shrunk, false otherwise.</returns>
-        public bool Shrink(ShrinkerManager shrinker, List<RunResult> results, Options options)
+        public bool Shrink(ShrinkerManager? shrinker, List<RunResult> results, Options options)
         {
             if (ShrinkCount >= options.MaxShrinkCount)
                 return false;

@@ -66,8 +66,11 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public bool CanGenerate(ParameterInfo parameter)
         {
             return !parameter.HasDefaultValue
-                && !parameter.ParameterType.IsInterface;
-            //&& !typeof(IEnumerable).IsAssignableFrom(parameter.ParameterType);
+                && !parameter.ParameterType.IsInterface
+                && !parameter.ParameterType.IsAbstract
+                && (parameter.ParameterType.IsValueType
+                    || parameter.ParameterType.IsEnum
+                    || parameter.ParameterType.GetConstructors().Any(x => x.GetParameters().Length == 0));
         }
 
         /// <summary>
@@ -99,19 +102,11 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="max">The maximum.</param>
         /// <param name="GenericMethod">The generic method.</param>
         /// <returns></returns>
-        private object? GetValue(ParameterInfo parameter, object min, object max, MethodInfo GenericMethod)
+        private object? GetValue(ParameterInfo parameter, object? min, object? max, MethodInfo GenericMethod)
         {
-            object? ReturnValue;
-            if (parameter.ParameterType.IsValueType)
-            {
-                ReturnValue = GenericMethod.Invoke(RandomObj, new object[] { min, max });
-            }
-            else
-            {
-                ReturnValue = RandomObj.Next(parameter.ParameterType);
-            }
-
-            return ReturnValue;
+            return parameter.ParameterType.IsValueType
+                ? GenericMethod.Invoke(RandomObj, new object?[] { min, max })
+                : RandomObj.Next(parameter.ParameterType);
         }
     }
 }

@@ -34,7 +34,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// Gets or sets the manager.
         /// </summary>
         /// <value>The manager.</value>
-        protected Check? Manager { get; set; }
+        protected Mech? Manager { get; set; }
 
         /// <summary>
         /// Runs the specified method on the target class.
@@ -43,7 +43,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <returns>The result.</returns>
-        public Task<Result> RunAsync(MethodInfo runMethod, object? target, Options options)
+        public async Task<Result> RunAsync(MethodInfo runMethod, object? target, Options options)
         {
             Init();
             StartRun(runMethod, target, options);
@@ -81,18 +81,18 @@ namespace Mecha.Core.Runner.BaseClasses
                 {
                     if (Finished)
                         break;
-                    Results[x].Run(TempTimer);
+                    await Results[x].RunAsync(TempTimer).ConfigureAwait(false);
                 }
                 InternalTimer.Stop();
             }
 
-            Results = Shrink(Results, options);
+            Results = await ShrinkAsync(Results, options).ConfigureAwait(false);
             Manager?.DataManager.Clear(runMethod);
             foreach (var Result in Results.Where(x => !(x.Exception is null)))
             {
                 SaveArguments(runMethod, Result.Parameters.ToArray(x => x?.Value));
             }
-            return Task.FromResult(FinishRun(runMethod, target, options, Results));
+            return FinishRun(runMethod, target, options, Results);
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="runs">The runs.</param>
         /// <param name="options">The options.</param>
         /// <returns>The shrunk run.</returns>
-        protected List<RunResult> Shrink(List<RunResult> runs, Options options)
+        protected async Task<List<RunResult>> ShrinkAsync(List<RunResult> runs, Options options)
         {
             var FinalRuns = runs.Where(x => x.Exception is null).ToList();
             var FailedRuns = runs.Where(x => !(x.Exception is null)).ToList();
@@ -157,7 +157,7 @@ namespace Mecha.Core.Runner.BaseClasses
                 var CopiedRun = CurrentRun.Copy();
                 while (CurrentRun.Shrink(Manager?.Shrinker, FinalRuns, options))
                 {
-                    if (CurrentRun.Run(TempTimer))
+                    if (await CurrentRun.RunAsync(TempTimer).ConfigureAwait(false))
                     {
                         break;
                     }
@@ -190,7 +190,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <returns></returns>
         private void Init()
         {
-            Manager = Check.Default;
+            Manager = Mech.Default;
         }
     }
 }
