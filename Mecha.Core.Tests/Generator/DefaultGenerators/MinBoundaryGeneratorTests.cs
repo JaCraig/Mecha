@@ -6,6 +6,7 @@ using Xunit;
 namespace Mecha.Core.Tests.Generator.DefaultGenerators
 {
     /// <summary>
+    /// Min boundary generator tests
     /// </summary>
     /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Generator.DefaultGenerators.MinBoundaryGenerator}"/>
     public class MinBoundaryGeneratorTests : TestBaseClass<MinBoundaryGenerator>

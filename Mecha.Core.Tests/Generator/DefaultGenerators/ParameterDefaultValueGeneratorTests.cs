@@ -6,6 +6,7 @@ using Xunit;
 namespace Mecha.Core.Tests.Generator.DefaultGenerators
 {
     /// <summary>
+    /// Parameter default value generator tests
     /// </summary>
     /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Generator.DefaultGenerators.ParameterDefaultValueGenerator}"/>
     public class ParameterDefaultValueGeneratorTests : TestBaseClass<ParameterDefaultValueGenerator>

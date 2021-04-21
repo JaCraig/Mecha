@@ -6,6 +6,7 @@ using Xunit;
 namespace Mecha.Core.Tests.Generator.DefaultGenerators
 {
     /// <summary>
+    /// max boundary generator test
     /// </summary>
     /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Generator.DefaultGenerators.MaxBoundaryGenerator}"/>
     public class MaxBoundaryGeneratorTests : TestBaseClass<MaxBoundaryGenerator>

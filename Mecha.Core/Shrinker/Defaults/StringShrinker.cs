@@ -25,7 +25,7 @@ namespace Mecha.Core.Shrinker.Defaults
         /// <returns></returns>
         public object? Shrink(object? value)
         {
-            var StringVal = (string)value;
+            var StringVal = (string?)value;
             if (string.IsNullOrEmpty(StringVal))
                 return StringVal;
             return StringVal.Remove(StringVal.Length - 1, 1);

@@ -110,7 +110,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         {
             var Key = parameter.ParameterType.GetHashCode();
             var Range = parameter.GetCustomAttribute<RangeAttribute>();
-            if (!(value is null) || !DefaultValueLookup.Max.ContainsKey(Key))
+            if (!(value is null) || !(DefaultValueLookup.Max?.ContainsKey(Key) ?? false))
                 return value;
             return Range?.Maximum ?? DefaultValueLookup.Max?[Key] ?? false;
         }
@@ -125,7 +125,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         {
             var Key = parameter.ParameterType.GetHashCode();
             var Range = parameter.GetCustomAttribute<RangeAttribute>();
-            if (!(value is null) || !DefaultValueLookup.Min.ContainsKey(Key))
+            if (!(value is null) || !(DefaultValueLookup.Min?.ContainsKey(Key) ?? false))
                 return value;
             return Range?.Minimum ?? DefaultValueLookup.Min?[Key] ?? false;
         }

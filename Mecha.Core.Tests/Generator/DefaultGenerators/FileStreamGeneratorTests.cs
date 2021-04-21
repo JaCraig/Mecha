@@ -7,6 +7,7 @@ using Xunit;
 namespace Mecha.Core.Tests.Generator.DefaultGenerators
 {
     /// <summary>
+    /// File stream generator tests
     /// </summary>
     /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Generator.DefaultGenerators.FileStreamGenerator}"/>
     public class FileStreamGeneratorTests : TestBaseClass<FileStreamGenerator>

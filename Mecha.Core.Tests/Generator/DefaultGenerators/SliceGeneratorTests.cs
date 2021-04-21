@@ -6,6 +6,7 @@ using Xunit;
 namespace Mecha.Core.Tests.Generator.DefaultGenerators
 {
     /// <summary>
+    /// Slice generator tests
     /// </summary>
     /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Generator.DefaultGenerators.SliceGenerator}"/>
     public class SliceGeneratorTests : TestBaseClass<SliceGenerator>

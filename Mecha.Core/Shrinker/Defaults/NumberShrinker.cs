@@ -18,30 +18,8 @@ namespace Mecha.Core.Shrinker.Defaults
         {
             if (value is null)
                 return false;
-            var ValueType = value?.GetType();
 
-            return (ValueType == typeof(byte))
-                || (ValueType == typeof(sbyte))
-                || (ValueType == typeof(short))
-                || (ValueType == typeof(int))
-                || (ValueType == typeof(long))
-                || (ValueType == typeof(ushort))
-                || (ValueType == typeof(uint))
-                || (ValueType == typeof(ulong))
-                || (ValueType == typeof(double))
-                || (ValueType == typeof(float))
-                || (ValueType == typeof(decimal))
-                || (ValueType == typeof(byte?))
-                || (ValueType == typeof(sbyte?))
-                || (ValueType == typeof(short?))
-                || (ValueType == typeof(int?))
-                || (ValueType == typeof(long?))
-                || (ValueType == typeof(ushort?))
-                || (ValueType == typeof(uint?))
-                || (ValueType == typeof(ulong?))
-                || (ValueType == typeof(double?))
-                || (ValueType == typeof(float?))
-                || (ValueType == typeof(decimal?));
+            return DefaultValueLookup.Slice?.ContainsKey(value.GetType().GetHashCode()) ?? false;
         }
 
         /// <summary>
@@ -54,7 +32,7 @@ namespace Mecha.Core.Shrinker.Defaults
             if (value is null)
                 return value;
             var ValueType = value.GetType().GetHashCode();
-            return DefaultValueLookup.Slice[ValueType](DefaultValueLookup.Values[ValueType], value);
+            return DefaultValueLookup.Slice?[ValueType](DefaultValueLookup.Values?[ValueType] ?? value, value);
         }
     }
 }
