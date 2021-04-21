@@ -77,12 +77,14 @@ namespace Mecha.Core.Runner.BaseClasses
             {
                 InternalTimer.Elapsed += (sender, e) => Finished = true;
                 InternalTimer.Start();
+                var Tasks = new List<Task>();
                 for (var x = 0; x < Results.Count; ++x)
                 {
                     if (Finished)
                         break;
-                    await Results[x].RunAsync(TempTimer).ConfigureAwait(false);
+                    Tasks.Add(Results[x].RunAsync(TempTimer));
                 }
+                await Task.WhenAll(Tasks).ConfigureAwait(false);
                 InternalTimer.Stop();
             }
 

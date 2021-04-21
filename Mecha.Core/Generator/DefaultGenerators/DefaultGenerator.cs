@@ -81,6 +81,12 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
             object? ReturnValue = null;
+            if (min == max)
+            {
+                max = min = null;
+            }
+            min = FixMinValue(min, parameter);
+            max = FixMaxValue(max, parameter);
             var GenericMethod = GenericRandMethod.MakeGenericMethod(parameter.ParameterType);
             ReturnValue = GetValue(parameter, min, max, GenericMethod);
             var ValidationRules = parameter.GetCustomAttributes<ValidationAttribute>();
@@ -92,6 +98,36 @@ namespace Mecha.Core.Generator.DefaultGenerators
                 }
             }
             return ReturnValue;
+        }
+
+        /// <summary>
+        /// Fixes the maximum value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="parameter">The parameter.</param>
+        /// <returns></returns>
+        private static object? FixMaxValue(object? value, ParameterInfo parameter)
+        {
+            var Key = parameter.ParameterType.GetHashCode();
+            var Range = parameter.GetCustomAttribute<RangeAttribute>();
+            if (!(value is null) || !DefaultValueLookup.Max.ContainsKey(Key))
+                return value;
+            return Range?.Maximum ?? DefaultValueLookup.Max?[Key] ?? false;
+        }
+
+        /// <summary>
+        /// Fixes the minimum value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        /// <param name="parameter">The parameter.</param>
+        /// <returns></returns>
+        private static object? FixMinValue(object? value, ParameterInfo parameter)
+        {
+            var Key = parameter.ParameterType.GetHashCode();
+            var Range = parameter.GetCustomAttribute<RangeAttribute>();
+            if (!(value is null) || !DefaultValueLookup.Min.ContainsKey(Key))
+                return value;
+            return Range?.Minimum ?? DefaultValueLookup.Min?[Key] ?? false;
         }
 
         /// <summary>

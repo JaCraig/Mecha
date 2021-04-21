@@ -12,7 +12,7 @@
         public static Options Default => new Options
         {
             GenerationCount = 10,
-            MaxDuration = 60,
+            MaxDuration = 1000,
             Verbose = true,
             MaxShrinkCount = 10
         };

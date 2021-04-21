@@ -18,7 +18,11 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public HttpClientGenerator(Mirage.Random random)
         {
             RandomObj = random;
-            Client = new FaultyHttpClient();
+            Clients = new HttpClient[]
+            {
+                new FaultyHttpClient(),
+                new EmptyHttpClient(random)
+            };
         }
 
         /// <summary>
@@ -37,7 +41,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Gets the client.
         /// </summary>
         /// <value>The client.</value>
-        private HttpClient Client { get; }
+        private HttpClient[] Clients { get; }
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.
@@ -59,7 +63,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
-            return Client;
+            return RandomObj.Next(Clients);
         }
     }
 }

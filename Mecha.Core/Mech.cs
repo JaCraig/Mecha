@@ -42,17 +42,28 @@ namespace Mecha.Core
         {
             get
             {
+                if (!(_Default is null))
+                    return _Default;
                 if (Canister.Builder.Bootstrapper is null)
                 {
                     lock (LockObject)
                     {
                         if (Canister.Builder.Bootstrapper is null)
                         {
-                            new ServiceCollection().AddCanisterModules(configure => configure.RegisterMecha());
+                            new ServiceCollection().AddCanisterModules();
                         }
                     }
                 }
-                return Canister.Builder.Bootstrapper?.Resolve<Mech>();
+                while (true)
+                {
+                    try
+                    {
+                        _Default = Canister.Builder.Bootstrapper?.Resolve<Mech>();
+                        break;
+                    }
+                    catch { }
+                }
+                return _Default;
             }
         }
 
@@ -91,6 +102,8 @@ namespace Mecha.Core
         /// </summary>
         private static readonly object LockObject = new object();
 
+        private static Mech? _Default;
+
         /// <summary>
         /// Breaks the specified target.
         /// </summary>
@@ -98,23 +111,11 @@ namespace Mecha.Core
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <exception cref="AggregateException"></exception>
-        public static async Task BreakAsync<TClass>(TClass target, Options? options = null)
+        public static Task BreakAsync<TClass>(TClass target, Options? options = null)
         {
             if (target is null || Default is null)
-                return;
-            options ??= Options.Default;
-            var ClassType = target.GetType();
-            var Exceptions = new List<Exception>();
-            foreach (var Method in ClassType.GetMethods())
-            {
-                if (!(Method.GetCustomAttribute<DoNotBreakAttribute>() is null))
-                    continue;
-                var Result = await Default.RunAsync(Method, target, options).ConfigureAwait(false);
-                if (!(Result.Exception is null))
-                    Exceptions.Add(Result.Exception);
-            }
-            if (Exceptions.Count > 0)
-                throw new AggregateException(Exceptions);
+                return Task.CompletedTask;
+            return BreakAsync(target, target.GetType(), options);
         }
 
         /// <summary>
@@ -255,10 +256,20 @@ namespace Mecha.Core
         /// <returns>The async task.</returns>
         public static Task BreakAsync<TClass>(Options? options = null)
         {
-            var ClassType = typeof(TClass);
-            if (ClassType.IsAbstract && ClassType.IsSealed) //Static class
-                return Task.CompletedTask;
-            return BreakAsync(FastActivator.CreateInstance(ClassType), options);
+            return BreakAsync(typeof(TClass), options);
+        }
+
+        /// <summary>
+        /// Finds the methods of the class type specified and tries to break them.
+        /// </summary>
+        /// <param name="classType">Type of the class.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>The async task.</returns>
+        public static Task BreakAsync(Type classType, Options? options = null)
+        {
+            if (classType.IsAbstract && classType.IsSealed) //Static class
+                return BreakAsync(default(object), classType, options);
+            return BreakAsync(FastActivator.CreateInstance(classType), options);
         }
 
         /// <summary>
@@ -271,6 +282,33 @@ namespace Mecha.Core
         public Task<Result> RunAsync(MethodInfo runMethod, object? target, Options? options)
         {
             return TestRunnerManager.RunAsync(runMethod, target, options ?? Options.Default);
+        }
+
+        /// <summary>
+        /// Breaks the asynchronous.
+        /// </summary>
+        /// <param name="target">The target.</param>
+        /// <param name="classType">Type of the class.</param>
+        /// <param name="options">The options.</param>
+        /// <exception cref="AggregateException"></exception>
+        private static async Task BreakAsync(object? target, Type classType, Options? options)
+        {
+            if (Default is null)
+                return;
+            options ??= Options.Default;
+            var Exceptions = new List<Exception>();
+            foreach (var Method in classType.GetMethods())
+            {
+                if (!(Method.GetCustomAttribute<DoNotBreakAttribute>() is null))
+                    continue;
+                if (target is null && Method.DeclaringType == typeof(object))
+                    continue;
+                var Result = await Default.RunAsync(Method, target, options).ConfigureAwait(false);
+                if (!(Result.Exception is null))
+                    Exceptions.Add(Result.Exception);
+            }
+            if (Exceptions.Count > 0)
+                throw new AggregateException(Exceptions);
         }
     }
 }

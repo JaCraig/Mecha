@@ -44,8 +44,9 @@ namespace Mecha.Core.Datasources
         /// <param name="method">The method.</param>
         public void Clear(MethodInfo method)
         {
-            var DataDirectoryInfo = GetDirectory(DataDirectory, method);
-            DataDirectoryInfo.Delete();
+            if (method is null)
+                return;
+            GetDirectory(DataDirectory, method)?.Delete();
         }
 
         /// <summary>
@@ -56,12 +57,16 @@ namespace Mecha.Core.Datasources
         /// <returns>The list of data for the method.</returns>
         public List<object?[]> Read(MethodInfo method, ISerializer serializer)
         {
+            if (method is null)
+                return new List<object?[]>();
             var Parameters = method.GetParameters();
             if (Parameters.Any(x => x.ParameterType.IsInterface))
                 return new List<object?[]>();
 
             var Results = new List<object?[]>();
             var DataDirectoryInfo = GetDirectory(DataDirectory, method);
+            if (DataDirectoryInfo is null)
+                return new List<object?[]>();
             foreach (var Directory in DataDirectoryInfo.EnumerateDirectories())
             {
                 var TempResult = new object?[Parameters.Length];
@@ -85,12 +90,15 @@ namespace Mecha.Core.Datasources
         /// <param name="serializer">The serializer.</param>
         public void Save(MethodInfo method, object?[] paramData, ISerializer serializer)
         {
+            if (method is null)
+                return;
             var Parameters = method.GetParameters();
             if (Parameters.Any(x => x.ParameterType.IsInterface))
                 return;
 
             var DataDirectoryInfo = GetDirectory(DataDirectory, method, Guid.NewGuid());
-
+            if (DataDirectoryInfo is null)
+                return;
             for (int x = 0; x < Parameters.Length; ++x)
             {
                 new FileInfo($"{DataDirectoryInfo.FullName}/{x}.json").Write(serializer.Serialize(Parameters[x].ParameterType, paramData[x]) ?? "");
@@ -103,9 +111,12 @@ namespace Mecha.Core.Datasources
         /// <param name="dataDirectory">The data directory.</param>
         /// <param name="method">The method.</param>
         /// <returns>The directory specified.</returns>
-        private static DirectoryInfo GetDirectory(string dataDirectory, MethodInfo method)
+        private static DirectoryInfo? GetDirectory(string dataDirectory, MethodInfo method)
         {
-            return new DirectoryInfo(RemoveIllegalDirectoryNameCharacters($"{dataDirectory}{method.DeclaringType.Namespace}/{RemoveIllegalDirectoryNameCharacters(method.DeclaringType.GetName().Replace(method.DeclaringType.Namespace + ".", "").Replace(".", ""))}/{method.Name}"));
+            var DirectoryName = RemoveIllegalDirectoryNameCharacters($"{dataDirectory}{method.ReflectedType?.Namespace}/{RemoveIllegalDirectoryNameCharacters(method.ReflectedType?.GetName().Replace(method.ReflectedType.Namespace + ".", "").Replace(".", ""))}/{method.Name}");
+            if (string.IsNullOrEmpty(DirectoryName))
+                return null;
+            return new DirectoryInfo(DirectoryName);
         }
 
         /// <summary>
@@ -115,9 +126,12 @@ namespace Mecha.Core.Datasources
         /// <param name="method">The method.</param>
         /// <param name="guid">The unique identifier.</param>
         /// <returns>The directory specified.</returns>
-        private static DirectoryInfo GetDirectory(string dataDirectory, MethodInfo method, Guid guid)
+        private static DirectoryInfo? GetDirectory(string dataDirectory, MethodInfo method, Guid guid)
         {
-            return new DirectoryInfo($"{GetDirectory(dataDirectory, method).FullName}/{guid}");
+            var ParentDirectory = GetDirectory(dataDirectory, method);
+            if (ParentDirectory is null)
+                return null;
+            return new DirectoryInfo($"{ParentDirectory.FullName}/{guid}");
         }
 
         /// <summary>
@@ -126,7 +140,7 @@ namespace Mecha.Core.Datasources
         /// <param name="directoryName">Directory name</param>
         /// <param name="replacementChar">Replacement character</param>
         /// <returns>DirectoryName with all illegal characters replaced with ReplacementChar</returns>
-        private static string RemoveIllegalDirectoryNameCharacters(string directoryName, char replacementChar = '_')
+        private static string? RemoveIllegalDirectoryNameCharacters(string? directoryName, char replacementChar = '_')
         {
             if (string.IsNullOrEmpty(directoryName))
                 return directoryName;

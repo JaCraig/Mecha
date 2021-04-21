@@ -143,14 +143,14 @@ namespace Mecha.Core.Runner
             {
                 if (e.InnerException is ArgumentException argument)
                 {
-                    if (!Parameters.Any(x => x.ParameterInfo.Name == argument.ParamName))
+                    if (Method == argument.TargetSite && Parameters.Any(x => x.ParameterInfo.Name == argument.ParamName))
                     {
-                        Exception = e.InnerException ?? e;
-                        Result = false;
+                        Result = true;
                     }
                     else
                     {
-                        Result = true;
+                        Exception = e.InnerException ?? e;
+                        Result = false;
                     }
                 }
                 else

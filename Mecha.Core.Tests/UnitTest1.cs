@@ -11,6 +11,8 @@ namespace Mecha.Core.Tests
     {
         public static bool ExtensionMethod1(this TestClass value)
         {
+            if (value is null)
+                throw new ArgumentNullException(nameof(value));
             return value.Method3(null);
         }
     }
@@ -72,7 +74,13 @@ namespace Mecha.Core.Tests
             return Mech.BreakAsync<TestClass>();
         }
 
-        [Property(GenerationCount = 10, MaxDuration = 50000)]
+        [Fact]
+        public Task ExtensionBreak()
+        {
+            return Mech.BreakAsync(typeof(ExtensionTestClass));
+        }
+
+        [Property(GenerationCount = 10, MaxDuration = 5000)]
         public void Test1(int data, List<int> list)
         {
             Assert.Single(list);

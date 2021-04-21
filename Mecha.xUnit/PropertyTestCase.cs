@@ -1,7 +1,6 @@
 ﻿using BigBook;
 using Mecha.Core;
 using Mecha.Core.Runner;
-using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Linq;
 using System.Threading;
@@ -49,12 +48,6 @@ namespace Mecha.xUnit
         private CancellationTokenSource? CancellationTokenSource { get; set; }
 
         /// <summary>
-        /// Gets the lock object.
-        /// </summary>
-        /// <value>The lock object.</value>
-        private object LockObject { get; } = new object();
-
-        /// <summary>
         /// Gets the manager.
         /// </summary>
         /// <value>The manager.</value>
@@ -95,17 +88,7 @@ namespace Mecha.xUnit
         /// </summary>
         public void Init(IMessageBus messageBus, CancellationTokenSource cancellationTokenSource)
         {
-            if (Canister.Builder.Bootstrapper is null)
-            {
-                lock (LockObject)
-                {
-                    if (Canister.Builder.Bootstrapper is null)
-                    {
-                        new ServiceCollection().AddCanisterModules(configure => configure?.RegisterMecha()?.AddAssembly(typeof(PropertyAttribute).Assembly));
-                    }
-                }
-            }
-            Manager = Canister.Builder.Bootstrapper?.Resolve<Mech>();
+            Manager = Mech.Default;
 
             Test = new XunitTest(this, DisplayName);
             CancellationTokenSource = cancellationTokenSource;
