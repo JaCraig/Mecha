@@ -127,6 +127,8 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1>(Action<TValue1> action, Options? options = null)
         {
+            if (action is null)
+                return Task.CompletedTask;
             return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
@@ -140,6 +142,8 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2>(Action<TValue1, TValue2> action, Options? options = null)
         {
+            if (action is null)
+                return Task.CompletedTask;
             return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
@@ -154,6 +158,8 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3>(Action<TValue1, TValue2, TValue3> action, Options? options = null)
         {
+            if (action is null)
+                return Task.CompletedTask;
             return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
@@ -169,6 +175,8 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3, TValue4>(Action<TValue1, TValue2, TValue3, TValue4> action, Options? options = null)
         {
+            if (action is null)
+                return Task.CompletedTask;
             return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
@@ -185,6 +193,8 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3, TValue4, TValue5>(Action<TValue1, TValue2, TValue3, TValue4, TValue5> action, Options? options = null)
         {
+            if (action is null)
+                return Task.CompletedTask;
             return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
@@ -202,6 +212,8 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3, TValue4, TValue5, TValue6>(Action<TValue1, TValue2, TValue3, TValue4, TValue5, TValue6> action, Options? options = null)
         {
+            if (action is null)
+                return Task.CompletedTask;
             return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
@@ -219,6 +231,8 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7>(Action<TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7> action, Options? options = null)
         {
+            if (action is null)
+                return Task.CompletedTask;
             return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
@@ -230,7 +244,9 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync(Action action, Options? options = null)
         {
-            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            if (action is null)
+                return Task.CompletedTask;
+            return BreakAsync(action?.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>
@@ -241,7 +257,7 @@ namespace Mecha.Core
         /// <param name="options">The options.</param>
         public static async Task BreakAsync(MethodInfo method, object? target, Options? options = null)
         {
-            if (Default is null || !(method.GetCustomAttribute<DoNotBreakAttribute>() is null))
+            if (Default is null || method is null || !(method.GetCustomAttribute<DoNotBreakAttribute>() is null))
                 return;
             options ??= Options.Default;
             var Result = await Default.RunAsync(method, target, options).ConfigureAwait(false);
@@ -267,6 +283,8 @@ namespace Mecha.Core
         /// <returns>The async task.</returns>
         public static Task BreakAsync(Type classType, Options? options = null)
         {
+            if (classType is null)
+                return Task.CompletedTask;
             if (classType.IsAbstract && classType.IsSealed) //Static class
                 return BreakAsync(default(object), classType, options);
             return BreakAsync(FastActivator.CreateInstance(classType), options);
