@@ -1,16 +1,6 @@
-# Mecha
+![Mecha Logo](https://repository-images.githubusercontent.com/337571372/3bfdaf00-a467-11eb-9e15-c30893f31981)
 
-The tool needs to do the following things:
-1. Fuzz library public entry points.
-2. Use DI to automatically create objects for testing.
-3. Property test public entry points.
-4. Code coverage should be used to determine quality of fuzz/property test values.
-5. Decouple from test runner (xUnit.Net, etc.).
-6. Allow Fluent interface for creation or just use attributes.
-7. Have custom assert library that automatically gets used for test generation/verification.
-8. Look into using ML.Net to generate tests/values based on other code.
-9. Save failed tests as regression tests.
-10. Tests with similar results don't get saved.
-11. Use mutation testing.
-12. Make suggestions for assertions, etc.
-13. Check for nullable objects, etc. and act accordingly.
+I've spent most of my adult, working life trying to track down bugs. Like every other developer out there, I spent hours trying to figure out edge cases to help get higher and higher test coverage percentages. And like most of you, I'm tired of it. With that in mind, I decided to build something to do the grunt work for me.
+
+Mecha is a system to automatically test classes with the goal being to break the code. It can help with unit testing, security testing via data fuzzing, testing for concurrency issues, and check for fault tolerance. With one line of code, you can test every method in a class automatically.
+
