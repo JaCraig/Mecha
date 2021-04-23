@@ -35,6 +35,16 @@ namespace Mecha.Core
         }
 
         /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object LockObject = new object();
+
+        /// <summary>
+        /// The default
+        /// </summary>
+        private static Mech? _Default;
+
+        /// <summary>
         /// Gets the default.
         /// </summary>
         /// <value>The default.</value>
@@ -96,13 +106,6 @@ namespace Mecha.Core
         /// </summary>
         /// <value>The test runner manager.</value>
         public TestRunnerManager TestRunnerManager { get; }
-
-        /// <summary>
-        /// The lock object
-        /// </summary>
-        private static readonly object LockObject = new object();
-
-        private static Mech? _Default;
 
         /// <summary>
         /// Breaks the specified target.
@@ -246,7 +249,7 @@ namespace Mecha.Core
         {
             if (action is null)
                 return Task.CompletedTask;
-            return BreakAsync(action?.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>

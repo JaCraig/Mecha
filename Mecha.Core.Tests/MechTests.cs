@@ -25,7 +25,7 @@ namespace Mecha.Core.Tests.Runner
         {
             var StaticMethods = typeof(Mech).GetMethods();
             var Tasks = new List<Task>();
-            foreach (var Method in StaticMethods.Where(x => x.IsStatic && !x.IsGenericMethod))
+            foreach (var Method in StaticMethods.Where(x => x.IsStatic))
             {
                 Tasks.Add(Mech.BreakAsync(Method, null, Options.Default));
             }
