@@ -130,6 +130,8 @@ namespace Mecha.Core.Runner
         /// <param name="timer">The timer.</param>
         public async Task<bool> RunAsync(Stopwatch timer)
         {
+            if (Method.ContainsGenericParameters || timer is null)
+                return false;
             bool Result;
             timer.Restart();
             try
@@ -189,6 +191,7 @@ namespace Mecha.Core.Runner
         /// <returns>True if it is shrunk, false otherwise.</returns>
         public bool Shrink(ShrinkerManager? shrinker, List<RunResult> results, Options options)
         {
+            options ??= Options.Default;
             if (ShrinkCount >= options.MaxShrinkCount)
                 return false;
             var Result = false;

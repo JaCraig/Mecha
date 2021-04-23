@@ -1,4 +1,5 @@
-﻿using Mecha.Core.Generator.Interfaces;
+﻿using Mecha.Core.Generator.DefaultGenerators.Utils;
+using Mecha.Core.Generator.Interfaces;
 using System.Reflection;
 
 namespace Mecha.Core.Generator.DefaultGenerators
@@ -39,8 +40,10 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
+            if (parameter is null)
+                return false;
             return !parameter.HasDefaultValue
-                && (DefaultValueLookup.Negate?.ContainsKey(parameter.ParameterType.GetHashCode()) ?? false);
+                && (NegateValueLookup.Negate?.ContainsKey(parameter.ParameterType.GetHashCode()) ?? false);
         }
 
         /// <summary>
@@ -52,10 +55,19 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
+            if (parameter is null)
+                return null;
             var Value = RandomObj.Next(0, 1) == 0 ? min : max;
             if (Value is null)
                 return null;
-            return DefaultValueLookup.Negate?[parameter.ParameterType.GetHashCode()](Value) ?? false;
+            try
+            {
+                return NegateValueLookup.Negate?[parameter.ParameterType.GetHashCode()](Value) ?? false;
+            }
+            catch
+            {
+                return Value;
+            }
         }
     }
 }

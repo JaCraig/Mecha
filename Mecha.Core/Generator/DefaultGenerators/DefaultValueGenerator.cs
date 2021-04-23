@@ -42,7 +42,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
-            return !parameter.HasDefaultValue;
+            return !parameter?.HasDefaultValue ?? false;
         }
 
         /// <summary>
@@ -54,13 +54,22 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
+            if (parameter is null)
+                return null;
             var NotNullable = parameter.GetCustomAttribute<DisallowNullAttribute>();
             var ResultType = parameter.ParameterType;
             if (!ResultType.IsValueType && NotNullable is null)
                 return null;
-            return DefaultValueLookup.Values.TryGetValue(ResultType.GetHashCode(), out var ReturnValue)
-                ? ReturnValue
-                : FastActivator.CreateInstance(ResultType);
+            try
+            {
+                return DefaultValueLookup.Values.TryGetValue(ResultType.GetHashCode(), out var ReturnValue)
+                    ? ReturnValue
+                    : FastActivator.CreateInstance(ResultType);
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

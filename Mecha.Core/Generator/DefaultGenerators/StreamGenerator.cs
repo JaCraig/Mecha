@@ -18,6 +18,11 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public StreamGenerator(Mirage.Random random)
         {
             RandomObj = random;
+            Streams = new Stream[]
+            {
+                new EmptyStream(),
+                new FaultyStream()
+            };
         }
 
         /// <summary>
@@ -33,6 +38,12 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public Mirage.Random RandomObj { get; }
 
         /// <summary>
+        /// Gets the streams.
+        /// </summary>
+        /// <value>The streams.</value>
+        private Stream[] Streams { get; }
+
+        /// <summary>
         /// Determines whether this instance can generate the specified parameter.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
@@ -41,6 +52,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
+            if (parameter is null)
+                return false;
             return !parameter.HasDefaultValue
                 && typeof(Stream).IsAssignableFrom(parameter.ParameterType);
         }
@@ -52,9 +65,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
-            if (RandomObj.Next<bool>())
-                return new FaultyStream();
-            return new EmptyStream();
+            return RandomObj.Next(Streams);
         }
     }
 }

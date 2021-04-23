@@ -2,6 +2,7 @@
 using Mecha.Core.Datasources;
 using Mecha.Core.Exceptions;
 using Mecha.Core.Generator;
+using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Runner;
 using Mecha.Core.Shrinker;
 using Microsoft.Extensions.DependencyInjection;
@@ -33,16 +34,6 @@ namespace Mecha.Core
             Random = random;
             Shrinker = shrinker;
         }
-
-        /// <summary>
-        /// The lock object
-        /// </summary>
-        private static readonly object LockObject = new object();
-
-        /// <summary>
-        /// The default
-        /// </summary>
-        private static Mech? _Default;
 
         /// <summary>
         /// Gets the default.
@@ -106,6 +97,16 @@ namespace Mecha.Core
         /// </summary>
         /// <value>The test runner manager.</value>
         public TestRunnerManager TestRunnerManager { get; }
+
+        /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object LockObject = new object();
+
+        /// <summary>
+        /// The default
+        /// </summary>
+        private static Mech? _Default;
 
         /// <summary>
         /// Breaks the specified target.
@@ -262,6 +263,19 @@ namespace Mecha.Core
         {
             if (Default is null || method is null || !(method.GetCustomAttribute<DoNotBreakAttribute>() is null))
                 return;
+            if (method.IsGenericMethodDefinition)
+            {
+                var Args = method.GetGenericArguments();
+                var ResultingItems = new Type[Args.Length];
+                for (var x = 0; x < ResultingItems.Length; ++x)
+                {
+                    var Type = Array.Find(BasicTypesLookup.Types, y => Args[x].BaseType.IsAssignableFrom(y));
+                    if (Type is null)
+                        return;
+                    ResultingItems[x] = Type;
+                }
+                method = method.MakeGenericMethod(ResultingItems);
+            }
             options ??= Options.Default;
             var Result = await Default.RunAsync(method, target, options).ConfigureAwait(false);
             if (!Result.Passed)
@@ -323,6 +337,8 @@ namespace Mecha.Core
                 if (!(Method.GetCustomAttribute<DoNotBreakAttribute>() is null))
                     continue;
                 if (target is null && Method.DeclaringType == typeof(object))
+                    continue;
+                if (Method.DeclaringType == typeof(MarshalByRefObject))
                     continue;
                 var Result = await Default.RunAsync(Method, target, options).ConfigureAwait(false);
                 if (!(Result.Exception is null))

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading;
 
 namespace Mecha
 {
@@ -15,14 +16,17 @@ namespace Mecha
 
         private static void Main(string[] args)
         {
-            var Temp = new Exception[2];
-            Temp[0] = ThrowTest(10);
-            Temp[1] = ThrowTest(10);
-            Console.WriteLine(SameException(Temp[0], Temp[1]));
-            var Method = typeof(Program).GetMethod(nameof(NullableTest));
-            var Parameters = Method?.GetParameters();
-            var Attributes = Parameters?[0].Member.CustomAttributes;
-            Console.WriteLine(Attributes);
+            var Temp = typeof(int);
+            var Temp2 = typeof(CancellationToken);
+            Console.WriteLine();
+            //var Temp = new Exception[2];
+            //Temp[0] = ThrowTest(10);
+            //Temp[1] = ThrowTest(10);
+            //Console.WriteLine(SameException(Temp[0], Temp[1]));
+            //var Method = typeof(Program).GetMethod(nameof(NullableTest));
+            //var Parameters = Method?.GetParameters();
+            //var Attributes = Parameters?[0].Member.CustomAttributes;
+            //Console.WriteLine(Attributes);
         }
 
         private static bool SameException(Exception? exception1, Exception? exception2)

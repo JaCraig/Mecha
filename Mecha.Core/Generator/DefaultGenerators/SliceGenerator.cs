@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using Fast.Activator;
+using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Generator.Interfaces;
 using System.Reflection;
 
@@ -40,8 +42,10 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
+            if (parameter is null)
+                return false;
             return !parameter.HasDefaultValue
-                && (DefaultValueLookup.Slice?.ContainsKey(parameter.ParameterType.GetHashCode()) ?? false);
+                && (SliceValueLookup.Slice?.ContainsKey(parameter.ParameterType.GetHashCode()) ?? false);
         }
 
         /// <summary>
@@ -51,8 +55,23 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
-            var Key = parameter.ParameterType.GetHashCode();
-            return DefaultValueLookup.Slice?[Key](min!, max!) ?? false;
+            if (parameter is null)
+                return null;
+            try
+            {
+                if (min is null)
+                    min = max;
+                if (max is null)
+                    max = min;
+                if (min is null)
+                    return FastActivator.CreateInstance(parameter.ParameterType);
+                var Key = parameter.ParameterType.GetHashCode();
+                return SliceValueLookup.Slice?[Key](min!, max!) ?? false;
+            }
+            catch
+            {
+                return FastActivator.CreateInstance(parameter.ParameterType);
+            }
         }
     }
 }

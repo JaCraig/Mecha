@@ -36,6 +36,60 @@ namespace Mecha.Core.Generator.Helpers
         }
 
         /// <summary>
+        /// Gets a value that indicates whether the current stream supports reading.
+        /// </summary>
+        public override bool CanRead => true;
+
+        /// <summary>
+        /// Gets a value that indicates whether the current stream supports seeking.
+        /// </summary>
+        public override bool CanSeek => true;
+
+        /// <summary>
+        /// Gets a value that determines whether the current stream can time out.
+        /// </summary>
+        public override bool CanTimeout => true;
+
+        /// <summary>
+        /// Gets a value that indicates whether the current stream supports writing.
+        /// </summary>
+        public override bool CanWrite => true;
+
+        /// <summary>
+        /// Gets the operating system file handle for the file that the current object encapsulates.
+        /// </summary>
+        [Obsolete("Handle no longer used")]
+        public override IntPtr Handle { get; }
+
+        /// <summary>
+        /// Gets a value that indicates whether the <see langword="FileStream"/> was opened
+        /// asynchronously or synchronously.
+        /// </summary>
+        public override bool IsAsync => true;
+
+        /// <summary>
+        /// Gets the length in bytes of the stream.
+        /// </summary>
+        public override long Length => 1000;
+
+        /// <summary>
+        /// Gets or sets the current position of this stream.
+        /// </summary>
+        public override long Position { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value, in milliseconds, that determines how long the stream will attempt
+        /// to read before timing out.
+        /// </summary>
+        public override int ReadTimeout { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value, in milliseconds, that determines how long the stream will attempt
+        /// to write before timing out.
+        /// </summary>
+        public override int WriteTimeout { get; set; }
+
+        /// <summary>
         /// Begins an asynchronous read operation. Consider using <see
         /// cref="M:System.IO.FileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)"/> instead.
         /// </summary>
@@ -182,6 +236,33 @@ namespace Mecha.Core.Generator.Helpers
         }
 
         /// <summary>
+        /// Obtains a lifetime service object to control the lifetime policy for this instance.
+        /// </summary>
+        /// <returns>
+        /// An object of type <see cref="T:System.Runtime.Remoting.Lifetime.ILease"/> used to
+        /// control the lifetime policy for this instance. This is the current lifetime service
+        /// object for this instance if one exists; otherwise, a new lifetime service object
+        /// initialized to the value of the <see
+        /// cref="P:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime"/> property.
+        /// </returns>
+        public override object InitializeLifetimeService()
+        {
+            return null!;
+        }
+
+        /// <summary>
+        /// Prevents other processes from reading from or writing to the <see cref="T:System.IO.FileStream"/>.
+        /// </summary>
+        /// <param name="position">
+        /// The beginning of the range to lock. The value of this parameter must be equal to or
+        /// greater than zero (0).
+        /// </param>
+        /// <param name="length">The range to be locked.</param>
+        public override void Lock(long position, long length)
+        {
+        }
+
+        /// <summary>
         /// Reads a block of bytes from the stream and writes the data in a given buffer.
         /// </summary>
         /// <param name="array">
@@ -278,6 +359,23 @@ namespace Mecha.Core.Generator.Helpers
         public override long Seek(long offset, SeekOrigin origin)
         {
             return 0;
+        }
+
+        /// <summary>
+        /// Sets the length of this stream to the given value.
+        /// </summary>
+        /// <param name="value">The new length of the stream.</param>
+        public override void SetLength(long value)
+        {
+        }
+
+        /// <summary>
+        /// Allows access by other processes to all or part of a file that was previously locked.
+        /// </summary>
+        /// <param name="position">The beginning of the range to unlock.</param>
+        /// <param name="length">The range to be unlocked.</param>
+        public override void Unlock(long position, long length)
+        {
         }
 
         /// <summary>
