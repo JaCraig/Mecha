@@ -1,4 +1,5 @@
 ﻿using Fast.Activator;
+using FileCurator;
 using Mecha.Core.Datasources;
 using Mecha.Core.Exceptions;
 using Mecha.Core.Generator;
@@ -36,6 +37,16 @@ namespace Mecha.Core
         }
 
         /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object LockObject = new object();
+
+        /// <summary>
+        /// The default
+        /// </summary>
+        private static Mech? _Default;
+
+        /// <summary>
         /// Gets the default.
         /// </summary>
         /// <value>The default.</value>
@@ -59,6 +70,7 @@ namespace Mecha.Core
                 {
                     try
                     {
+                        new DirectoryInfo("./Mecha").Create();
                         _Default = Canister.Builder.Bootstrapper?.Resolve<Mech>();
                         break;
                     }
@@ -97,16 +109,6 @@ namespace Mecha.Core
         /// </summary>
         /// <value>The test runner manager.</value>
         public TestRunnerManager TestRunnerManager { get; }
-
-        /// <summary>
-        /// The lock object
-        /// </summary>
-        private static readonly object LockObject = new object();
-
-        /// <summary>
-        /// The default
-        /// </summary>
-        private static Mech? _Default;
 
         /// <summary>
         /// Breaks the specified target.
