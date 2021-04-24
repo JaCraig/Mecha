@@ -4,6 +4,34 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <Nullable>enable</Nullable>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <RootNamespace>Mecha.Core</RootNamespace>
+    <AssemblyName>Mecha.Core</AssemblyName>
+
+    <BuildNumber Condition=" '$(APPVEYOR_BUILD_NUMBER)' != '' ">$(APPVEYOR_BUILD_NUMBER)</BuildNumber>
+    <!-- for AppVeyor -->
+    <BuildNumber Condition=" '$(BUILD_NUMBER)' != '' ">$(BUILD_NUMBER)</BuildNumber>
+    <!-- for Team City -->
+    <BuildNumber Condition=" '$(BuildNumber)' == '' ">0</BuildNumber>
+    <!-- if not set -->
+    <Description>Mecha.Core is the central portion of the Mecha library and contains the Mech class itself. If a version isn't available for your unit testing library of choice, this will give you access to the Mech class.</Description>
+    <AssemblyTitle>Mecha.Core</AssemblyTitle>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <Authors>James Craig</Authors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageId>Mecha.Core</PackageId>
+    <PackageTags>Unit Testing;Testing;Automation;Concurrency;Fuzzing</PackageTags>
+    <PackageProjectUrl>https://github.com/JaCraig/Mecha</PackageProjectUrl>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.0.$(BuildNumber)</Version>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>

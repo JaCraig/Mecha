@@ -18,6 +18,11 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public FileStreamGenerator(Mirage.Random random)
         {
             RandomObj = random;
+            Streams = new FileStream[]
+            {
+                new EmptyFileStream(),
+                new FaultyFileStream()
+            };
         }
 
         /// <summary>
@@ -32,6 +37,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <value>The random object.</value>
         public Mirage.Random RandomObj { get; }
 
+        private FileStream[] Streams { get; }
+
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.
         /// </summary>
@@ -41,6 +48,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
+            if (parameter is null)
+                return false;
             return !parameter.HasDefaultValue
                 && typeof(FileStream).IsAssignableFrom(parameter.ParameterType);
         }
@@ -52,9 +61,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
-            if (RandomObj.Next<bool>())
-                return new FaultyFileStream();
-            return new EmptyFileStream();
+            return RandomObj.Next(Streams);
         }
     }
 }

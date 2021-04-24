@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Generator.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -65,6 +66,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
+            if (parameter is null)
+                return false;
             return !parameter.HasDefaultValue
                 && !parameter.ParameterType.IsInterface
                 && !parameter.ParameterType.IsAbstract
@@ -80,6 +83,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
+            if (parameter is null)
+                return null;
             object? ReturnValue = null;
             if (min == max)
             {
@@ -87,17 +92,21 @@ namespace Mecha.Core.Generator.DefaultGenerators
             }
             min = FixMinValue(min, parameter);
             max = FixMaxValue(max, parameter);
-            var GenericMethod = GenericRandMethod.MakeGenericMethod(parameter.ParameterType);
-            ReturnValue = GetValue(parameter, min, max, GenericMethod);
-            var ValidationRules = parameter.GetCustomAttributes<ValidationAttribute>();
-            if (ValidationRules?.Any() == true)
+            try
             {
-                while (!ValidationRules.All(x => x.IsValid(ReturnValue)))
+                var GenericMethod = GenericRandMethod.MakeGenericMethod(parameter.ParameterType);
+                ReturnValue = GetValue(parameter, min, max, GenericMethod);
+                var ValidationRules = parameter.GetCustomAttributes<ValidationAttribute>();
+                if (ValidationRules?.Any() == true)
                 {
-                    ReturnValue = GetValue(parameter, min, max, GenericMethod);
+                    while (!ValidationRules.All(x => x.IsValid(ReturnValue)))
+                    {
+                        ReturnValue = GetValue(parameter, min, max, GenericMethod);
+                    }
                 }
+                return ReturnValue;
             }
-            return ReturnValue;
+            catch { return null; }
         }
 
         /// <summary>
@@ -110,9 +119,9 @@ namespace Mecha.Core.Generator.DefaultGenerators
         {
             var Key = parameter.ParameterType.GetHashCode();
             var Range = parameter.GetCustomAttribute<RangeAttribute>();
-            if (!(value is null) || !(DefaultValueLookup.Max?.ContainsKey(Key) ?? false))
+            if (!(value is null) || !(MaxValueLookup.Max?.ContainsKey(Key) ?? false))
                 return value;
-            return Range?.Maximum ?? DefaultValueLookup.Max?[Key] ?? false;
+            return Range?.Maximum ?? MaxValueLookup.Max?[Key] ?? false;
         }
 
         /// <summary>
@@ -125,9 +134,9 @@ namespace Mecha.Core.Generator.DefaultGenerators
         {
             var Key = parameter.ParameterType.GetHashCode();
             var Range = parameter.GetCustomAttribute<RangeAttribute>();
-            if (!(value is null) || !(DefaultValueLookup.Min?.ContainsKey(Key) ?? false))
+            if (!(value is null) || !(MinValueLookup.Min?.ContainsKey(Key) ?? false))
                 return value;
-            return Range?.Minimum ?? DefaultValueLookup.Min?[Key] ?? false;
+            return Range?.Minimum ?? MinValueLookup.Min?[Key] ?? false;
         }
 
         /// <summary>
@@ -140,7 +149,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns></returns>
         private object? GetValue(ParameterInfo parameter, object? min, object? max, MethodInfo GenericMethod)
         {
-            return parameter.ParameterType.IsValueType
+            return parameter.ParameterType.IsPrimitive
                 ? GenericMethod.Invoke(RandomObj, new object?[] { min, max })
                 : RandomObj.Next(parameter.ParameterType);
         }

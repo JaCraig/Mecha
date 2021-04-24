@@ -1,4 +1,5 @@
 ﻿using Mecha.Core.Generator.DefaultGenerators;
+using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Shrinker.Interfaces;
 
 namespace Mecha.Core.Shrinker.Defaults
@@ -19,7 +20,7 @@ namespace Mecha.Core.Shrinker.Defaults
             if (value is null)
                 return false;
 
-            return DefaultValueLookup.Slice?.ContainsKey(value.GetType().GetHashCode()) ?? false;
+            return SliceValueLookup.Slice?.ContainsKey(value.GetType().GetHashCode()) ?? false;
         }
 
         /// <summary>
@@ -32,7 +33,7 @@ namespace Mecha.Core.Shrinker.Defaults
             if (value is null)
                 return value;
             var ValueType = value.GetType().GetHashCode();
-            return DefaultValueLookup.Slice?[ValueType](DefaultValueLookup.Values?[ValueType] ?? value, value);
+            return SliceValueLookup.Slice?[ValueType](DefaultValueLookup.Values?[ValueType] ?? value, value);
         }
     }
 }

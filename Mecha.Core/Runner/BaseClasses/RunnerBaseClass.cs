@@ -45,6 +45,11 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <returns>The result.</returns>
         public async Task<Result> RunAsync(MethodInfo runMethod, object? target, Options options)
         {
+            if (runMethod is null)
+                return new Result { Output = "Method not specified", Passed = false, Exception = new ArgumentNullException(nameof(runMethod)) };
+            options ??= Options.Default;
+            if (options.MaxDuration == 0)
+                options.MaxDuration = 1;
             Init();
             StartRun(runMethod, target, options);
             var Count = options.GenerationCount;

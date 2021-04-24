@@ -52,6 +52,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
+            if (parameter is null)
+                return false;
             return !parameter.HasDefaultValue
                 && typeof(HttpClient).IsAssignableFrom(parameter.ParameterType);
         }
