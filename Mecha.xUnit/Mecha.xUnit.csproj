@@ -6,6 +6,7 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <RootNamespace>Mecha.xUnit</RootNamespace>
     <AssemblyName>Mecha.xUnit</AssemblyName>
+    <IsPackable>true</IsPackable>
 
     <BuildNumber Condition=" '$(APPVEYOR_BUILD_NUMBER)' != '' ">$(APPVEYOR_BUILD_NUMBER)</BuildNumber>
     <!-- for AppVeyor -->
