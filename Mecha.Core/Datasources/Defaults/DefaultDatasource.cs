@@ -113,10 +113,10 @@ namespace Mecha.Core.Datasources
         /// <returns>The directory specified.</returns>
         private static DirectoryInfo? GetDirectory(string dataDirectory, MethodInfo method)
         {
-            var DirectoryName = RemoveIllegalDirectoryNameCharacters($"{dataDirectory}{method.ReflectedType?.Namespace}/{RemoveIllegalDirectoryNameCharacters(method.ReflectedType?.GetName().Replace(method.ReflectedType.Namespace + ".", "").Replace(".", ""))}/{method.Name}");
-            if (string.IsNullOrEmpty(DirectoryName))
+            if (method is null)
                 return null;
-            return new DirectoryInfo(DirectoryName);
+            var DirectoryName = RemoveIllegalDirectoryNameCharacters($"{dataDirectory}{method.ReflectedType?.Namespace}/{RemoveIllegalDirectoryNameCharacters(method.ReflectedType?.GetName().Replace(method.ReflectedType.Namespace + ".", "").Replace(".", ""))}/{method.Name}");
+            return string.IsNullOrEmpty(DirectoryName) ? null : new DirectoryInfo(DirectoryName);
         }
 
         /// <summary>

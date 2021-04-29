@@ -37,16 +37,6 @@ namespace Mecha.Core
         }
 
         /// <summary>
-        /// The lock object
-        /// </summary>
-        private static readonly object LockObject = new object();
-
-        /// <summary>
-        /// The default
-        /// </summary>
-        private static Mech? _Default;
-
-        /// <summary>
         /// Gets the default.
         /// </summary>
         /// <value>The default.</value>
@@ -66,7 +56,7 @@ namespace Mecha.Core
                         }
                     }
                 }
-                while (true)
+                for (var x = 0; x < 1000; ++x)
                 {
                     try
                     {
@@ -109,6 +99,16 @@ namespace Mecha.Core
         /// </summary>
         /// <value>The test runner manager.</value>
         public TestRunnerManager TestRunnerManager { get; }
+
+        /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object LockObject = new object();
+
+        /// <summary>
+        /// The default
+        /// </summary>
+        private static Mech? _Default;
 
         /// <summary>
         /// Breaks the specified target.
