@@ -73,6 +73,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
                 && !parameter.ParameterType.IsAbstract
                 && (parameter.ParameterType.IsValueType
                     || parameter.ParameterType.IsEnum
+                    || parameter.ParameterType == typeof(string)
                     || parameter.ParameterType.GetConstructors().Any(x => x.GetParameters().Length == 0));
         }
 
@@ -80,12 +81,13 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Generates the next object of the specified parameter type.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
+        /// <param name="min">The minimum.</param>
+        /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {
             if (parameter is null)
                 return null;
-            object? ReturnValue = null;
             if (min == max)
             {
                 max = min = null;
@@ -95,16 +97,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
             try
             {
                 var GenericMethod = GenericRandMethod.MakeGenericMethod(parameter.ParameterType);
-                ReturnValue = GetValue(parameter, min, max, GenericMethod);
-                var ValidationRules = parameter.GetCustomAttributes<ValidationAttribute>();
-                if (ValidationRules?.Any() == true)
-                {
-                    while (!ValidationRules.All(x => x.IsValid(ReturnValue)))
-                    {
-                        ReturnValue = GetValue(parameter, min, max, GenericMethod);
-                    }
-                }
-                return ReturnValue;
+                return GetValue(parameter, min, max, GenericMethod);
             }
             catch { return null; }
         }

@@ -34,7 +34,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
                 max = Value;
             }
             var Parameters = TestMethodInfo.GetParameters();
-            Assert.Equal((min / 2 + max / 2), TestObject.Next(Parameters[0], min, max));
+            Assert.Equal((min / 2) + (max / 2), TestObject.Next(Parameters[0], min, max));
         }
     }
 }

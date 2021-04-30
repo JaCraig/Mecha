@@ -1,5 +1,7 @@
 ﻿using Mecha.Core.Tests.BaseClasses;
+using Mecha.xUnit;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
@@ -44,6 +46,16 @@ namespace Mecha.Core.Tests.Runner
             Assert.True(Result.ExecutionTime >= 0);
             Assert.NotEmpty(Result.Output);
             Assert.True(Result.Passed);
+        }
+
+        /// <summary>
+        /// Validation test.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        [Property(GenerationCount = 100)]
+        public void ValidationTest([Required] string value)
+        {
+            Assert.True(!string.IsNullOrEmpty(value));
         }
     }
 }

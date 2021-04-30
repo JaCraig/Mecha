@@ -61,6 +61,10 @@ namespace Mecha.Core.Runner
         /// <value>The value.</value>
         public object? Value { get; private set; }
 
+        /// <summary>
+        /// Copies this instance.
+        /// </summary>
+        /// <returns></returns>
         public Parameter Copy()
         {
             return new Parameter(ParameterInfo, Value, ShrinkCount);

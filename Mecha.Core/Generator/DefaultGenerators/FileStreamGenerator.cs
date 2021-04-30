@@ -58,6 +58,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Generates the next object of the specified parameter type.
         /// </summary>
         /// <param name="parameter">The parameter.</param>
+        /// <param name="min">The minimum.</param>
+        /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo parameter, object? min, object? max)
         {

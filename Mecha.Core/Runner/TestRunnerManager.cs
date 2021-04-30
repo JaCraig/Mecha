@@ -33,7 +33,7 @@ namespace Mecha.Core.Runner
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <returns>Results</returns>
-        public Task<Result> RunAsync(MethodInfo methodInfo, object? target, Options options)
+        public Task<Result> RunAsync(MethodInfo? methodInfo, object? target, Options options)
         {
             return Runner.RunAsync(methodInfo, target, options);
         }

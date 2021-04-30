@@ -232,6 +232,7 @@ namespace Mecha.Core
         /// <typeparam name="TValue4">The type of the value4.</typeparam>
         /// <typeparam name="TValue5">The type of the value5.</typeparam>
         /// <typeparam name="TValue6">The type of the value6.</typeparam>
+        /// <typeparam name="TValue7">The type of the value7.</typeparam>
         /// <param name="action">The action.</param>
         /// <param name="options">The options.</param>
         /// <returns></returns>

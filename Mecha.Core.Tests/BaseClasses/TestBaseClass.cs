@@ -29,7 +29,7 @@ namespace Mecha.Core.Tests.BaseClasses
         /// Gets or sets the test object.
         /// </summary>
         /// <value>The test object.</value>
-        protected TTestObject TestObject { get; set; }
+        protected TTestObject? TestObject { get; set; }
 
         /// <summary>
         /// Attempts to break the object.

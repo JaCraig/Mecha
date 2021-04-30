@@ -1,5 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using BigBook;
+using Mecha.Core.ExtensionMethods;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Reflection;
+using System.Text.Json;
 
 namespace Mecha.Core.Generator
 {
@@ -15,6 +21,7 @@ namespace Mecha.Core.Generator
         public ParameterValues(ParameterInfo parameter)
         {
             Parameter = parameter;
+            ValidationAttributes = Parameter?.GetCustomAttributes<ValidationAttribute>() ?? Array.Empty<ValidationAttribute>();
         }
 
         /// <summary>
@@ -28,5 +35,46 @@ namespace Mecha.Core.Generator
         /// </summary>
         /// <value>The parameter.</value>
         public ParameterInfo Parameter { get; set; }
+
+        /// <summary>
+        /// Gets the validation attributes.
+        /// </summary>
+        /// <value>The validation attributes.</value>
+        private IEnumerable<ValidationAttribute> ValidationAttributes { get; }
+
+        /// <summary>
+        /// Adds the value specified if it is valid.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        public void AddValue(object? value)
+        {
+            if (GeneratedValues.Contains(value))
+                return;
+            if (ValidationAttributes.Any(x => !x.IsValid(value)))
+                return;
+            GeneratedValues.AddIfUnique(Same, value);
+        }
+
+        /// <summary>
+        /// Determines if the 2 arrays are the same.
+        /// </summary>
+        /// <param name="value1">The value1.</param>
+        /// <param name="value2">The value2.</param>
+        /// <returns>True if they are, false otherwise.</returns>
+        private bool Same(object? value1, object? value2)
+        {
+            if (value1.IsInfinite() && value2.IsInfinite())
+                return true;
+            if (value1.IsInfinite() || value2.IsInfinite())
+                return false;
+            try
+            {
+                return (value1 is null && value2 is null)
+                    || (!(value1 is null)
+                        && !(value2 is null)
+                        && JsonSerializer.Serialize(value1) == JsonSerializer.Serialize(value2));
+            }
+            catch { return false; }
+        }
     }
 }

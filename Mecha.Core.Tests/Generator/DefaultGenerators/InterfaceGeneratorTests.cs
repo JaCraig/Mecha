@@ -2,7 +2,6 @@
 using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
 using System;
-using System.Linq;
 using System.Reflection;
 using Xunit;
 
@@ -20,7 +19,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         public InterfaceGeneratorTest()
         {
             TestObject = new InterfaceGenerator();
-            MethodParam = typeof(InterfaceGeneratorTest).GetMethods().FirstOrDefault(x => x.Name == "InterfaceMethod")?.GetParameters()[0];
+            MethodParam = Array.Find(typeof(InterfaceGeneratorTest).GetMethods(), x => x.Name == "InterfaceMethod")?.GetParameters()[0];
         }
 
         /// <summary>

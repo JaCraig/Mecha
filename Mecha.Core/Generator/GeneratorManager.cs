@@ -15,13 +15,11 @@ limitations under the License.
 */
 
 using BigBook;
-using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Generator.Interfaces;
 using Mirage;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Text.Json;
 using System.Timers;
 
 namespace Mecha.Core.Generator
@@ -81,35 +79,13 @@ namespace Mecha.Core.Generator
                     var Min = CurrentParameter.GeneratedValues.Count > 0 ? Random.Next(CurrentParameter.GeneratedValues) : null;
                     var Max = CurrentParameter.GeneratedValues.Count > 0 ? Random.Next(CurrentParameter.GeneratedValues) : null;
                     var Data = Generator.Next(CurrentParameter.Parameter, Min, Max);
-                    CurrentParameter.GeneratedValues.AddIfUnique(Same, Data);
+                    CurrentParameter.AddValue(Data);
                     if (CurrentParameter.GeneratedValues.Count >= options.GenerationCount)
                         break;
                 }
                 InternalTimer.Stop();
             }
             return ReturnValue;
-        }
-
-        /// <summary>
-        /// Determines if the 2 arrays are the same.
-        /// </summary>
-        /// <param name="value1">The value1.</param>
-        /// <param name="value2">The value2.</param>
-        /// <returns>True if they are, false otherwise.</returns>
-        private bool Same(object? value1, object? value2)
-        {
-            if (value1.IsInfinite() && value2.IsInfinite())
-                return true;
-            if (value1.IsInfinite() || value2.IsInfinite())
-                return false;
-            try
-            {
-                return (value1 is null && value2 is null)
-                    || (!(value1 is null)
-                        && !(value2 is null)
-                        && JsonSerializer.Serialize(value1) == JsonSerializer.Serialize(value2));
-            }
-            catch { return false; }
         }
     }
 }

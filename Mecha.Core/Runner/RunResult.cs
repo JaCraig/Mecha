@@ -188,6 +188,7 @@ namespace Mecha.Core.Runner
         /// </summary>
         /// <param name="shrinker">The shrinker.</param>
         /// <param name="results">The results.</param>
+        /// <param name="options">The options.</param>
         /// <returns>True if it is shrunk, false otherwise.</returns>
         public bool Shrink(ShrinkerManager? shrinker, List<RunResult> results, Options options)
         {

@@ -416,6 +416,7 @@ namespace Mecha.Core.Generator.Helpers
         /// Allocates a <see cref="T:System.Threading.WaitHandle"/> object.
         /// </summary>
         /// <returns>A reference to the allocated <see langword="WaitHandle"/>.</returns>
+        [Obsolete("Reasons")]
         protected override WaitHandle CreateWaitHandle()
         {
             return null;

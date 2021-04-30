@@ -41,6 +41,12 @@ namespace Mecha
                 && exception1.Source == exception2.Source;
         }
 
+        /// <summary>
+        /// Throws the test.
+        /// </summary>
+        /// <param name="time">The time.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException">time</exception>
         private static Exception ThrowTest(int time)
         {
             try
