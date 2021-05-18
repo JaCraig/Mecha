@@ -30,7 +30,7 @@ namespace Mecha.Core.Shrinker.Defaults
         /// <returns></returns>
         public object? Shrink(object? value)
         {
-            if (value is null)
+            if (value is null || !CanShrink(value))
                 return value;
             var ValueType = value.GetType().GetHashCode();
             return SliceValueLookup.Slice?[ValueType](DefaultValueLookup.Values?[ValueType] ?? value, value);

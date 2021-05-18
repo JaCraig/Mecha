@@ -239,6 +239,10 @@ namespace Mecha.Core.Generator.Helpers
         /// <exception cref="EndOfStreamException"></exception>
         public override int Read(byte[] buffer, int offset, int count)
         {
+            if (offset < 0)
+                offset = 0;
+            if (count < 0)
+                count = 0;
             if (buffer is null || buffer.Length < offset + count)
                 return 0;
             Array.Fill<byte>(buffer, 0, offset, count);

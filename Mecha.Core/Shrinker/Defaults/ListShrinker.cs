@@ -21,7 +21,7 @@ namespace Mecha.Core.Shrinker.Defaults
                 return false;
             var ValueType = value?.GetType();
 
-            return typeof(IList).IsAssignableFrom(ValueType);
+            return typeof(IList).IsAssignableFrom(ValueType) && ValueType?.IsArray == false;
         }
 
         /// <summary>
@@ -31,7 +31,7 @@ namespace Mecha.Core.Shrinker.Defaults
         /// <returns></returns>
         public object? Shrink(object? value)
         {
-            if (value is null)
+            if (value is null || !CanShrink(value))
                 return value;
             var Val = (IList)value;
             if (Val.Count == 0)

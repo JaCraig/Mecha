@@ -25,6 +25,8 @@ namespace Mecha.Core.Shrinker.Defaults
         /// <returns></returns>
         public object? Shrink(object? value)
         {
+            if (!CanShrink(value))
+                return value;
             var StringVal = (string?)value;
             if (string.IsNullOrEmpty(StringVal))
                 return StringVal;

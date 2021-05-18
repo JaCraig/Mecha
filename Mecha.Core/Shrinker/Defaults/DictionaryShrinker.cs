@@ -31,7 +31,7 @@ namespace Mecha.Core.Shrinker.Defaults
         /// <returns></returns>
         public object? Shrink(object? value)
         {
-            if (value is null)
+            if (value is null || !CanShrink(value))
                 return value;
             var Val = (IDictionary)value;
             if (Val.Count == 0)
