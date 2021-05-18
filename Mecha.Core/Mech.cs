@@ -20,7 +20,7 @@ namespace Mecha.Core
     public class Mech
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Check"/> class.
+        /// Initializes a new instance of the <see cref="Mech"/> class.
         /// </summary>
         /// <param name="generatorManager">The generator manager.</param>
         /// <param name="dataManager">The data manager.</param>
@@ -303,7 +303,7 @@ namespace Mecha.Core
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <returns>The result</returns>
-        public Task<Result> RunAsync(MethodInfo runMethod, object? target, Options? options)
+        public Task<Result> RunAsync(MethodInfo? runMethod, object? target, Options? options)
         {
             if (runMethod is null
                 || !(runMethod.GetCustomAttribute<DoNotBreakAttribute>() is null)
@@ -313,7 +313,7 @@ namespace Mecha.Core
                 return Task.FromResult(Result.Skipped);
             }
             runMethod = FixMethod(runMethod);
-            if (runMethod is null || runMethod.IsGenericMethodDefinition)
+            if (runMethod?.IsGenericMethodDefinition != false)
             {
                 return Task.FromResult(Result.Skipped);
             }

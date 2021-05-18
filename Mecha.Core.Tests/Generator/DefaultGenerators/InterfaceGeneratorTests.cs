@@ -19,14 +19,14 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         public InterfaceGeneratorTest()
         {
             TestObject = new InterfaceGenerator();
-            MethodParam = Array.Find(typeof(InterfaceGeneratorTest).GetMethods(), x => x.Name == "InterfaceMethod")?.GetParameters()[0];
+            MethodParam = Array.Find(typeof(InterfaceGeneratorTest).GetMethods(), x => string.Equals(x.Name, "InterfaceMethod", StringComparison.OrdinalIgnoreCase))?.GetParameters()[0];
         }
 
         /// <summary>
         /// Gets the method parameter.
         /// </summary>
         /// <value>The method parameter.</value>
-        private ParameterInfo MethodParam { get; }
+        private ParameterInfo? MethodParam { get; }
 
         /// <summary>
         /// Interfaces the method.

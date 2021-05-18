@@ -14,7 +14,6 @@ namespace Mecha.Core.Generator.Helpers
         /// <summary>
         /// Initializes a new instance of the <see cref="FaultyFileStream"/> class.
         /// </summary>
-        /// <param name="random">The random.</param>
         public FaultyFileStream()
             : base($"./Mecha/mock-{Guid.NewGuid()}.txt", FileMode.OpenOrCreate)
         {

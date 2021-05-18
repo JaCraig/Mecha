@@ -43,7 +43,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <returns>The result.</returns>
-        public async Task<Result> RunAsync(MethodInfo runMethod, object? target, Options options)
+        public async Task<Result> RunAsync(MethodInfo? runMethod, object? target, Options options)
         {
             if (runMethod is null)
                 return new Result { Output = "Method not specified", Passed = false, Exception = new ArgumentNullException(nameof(runMethod)) };

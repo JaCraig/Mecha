@@ -36,7 +36,7 @@ namespace Mecha.Core.Generator.Interfaces
         /// <returns>
         /// <c>true</c> if this instance can generate the specified parameter; otherwise, <c>false</c>.
         /// </returns>
-        bool CanGenerate(ParameterInfo parameter);
+        bool CanGenerate(ParameterInfo? parameter);
 
         /// <summary>
         /// Generates the next object of the specified parameter type.
@@ -45,6 +45,6 @@ namespace Mecha.Core.Generator.Interfaces
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        object? Next(ParameterInfo parameter, object? min, object? max);
+        object? Next(ParameterInfo? parameter, object? min, object? max);
     }
 }

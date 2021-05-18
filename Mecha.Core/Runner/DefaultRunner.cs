@@ -51,6 +51,12 @@ namespace Mecha.Core.Runner
             return ReturnValue;
         }
 
+        /// <summary>
+        /// Called at the start of the run.
+        /// </summary>
+        /// <param name="runMethod">The run method.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="options">The options.</param>
         protected override void StartRun(MethodInfo runMethod, object? target, Options options)
         {
         }

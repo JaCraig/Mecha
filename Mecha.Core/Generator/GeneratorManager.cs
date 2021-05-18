@@ -58,8 +58,9 @@ namespace Mecha.Core.Generator
         /// <param name="parameters">The parameters.</param>
         /// <param name="options">The options.</param>
         /// <returns>The parameter values</returns>
-        public ParameterValues[] GenerateParameterValues(ParameterInfo[] parameters, Options options)
+        public ParameterValues[] GenerateParameterValues(ParameterInfo[] parameters, Options? options)
         {
+            options = options.Initialize();
             parameters ??= System.Array.Empty<ParameterInfo>();
             var ReturnValue = new ParameterValues[parameters.Length];
             for (var x = 0; x < parameters.Length; ++x)

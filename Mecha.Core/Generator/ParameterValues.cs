@@ -34,7 +34,7 @@ namespace Mecha.Core.Generator
         /// Gets or sets the parameter.
         /// </summary>
         /// <value>The parameter.</value>
-        public ParameterInfo Parameter { get; set; }
+        public ParameterInfo? Parameter { get; set; }
 
         /// <summary>
         /// Gets the validation attributes.

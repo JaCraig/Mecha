@@ -84,7 +84,7 @@ namespace Mecha.Core.Generator.Helpers
         /// An <see cref="T:System.IAsyncResult"/> that represents the asynchronous read, which
         /// could still be pending.
         /// </returns>
-        public override IAsyncResult BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, object state)
+        public override IAsyncResult? BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, object state)
         {
             return null;
         }
@@ -109,7 +109,7 @@ namespace Mecha.Core.Generator.Helpers
         /// An <see langword="IAsyncResult"/> that represents the asynchronous write, which could
         /// still be pending.
         /// </returns>
-        public override IAsyncResult BeginWrite(byte[] buffer, int offset, int count, AsyncCallback callback, object state)
+        public override IAsyncResult? BeginWrite(byte[] buffer, int offset, int count, AsyncCallback callback, object state)
         {
             return null;
         }
@@ -212,7 +212,7 @@ namespace Mecha.Core.Generator.Helpers
         /// initialized to the value of the <see
         /// cref="P:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime"/> property.
         /// </returns>
-        public override object InitializeLifetimeService()
+        public override object? InitializeLifetimeService()
         {
             return null;
         }
@@ -296,11 +296,10 @@ namespace Mecha.Core.Generator.Helpers
         /// The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.
         /// </param>
         /// <returns>
-        /// A task that represents the asynchronous read operation. The value of the <paramref
-        /// name="TResult"/> parameter contains the total number of bytes read into the buffer. The
-        /// result value can be less than the number of bytes requested if the number of bytes
-        /// currently available is less than the requested number, or it can be 0 (zero) if the end
-        /// of the stream has been reached.
+        /// A task that represents the asynchronous read operation. The value of the parameter
+        /// contains the total number of bytes read into the buffer. The result value can be less
+        /// than the number of bytes requested if the number of bytes currently available is less
+        /// than the requested number, or it can be 0 (zero) if the end of the stream has been reached.
         /// </returns>
         public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
         {
@@ -417,7 +416,7 @@ namespace Mecha.Core.Generator.Helpers
         /// </summary>
         /// <returns>A reference to the allocated <see langword="WaitHandle"/>.</returns>
         [Obsolete("Reasons")]
-        protected override WaitHandle CreateWaitHandle()
+        protected override WaitHandle? CreateWaitHandle()
         {
             return null;
         }

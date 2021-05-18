@@ -2,8 +2,14 @@
 
 namespace Mecha.Core.Generator.DefaultGenerators.Utils
 {
+    /// <summary>
+    /// Basic types lookup
+    /// </summary>
     public static class BasicTypesLookup
     {
+        /// <summary>
+        /// The types
+        /// </summary>
         public static Type[] Types = new Type[]
         {
             typeof(DummyClass),
@@ -18,6 +24,9 @@ namespace Mecha.Core.Generator.DefaultGenerators.Utils
             typeof(TimeSpan)
         };
 
+        /// <summary>
+        /// Dummy class
+        /// </summary>
         public class DummyClass
         {
         }

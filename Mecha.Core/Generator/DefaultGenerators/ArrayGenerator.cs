@@ -1,21 +1,5 @@
-﻿/*
-Copyright 2021 James Craig
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
+﻿using Fast.Activator;
 using Mecha.Core.Generator.Interfaces;
-using NSubstitute;
 using System;
 using System.Linq;
 using System.Reflection;
@@ -23,16 +7,31 @@ using System.Reflection;
 namespace Mecha.Core.Generator.DefaultGenerators
 {
     /// <summary>
-    /// Interface generator
+    /// Array generator
     /// </summary>
     /// <seealso cref="IGenerator"/>
-    public class InterfaceGenerator : IGenerator
+    public class ArrayGenerator : IGenerator
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ArrayGenerator"/> class.
+        /// </summary>
+        /// <param name="random">The random.</param>
+        public ArrayGenerator(Mirage.Random random)
+        {
+            Random = random;
+        }
+
         /// <summary>
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order => int.MinValue;
+        public int Order { get; }
+
+        /// <summary>
+        /// Gets the random.
+        /// </summary>
+        /// <value>The random.</value>
+        private Mirage.Random Random { get; }
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.
@@ -43,9 +42,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo? parameter)
         {
-            return parameter?.HasDefaultValue == false
-                && (parameter.ParameterType.IsInterface
-                    || (parameter.ParameterType.IsAbstract && parameter.ParameterType.GetConstructors().Any(x => x.GetParameters().Length == 0)));
+            return parameter?.HasDefaultValue == false && parameter.ParameterType.IsArray;
         }
 
         /// <summary>
@@ -59,7 +56,18 @@ namespace Mecha.Core.Generator.DefaultGenerators
         {
             if (parameter is null || !CanGenerate(parameter))
                 return null;
-            return Substitute.For(new Type[] { parameter.ParameterType }, Array.Empty<object?>());
+            var Amount = Random.Next(0, 100);
+            var ElementType = parameter.ParameterType.GetElementType();
+            var ArrayInstance = (Array)FastActivator.CreateInstance(parameter.ParameterType, new object[] { Amount });
+            if (!ElementType.GetConstructors().Any(x => x.GetParameters().Length == 0))
+                return ArrayInstance;
+            int Index = 0;
+            foreach (var Item in Random.Next(ElementType, Amount))
+            {
+                ArrayInstance.SetValue(Item, Index);
+                ++Index;
+            }
+            return ArrayInstance;
         }
     }
 }
