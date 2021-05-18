@@ -47,9 +47,7 @@ namespace Mecha.Core.Runner.BaseClasses
         {
             if (runMethod is null)
                 return new Result { Output = "Method not specified", Passed = false, Exception = new ArgumentNullException(nameof(runMethod)) };
-            options ??= Options.Default;
-            if (options.MaxDuration == 0)
-                options.MaxDuration = 1;
+            options = options.Initialize();
             Init();
             StartRun(runMethod, target, options);
             var Count = options.GenerationCount;

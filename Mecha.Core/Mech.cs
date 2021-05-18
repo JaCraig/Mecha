@@ -264,22 +264,8 @@ namespace Mecha.Core
         /// <param name="options">The options.</param>
         public static async Task BreakAsync(MethodInfo method, object? target, Options? options = null)
         {
-            if (Default is null || method is null || !(method.GetCustomAttribute<DoNotBreakAttribute>() is null))
+            if (Default is null)
                 return;
-            if (method.IsGenericMethodDefinition)
-            {
-                var Args = method.GetGenericArguments();
-                var ResultingItems = new Type[Args.Length];
-                for (var x = 0; x < ResultingItems.Length; ++x)
-                {
-                    var Type = Array.Find(BasicTypesLookup.Types, y => Args[x].BaseType.IsAssignableFrom(y));
-                    if (Type is null)
-                        return;
-                    ResultingItems[x] = Type;
-                }
-                method = method.MakeGenericMethod(ResultingItems);
-            }
-            options ??= Options.Default;
             var Result = await Default.RunAsync(method, target, options).ConfigureAwait(false);
             if (!Result.Passed)
                 throw new MethodBrokenException(Result.Output, Result.Exception);
@@ -319,7 +305,20 @@ namespace Mecha.Core
         /// <returns>The result</returns>
         public Task<Result> RunAsync(MethodInfo runMethod, object? target, Options? options)
         {
-            return TestRunnerManager.RunAsync(runMethod, target, options ?? Options.Default);
+            if (runMethod is null
+                || !(runMethod.GetCustomAttribute<DoNotBreakAttribute>() is null)
+                || (target is null && runMethod.DeclaringType == typeof(object))
+                || (runMethod.DeclaringType == typeof(MarshalByRefObject)))
+            {
+                return Task.FromResult(Result.Skipped);
+            }
+            runMethod = FixMethod(runMethod);
+            if (runMethod is null || runMethod.IsGenericMethodDefinition)
+            {
+                return Task.FromResult(Result.Skipped);
+            }
+
+            return TestRunnerManager.RunAsync(runMethod, target, options.Initialize());
         }
 
         /// <summary>
@@ -333,22 +332,38 @@ namespace Mecha.Core
         {
             if (Default is null)
                 return;
-            options ??= Options.Default;
             var Exceptions = new List<Exception>();
             foreach (var Method in classType.GetMethods())
             {
-                if (!(Method.GetCustomAttribute<DoNotBreakAttribute>() is null))
-                    continue;
-                if (target is null && Method.DeclaringType == typeof(object))
-                    continue;
-                if (Method.DeclaringType == typeof(MarshalByRefObject))
-                    continue;
                 var Result = await Default.RunAsync(Method, target, options).ConfigureAwait(false);
                 if (!(Result.Exception is null))
                     Exceptions.Add(Result.Exception);
             }
             if (Exceptions.Count > 0)
                 throw new AggregateException(Exceptions);
+        }
+
+        /// <summary>
+        /// Fixes the method.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        /// <returns>The fixed method</returns>
+        private static MethodInfo? FixMethod(MethodInfo? method)
+        {
+            if (method is null)
+                return method;
+            if (!method.IsGenericMethodDefinition)
+                return method;
+            var Args = method.GetGenericArguments();
+            var ResultingItems = new Type[Args.Length];
+            for (var x = 0; x < ResultingItems.Length; ++x)
+            {
+                var Type = Array.Find(BasicTypesLookup.Types, y => Args[x].BaseType.IsAssignableFrom(y));
+                if (Type is null)
+                    return method;
+                ResultingItems[x] = Type;
+            }
+            return method.MakeGenericMethod(ResultingItems);
         }
     }
 }

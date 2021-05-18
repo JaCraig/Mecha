@@ -192,7 +192,7 @@ namespace Mecha.Core.Runner
         /// <returns>True if it is shrunk, false otherwise.</returns>
         public bool Shrink(ShrinkerManager? shrinker, List<RunResult> results, Options options)
         {
-            options ??= Options.Default;
+            options = options.Initialize();
             if (ShrinkCount >= options.MaxShrinkCount)
                 return false;
             var Result = false;

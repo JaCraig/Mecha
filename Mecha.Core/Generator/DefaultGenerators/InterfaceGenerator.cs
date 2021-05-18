@@ -17,6 +17,7 @@ limitations under the License.
 using Mecha.Core.Generator.Interfaces;
 using NSubstitute;
 using System;
+using System.Linq;
 using System.Reflection;
 
 namespace Mecha.Core.Generator.DefaultGenerators
@@ -42,9 +43,9 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo parameter)
         {
-            if (parameter is null)
-                return false;
-            return !parameter.HasDefaultValue && (parameter.ParameterType.IsInterface || parameter.ParameterType.IsAbstract);
+            return parameter?.HasDefaultValue == false
+                && (parameter.ParameterType.IsInterface
+                    || (parameter.ParameterType.IsAbstract && parameter.ParameterType.GetConstructors().Any(x => x.GetParameters().Length == 0)));
         }
 
         /// <summary>

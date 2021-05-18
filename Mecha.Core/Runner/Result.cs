@@ -8,6 +8,16 @@ namespace Mecha.Core.Runner
     public class Result
     {
         /// <summary>
+        /// Gets the skipped.
+        /// </summary>
+        /// <value>The skipped.</value>
+        public static Result Skipped => new Result
+        {
+            Passed = true,
+            Output = "Skipped"
+        };
+
+        /// <summary>
         /// Gets or sets the exception.
         /// </summary>
         /// <value>The exception.</value>
