@@ -9,6 +9,7 @@ using Mecha.Core.Shrinker;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
@@ -322,6 +323,67 @@ namespace Mecha.Core
         }
 
         /// <summary>
+        /// Attempts to find the type using basic lookup.
+        /// </summary>
+        /// <param name="Args">The arguments.</param>
+        /// <returns>The type.</returns>
+        private static Type AttemptToFindBasic(Type Args)
+        {
+            return Array.Find(BasicTypesLookup.Types, y => Args.BaseType.IsAssignableFrom(y) && Args.GetInterfaces().All(z => z.IsAssignableFrom(y)));
+        }
+
+        /// <summary>
+        /// Attempts to resolve the type.
+        /// </summary>
+        /// <param name="Arg">The argument.</param>
+        /// <param name="Type">The type.</param>
+        /// <returns>The type</returns>
+        private static Type? AttemptToResolveType(Type Arg, Type? Type)
+        {
+            if (!(Type is null))
+                return Type;
+            try
+            {
+                return Canister.Builder.Bootstrapper.Resolve(Arg.BaseType, null)?.GetType() ?? Type;
+            }
+            catch
+            {
+                foreach (var Interface in Arg.GetInterfaces())
+                {
+                    try
+                    {
+                        return Canister.Builder.Bootstrapper.Resolve(Interface, null)?.GetType() ?? Type;
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+
+            return Type;
+        }
+
+        /// <summary>
+        /// Attempts to create via substitute.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
+        /// <param name="type">The type.</param>
+        /// <returns>The types</returns>
+        private static Type? AttemptToSubstitute(Type args, Type? type)
+        {
+            if (!(type is null))
+                return type;
+            var FinalTypes = new List<Type> { args.BaseType };
+            FinalTypes.AddRange(args.GetInterfaces());
+            try
+            {
+                return NSubstitute.Substitute.For(FinalTypes.ToArray(), Array.Empty<object>())?.GetType() ?? type;
+            }
+            catch { }
+            return type;
+        }
+
+        /// <summary>
         /// Breaks the asynchronous.
         /// </summary>
         /// <param name="target">The target.</param>
@@ -358,7 +420,9 @@ namespace Mecha.Core
             var ResultingItems = new Type[Args.Length];
             for (var x = 0; x < ResultingItems.Length; ++x)
             {
-                var Type = Array.Find(BasicTypesLookup.Types, y => Args[x].BaseType.IsAssignableFrom(y));
+                Type? Type = AttemptToFindBasic(Args[x]);
+                Type = AttemptToSubstitute(Args[x], Type);
+                Type = AttemptToResolveType(Args[x], Type);
                 if (Type is null)
                     return method;
                 ResultingItems[x] = Type;
