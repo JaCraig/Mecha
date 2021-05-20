@@ -16,7 +16,7 @@ namespace Mecha.Core.Tests.Runner
         /// </summary>
         public ParameterTests()
         {
-            TestObject = new Parameter(TestMethodInfo.GetParameters()[0]);
+            TestObject = new Parameter(TestMethodInfo.GetParameters()[0], 0);
         }
 
         /// <summary>
