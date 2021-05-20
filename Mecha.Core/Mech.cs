@@ -9,6 +9,7 @@ using Mecha.Core.Shrinker;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -309,7 +310,8 @@ namespace Mecha.Core
             if (runMethod is null
                 || !(runMethod.GetCustomAttribute<DoNotBreakAttribute>() is null)
                 || (target is null && runMethod.DeclaringType == typeof(object))
-                || (runMethod.DeclaringType == typeof(MarshalByRefObject)))
+                || (runMethod.DeclaringType == typeof(MarshalByRefObject))
+                || (runMethod.DeclaringType == typeof(DynamicObject)))
             {
                 return Task.FromResult(Result.Skipped);
             }
