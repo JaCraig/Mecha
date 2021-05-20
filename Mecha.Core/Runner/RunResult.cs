@@ -128,7 +128,7 @@ namespace Mecha.Core.Runner
         /// Runs the specified timer.
         /// </summary>
         /// <param name="timer">The timer.</param>
-        public async Task<bool> RunAsync(Stopwatch timer)
+        public async Task<bool> RunAsync(Stopwatch timer, Options options)
         {
             if (Method.ContainsGenericParameters || timer is null)
                 return false;
@@ -143,16 +143,7 @@ namespace Mecha.Core.Runner
             }
             catch (Exception e)
             {
-                Result = false;
-                if (e is ArgumentException argument2)
-                {
-                    var Temp = argument2.ToString();
-                    Result = IgnoreException(argument2);
-                }
-                else if (e.InnerException is ArgumentException argument)
-                {
-                    Result = IgnoreException(argument);
-                }
+                Result = options.ExceptionHandlers?.CanIgnore(e, Method) ?? false;
                 if (!Result)
                 {
                     Exception = e.InnerException ?? e;
@@ -226,33 +217,6 @@ namespace Mecha.Core.Runner
         }
 
         /// <summary>
-        /// Are the methods equal.
-        /// </summary>
-        /// <param name="left">The left.</param>
-        /// <param name="right">The right.</param>
-        /// <returns>True if they are, false otherwise.</returns>
-        private static bool AreMethodsEqual(MethodBase left, MethodBase right)
-        {
-            if (left is null && right is null)
-                return true;
-            if (left is null || right is null)
-                return false;
-            if (left.Equals(right))
-                return true;
-            try
-            {
-                var RightMethod = left.DeclaringType.GetMethod(right.Name, right.GetGenericArguments().Length, right.GetParameters().Select(p => p.ParameterType).ToArray());
-                if (RightMethod is null)
-                    return false;
-                return left.Equals(RightMethod);
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
         /// Gets the value.
         /// </summary>
         /// <param name="value">The value.</param>
@@ -298,22 +262,6 @@ namespace Mecha.Core.Runner
         private static string GetValue(Parameter value)
         {
             return value.ParameterInfo.Name + ": " + GetValue(value.Value);
-        }
-
-        /// <summary>
-        /// Parses the exception.
-        /// </summary>
-        /// <param name="argument">The argument.</param>
-        /// <returns>True if it the exception can be ignored, false otherwise.</returns>
-        private bool IgnoreException(ArgumentException argument)
-        {
-            var GenericMethod = Method.IsGenericMethod ? Method.GetGenericMethodDefinition() : Method;
-            var ParameterInList = Parameters.Length == 0 || Parameters.Any(x => x.ParameterInfo.Name == argument.ParamName);
-            if (typeof(Task).IsAssignableFrom(GenericMethod.ReturnType))
-            {
-                return true;
-            }
-            return AreMethodsEqual(GenericMethod, argument.TargetSite) && ParameterInList;
         }
     }
 }

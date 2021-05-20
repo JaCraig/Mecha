@@ -43,7 +43,16 @@ namespace Mecha.Core.Tests.Runner
         [Fact]
         public async Task RunAsync()
         {
-            Assert.True(await TestObject.RunAsync(new System.Diagnostics.Stopwatch()).ConfigureAwait(false));
+            Assert.True(await TestObject.RunAsync(new System.Diagnostics.Stopwatch(), Options.Default).ConfigureAwait(false));
+        }
+
+        /// <summary>
+        /// Runs the with ignored exception asynchronous.
+        /// </summary>
+        [Fact]
+        public async Task RunWithIgnoredExceptionAsync()
+        {
+            Assert.True(await new RunResult(TestMethodWithExceptionInfo, this).RunAsync(new System.Diagnostics.Stopwatch(), Options.Default).ConfigureAwait(false));
         }
 
         /// <summary>

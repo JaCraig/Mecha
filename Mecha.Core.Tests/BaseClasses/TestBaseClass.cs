@@ -54,6 +54,7 @@ namespace Mecha.Core.Tests.BaseClasses
         {
             _ = Mech.Default;
             TestMethodInfo = Array.Find(GetType().GetMethods(), x => x.Name == "TestMethod");
+            TestMethodWithExceptionInfo = Array.Find(GetType().GetMethods(), x => x.Name == "TestMethodWithException");
         }
 
         /// <summary>
@@ -67,6 +68,12 @@ namespace Mecha.Core.Tests.BaseClasses
         /// </summary>
         /// <value>The test method information.</value>
         protected MethodInfo? TestMethodInfo { get; }
+
+        /// <summary>
+        /// Gets the test method with exception information.
+        /// </summary>
+        /// <value>The test method with exception information.</value>
+        protected MethodInfo? TestMethodWithExceptionInfo { get; }
 
         /// <summary>
         /// Attempts to break the object.
@@ -85,6 +92,16 @@ namespace Mecha.Core.Tests.BaseClasses
         /// <param name="val2">The val2.</param>
         public void TestMethod(int val1, int val2)
         {
+        }
+
+        /// <summary>
+        /// Tests the method with exception.
+        /// </summary>
+        /// <param name="val1">The val1.</param>
+        /// <exception cref="ArgumentException">val1</exception>
+        public void TestMethodWithException(int val1)
+        {
+            throw new ArgumentOutOfRangeException(nameof(val1));
         }
     }
 }

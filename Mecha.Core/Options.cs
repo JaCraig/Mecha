@@ -1,4 +1,6 @@
-﻿namespace Mecha.Core
+﻿using System;
+
+namespace Mecha.Core
 {
     /// <summary>
     /// Options extensions
@@ -21,6 +23,7 @@
                 options.MaxDuration = TempDefault.MaxDuration;
             if (options.MaxShrinkCount == 0)
                 options.MaxShrinkCount = TempDefault.MaxShrinkCount;
+            options.ExceptionHandlers ??= TempDefault.ExceptionHandlers;
             return options;
         }
     }
@@ -39,8 +42,15 @@
             GenerationCount = 10,
             MaxDuration = 1000,
             Verbose = true,
-            MaxShrinkCount = 10
+            MaxShrinkCount = 10,
+            ExceptionHandlers = new ExceptionHandler().IgnoreException<NotImplementedException>().IgnoreException<ArgumentException>()
         };
+
+        /// <summary>
+        /// Gets or sets the exceptions to ignore.
+        /// </summary>
+        /// <value>The exceptions to ignore.</value>
+        public ExceptionHandler? ExceptionHandlers { get; set; }
 
         /// <summary>
         /// Gets the number of generated items to create.

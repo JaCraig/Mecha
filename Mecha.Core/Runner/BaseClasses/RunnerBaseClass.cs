@@ -85,7 +85,7 @@ namespace Mecha.Core.Runner.BaseClasses
                 {
                     if (Finished)
                         break;
-                    Tasks.Add(Results[x].RunAsync(TempTimer));
+                    Tasks.Add(Results[x].RunAsync(TempTimer, options));
                 }
                 await Task.WhenAll(Tasks).ConfigureAwait(false);
                 InternalTimer.Stop();
@@ -162,7 +162,7 @@ namespace Mecha.Core.Runner.BaseClasses
                 var CopiedRun = CurrentRun.Copy();
                 while (CurrentRun.Shrink(Manager?.Shrinker, FinalRuns, options))
                 {
-                    if (await CurrentRun.RunAsync(TempTimer).ConfigureAwait(false))
+                    if (await CurrentRun.RunAsync(TempTimer, options).ConfigureAwait(false))
                     {
                         break;
                     }
