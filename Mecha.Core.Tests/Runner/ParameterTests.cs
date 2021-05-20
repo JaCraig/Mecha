@@ -29,7 +29,7 @@ namespace Mecha.Core.Tests.Runner
             Assert.NotNull(Result);
             Assert.Equal(TestObject.ParameterInfo, Result.ParameterInfo);
             Assert.Equal(0, Result.ShrinkCount);
-            Assert.Null(Result.Value);
+            Assert.Equal(Result.Value, 0);
         }
 
         [Fact]
