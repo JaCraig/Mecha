@@ -47,6 +47,12 @@ namespace Mecha.Core
         };
 
         /// <summary>
+        /// Gets or sets a value indicating whether [discover inherited methods].
+        /// </summary>
+        /// <value><c>true</c> if [discover inherited methods]; otherwise, <c>false</c>.</value>
+        public bool DiscoverInheritedMethods { get; set; } = true;
+
+        /// <summary>
         /// Gets or sets the exceptions to ignore.
         /// </summary>
         /// <value>The exceptions to ignore.</value>

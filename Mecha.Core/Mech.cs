@@ -307,11 +307,7 @@ namespace Mecha.Core
         /// <returns>The result</returns>
         public Task<Result> RunAsync(MethodInfo? runMethod, object? target, Options? options)
         {
-            if (runMethod is null
-                || !(runMethod.GetCustomAttribute<DoNotBreakAttribute>() is null)
-                || (target is null && runMethod.DeclaringType == typeof(object))
-                || (runMethod.DeclaringType == typeof(MarshalByRefObject))
-                || (runMethod.DeclaringType == typeof(DynamicObject)))
+            if (SkipMethod(runMethod, target, options))
             {
                 return Task.FromResult(Result.Skipped);
             }
@@ -430,6 +426,23 @@ namespace Mecha.Core
                 ResultingItems[x] = Type;
             }
             return method.MakeGenericMethod(ResultingItems);
+        }
+
+        /// <summary>
+        /// Skips the method.
+        /// </summary>
+        /// <param name="runMethod">The run method.</param>
+        /// <param name="target">The target.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>True if it should be skipped, false otherwise.</returns>
+        private static bool SkipMethod(MethodInfo? runMethod, object? target, Options? options)
+        {
+            return runMethod is null
+                            || !(runMethod.GetCustomAttribute<DoNotBreakAttribute>() is null)
+                            || (target is null && runMethod.DeclaringType == typeof(object))
+                            || (runMethod.DeclaringType == typeof(MarshalByRefObject))
+                            || (runMethod.DeclaringType == typeof(DynamicObject))
+                            || (!(options?.DiscoverInheritedMethods ?? true) && runMethod.DeclaringType != target?.GetType());
         }
     }
 }
