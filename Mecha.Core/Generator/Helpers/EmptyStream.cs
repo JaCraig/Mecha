@@ -243,7 +243,7 @@ namespace Mecha.Core.Generator.Helpers
                 offset = 0;
             if (count < 0)
                 count = 0;
-            if (buffer is null || buffer.Length < offset + count)
+            if (buffer is null || buffer.Length < offset + count || offset > buffer.Length)
                 return 0;
             Array.Fill<byte>(buffer, 0, offset, count);
             return count;
