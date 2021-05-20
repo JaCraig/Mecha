@@ -1,4 +1,5 @@
 ﻿using Mecha.Core.ExtensionMethods;
+using Mecha.Core.Generator.DefaultGenerators;
 using Mecha.Core.Shrinker;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,10 @@ namespace Mecha.Core.Runner
         public Parameter(ParameterInfo parameter, object? value)
         {
             ParameterInfo = parameter;
+            if (!(value is null) && !parameter.ParameterType.IsAssignableFrom(value?.GetType()))
+                value = null;
+            if (value is null)
+                DefaultValueLookup.Values.TryGetValue(parameter.ParameterType.GetHashCode(), out value);
             Value = value;
         }
 

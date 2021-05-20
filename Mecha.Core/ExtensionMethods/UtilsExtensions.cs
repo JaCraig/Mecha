@@ -1,40 +1,10 @@
-﻿using System.Linq;
-using System.Reflection;
-
-namespace Mecha.Core.ExtensionMethods
+﻿namespace Mecha.Core.ExtensionMethods
 {
     /// <summary>
     /// Utils extensions
     /// </summary>
     public static class UtilsExtensions
     {
-        /// <summary>
-        /// Are the methods equal.
-        /// </summary>
-        /// <param name="left">The left.</param>
-        /// <param name="right">The right.</param>
-        /// <returns>True if they are, false otherwise.</returns>
-        public static bool AreMethodsEqual(this MethodBase left, MethodBase right)
-        {
-            if (left is null && right is null)
-                return true;
-            if (left is null || right is null)
-                return false;
-            if (left.Equals(right))
-                return true;
-            try
-            {
-                var RightMethod = left.DeclaringType.GetMethod(right.Name, right.GetGenericArguments().Length, right.GetParameters().Select(p => p.ParameterType).ToArray());
-                if (RightMethod is null)
-                    return false;
-                return left.Equals(RightMethod);
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         /// <summary>
         /// Determines whether the specified value is infinite.
         /// </summary>
