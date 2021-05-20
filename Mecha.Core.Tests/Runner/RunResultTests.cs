@@ -17,7 +17,7 @@ namespace Mecha.Core.Tests.Runner
         /// </summary>
         public RunResultTests()
         {
-            TestObject = new RunResult(TestMethodInfo, this);
+            TestObject = new RunResult(TestMethodInfo, this, new object[] { 0, 0 });
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Mecha.Core.Tests.Runner
         [Fact]
         public async Task RunWithIgnoredExceptionAsync()
         {
-            Assert.True(await new RunResult(TestMethodWithExceptionInfo, this).RunAsync(new System.Diagnostics.Stopwatch(), Options.Default).ConfigureAwait(false));
+            Assert.True(await new RunResult(TestMethodWithExceptionInfo, this, new object[] { 0 }).RunAsync(new System.Diagnostics.Stopwatch(), Options.Default).ConfigureAwait(false));
         }
 
         /// <summary>

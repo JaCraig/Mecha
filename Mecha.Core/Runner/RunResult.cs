@@ -20,18 +20,6 @@ namespace Mecha.Core.Runner
         /// </summary>
         /// <param name="method">The method.</param>
         /// <param name="target">The target.</param>
-        public RunResult(MethodInfo method, object? target)
-        {
-            Method = method;
-            Target = target;
-            Parameters = method.GetParameters().ToArray(x => new Parameter(x));
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RunResult"/> class.
-        /// </summary>
-        /// <param name="method">The method.</param>
-        /// <param name="target">The target.</param>
         /// <param name="parameterValues">The parameter values.</param>
         public RunResult(MethodInfo method, object? target, object?[] parameterValues)
         {
