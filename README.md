@@ -16,9 +16,17 @@ Seriously, that's it. With that Mecha searches for any public methods and proper
 
 Ok, so it breaks my method and does what? Mecha uses a concept borrowed from property testing known as shrinking. For instance you generate a list of 100 items for the method and it breaks. Mecha then removes some of the values and sees if it continues to break. It then continues to do this until it finds a list as small as possible that still breaks.
 
-# Supported Types
+# Supported Types and Object Generation
 
 Mostly everything. It will generate inputs for all value types, enums, and even complete classes. It will give your methods FileStreams, HttpClients, Streams, etc. that throw exceptions themselves to see if your code can handle edge cases. Stubs/substitutes are automatically generated and fed through depending on the parameters of your method. It checks bounds, null, etc. as well. On top of that it takes into account any ValidationAttributes that it finds. So if you specify a range for a parameter, it will keep the values inside that range.
+
+# Non Ninja Mutants
+
+On a successful run where no exception is thrown the input values are potentially mutated in ways that are known to cause issues. For instance adding \0 in the middle of a string, etc. These are then run through the system to see if they can break the code. If they do, they're added to the set of results. If not, we mutate again and rerun up until the max number of mutations that you set in the options.
+
+# Shrinking All the Things
+
+On a run where an exception is thrown, the input values are "shrunk". This involves taking a value and making it smaller in some way. For instance if a list of 100 values throws an exception, the system will remove 20 of them and try again. If it throws an exception, we shrink it again and again until it passes or we hit the max number of shrinks set in the options.
 
 # Getting Started
 
@@ -64,3 +72,7 @@ There are variations of the above method depending on your needs. Also note that
 4. Can I create my own data shrinker?
 
     A. Yes by implementing the Mecha.Core.Shrinker.Interfaces.IShrinker interface. The system should automatically pick them up and use them.
+
+5. Can I create my own data mutator?
+
+    A. Yes by implementing the Mecha.Core.Mutator.Interfaces.IMutator interface. The system should automatically pick them up and use them.
