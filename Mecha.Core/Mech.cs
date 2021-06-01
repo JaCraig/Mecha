@@ -4,6 +4,7 @@ using Mecha.Core.Datasources;
 using Mecha.Core.Exceptions;
 using Mecha.Core.Generator;
 using Mecha.Core.Generator.DefaultGenerators.Utils;
+using Mecha.Core.Mutator;
 using Mecha.Core.Runner;
 using Mecha.Core.Shrinker;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,13 +30,15 @@ namespace Mecha.Core
         /// <param name="testRunnerManager">The test runner manager.</param>
         /// <param name="random">The random.</param>
         /// <param name="shrinker">The shrinker.</param>
-        public Mech(GeneratorManager generatorManager, DataManager dataManager, TestRunnerManager testRunnerManager, Mirage.Random random, ShrinkerManager shrinker)
+        /// <param name="mutator">The mutator.</param>
+        public Mech(GeneratorManager generatorManager, DataManager dataManager, TestRunnerManager testRunnerManager, Mirage.Random random, ShrinkerManager shrinker, MutatorManager mutator)
         {
             DataManager = dataManager;
             GeneratorManager = generatorManager;
             TestRunnerManager = testRunnerManager;
             Random = random;
             Shrinker = shrinker;
+            Mutator = mutator;
         }
 
         /// <summary>
@@ -83,6 +86,12 @@ namespace Mecha.Core
         /// </summary>
         /// <value>The generator manager.</value>
         public GeneratorManager GeneratorManager { get; }
+
+        /// <summary>
+        /// Gets the mutator.
+        /// </summary>
+        /// <value>The mutator.</value>
+        public MutatorManager? Mutator { get; }
 
         /// <summary>
         /// Gets the random.

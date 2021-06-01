@@ -1,6 +1,8 @@
-﻿using Mecha.Core.Runner;
+﻿using Mecha.Core.Mutator.Defaults;
+using Mecha.Core.Runner;
 using Mecha.Core.Shrinker.Defaults;
 using Mecha.Core.Tests.BaseClasses;
+using Mirage;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -35,6 +37,15 @@ namespace Mecha.Core.Tests.Runner
             Assert.Equal(TestObject.ReturnedValue, Result.ReturnedValue);
             Assert.Equal(TestObject.ShrinkCount, Result.ShrinkCount);
             Assert.Equal(TestObject.Target, Result.Target);
+        }
+
+        /// <summary>
+        /// Shrinks this instance.
+        /// </summary>
+        [Fact]
+        public void Mutate()
+        {
+            Assert.False(TestObject.Mutate(new Core.Mutator.MutatorManager(new[] { new StringMutator(Canister.Builder.Bootstrapper.Resolve<Random>()) }), new System.Collections.Generic.List<RunResult>(), Options.Default));
         }
 
         /// <summary>

@@ -90,7 +90,7 @@ namespace Mecha.Core.Runner.BaseClasses
                 await Task.WhenAll(Tasks).ConfigureAwait(false);
                 InternalTimer.Stop();
             }
-
+            Results = await MutateAsync(Results, options).ConfigureAwait(false);
             Results = await ShrinkAsync(Results, options).ConfigureAwait(false);
             Manager?.DataManager.Clear(runMethod);
             foreach (var Result in Results.Where(x => !(x.Exception is null)))
@@ -119,6 +119,37 @@ namespace Mecha.Core.Runner.BaseClasses
         protected ParameterValues[] GenerateArguments(MethodInfo methodInfo, Options options)
         {
             return Manager?.GeneratorManager.GenerateParameterValues(methodInfo.GetParameters(), options) ?? Array.Empty<ParameterValues>();
+        }
+
+        /// <summary>
+        /// Attempts to mutate the successful runs asynchronously.
+        /// </summary>
+        /// <param name="runs">The runs.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>The resulting runs.</returns>
+        protected async Task<List<RunResult>> MutateAsync(List<RunResult> runs, Options options)
+        {
+            var SuccessfulRuns = runs.Where(x => x.Exception is null).ToList();
+            var TempTimer = new Stopwatch();
+            for (var x = 0; x < SuccessfulRuns.Count; ++x)
+            {
+                var CurrentRun = SuccessfulRuns[x];
+                if (CurrentRun is null)
+                    continue;
+                var CopiedRun = CurrentRun.Copy();
+                while (CopiedRun.Mutate(Manager?.Mutator, runs, options))
+                {
+                    if (!await CopiedRun.RunAsync(TempTimer, options).ConfigureAwait(false))
+                    {
+                        break;
+                    }
+                    CopiedRun = CopiedRun.Copy();
+                }
+                if (!(CopiedRun.Exception is null))
+                    runs.Add(CopiedRun);
+            }
+            ShrinkRunsReported(runs);
+            return runs;
         }
 
         /// <summary>
@@ -170,14 +201,7 @@ namespace Mecha.Core.Runner.BaseClasses
                 }
                 FinalRuns.Add(CopiedRun);
             }
-            for (var x = 0; x < FinalRuns.Count; ++x)
-            {
-                var Runs = FinalRuns.FindAll(y => FinalRuns[x].Same(y));
-                for (var y = 1; y < Runs.Count; ++y)
-                {
-                    FinalRuns.Remove(Runs[y]);
-                }
-            }
+            ShrinkRunsReported(FinalRuns);
             return FinalRuns;
         }
 
@@ -188,6 +212,18 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         protected abstract void StartRun(MethodInfo runMethod, object? target, Options options);
+
+        private static void ShrinkRunsReported(List<RunResult> FinalRuns)
+        {
+            for (var x = 0; x < FinalRuns.Count; ++x)
+            {
+                var Runs = FinalRuns.FindAll(y => FinalRuns[x].Same(y));
+                for (var y = 1; y < Runs.Count; ++y)
+                {
+                    FinalRuns.Remove(Runs[y]);
+                }
+            }
+        }
 
         /// <summary>
         /// Initializes this instance.

@@ -1,5 +1,6 @@
 ﻿using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Generator.DefaultGenerators;
+using Mecha.Core.Mutator;
 using Mecha.Core.Shrinker;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,10 +44,17 @@ namespace Mecha.Core.Runner
         /// <param name="parameter">The parameter.</param>
         /// <param name="value">The value.</param>
         /// <param name="shrinkCount">The shrink count.</param>
-        public Parameter(ParameterInfo parameter, object? value, int shrinkCount) : this(parameter, value)
+        public Parameter(ParameterInfo parameter, object? value, int shrinkCount, int mutationCount) : this(parameter, value)
         {
             ShrinkCount = shrinkCount;
+            MutationCount = mutationCount;
         }
+
+        /// <summary>
+        /// Gets the mutate count.
+        /// </summary>
+        /// <value>The mutate count.</value>
+        public int MutationCount { get; private set; }
 
         /// <summary>
         /// Gets or sets the name.
@@ -72,7 +80,28 @@ namespace Mecha.Core.Runner
         /// <returns></returns>
         public Parameter Copy()
         {
-            return new Parameter(ParameterInfo, Value, ShrinkCount);
+            return new Parameter(ParameterInfo, Value, ShrinkCount, MutationCount);
+        }
+
+        /// <summary>
+        /// Mutates the parameter.
+        /// </summary>
+        /// <param name="mutator">The mutator.</param>
+        /// <param name="results">The results.</param>
+        /// <returns>True if it is mutated, false otherwise.</returns>
+        public bool Mutate(MutatorManager? mutator, List<RunResult> results)
+        {
+            if (mutator is null)
+                return false;
+            if (results.Any(x => x.Parameters.Any(y => Same(y, this))))
+                return false;
+
+            var FinalValue = mutator.Mutate(Value);
+            if (Same(FinalValue, Value))
+                return false;
+            Value = FinalValue;
+            ++MutationCount;
+            return true;
         }
 
         /// <summary>

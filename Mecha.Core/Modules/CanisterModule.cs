@@ -19,6 +19,8 @@ using Mecha.Core.Datasources;
 using Mecha.Core.Datasources.Interfaces;
 using Mecha.Core.Generator;
 using Mecha.Core.Generator.Interfaces;
+using Mecha.Core.Mutator;
+using Mecha.Core.Mutator.Interfaces;
 using Mecha.Core.Runner;
 using Mecha.Core.Runner.Interfaces;
 using Mecha.Core.Shrinker;
@@ -53,7 +55,9 @@ namespace Mecha.Core.Modules
                          .Register<TestRunnerManager>(ServiceLifetime.Singleton)
                          .RegisterAll<IRunner>(ServiceLifetime.Singleton)
                          .RegisterAll<IShrinker>(ServiceLifetime.Singleton)
-                         .Register<ShrinkerManager>(ServiceLifetime.Singleton);
+                         .Register<ShrinkerManager>(ServiceLifetime.Singleton)
+                         .RegisterAll<IMutator>(ServiceLifetime.Singleton)
+                         .Register<MutatorManager>(ServiceLifetime.Singleton);
         }
     }
 }

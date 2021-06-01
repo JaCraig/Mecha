@@ -1,4 +1,5 @@
 ﻿using BigBook;
+using Mecha.Core.Mutator;
 using Mecha.Core.Shrinker;
 using System;
 using System.Collections;
@@ -40,6 +41,7 @@ namespace Mecha.Core.Runner
         /// <param name="target">The target.</param>
         /// <param name="parameters">The parameters.</param>
         /// <param name="shrinkCount">The shrink count.</param>
+        /// <param name="mutationCount">The mutation count.</param>
         /// <param name="returnedValue">The returned value.</param>
         /// <param name="exception">The exception.</param>
         /// <param name="elapsedTime">The elapsed time.</param>
@@ -48,6 +50,7 @@ namespace Mecha.Core.Runner
             object? target,
             Parameter[] parameters,
             int shrinkCount,
+            int mutationCount,
             object? returnedValue,
             Exception? exception,
             decimal elapsedTime)
@@ -56,6 +59,7 @@ namespace Mecha.Core.Runner
             Target = target;
             Parameters = parameters.ToArray(x => x.Copy());
             ShrinkCount = shrinkCount;
+            MutationCount = mutationCount;
             ReturnedValue = returnedValue;
             Exception = exception;
             ElapsedTime = elapsedTime;
@@ -78,6 +82,12 @@ namespace Mecha.Core.Runner
         /// </summary>
         /// <value>The method.</value>
         public MethodInfo Method { get; }
+
+        /// <summary>
+        /// Gets the mutation count.
+        /// </summary>
+        /// <value>The mutation count.</value>
+        public int MutationCount { get; private set; }
 
         /// <summary>
         /// Gets or sets the parameters used.
@@ -109,13 +119,37 @@ namespace Mecha.Core.Runner
         /// <returns>The copy.</returns>
         public RunResult Copy()
         {
-            return new RunResult(Method, Target, Parameters, ShrinkCount, ReturnedValue, Exception, ElapsedTime);
+            return new RunResult(Method, Target, Parameters, ShrinkCount, MutationCount, ReturnedValue, Exception, ElapsedTime);
+        }
+
+        /// <summary>
+        /// Mutates the specified mutator.
+        /// </summary>
+        /// <param name="mutator">The mutator.</param>
+        /// <param name="results">The results.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>True if it is mutated, false otherwise.</returns>
+        public bool Mutate(MutatorManager? mutator, List<RunResult> results, Options options)
+        {
+            options = options.Initialize();
+            if (MutationCount >= options.MaxMutationCount || !(Exception is null))
+                return false;
+            var Result = false;
+            foreach (var Parameter in Parameters)
+            {
+                Result |= Parameter.Mutate(mutator, results);
+            }
+            if (Result)
+                ++MutationCount;
+            return Result;
         }
 
         /// <summary>
         /// Runs the specified timer.
         /// </summary>
         /// <param name="timer">The timer.</param>
+        /// <param name="options">The options.</param>
+        /// <returns>True if it runs successfully, false otherwise.</returns>
         public async Task<bool> RunAsync(Stopwatch timer, Options options)
         {
             if (Method.ContainsGenericParameters || timer is null)
@@ -169,7 +203,7 @@ namespace Mecha.Core.Runner
         public bool Shrink(ShrinkerManager? shrinker, List<RunResult> results, Options options)
         {
             options = options.Initialize();
-            if (ShrinkCount >= options.MaxShrinkCount)
+            if (ShrinkCount >= options.MaxShrinkCount || Exception is null)
                 return false;
             var Result = false;
             foreach (var Parameter in Parameters)

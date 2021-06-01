@@ -23,6 +23,8 @@ namespace Mecha.Core
                 options.MaxDuration = TempDefault.MaxDuration;
             if (options.MaxShrinkCount == 0)
                 options.MaxShrinkCount = TempDefault.MaxShrinkCount;
+            if (options.MaxMutationCount == 0)
+                options.MaxMutationCount = TempDefault.MaxMutationCount;
             options.ExceptionHandlers ??= TempDefault.ExceptionHandlers;
             return options;
         }
@@ -43,6 +45,7 @@ namespace Mecha.Core
             MaxDuration = 1000,
             Verbose = true,
             MaxShrinkCount = 10,
+            MaxMutationCount = 10,
             ExceptionHandlers = new ExceptionHandler().IgnoreException<NotImplementedException>().IgnoreException<ArgumentException>()
         };
 
@@ -69,6 +72,12 @@ namespace Mecha.Core
         /// </summary>
         /// <value>The max duration to run the tests for.</value>
         public int MaxDuration { get; set; }
+
+        /// <summary>
+        /// Gets or sets the maximum mutation count.
+        /// </summary>
+        /// <value>The maximum mutation count.</value>
+        public int MaxMutationCount { get; set; }
 
         /// <summary>
         /// Gets or sets the maximum shrink count.
