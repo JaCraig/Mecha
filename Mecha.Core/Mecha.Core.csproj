@@ -40,7 +40,7 @@
     <PackageReference Include="FileCurator" Version="3.1.29" />
     <PackageReference Include="Mirage" Version="3.0.8" />
     <PackageReference Include="NSubstitute" Version="4.2.2" />
-    <PackageReference Include="SecurityCodeScan.VS2019" Version="5.1.0">
+    <PackageReference Include="SecurityCodeScan.VS2019" Version="5.2.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
