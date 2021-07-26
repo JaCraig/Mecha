@@ -351,7 +351,7 @@ namespace Mecha.Core
                 return Type;
             try
             {
-                return Canister.Builder.Bootstrapper.Resolve(Arg.BaseType, null)?.GetType() ?? Type;
+                return Canister.Builder.Bootstrapper?.Resolve(Arg.BaseType, null!)?.GetType() ?? Type;
             }
             catch
             {
@@ -359,7 +359,7 @@ namespace Mecha.Core
                 {
                     try
                     {
-                        return Canister.Builder.Bootstrapper.Resolve(Interface, null)?.GetType() ?? Type;
+                        return Canister.Builder.Bootstrapper?.Resolve(Interface, null!)?.GetType() ?? Type;
                     }
                     catch
                     {

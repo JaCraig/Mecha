@@ -1,6 +1,11 @@
-﻿using Mecha.Core.Shrinker.Defaults;
+﻿using BigBook;
+using Mecha.Core.Shrinker.Defaults;
 using Mecha.Core.Tests.BaseClasses;
+using Mecha.xUnit;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using Xunit;
 
 namespace Mecha.Core.Tests.Runner
@@ -28,6 +33,9 @@ namespace Mecha.Core.Tests.Runner
             Assert.True(TestObject.CanShrink(new Dictionary<string, string>()));
         }
 
+        /// <summary>
+        /// Shrinks this instance.
+        /// </summary>
         [Fact]
         public void Shrink()
         {
@@ -35,6 +43,18 @@ namespace Mecha.Core.Tests.Runner
             Assert.Single(Result);
             Assert.True(Result.TryGetValue("B", out var Value));
             Assert.Equal("A", Value);
+        }
+
+        /// <summary>
+        /// Shrinks the large dictionary.
+        /// </summary>
+        /// <param name="length">The length.</param>
+        [Property]
+        public void ShrinkLargeDictionary([Range(100, 500)] int length)
+        {
+            var Original = length.Times(x => new Tuple<int, int>(x, 1)).ToDictionary(x => x.Item1, x => x.Item2);
+            var Result = (Dictionary<int, int>)TestObject.Shrink(Original);
+            Assert.True(Original.Count > Result.Count);
         }
     }
 }

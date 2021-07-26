@@ -20,6 +20,18 @@ namespace Mecha.Core.Tests.Datasources.Defaults
         }
 
         /// <summary>
+        /// Infinites the test.
+        /// </summary>
+        [Fact]
+        public void InfiniteTest()
+        {
+            Assert.Null(TestObject.Deserialize(typeof(double), TestObject.Serialize(typeof(double), double.PositiveInfinity)));
+            Assert.Null(TestObject.Deserialize(typeof(float), TestObject.Serialize(typeof(float), float.PositiveInfinity)));
+            Assert.Null(TestObject.Deserialize(typeof(double), TestObject.Serialize(typeof(double), double.NegativeInfinity)));
+            Assert.Null(TestObject.Deserialize(typeof(float), TestObject.Serialize(typeof(float), float.NegativeInfinity)));
+        }
+
+        /// <summary>
         /// Serializes the and deserialize.
         /// </summary>
         /// <param name="value1">The value1.</param>

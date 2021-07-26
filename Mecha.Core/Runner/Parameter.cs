@@ -44,6 +44,7 @@ namespace Mecha.Core.Runner
         /// <param name="parameter">The parameter.</param>
         /// <param name="value">The value.</param>
         /// <param name="shrinkCount">The shrink count.</param>
+        /// <param name="mutationCount">The mutation count.</param>
         public Parameter(ParameterInfo parameter, object? value, int shrinkCount, int mutationCount) : this(parameter, value)
         {
             ShrinkCount = shrinkCount;

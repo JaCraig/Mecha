@@ -20,6 +20,18 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         }
 
         /// <summary>
+        /// Nullables the range test.
+        /// </summary>
+        /// <param name="min">The minimum.</param>
+        /// <param name="max">The maximum.</param>
+        [Property]
+        public void NullableRangeTest(int? min, int? max)
+        {
+            var Parameters = TestMethodInfo.GetParameters();
+            Assert.NotNull(TestObject.Next(Parameters[0], min, max));
+        }
+
+        /// <summary>
         /// Ranges the test.
         /// </summary>
         /// <param name="min">The minimum.</param>
