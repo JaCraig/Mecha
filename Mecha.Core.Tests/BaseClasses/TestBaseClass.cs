@@ -55,7 +55,23 @@ namespace Mecha.Core.Tests.BaseClasses
             _ = Mech.Default;
             TestMethodInfo = Array.Find(GetType().GetMethods(), x => x.Name == "TestMethod");
             TestMethodWithExceptionInfo = Array.Find(GetType().GetMethods(), x => x.Name == "TestMethodWithException");
+            if (Random is null)
+            {
+                lock (LockObj)
+                {
+                    if (Random is null)
+                    {
+                        Random = Canister.Builder.Bootstrapper?.Resolve<Mirage.Random>();
+                    }
+                }
+            }
         }
+
+        /// <summary>
+        /// Gets the random.
+        /// </summary>
+        /// <value>The random.</value>
+        protected static Mirage.Random? Random { get; set; }
 
         /// <summary>
         /// Gets the type of the object.
@@ -74,6 +90,11 @@ namespace Mecha.Core.Tests.BaseClasses
         /// </summary>
         /// <value>The test method with exception information.</value>
         protected MethodInfo? TestMethodWithExceptionInfo { get; }
+
+        /// <summary>
+        /// The lock object
+        /// </summary>
+        private static object LockObj = new object();
 
         /// <summary>
         /// Attempts to break the object.

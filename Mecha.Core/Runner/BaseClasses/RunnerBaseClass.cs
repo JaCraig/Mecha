@@ -69,7 +69,7 @@ namespace Mecha.Core.Runner.BaseClasses
                     {
                         Arguments[y] = Random.Next(GeneratedParameters[y].GeneratedValues);
                     }
-                    if (!Results.AddIfUnique((val1, val2) => val1.Same(val2), new RunResult(runMethod, target, Arguments)))
+                    if (!Results.AddIfUnique(IsTheSame, new RunResult(runMethod, target, Arguments)))
                         --x;
                 }
                 InternalTimer.Stop();
@@ -213,6 +213,21 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="options">The options.</param>
         protected abstract void StartRun(MethodInfo runMethod, object? target, Options options);
 
+        /// <summary>
+        /// Determines whether [is the same] [the specified val1].
+        /// </summary>
+        /// <param name="val1">The val1.</param>
+        /// <param name="val2">The val2.</param>
+        /// <returns><c>true</c> if [is the same] [the specified val1]; otherwise, <c>false</c>.</returns>
+        private static bool IsTheSame(RunResult val1, RunResult val2)
+        {
+            return val1.Same(val2);
+        }
+
+        /// <summary>
+        /// Shrinks the runs reported.
+        /// </summary>
+        /// <param name="FinalRuns">The final runs.</param>
         private static void ShrinkRunsReported(List<RunResult> FinalRuns)
         {
             for (var x = 0; x < FinalRuns.Count; ++x)

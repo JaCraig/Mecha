@@ -48,9 +48,7 @@ namespace Mecha.Core.Generator
         /// <param name="value">The value.</param>
         public void AddValue(object? value)
         {
-            if (GeneratedValues.Contains(value))
-                return;
-            if (ValidationAttributes.Any(x => !x.IsValid(value)))
+            if (GeneratedValues.Contains(value) || ValidationAttributes.Any(x => !x.IsValid(value)))
                 return;
             GeneratedValues.AddIfUnique(Same, value);
         }

@@ -1,4 +1,5 @@
 ﻿using Mecha.Core.Datasources.Interfaces;
+using Mecha.Core.ExtensionMethods;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -17,7 +18,7 @@ namespace Mecha.Core.Datasources
         /// <param name="serializers">The serializers.</param>
         public DataManager(IEnumerable<IDatasource> datasources, IEnumerable<ISerializer> serializers)
         {
-            var MechaCoreAssembly = typeof(DataManager).Assembly;
+            var MechaCoreAssembly = TypeCache<Mech>.Assembly;
             Datasource = datasources.FirstOrDefault(x => x.GetType().Assembly != MechaCoreAssembly) ?? new DefaultDatasource();
             Serializer = serializers.FirstOrDefault(x => x.GetType().Assembly != MechaCoreAssembly) ?? new DefaultSerializer();
         }

@@ -1,4 +1,5 @@
-﻿using Mecha.Core.Mutator.Interfaces;
+﻿using Mecha.Core.ExtensionMethods;
+using Mecha.Core.Mutator.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,21 +16,17 @@ namespace Mecha.Core.Mutator
         /// <param name="mutators">The mutators.</param>
         public MutatorManager(IEnumerable<IMutator> mutators)
         {
-            CustomMutators = mutators.Where(x => x.GetType().Assembly != typeof(MutatorManager).Assembly).ToList();
-            DefaultMutators = mutators.Where(x => x.GetType().Assembly == typeof(MutatorManager).Assembly).ToList();
+            var MechaCoreAssembly = TypeCache<Mech>.Assembly;
+            var TempMutators = mutators.Where(x => x.GetType().Assembly != MechaCoreAssembly).ToList();
+            TempMutators.AddRange(mutators.Where(x => x.GetType().Assembly == MechaCoreAssembly));
+            Mutators = TempMutators.ToArray();
         }
 
         /// <summary>
         /// Gets the mutators.
         /// </summary>
         /// <value>The mutators.</value>
-        private IEnumerable<IMutator> CustomMutators { get; }
-
-        /// <summary>
-        /// Gets the default mutators.
-        /// </summary>
-        /// <value>The default mutators.</value>
-        private IEnumerable<IMutator> DefaultMutators { get; }
+        private IMutator[] Mutators { get; }
 
         /// <summary>
         /// Mutates the specified value.
@@ -38,15 +35,10 @@ namespace Mecha.Core.Mutator
         /// <returns>The mutated value.</returns>
         public object? Mutate(object? value)
         {
-            foreach (var mutator in CustomMutators)
+            foreach (var Mutator in Mutators)
             {
-                if (mutator.CanMutate(value))
-                    return mutator.Mutate(value);
-            }
-            foreach (var mutator in DefaultMutators)
-            {
-                if (mutator.CanMutate(value))
-                    return mutator.Mutate(value);
+                if (Mutator.CanMutate(value))
+                    return Mutator.Mutate(value);
             }
             return value;
         }

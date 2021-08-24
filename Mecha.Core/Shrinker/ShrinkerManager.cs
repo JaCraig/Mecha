@@ -1,4 +1,5 @@
-﻿using Mecha.Core.Shrinker.Interfaces;
+﻿using Mecha.Core.ExtensionMethods;
+using Mecha.Core.Shrinker.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -15,21 +16,17 @@ namespace Mecha.Core.Shrinker
         /// <param name="shrinkers">The shrinkers.</param>
         public ShrinkerManager(IEnumerable<IShrinker> shrinkers)
         {
-            CustomShrinkers = shrinkers.Where(x => x.GetType().Assembly != typeof(ShrinkerManager).Assembly).ToList();
-            DefaultShrinkers = shrinkers.Where(x => x.GetType().Assembly == typeof(ShrinkerManager).Assembly).ToList();
+            var MechaCoreAssembly = TypeCache<Mech>.Assembly;
+            var TempShrinkers = shrinkers.Where(x => x.GetType().Assembly != MechaCoreAssembly).ToList();
+            TempShrinkers.AddRange(shrinkers.Where(x => x.GetType().Assembly == MechaCoreAssembly));
+            Shrinkers = TempShrinkers.ToArray();
         }
 
         /// <summary>
         /// Gets the shrinkers.
         /// </summary>
         /// <value>The shrinkers.</value>
-        private IEnumerable<IShrinker> CustomShrinkers { get; }
-
-        /// <summary>
-        /// Gets the default shrinkers.
-        /// </summary>
-        /// <value>The default shrinkers.</value>
-        private IEnumerable<IShrinker> DefaultShrinkers { get; }
+        private IShrinker[] Shrinkers { get; }
 
         /// <summary>
         /// Shrinks the specified value.
@@ -38,12 +35,7 @@ namespace Mecha.Core.Shrinker
         /// <returns>The "shrunk" value</returns>
         public object? Shrink(object? value)
         {
-            foreach (var Shrinker in CustomShrinkers)
-            {
-                if (Shrinker.CanShrink(value))
-                    return Shrinker.Shrink(value);
-            }
-            foreach (var Shrinker in DefaultShrinkers)
+            foreach (var Shrinker in Shrinkers)
             {
                 if (Shrinker.CanShrink(value))
                     return Shrinker.Shrink(value);

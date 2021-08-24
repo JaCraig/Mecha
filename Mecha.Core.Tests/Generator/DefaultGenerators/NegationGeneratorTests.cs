@@ -16,7 +16,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// </summary>
         public NegationGeneratorTests()
         {
-            TestObject = new NegationGenerator(Canister.Builder.Bootstrapper.Resolve<Mirage.Random>());
+            TestObject = new NegationGenerator(Random);
         }
 
         /// <summary>

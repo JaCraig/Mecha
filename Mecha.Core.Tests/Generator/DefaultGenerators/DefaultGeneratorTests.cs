@@ -16,7 +16,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// </summary>
         public DefaultGeneratorTests()
         {
-            TestObject = new DefaultGenerator(Canister.Builder.Bootstrapper.Resolve<Mirage.Random>());
+            TestObject = new DefaultGenerator(Random);
         }
 
         /// <summary>

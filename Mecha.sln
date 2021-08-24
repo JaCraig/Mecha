@@ -9,9 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mecha.Core", "Mecha.Core\Me
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5B38BFBD-8534-4CB7-8A51-692796547B4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mecha.Core.Tests", "Mecha.Core.Tests\Mecha.Core.Tests.csproj", "{136CF910-46E0-4C11-8680-EA61E0B438D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mecha.Core.Tests", "Mecha.Core.Tests\Mecha.Core.Tests.csproj", "{136CF910-46E0-4C11-8680-EA61E0B438D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mecha.xUnit", "Mecha.xUnit\Mecha.xUnit.csproj", "{C5608CA8-9E70-40D0-9BEA-078D82A8FDAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mecha.xUnit", "Mecha.xUnit\Mecha.xUnit.csproj", "{C5608CA8-9E70-40D0-9BEA-078D82A8FDAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

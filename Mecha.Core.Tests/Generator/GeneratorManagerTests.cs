@@ -16,7 +16,7 @@ namespace Mecha.Core.Tests.Generator
         /// </summary>
         public GeneratorManagerTests()
         {
-            TestObject = new GeneratorManager(new[] { new DefaultGenerator(Canister.Builder.Bootstrapper.Resolve<Mirage.Random>()) }, Canister.Builder.Bootstrapper.Resolve<Mirage.Random>());
+            TestObject = new GeneratorManager(new[] { new DefaultGenerator(Random) }, Random);
         }
 
         /// <summary>

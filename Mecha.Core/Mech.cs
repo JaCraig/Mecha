@@ -1,5 +1,4 @@
 ﻿using Fast.Activator;
-using FileCurator;
 using Mecha.Core.Datasources;
 using Mecha.Core.Exceptions;
 using Mecha.Core.Generator;
@@ -59,17 +58,17 @@ namespace Mecha.Core
                         {
                             new ServiceCollection().AddCanisterModules();
                         }
+                        for (var x = 0; x < 1000; ++x)
+                        {
+                            try
+                            {
+                                new System.IO.DirectoryInfo("./Mecha").Create();
+                                _Default = Canister.Builder.Bootstrapper?.Resolve<Mech>();
+                                break;
+                            }
+                            catch { }
+                        }
                     }
-                }
-                for (var x = 0; x < 1000; ++x)
-                {
-                    try
-                    {
-                        new DirectoryInfo("./Mecha").Create();
-                        _Default = Canister.Builder.Bootstrapper?.Resolve<Mech>();
-                        break;
-                    }
-                    catch { }
                 }
                 return _Default;
             }

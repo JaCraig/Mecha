@@ -17,7 +17,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// </summary>
         public StreamGeneratorTests()
         {
-            TestObject = new StreamGenerator(Canister.Builder.Bootstrapper.Resolve<Mirage.Random>());
+            TestObject = new StreamGenerator(Random);
         }
 
         /// <summary>

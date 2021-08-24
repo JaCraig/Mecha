@@ -33,10 +33,25 @@ namespace Mecha.Core.Datasources
     public class DefaultDatasource : IDatasource
     {
         /// <summary>
+        /// Initializes a new instance of the <see cref="DefaultDatasource"/> class.
+        /// </summary>
+        public DefaultDatasource()
+        {
+            var Items = new List<char>(System.IO.Path.GetInvalidPathChars());
+            Items.AddRange(new[] { '<', '>' });
+            InvalidChars = Items.ToArray();
+        }
+
+        /// <summary>
         /// Gets the data directory.
         /// </summary>
         /// <value>The data directory.</value>
         private const string DataDirectory = "./Mecha/SavedTests/";
+
+        /// <summary>
+        /// The invalid chars
+        /// </summary>
+        private static char[] InvalidChars = Array.Empty<char>();
 
         /// <summary>
         /// Clears the specified method's param data.
@@ -57,24 +72,25 @@ namespace Mecha.Core.Datasources
         /// <returns>The list of data for the method.</returns>
         public List<object?[]> Read(MethodInfo method, ISerializer serializer)
         {
+            var Results = new List<object?[]>();
             if (method is null)
-                return new List<object?[]>();
+                return Results;
             var Parameters = method.GetParameters();
             if (Parameters.Any(x => x.ParameterType.IsInterface))
-                return new List<object?[]>();
+                return Results;
 
-            var Results = new List<object?[]>();
             var DataDirectoryInfo = GetDirectory(DataDirectory, method);
             if (DataDirectoryInfo is null)
-                return new List<object?[]>();
+                return Results;
             foreach (var Directory in DataDirectoryInfo.EnumerateDirectories())
             {
                 var TempResult = new object?[Parameters.Length];
                 for (int x = 0; x < Parameters.Length; ++x)
                 {
+                    var Parameter = Parameters[x];
                     var Data = new FileInfo($"{Directory.FullName}/{x}.json").Read();
-                    TempResult[x] = serializer.Deserialize(Parameters[x].ParameterType, Data);
-                    if (TempResult[x] is null && DefaultValueLookup.Values.TryGetValue(Parameters[x].ParameterType.GetHashCode(), out var DefaultValue))
+                    TempResult[x] = serializer.Deserialize(Parameter.ParameterType, Data);
+                    if (TempResult[x] is null && DefaultValueLookup.Values.TryGetValue(Parameter.ParameterType.GetHashCode(), out var DefaultValue))
                         TempResult[x] = DefaultValue;
                 }
                 Results.AddIfUnique(Same, TempResult);
@@ -144,19 +160,11 @@ namespace Mecha.Core.Datasources
         {
             if (string.IsNullOrEmpty(directoryName))
                 return directoryName;
-            var InvalidChars = System.IO.Path.GetInvalidPathChars();
             for (int i = 0, maxLength = InvalidChars.Length; i < maxLength; i++)
             {
                 char Char = InvalidChars[i];
                 directoryName = directoryName.Replace(Char, replacementChar);
             }
-            InvalidChars = new char[] { '<', '>' };
-            for (int i = 0, maxLength = InvalidChars.Length; i < maxLength; i++)
-            {
-                char Char = InvalidChars[i];
-                directoryName = directoryName.Replace(Char, replacementChar);
-            }
-
             return directoryName;
         }
 

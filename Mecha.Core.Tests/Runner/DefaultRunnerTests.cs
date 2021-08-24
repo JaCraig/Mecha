@@ -16,7 +16,7 @@ namespace Mecha.Core.Tests.Runner
         /// </summary>
         public DefaultRunnerTests()
         {
-            TestObject = new DefaultRunner(Canister.Builder.Bootstrapper.Resolve<Mirage.Random>());
+            TestObject = new DefaultRunner(Random);
         }
 
         /// <summary>

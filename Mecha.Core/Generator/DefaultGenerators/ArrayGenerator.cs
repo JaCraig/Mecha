@@ -59,7 +59,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
             var Amount = Random.Next(0, 100);
             var ElementType = parameter.ParameterType.GetElementType();
             var ArrayInstance = (Array)FastActivator.CreateInstance(parameter.ParameterType, new object[] { Amount });
-            if (!ElementType.GetConstructors().Any(x => x.GetParameters().Length == 0))
+            if (!ElementType.GetConstructors().Any(IsDefaultConstructor))
                 return ArrayInstance;
             int Index = 0;
             foreach (var Item in Random.Next(ElementType, Amount))
@@ -68,6 +68,18 @@ namespace Mecha.Core.Generator.DefaultGenerators
                 ++Index;
             }
             return ArrayInstance;
+        }
+
+        /// <summary>
+        /// Determines whether [is default constructor] [the specified constructor].
+        /// </summary>
+        /// <param name="constructor">The constructor.</param>
+        /// <returns>
+        /// <c>true</c> if [is default constructor] [the specified constructor]; otherwise, <c>false</c>.
+        /// </returns>
+        private static bool IsDefaultConstructor(ConstructorInfo constructor)
+        {
+            return constructor.GetParameters().Length == 0;
         }
     }
 }

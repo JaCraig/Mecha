@@ -79,8 +79,7 @@ namespace Mecha.Core.Generator
                         continue;
                     var Min = CurrentParameter.GeneratedValues.Count > 0 ? Random.Next(CurrentParameter.GeneratedValues) : null;
                     var Max = CurrentParameter.GeneratedValues.Count > 0 ? Random.Next(CurrentParameter.GeneratedValues) : null;
-                    var Data = Generator.Next(CurrentParameter.Parameter, Min, Max);
-                    CurrentParameter.AddValue(Data);
+                    CurrentParameter.AddValue(Generator.Next(CurrentParameter.Parameter, Min, Max));
                     if (CurrentParameter.GeneratedValues.Count >= options.GenerationCount)
                         break;
                 }
