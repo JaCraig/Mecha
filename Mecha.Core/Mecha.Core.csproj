@@ -38,7 +38,7 @@
     <PackageReference Include="Canister.IoC" Version="4.0.6" />
     <PackageReference Include="Fast.Activator" Version="1.0.17" />
     <PackageReference Include="FileCurator" Version="3.1.40" />
-    <PackageReference Include="Mirage" Version="3.0.15" />
+    <PackageReference Include="Mirage" Version="3.0.16" />
     <PackageReference Include="NSubstitute" Version="4.2.2" />
     <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.0">
       <PrivateAssets>all</PrivateAssets>
