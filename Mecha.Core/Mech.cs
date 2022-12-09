@@ -1,4 +1,6 @@
-﻿using Fast.Activator;
+﻿using BigBook;
+using Fast.Activator;
+using FileCurator;
 using Mecha.Core.Datasources;
 using Mecha.Core.Exceptions;
 using Mecha.Core.Generator;
@@ -38,6 +40,11 @@ namespace Mecha.Core
             Random = random;
             Shrinker = shrinker;
             Mutator = mutator;
+            try
+            {
+                new DirectoryInfo("./Mech").EnumerateFiles().ForEach(x => x.Delete());
+            }
+            catch { }
         }
 
         /// <summary>
