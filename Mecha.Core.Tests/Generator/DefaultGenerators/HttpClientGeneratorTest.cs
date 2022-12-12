@@ -1,6 +1,7 @@
 ﻿using Mecha.Core.Generator.DefaultGenerators;
 using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
+using Microsoft.Extensions.DependencyInjection;
 using System.Net.Http;
 using Xunit;
 
@@ -17,7 +18,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// </summary>
         public HttpClientGeneratorTest()
         {
-            TestObject = new HttpClientGenerator(Canister.Builder.Bootstrapper.Resolve<Mirage.Random>());
+            TestObject = new HttpClientGenerator(new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Mirage.Random>());
         }
 
         /// <summary>

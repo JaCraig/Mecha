@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Reflection;
 using System.Threading.Tasks;
 using Xunit;
@@ -61,7 +62,7 @@ namespace Mecha.Core.Tests.BaseClasses
                 {
                     if (Random is null)
                     {
-                        Random = Canister.Builder.Bootstrapper?.Resolve<Mirage.Random>();
+                        Random = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Mirage.Random>();
                     }
                 }
             }

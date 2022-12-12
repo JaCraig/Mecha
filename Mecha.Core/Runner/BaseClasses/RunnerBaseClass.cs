@@ -93,7 +93,7 @@ namespace Mecha.Core.Runner.BaseClasses
             Results = await MutateAsync(Results, options).ConfigureAwait(false);
             Results = await ShrinkAsync(Results, options).ConfigureAwait(false);
             Manager?.DataManager.Clear(runMethod);
-            foreach (var Result in Results.Where(x => !(x.Exception is null)))
+            foreach (var Result in Results.Where(x => x.Exception is not null))
             {
                 SaveArguments(runMethod, Result.Parameters.ToArray(x => x?.Value));
             }
@@ -145,7 +145,7 @@ namespace Mecha.Core.Runner.BaseClasses
                     }
                     CopiedRun = CopiedRun.Copy();
                 }
-                if (!(CopiedRun.Exception is null))
+                if (CopiedRun.Exception is not null)
                     runs.Add(CopiedRun);
             }
             ShrinkRunsReported(runs);
@@ -183,7 +183,7 @@ namespace Mecha.Core.Runner.BaseClasses
         protected async Task<List<RunResult>> ShrinkAsync(List<RunResult> runs, Options options)
         {
             var FinalRuns = runs.Where(x => x.Exception is null).ToList();
-            var FailedRuns = runs.Where(x => !(x.Exception is null)).ToList();
+            var FailedRuns = runs.Where(x => x.Exception is not null).ToList();
             var TempTimer = new Stopwatch();
             for (var x = 0; x < FailedRuns.Count; ++x)
             {

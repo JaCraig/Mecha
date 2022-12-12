@@ -3,6 +3,7 @@ using Fast.Activator;
 using FileCurator;
 using Mecha.Core.Datasources;
 using Mecha.Core.Exceptions;
+using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Generator;
 using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Mutator;
@@ -55,27 +56,14 @@ namespace Mecha.Core
         {
             get
             {
-                if (!(_Default is null))
+                if (_Default is not null)
                     return _Default;
-                if (Canister.Builder.Bootstrapper is null)
+                lock (LockObject)
                 {
-                    lock (LockObject)
-                    {
-                        if (Canister.Builder.Bootstrapper is null)
-                        {
-                            new ServiceCollection().AddCanisterModules();
-                        }
-                        for (var x = 0; x < 1000; ++x)
-                        {
-                            try
-                            {
-                                new System.IO.DirectoryInfo("./Mecha").Create();
-                                _Default = Canister.Builder.Bootstrapper?.Resolve<Mech>();
-                                break;
-                            }
-                            catch { }
-                        }
-                    }
+                    if (_Default is not null)
+                        return _Default;
+                    new System.IO.DirectoryInfo("./Mecha").Create();
+                    _Default = Services.ServiceProvider.GetService<Mech>();
                 }
                 return _Default;
             }
@@ -353,11 +341,11 @@ namespace Mecha.Core
         /// <returns>The type</returns>
         private static Type? AttemptToResolveType(Type Arg, Type? Type)
         {
-            if (!(Type is null))
+            if (Type is not null)
                 return Type;
             try
             {
-                return Canister.Builder.Bootstrapper?.Resolve(Arg.BaseType, null!)?.GetType() ?? Type;
+                return Services.ServiceProvider.GetService(Arg.BaseType)?.GetType() ?? Type;
             }
             catch
             {
@@ -365,7 +353,7 @@ namespace Mecha.Core
                 {
                     try
                     {
-                        return Canister.Builder.Bootstrapper?.Resolve(Interface, null!)?.GetType() ?? Type;
+                        return Services.ServiceProvider.GetService(Interface)?.GetType() ?? Type;
                     }
                     catch
                     {
@@ -384,7 +372,7 @@ namespace Mecha.Core
         /// <returns>The types</returns>
         private static Type? AttemptToSubstitute(Type args, Type? type)
         {
-            if (!(type is null))
+            if (type is not null)
                 return type;
             var FinalTypes = new List<Type> { args.BaseType };
             FinalTypes.AddRange(args.GetInterfaces());
@@ -411,7 +399,7 @@ namespace Mecha.Core
             foreach (var Method in classType.GetMethods())
             {
                 var Result = await Default.RunAsync(Method, target, options).ConfigureAwait(false);
-                if (!(Result.Exception is null))
+                if (Result.Exception is not null)
                     Exceptions.Add(Result.Exception);
             }
             if (Exceptions.Count > 0)
@@ -453,7 +441,7 @@ namespace Mecha.Core
         private static bool SkipMethod(MethodInfo? runMethod, object? target, Options? options)
         {
             return runMethod is null
-                            || !(runMethod.GetCustomAttribute<DoNotBreakAttribute>() is null)
+                            || runMethod.GetCustomAttribute<DoNotBreakAttribute>() is not null
                             || (target is null && runMethod.DeclaringType == typeof(object))
                             || (runMethod.DeclaringType == typeof(MarshalByRefObject))
                             || (runMethod.DeclaringType == typeof(DynamicObject))

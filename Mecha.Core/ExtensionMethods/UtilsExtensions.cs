@@ -26,7 +26,7 @@ namespace Mecha.Core.ExtensionMethods
         /// <returns><c>true</c> if the specified value is infinite; otherwise, <c>false</c>.</returns>
         public static bool IsInfinite(this object? value)
         {
-            return !(value is null)
+            return value is not null
                 && Methods.TryGetValue(value.GetType(), out var Result)
                 && Result(value);
         }

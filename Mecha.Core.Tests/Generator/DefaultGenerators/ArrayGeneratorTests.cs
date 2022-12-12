@@ -1,6 +1,7 @@
 ﻿using Mecha.Core.Generator.DefaultGenerators;
 using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Reflection;
 using Xunit;
@@ -18,7 +19,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// </summary>
         public ArrayGeneratorTests()
         {
-            TestObject = new ArrayGenerator(Canister.Builder.Bootstrapper.Resolve<Mirage.Random>());
+            TestObject = new ArrayGenerator(new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Mirage.Random>());
             TestMethodInfo2 = Array.Find(GetType().GetMethods(), x => x.Name == "TestMethod2");
         }
 

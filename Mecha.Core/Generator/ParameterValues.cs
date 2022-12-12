@@ -68,8 +68,8 @@ namespace Mecha.Core.Generator
             try
             {
                 return (value1 is null && value2 is null)
-                    || (!(value1 is null)
-                        && !(value2 is null)
+                    || (value1 is not null
+                        && value2 is not null
                         && JsonSerializer.Serialize(value1) == JsonSerializer.Serialize(value2));
             }
             catch { return false; }

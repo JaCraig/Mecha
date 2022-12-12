@@ -31,7 +31,7 @@ namespace Mecha.Core.Runner
         public Parameter(ParameterInfo parameter, object? value)
         {
             ParameterInfo = parameter;
-            if (!(value is null) && !parameter.ParameterType.IsAssignableFrom(value?.GetType()))
+            if (value is not null && !parameter.ParameterType.IsAssignableFrom(value?.GetType()))
                 value = null;
             if (value is null)
                 DefaultValueLookup.Values.TryGetValue(parameter.ParameterType.GetHashCode(), out value);

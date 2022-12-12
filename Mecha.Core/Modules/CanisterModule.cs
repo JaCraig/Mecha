@@ -44,20 +44,20 @@ namespace Mecha.Core.Modules
         /// Loads the module using the bootstrapper
         /// </summary>
         /// <param name="bootstrapper">The bootstrapper.</param>
-        public void Load(IBootstrapper? bootstrapper)
+        public void Load(IServiceCollection? bootstrapper)
         {
-            bootstrapper?.RegisterAll<ISerializer>(ServiceLifetime.Singleton)
-                         .RegisterAll<IDatasource>(ServiceLifetime.Singleton)
-                         .Register<DataManager>(ServiceLifetime.Singleton)
-                         .RegisterAll<IGenerator>(ServiceLifetime.Singleton)
-                         .Register<GeneratorManager>(ServiceLifetime.Singleton)
-                         .Register<Mech>(ServiceLifetime.Singleton)
-                         .Register<TestRunnerManager>(ServiceLifetime.Singleton)
-                         .RegisterAll<IRunner>(ServiceLifetime.Singleton)
-                         .RegisterAll<IShrinker>(ServiceLifetime.Singleton)
-                         .Register<ShrinkerManager>(ServiceLifetime.Singleton)
-                         .RegisterAll<IMutator>(ServiceLifetime.Singleton)
-                         .Register<MutatorManager>(ServiceLifetime.Singleton);
+            bootstrapper?.AddAllSingleton<ISerializer>()
+                         .AddAllSingleton<IDatasource>()
+                         .AddSingleton<DataManager>()
+                         .AddAllSingleton<IGenerator>()
+                         .AddSingleton<GeneratorManager>()
+                         .AddSingleton<Mech>()
+                         .AddSingleton<TestRunnerManager>()
+                         .AddAllSingleton<IRunner>()
+                         .AddAllSingleton<IShrinker>()
+                         .AddSingleton<ShrinkerManager>()
+                         .AddAllSingleton<IMutator>()
+                         .AddSingleton<MutatorManager>();
         }
     }
 }

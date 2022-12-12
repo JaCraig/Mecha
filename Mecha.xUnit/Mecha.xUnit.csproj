@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-	  <TargetFrameworks>netstandard2.1;net5.0;net6.0</TargetFrameworks>
+	  <TargetFrameworks>net6.0</TargetFrameworks>
     <Nullable>enable</Nullable>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <RootNamespace>Mecha.xUnit</RootNamespace>
@@ -16,7 +16,7 @@
     <!-- if not set -->
     <Description>Mecha.xUnit is the xUnit.net library. It allows you to tie Mecha into xUnit directly so tests can be found by xUnit and allows you to tie it into your unit tests a bit easier.</Description>
     <AssemblyTitle>Mecha.xUnit</AssemblyTitle>
-    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionPrefix>2.0.0</VersionPrefix>
     <Authors>James Craig</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>Mecha.xUnit</PackageId>
@@ -27,7 +27,7 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>1.0.$(BuildNumber)</Version>
+    <Version>2.0.$(BuildNumber)</Version>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>

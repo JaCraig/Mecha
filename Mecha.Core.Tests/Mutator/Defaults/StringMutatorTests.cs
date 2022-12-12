@@ -1,5 +1,6 @@
 ﻿using Mecha.Core.Mutator.Defaults;
 using Mecha.Core.Tests.BaseClasses;
+using Microsoft.Extensions.DependencyInjection;
 using Xunit;
 
 namespace Mecha.Core.Tests.Mutator.Defaults
@@ -15,7 +16,7 @@ namespace Mecha.Core.Tests.Mutator.Defaults
         /// </summary>
         public StringMutatorTests()
         {
-            TestObject = new StringMutator(Canister.Builder.Bootstrapper.Resolve<Mirage.Random>());
+            TestObject = new StringMutator(new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Mirage.Random>());
         }
 
         /// <summary>

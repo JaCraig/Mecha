@@ -2,6 +2,7 @@
 using Mecha.Core.Runner;
 using Mecha.Core.Shrinker.Defaults;
 using Mecha.Core.Tests.BaseClasses;
+using Microsoft.Extensions.DependencyInjection;
 using Mirage;
 using System.Threading.Tasks;
 using Xunit;
@@ -45,7 +46,7 @@ namespace Mecha.Core.Tests.Runner
         [Fact]
         public void Mutate()
         {
-            Assert.False(TestObject.Mutate(new Core.Mutator.MutatorManager(new[] { new StringMutator(Canister.Builder.Bootstrapper.Resolve<Random>()) }), new System.Collections.Generic.List<RunResult>(), Options.Default));
+            Assert.False(TestObject.Mutate(new Core.Mutator.MutatorManager(new[] { new StringMutator(new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Random>()) }), new System.Collections.Generic.List<RunResult>(), Options.Default));
         }
 
         /// <summary>

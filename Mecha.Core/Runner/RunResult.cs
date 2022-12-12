@@ -132,7 +132,7 @@ namespace Mecha.Core.Runner
         public bool Mutate(MutatorManager? mutator, List<RunResult> results, Options options)
         {
             options = options.Initialize();
-            if (MutationCount >= options.MaxMutationCount || !(Exception is null))
+            if (MutationCount >= options.MaxMutationCount || Exception is not null)
                 return false;
             var Result = false;
             foreach (var Parameter in Parameters)
@@ -228,7 +228,7 @@ namespace Mecha.Core.Runner
             var ExceptionText = "";
             if (Method.ReturnType != typeof(void))
                 ReturnVal = $" => {ReturnedValue}";
-            if (!(Exception is null))
+            if (Exception is not null)
             {
                 ShrinkText = $"\nNumber of shrinks:\t{ShrinkCount}\n";
                 if (Parameters.Any(x => x.ShrinkCount > 1))

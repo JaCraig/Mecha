@@ -122,7 +122,7 @@ namespace Mecha.Core
                 return false;
             }
             handler = ExceptionHandlers[HandlerKey];
-            return !(handler is null);
+            return handler is not null;
         }
     }
 }

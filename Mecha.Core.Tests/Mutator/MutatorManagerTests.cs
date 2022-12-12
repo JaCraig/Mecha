@@ -2,6 +2,7 @@
 using Mecha.Core.Mutator.Defaults;
 using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
+using Microsoft.Extensions.DependencyInjection;
 using System.ComponentModel.DataAnnotations;
 using Xunit;
 
@@ -18,7 +19,7 @@ namespace Mecha.Core.Tests.Mutator
         /// </summary>
         public MutatorManagerTests()
         {
-            TestObject = new MutatorManager(new[] { new StringMutator(Canister.Builder.Bootstrapper.Resolve<Mirage.Random>()) });
+            TestObject = new MutatorManager(new[] { new StringMutator(new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Mirage.Random>()) });
         }
 
         /// <summary>

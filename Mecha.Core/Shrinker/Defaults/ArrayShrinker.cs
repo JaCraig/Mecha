@@ -17,7 +17,7 @@ namespace Mecha.Core.Shrinker.Defaults
         /// <returns><c>true</c> if this instance can shrink; otherwise, <c>false</c>.</returns>
         public bool CanShrink(object? value)
         {
-            return !(value is null) && value.GetType().IsArray;
+            return value is not null && value.GetType().IsArray;
         }
 
         /// <summary>
