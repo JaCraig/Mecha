@@ -88,7 +88,6 @@ namespace Mecha.Core.Datasources
                 for (var x = 0; x < Parameters.Length; ++x)
                 {
                     ParameterInfo Parameter = Parameters[x];
-                    Console.WriteLine($"{Directory.FullName}/{x}.json");
                     var Data = new FileInfo($"{Directory.FullName}/{x}.json").Read();
                     TempResult[x] = serializer.Deserialize(Parameter.ParameterType, Data);
                     if (TempResult[x] is null && DefaultValueLookup.Values.TryGetValue(Parameter.ParameterType.GetHashCode(), out var DefaultValue))
