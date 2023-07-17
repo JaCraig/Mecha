@@ -1,0 +1,951 @@
+{
+  "homepages": [],
+  "source_base_path": "/home/runner/work/Mecha/Mecha/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Datasources.DataManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Datasources.DataManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Datasources.DefaultDatasource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Datasources.DefaultDatasource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Datasources.DefaultSerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Datasources.DefaultSerializer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Datasources.Interfaces.IDatasource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Datasources.Interfaces.IDatasource.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Datasources.Interfaces.ISerializer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Datasources.Interfaces.ISerializer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Datasources.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Datasources.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Datasources.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Datasources.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.DoNotBreakAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.DoNotBreakAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.ExceptionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.ExceptionHandler.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Exceptions.GeneratorException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Exceptions.GeneratorException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Exceptions.MethodBrokenException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Exceptions.MethodBrokenException.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Exceptions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.ExtensionMethods.ServiceCollectionExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.ExtensionMethods.ServiceCollectionExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.ExtensionMethods.UtilsExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.ExtensionMethods.UtilsExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.ExtensionMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.ExtensionMethods.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultValueGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultValueGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.FileStreamGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.FileStreamGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.HttpClientGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.HttpClientGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.InterfaceGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.InterfaceGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.MaxBoundaryGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.MaxBoundaryGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.MinBoundaryGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.MinBoundaryGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.NegationGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.NegationGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.ParameterDefaultValueGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.ParameterDefaultValueGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.SliceGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.SliceGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.StreamGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.StreamGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.DummyClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.DummyClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.MaxValueLookup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.MaxValueLookup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.MinValueLookup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.MinValueLookup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.NegateValueLookup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.NegateValueLookup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.SliceValueLookup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.SliceValueLookup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.GeneratorManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.GeneratorManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.Helpers.EmptyFileStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.Helpers.EmptyFileStream.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.Helpers.EmptyHttpClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.Helpers.EmptyHttpClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.Helpers.EmptyStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.Helpers.EmptyStream.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.Helpers.FaultyFileStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.Helpers.FaultyFileStream.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.Helpers.FaultyHttpClient.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.Helpers.FaultyHttpClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.Helpers.FaultyStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.Helpers.FaultyStream.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.Helpers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.Interfaces.IGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.Interfaces.IGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.ParameterValues.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.ParameterValues.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Mech.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Mech.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Modules.CanisterModule.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Modules.CanisterModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Modules.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Modules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Mutator.Defaults.StringMutator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Mutator.Defaults.StringMutator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Mutator.Defaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Mutator.Defaults.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Mutator.Interfaces.IMutator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Mutator.Interfaces.IMutator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Mutator.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Mutator.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Mutator.MutatorManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Mutator.MutatorManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Mutator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Mutator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Options.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.OptionsExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.OptionsExtensions.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.BaseClasses.RunnerBaseClass.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.BaseClasses.RunnerBaseClass.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.BaseClasses.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.BaseClasses.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.DefaultRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.DefaultRunner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.Interfaces.IRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.Interfaces.IRunner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.Parameter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.Parameter.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.Result.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.Result.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.RunResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.RunResult.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.TestRunnerManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.TestRunnerManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.Defaults.ArrayShrinker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.Defaults.ArrayShrinker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.Defaults.DictionaryShrinker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.Defaults.DictionaryShrinker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.Defaults.ListShrinker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.Defaults.ListShrinker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.Defaults.NumberShrinker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.Defaults.NumberShrinker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.Defaults.StringShrinker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.Defaults.StringShrinker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.Defaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.Defaults.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.Interfaces.IShrinker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.Interfaces.IShrinker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.Interfaces.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.Interfaces.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.ShrinkerManager.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.ShrinkerManager.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Shrinker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Shrinker.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.xUnit.PropertyAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.xUnit.PropertyAttribute.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.xUnit.PropertyDiscoverer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.xUnit.PropertyDiscoverer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.xUnit.PropertyTestCase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.xUnit.PropertyTestCase.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.xUnit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.xUnit.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.CanisterMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.CanisterMethods.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/icon.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/icon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

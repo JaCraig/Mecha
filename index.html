@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>The Code and What It&#39;s Doing | Mecha API Reference </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="The Code and What It&#39;s Doing | Mecha API Reference ">
+      <meta name="generator" content="docfx ">
+  
+      <link rel="shortcut icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
+      <link rel="stylesheet" href="styles/config.css">
+      <link rel="stylesheet" href="styles/discord.css">
+      <link rel="stylesheet" href="styles/singulink.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="">
+  <meta property="docfx:newtab" content="true">
+    </head>
+    <body>
+        <div class="top-navbar">
+            <a class="burger-icon" onclick="toggleMenu()">
+                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
+            </a>
+
+
+            <a class="brand" href="index.html">
+              <img src="images/icon.png" alt="Mecha" class="logomark">
+              <span class="brand-title">Mecha</span>
+            </a>        </div>
+
+        <div class="body-content">
+            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+
+            <nav id="sidebar" role="navigation">
+                <div class="sidebar">
+
+                    <div>
+                      <div class="mobile-hide">
+
+                        <a class="brand" href="index.html">
+                          <img src="images/icon.png" alt="Mecha" class="logomark">
+                          <span class="brand-title">Mecha</span>
+                        </a>                      </div>
+
+                      <div class="sidesearch">
+                        <form id="search" role="search" class="search">
+                            <i class="bi bi-search search-icon"></i>
+                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
+                        </form>
+                      </div>
+
+                      <div id="navbar">
+                      </div>
+                    </div>                    <div class="sidebar-item-separator"></div>
+                </div>
+                <div class="footer">
+  <strong><a href='https://github.com/JaCraig/Mecha'>Open in Github</a></strong>
+  
+                </div>            </nav>
+
+            <main class="main-panel">
+
+                <div id="search-results" style="display: none;">
+                  <h1 class="search-list">Search Results for <span></span></h1>
+                  <div class="sr-items">
+                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
+                  </div>
+                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+                </div>
+ 
+
+                <div role="main" class="hide-when-search">
+
+                        <div class="subnav navbar navbar-default">
+                          <div class="container hide-when-search" id="breadcrumb">
+                            <ul class="breadcrumb">
+                              <li></li>
+                            </ul>
+                          </div>
+                        </div>
+
+                         <div id="contribution">
+                               <a href="https://github.com/JaCraig/Mecha/blob/main/docfx_project/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                         </div>
+
+                    <article class="content wrap" id="_content" data-uid="">
+
+<p><img src="https://repository-images.githubusercontent.com/337571372/3bfdaf00-a467-11eb-9e15-c30893f31981" alt="Mecha Logo"></p>
+<p><a href="https://ci.appveyor.com/project/JaCraig/mecha"><img src="https://ci.appveyor.com/api/projects/status/46292g2dtkhw1hyg?svg=true" alt="Build status"></a></p>
+<blockquote>
+<p>I try to make idiot proof software but the world keeps making better idiots.</p>
+</blockquote>
+<p>Or at least that's how it seems to us much of the time. You post a new application feature and the user's find a way to break it. In reality it's because we didn't think of an edge case that they found. I mean who can possibly think up all of these possibilities? A cracked out squirrel? Perhaps a raccoon with ADHD? Neither really work out in the long run as eventually they rise up against society to overthrow it. They're trained with computers at that point so there is no stopping them. And personally I'm too lazy to do this myself so I guess that leaves writing some code to do it, but thankfully I've already done that for you.</p>
+<p>Mecha is a library to automatically test classes with the ultimate goal being to find ways to break the code. It can help with unit testing, security testing via data fuzzing, testing for concurrency issues, and check for fault tolerance. With one line of code, you can test every method in a class automatically. Best part is it ties into the testing framework that you're already using.</p>
+<h1 id="the-code-and-what-its-doing">The Code and What It's Doing</h1>
+<pre><code>Mech.BreakAsync&lt;MyClass&gt;();
+</code></pre>
+<p>Seriously, that's it. With that Mecha searches for any public methods and properties, loops through them, finds interesting inputs for the methods, and runs them looking for exceptions to be thrown. Once an exception is thrown, it then uses the input to find the smallest possible value that still results in an issue. It then saves these issues as test cases for the future.</p>
+<p>Ok, so it breaks my method and does what? Mecha uses a concept borrowed from property testing known as shrinking. For instance you generate a list of 100 items for the method and it breaks. Mecha then removes some of the values and sees if it continues to break. It then continues to do this until it finds a list as small as possible that still breaks.</p>
+<h1 id="supported-types-and-object-generation">Supported Types and Object Generation</h1>
+<p>Mostly everything. It will generate inputs for all value types, enums, and even complete classes. It will give your methods FileStreams, HttpClients, Streams, etc. that throw exceptions themselves to see if your code can handle edge cases. Stubs/substitutes are automatically generated and fed through depending on the parameters of your method. It checks bounds, null, etc. as well. On top of that it takes into account any ValidationAttributes that it finds. So if you specify a range for a parameter, it will keep the values inside that range.</p>
+<h1 id="non-ninja-mutants">Non Ninja Mutants</h1>
+<p>On a successful run where no exception is thrown the input values are potentially mutated in ways that are known to cause issues. For instance adding \0 in the middle of a string, etc. These are then run through the system to see if they can break the code. If they do, they're added to the set of results. If not, we mutate again and rerun up until the max number of mutations that you set in the options.</p>
+<h1 id="shrinking-all-the-things">Shrinking All the Things</h1>
+<p>On a run where an exception is thrown, the input values are &quot;shrunk&quot;. This involves taking a value and making it smaller in some way. For instance if a list of 100 values throws an exception, the system will remove 20 of them and try again. If it throws an exception, we shrink it again and again until it passes or we hit the max number of shrinks set in the options.</p>
+<h1 id="getting-started">Getting Started</h1>
+<p>All you need to do is install the framework specific library from NuGet:</p>
+<table>
+<thead>
+<tr>
+<th>Framework</th>
+<th>Library</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>xUnit.Net</td>
+<td><a href="https://www.nuget.org/packages/Mecha.xUnit/">Mecha.xUnit</a></td>
+</tr>
+<tr>
+<td>All other frameworks</td>
+<td><a href="https://www.nuget.org/packages/Mecha.Core/">Mecha.Core</a></td>
+</tr>
+</tbody>
+</table>
+<p>This list should grow as new supported frameworks are added. If your library isn't supported, you can get access to the Mech class itself by adding the Mecha.Core library to your project. And if you like the library and would like to support your framework of choice, we'll gladly accept pull requests to add it. Anyway, what does the framework specific libraries give you?</p>
+<h2 id="xunitnet">xUnit.Net</h2>
+<pre><code>[Property]
+public void MyTest(int value1,int value2, ...)
+{
+    ...
+}
+</code></pre>
+<p>The above code adds the Property attribute which lets xUnit.Net know that you want to assign values for value1, value2, etc. using the library. It then aggregates all of the failed tests in one result in the Test Explorer window with details about what values broke the test.</p>
+<h2 id="everything-else">Everything Else</h2>
+<pre><code>Mech.BreakAsync&lt;MyClass&gt;();
+</code></pre>
+<p>There are variations of the above method depending on your needs. Also note that you can specify various options including how long it should attempt to generate values, the number of shrinks to attempt, and the number of test cases to run from the generated values.</p>
+<h1 id="faq">FAQ</h1>
+<ol>
+<li><p>What if I have a method that I don't want the library to run?</p>
+<p>A. The library comes with a DoNotBreak Attribute. Any method marked with this will be skipped by the library.</p>
+</li>
+<li><p>Where is it saving the failed runs for later?</p>
+<p>A. By default the system places the failed runs in a directory called Mecha under the test library's bin directory. It's possible to override this and store the information somewhere else by implementing the Mecha.Core.Datasources.Interfaces.IDatasource interface.</p>
+</li>
+<li><p>Can I create my own data generators?</p>
+<p>A. Yes by implementing the Mecha.Core.Generator.Interfaces.IGenerator interface. The system should automatically pick them up and use them.</p>
+</li>
+<li><p>Can I create my own data shrinker?</p>
+<p>A. Yes by implementing the Mecha.Core.Shrinker.Interfaces.IShrinker interface. The system should automatically pick them up and use them.</p>
+</li>
+<li><p>Can I create my own data mutator?</p>
+<p>A. Yes by implementing the Mecha.Core.Mutator.Interfaces.IMutator interface. The system should automatically pick them up and use them.</p>
+</li>
+</ol>
+</article>
+                </div>
+
+                <div class="copyright-footer">
+                    <span>&#169; James Craig. All rights reserved.</span>
+                </div>
+            </main>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script type="text/javascript" src="styles/jquery.twbsPagination.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+        <script type="text/javascript" src="styles/url.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
+        <script type="text/javascript" src="styles/docfx.js"></script>
+        <script type="text/javascript" src="styles/main.js"></script>
+        <script type="text/javascript" src="styles/singulink.js"></script>    </body>
+</html>
