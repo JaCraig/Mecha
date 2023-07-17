@@ -13,7 +13,7 @@
     <!-- for Team City -->
     <BuildNumber Condition=" '$(BuildNumber)' == '' ">0</BuildNumber>
     <!-- if not set -->
-    <Description>Mecha.Core is the central portion of the Mecha library and contains the Mech class itself. If a version isn't available for your unit testing library of choice, this will give you access to the Mech class.</Description>
+    <Description>Mecha is a C# library that enables automatic testing of classes with the goal of finding ways to break the code. It provides various testing capabilities such as unit testing, security testing through data fuzzing, checking for concurrency issues, and verifying fault tolerance. With just a single line of code, Mecha can automatically test every method in a class. The library seamlessly integrates with your existing testing framework.</Description>
     <AssemblyTitle>Mecha.Core</AssemblyTitle>
     <VersionPrefix>2.0.0</VersionPrefix>
     <Authors>James Craig</Authors>
@@ -26,24 +26,40 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>2.0.$(BuildNumber)</Version>
+    <Version>2.0.2</Version>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Title>Mecha.Core</Title>
+    <Copyright>Copyright © James Craig 2021</Copyright>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/JaCraig/Mecha</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>https://github.com/JaCraig/Mecha/blob/master/CHANGELOG.md</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Canister.IoC" Version="5.0.1" />
-    <PackageReference Include="Fast.Activator" Version="2.0.0" />
-    <PackageReference Include="FileCurator" Version="4.0.0" />
-    <PackageReference Include="Mirage" Version="4.0.0" />
-    <PackageReference Include="NSubstitute" Version="4.4.0" />
+    <None Include="..\build\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FileCurator" Version="4.0.4" />
+    <PackageReference Include="Mirage" Version="4.0.2" />
+    <PackageReference Include="NSubstitute" Version="5.0.0" />
     <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Text.Json" Version="7.0.0" />
+    <PackageReference Include="System.Text.Json" Version="7.0.3" />
   </ItemGroup>
 </Project>

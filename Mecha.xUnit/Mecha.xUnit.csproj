@@ -14,7 +14,7 @@
     <!-- for Team City -->
     <BuildNumber Condition=" '$(BuildNumber)' == '' ">0</BuildNumber>
     <!-- if not set -->
-    <Description>Mecha.xUnit is the xUnit.net library. It allows you to tie Mecha into xUnit directly so tests can be found by xUnit and allows you to tie it into your unit tests a bit easier.</Description>
+    <Description>Mecha is a C# library that enables automatic testing of classes with the goal of finding ways to break the code. It provides various testing capabilities such as unit testing, security testing through data fuzzing, checking for concurrency issues, and verifying fault tolerance. With just a single line of code, Mecha can automatically test every method in a class. The library seamlessly integrates with your existing testing framework.</Description>
     <AssemblyTitle>Mecha.xUnit</AssemblyTitle>
     <VersionPrefix>2.0.0</VersionPrefix>
     <Authors>James Craig</Authors>
@@ -27,20 +27,39 @@
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Version>2.0.$(BuildNumber)</Version>
+    <Version>2.0.2</Version>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
     <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Title>Mecha.xUnit</Title>
+    <Copyright>Copyright © James Craig 2021</Copyright>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/JaCraig/Mecha</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>https://github.com/JaCraig/Mecha/blob/master/CHANGELOG.md</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\build\Icon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
     <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="xunit.core" Version="2.4.2" />
+    <PackageReference Include="xunit.core" Version="2.5.0" />
   </ItemGroup>
 
   <ItemGroup>

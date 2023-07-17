@@ -1,10 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30717.126
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mecha", "Mecha\Mecha.csproj", "{20919AFA-A349-40B5-819D-8B15288560A0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mecha.Core", "Mecha.Core\Mecha.Core.csproj", "{085439A6-1FB0-4A87-A5C5-F8F00E0328E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5B38BFBD-8534-4CB7-8A51-692796547B4C}"
@@ -19,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20919AFA-A349-40B5-819D-8B15288560A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20919AFA-A349-40B5-819D-8B15288560A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20919AFA-A349-40B5-819D-8B15288560A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20919AFA-A349-40B5-819D-8B15288560A0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{085439A6-1FB0-4A87-A5C5-F8F00E0328E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{085439A6-1FB0-4A87-A5C5-F8F00E0328E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{085439A6-1FB0-4A87-A5C5-F8F00E0328E7}.Release|Any CPU.ActiveCfg = Release|Any CPU

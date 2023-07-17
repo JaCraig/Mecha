@@ -39,7 +39,7 @@ namespace Mecha.Core.Tests.BaseClasses
         [Fact]
         public Task BreakObject()
         {
-            return Mech.BreakAsync(TestObject);
+            return Mech.BreakAsync(TestObject, new Options { MaxDuration = 100 });
         }
     }
 
@@ -69,6 +69,11 @@ namespace Mecha.Core.Tests.BaseClasses
         }
 
         /// <summary>
+        /// The lock object
+        /// </summary>
+        private static object LockObj = new object();
+
+        /// <summary>
         /// Gets the random.
         /// </summary>
         /// <value>The random.</value>
@@ -93,18 +98,13 @@ namespace Mecha.Core.Tests.BaseClasses
         protected MethodInfo? TestMethodWithExceptionInfo { get; }
 
         /// <summary>
-        /// The lock object
-        /// </summary>
-        private static object LockObj = new object();
-
-        /// <summary>
         /// Attempts to break the object.
         /// </summary>
         /// <returns>The async task.</returns>
         [Fact]
         public Task BreakType()
         {
-            return Mech.BreakAsync(ObjectType);
+            return Mech.BreakAsync(ObjectType, new Options { MaxDuration = 100 });
         }
 
         /// <summary>
