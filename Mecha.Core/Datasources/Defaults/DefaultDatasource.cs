@@ -75,19 +75,20 @@ namespace Mecha.Core.Datasources
             var Results = new List<object?[]>();
             if (method is null)
                 return Results;
-            var Parameters = method.GetParameters();
+            ParameterInfo[] Parameters = method.GetParameters();
             if (Parameters.Any(x => x.ParameterType.IsInterface))
                 return Results;
 
-            var DataDirectoryInfo = GetDirectory(DataDirectory, method);
+            DirectoryInfo? DataDirectoryInfo = GetDirectory(DataDirectory, method);
             if (DataDirectoryInfo is null)
                 return Results;
-            foreach (var Directory in DataDirectoryInfo.EnumerateDirectories())
+            foreach (FileCurator.Interfaces.IDirectory Directory in DataDirectoryInfo.EnumerateDirectories())
             {
                 var TempResult = new object?[Parameters.Length];
-                for (int x = 0; x < Parameters.Length; ++x)
+                for (var x = 0; x < Parameters.Length; ++x)
                 {
-                    var Parameter = Parameters[x];
+                    ParameterInfo Parameter = Parameters[x];
+                    Console.WriteLine($"{Directory.FullName}/{x}.json");
                     var Data = new FileInfo($"{Directory.FullName}/{x}.json").Read();
                     TempResult[x] = serializer.Deserialize(Parameter.ParameterType, Data);
                     if (TempResult[x] is null && DefaultValueLookup.Values.TryGetValue(Parameter.ParameterType.GetHashCode(), out var DefaultValue))
@@ -108,14 +109,14 @@ namespace Mecha.Core.Datasources
         {
             if (method is null)
                 return;
-            var Parameters = method.GetParameters();
+            ParameterInfo[] Parameters = method.GetParameters();
             if (Parameters.Any(x => x.ParameterType.IsInterface))
                 return;
 
-            var DataDirectoryInfo = GetDirectory(DataDirectory, method, Guid.NewGuid());
+            DirectoryInfo? DataDirectoryInfo = GetDirectory(DataDirectory, method, Guid.NewGuid());
             if (DataDirectoryInfo is null)
                 return;
-            for (int x = 0; x < Parameters.Length; ++x)
+            for (var x = 0; x < Parameters.Length; ++x)
             {
                 new FileInfo($"{DataDirectoryInfo.FullName}/{x}.json").Write(serializer.Serialize(Parameters[x].ParameterType, paramData[x]) ?? "");
             }
@@ -144,10 +145,8 @@ namespace Mecha.Core.Datasources
         /// <returns>The directory specified.</returns>
         private static DirectoryInfo? GetDirectory(string dataDirectory, MethodInfo method, Guid guid)
         {
-            var ParentDirectory = GetDirectory(dataDirectory, method);
-            if (ParentDirectory is null)
-                return null;
-            return new DirectoryInfo($"{ParentDirectory.FullName}/{guid}");
+            DirectoryInfo? ParentDirectory = GetDirectory(dataDirectory, method);
+            return ParentDirectory is null ? null : new DirectoryInfo($"{ParentDirectory.FullName}/{guid}");
         }
 
         /// <summary>
@@ -162,7 +161,7 @@ namespace Mecha.Core.Datasources
                 return directoryName;
             for (int i = 0, maxLength = InvalidChars.Length; i < maxLength; i++)
             {
-                char Char = InvalidChars[i];
+                var Char = InvalidChars[i];
                 directoryName = directoryName.Replace(Char, replacementChar);
             }
             return directoryName;
@@ -180,7 +179,7 @@ namespace Mecha.Core.Datasources
                 return false;
             if (value1.Length != value2.Length)
                 return false;
-            for (int x = 0; x < value1.Length; ++x)
+            for (var x = 0; x < value1.Length; ++x)
             {
                 var Value1 = JsonSerializer.Serialize(value1[x]);
                 var Value2 = JsonSerializer.Serialize(value2[x]);
