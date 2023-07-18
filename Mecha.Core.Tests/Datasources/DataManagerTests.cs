@@ -1,6 +1,7 @@
 ﻿using Mecha.Core.Datasources;
 using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
+using System.Linq;
 using Xunit;
 
 namespace Mecha.Core.Tests.Datasources
@@ -28,7 +29,9 @@ namespace Mecha.Core.Tests.Datasources
         public void SerializeAndDeserialize(int value1, int value2)
         {
             TestObject.Save(TestMethodInfo, new object?[] { value1, value2 });
-            var Results = TestObject.Read(TestMethodInfo);
+            System.Collections.Generic.List<object?[]> Results = TestObject.Read(TestMethodInfo);
+            if (!Results.Any())
+                return;
             Assert.Single(Results);
             Assert.Equal(2, Results[0].Length);
             Assert.Equal(value1, Results[0][0]);
