@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.0.3"></a>
+## [2.0.3](https://www.github.com/JaCraig/Mecha/releases/tag/v2.0.3) (2023-7-19)
+
+### Bug Fixes
+
+* bump the dependencies group with 1 update ([d72f3f0](https://www.github.com/JaCraig/Mecha/commit/d72f3f00aedaa2857e437bca3bd1cb23baef7dae))
+
+### Other
+
+* Merge pull request #81 from JaCraig/dependabot/github_actions/dependencies-0717129e0a ([a5c2f52](https://www.github.com/JaCraig/Mecha/commit/a5c2f52b88f09e46c4cfc756ce7d22909e645045))
+* Merge pull request #82 from JaCraig/dependabot/nuget/dependencies-dd930e6650 ([7b0c3ce](https://www.github.com/JaCraig/Mecha/commit/7b0c3ce341198856bd8e88c15098060d8c1c3ea6))
+* bump the dependencies group with 2 updates ([5f47435](https://www.github.com/JaCraig/Mecha/commit/5f47435409b788069e2e2be505a1ed0c72624deb))
+* dependabot update ([d6ef0b7](https://www.github.com/JaCraig/Mecha/commit/d6ef0b708d1b209d75130fdfa15578882338802b))
+* editorconfig added ([062df7b](https://www.github.com/JaCraig/Mecha/commit/062df7b8b64bfe8fc486c587f39c723e38b3eb9d))
+* merge ([6456bc4](https://www.github.com/JaCraig/Mecha/commit/6456bc4e932f0d2d5bdf3c88b5102dd35fc53ad8))
+* Updating icon in docs ([545e54b](https://www.github.com/JaCraig/Mecha/commit/545e54b91e28480c50a63e40a806ae970b0c30aa))
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://www.github.com/JaCraig/Mecha/releases/tag/v2.0.2) (2023-7-17)
 
