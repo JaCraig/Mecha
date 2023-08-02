@@ -1,9 +1,4 @@
 {
-  "api/index.html": {
-    "href": "api/index.html",
-    "title": "Welcome | Mecha API Reference",
-    "keywords": "Welcome Welcome to the API browser."
-  },
   "api/Mecha.Core.Datasources.DataManager.html": {
     "href": "api/Mecha.Core.Datasources.DataManager.html",
     "title": "Class DataManager | Mecha API Reference",
@@ -19,16 +14,6 @@
     "title": "Class DefaultSerializer | Mecha API Reference",
     "keywords": "Class DefaultSerializer Default serializer (goes to JSON) Inheritance object DefaultSerializer Implements ISerializer Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Datasources Assembly: Mecha.Core.dll Syntax public class DefaultSerializer : ISerializer Methods | Improve this Doc View Source Deserialize(Type, string?) Deserializes the specified data. Declaration public object? Deserialize(Type objectType, string? data) Parameters Type Name Description Type objectType Type of the object. string data The data. Returns Type Description object The deserialized value. See Also ISerializer | Improve this Doc View Source Serialize(Type, object?) Serializes the specified data. Declaration public string? Serialize(Type objectType, object? data) Parameters Type Name Description Type objectType Type of the object. object data The data. Returns Type Description string The serialized value used for storage. See Also ISerializer Implements ISerializer Extension Methods UtilsExtensions.IsInfinite(object?) See Also ISerializer"
   },
-  "api/Mecha.Core.Datasources.html": {
-    "href": "api/Mecha.Core.Datasources.html",
-    "title": "Namespace Mecha.Core.Datasources | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Datasources Classes DataManager Data manager DefaultDatasource Default datasource (exports to local directory) DefaultSerializer Default serializer (goes to JSON)"
-  },
-  "api/Mecha.Core.Datasources.Interfaces.html": {
-    "href": "api/Mecha.Core.Datasources.Interfaces.html",
-    "title": "Namespace Mecha.Core.Datasources.Interfaces | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Datasources.Interfaces Interfaces IDatasource Datasource ISerializer Serializer interface"
-  },
   "api/Mecha.Core.Datasources.Interfaces.IDatasource.html": {
     "href": "api/Mecha.Core.Datasources.Interfaces.IDatasource.html",
     "title": "Interface IDatasource | Mecha API Reference",
@@ -38,6 +23,16 @@
     "href": "api/Mecha.Core.Datasources.Interfaces.ISerializer.html",
     "title": "Interface ISerializer | Mecha API Reference",
     "keywords": "Interface ISerializer Serializer interface Namespace: Mecha.Core.Datasources.Interfaces Assembly: Mecha.Core.dll Syntax public interface ISerializer Methods | Improve this Doc View Source Deserialize(Type, string?) Deserializes the specified data. Declaration object? Deserialize(Type objectType, string? data) Parameters Type Name Description Type objectType Type of the object. string data The data. Returns Type Description object The deserialized value. | Improve this Doc View Source Serialize(Type, object?) Serializes the specified data. Declaration string? Serialize(Type objectType, object? data) Parameters Type Name Description Type objectType Type of the object. object data The data. Returns Type Description string The serialized value used for storage. Extension Methods UtilsExtensions.IsInfinite(object?)"
+  },
+  "api/Mecha.Core.Datasources.Interfaces.html": {
+    "href": "api/Mecha.Core.Datasources.Interfaces.html",
+    "title": "Namespace Mecha.Core.Datasources.Interfaces | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Datasources.Interfaces Interfaces IDatasource Datasource ISerializer Serializer interface"
+  },
+  "api/Mecha.Core.Datasources.html": {
+    "href": "api/Mecha.Core.Datasources.html",
+    "title": "Namespace Mecha.Core.Datasources | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Datasources Classes DataManager Data manager DefaultDatasource Default datasource (exports to local directory) DefaultSerializer Default serializer (goes to JSON)"
   },
   "api/Mecha.Core.DoNotBreakAttribute.html": {
     "href": "api/Mecha.Core.DoNotBreakAttribute.html",
@@ -54,20 +49,15 @@
     "title": "Class GeneratorException | Mecha API Reference",
     "keywords": "Class GeneratorException Generator exception Inheritance object Exception GeneratorException Implements ISerializable Inherited Members Exception.GetBaseException() Exception.GetObjectData(SerializationInfo, StreamingContext) Exception.GetType() Exception.ToString() Exception.Data Exception.HelpLink Exception.HResult Exception.InnerException Exception.Message Exception.Source Exception.StackTrace Exception.TargetSite Exception.SerializeObjectState object.Equals(object) object.Equals(object, object) object.GetHashCode() object.MemberwiseClone() object.ReferenceEquals(object, object) Namespace: Mecha.Core.Exceptions Assembly: Mecha.Core.dll Syntax public class GeneratorException : Exception, ISerializable Constructors | Improve this Doc View Source GeneratorException() Initializes a new instance of the GeneratorException class. Declaration public GeneratorException() See Also Exception | Improve this Doc View Source GeneratorException(SerializationInfo, StreamingContext) Initializes a new instance of the GeneratorException class. Declaration protected GeneratorException(SerializationInfo info, StreamingContext context) Parameters Type Name Description SerializationInfo info The SerializationInfo that holds the serialized object data about the exception being thrown. StreamingContext context The StreamingContext that contains contextual information about the source or destination. See Also Exception | Improve this Doc View Source GeneratorException(string) Initializes a new instance of the GeneratorException class. Declaration public GeneratorException(string message) Parameters Type Name Description string message The message that describes the error. See Also Exception | Improve this Doc View Source GeneratorException(string, Exception) Initializes a new instance of the GeneratorException class. Declaration public GeneratorException(string message, Exception innerException) Parameters Type Name Description string message The error message that explains the reason for the exception. Exception innerException The exception that is the cause of the current exception, or a null reference (Nothing in Visual Basic) if no inner exception is specified. See Also Exception Implements ISerializable Extension Methods UtilsExtensions.IsInfinite(object?) See Also Exception"
   },
-  "api/Mecha.Core.Exceptions.html": {
-    "href": "api/Mecha.Core.Exceptions.html",
-    "title": "Namespace Mecha.Core.Exceptions | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Exceptions Classes GeneratorException Generator exception MethodBrokenException The method threw an exception"
-  },
   "api/Mecha.Core.Exceptions.MethodBrokenException.html": {
     "href": "api/Mecha.Core.Exceptions.MethodBrokenException.html",
     "title": "Class MethodBrokenException | Mecha API Reference",
     "keywords": "Class MethodBrokenException The method threw an exception Inheritance object Exception MethodBrokenException Implements ISerializable Inherited Members Exception.GetBaseException() Exception.GetObjectData(SerializationInfo, StreamingContext) Exception.GetType() Exception.ToString() Exception.Data Exception.HelpLink Exception.HResult Exception.InnerException Exception.Message Exception.Source Exception.StackTrace Exception.TargetSite Exception.SerializeObjectState object.Equals(object) object.Equals(object, object) object.GetHashCode() object.MemberwiseClone() object.ReferenceEquals(object, object) Namespace: Mecha.Core.Exceptions Assembly: Mecha.Core.dll Syntax public class MethodBrokenException : Exception, ISerializable Constructors | Improve this Doc View Source MethodBrokenException() Initializes a new instance of the MethodBrokenException class. Declaration public MethodBrokenException() See Also Exception | Improve this Doc View Source MethodBrokenException(string?) Initializes a new instance of the MethodBrokenException class. Declaration public MethodBrokenException(string? message) Parameters Type Name Description string message The message that describes the error. See Also Exception | Improve this Doc View Source MethodBrokenException(string?, Exception?) Initializes a new instance of the MethodBrokenException class. Declaration public MethodBrokenException(string? message, Exception? innerException) Parameters Type Name Description string message The error message that explains the reason for the exception. Exception innerException The exception that is the cause of the current exception, or a null reference ( Nothing in Visual Basic) if no inner exception is specified. See Also Exception Implements ISerializable Extension Methods UtilsExtensions.IsInfinite(object?) See Also Exception"
   },
-  "api/Mecha.Core.ExtensionMethods.html": {
-    "href": "api/Mecha.Core.ExtensionMethods.html",
-    "title": "Namespace Mecha.Core.ExtensionMethods | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.ExtensionMethods Classes ServiceCollectionExtensions ServiceCollection extension methods. UtilsExtensions Utils extensions"
+  "api/Mecha.Core.Exceptions.html": {
+    "href": "api/Mecha.Core.Exceptions.html",
+    "title": "Namespace Mecha.Core.Exceptions | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Exceptions Classes GeneratorException Generator exception MethodBrokenException The method threw an exception"
   },
   "api/Mecha.Core.ExtensionMethods.ServiceCollectionExtensions.html": {
     "href": "api/Mecha.Core.ExtensionMethods.ServiceCollectionExtensions.html",
@@ -78,6 +68,11 @@
     "href": "api/Mecha.Core.ExtensionMethods.UtilsExtensions.html",
     "title": "Class UtilsExtensions | Mecha API Reference",
     "keywords": "Class UtilsExtensions Utils extensions Inheritance object UtilsExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.ExtensionMethods Assembly: Mecha.Core.dll Syntax public static class UtilsExtensions Methods | Improve this Doc View Source IsInfinite(object?) Determines whether the specified value is infinite. Declaration public static bool IsInfinite(this object? value) Parameters Type Name Description object value The value. Returns Type Description bool true if the specified value is infinite; otherwise, false."
+  },
+  "api/Mecha.Core.ExtensionMethods.html": {
+    "href": "api/Mecha.Core.ExtensionMethods.html",
+    "title": "Namespace Mecha.Core.ExtensionMethods | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.ExtensionMethods Classes ServiceCollectionExtensions ServiceCollection extension methods. UtilsExtensions Utils extensions"
   },
   "api/Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.html": {
     "href": "api/Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.html",
@@ -103,11 +98,6 @@
     "href": "api/Mecha.Core.Generator.DefaultGenerators.FileStreamGenerator.html",
     "title": "Class FileStreamGenerator | Mecha API Reference",
     "keywords": "Class FileStreamGenerator File stream generator Inheritance object FileStreamGenerator Implements IGenerator Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Generator.DefaultGenerators Assembly: Mecha.Core.dll Syntax public class FileStreamGenerator : IGenerator Constructors | Improve this Doc View Source FileStreamGenerator(Random) Initializes a new instance of the FileStreamGenerator class. Declaration public FileStreamGenerator(Random random) Parameters Type Name Description Random random The random. See Also IGenerator Properties | Improve this Doc View Source Order Gets the order. Declaration public int Order { get; } Property Value Type Description int The order. See Also IGenerator | Improve this Doc View Source RandomObj Gets the random object. Declaration public Random RandomObj { get; } Property Value Type Description Random The random object. See Also IGenerator Methods | Improve this Doc View Source CanGenerate(ParameterInfo?) Determines whether this instance can generate the specified parameter. Declaration public bool CanGenerate(ParameterInfo? parameter) Parameters Type Name Description ParameterInfo parameter The parameter. Returns Type Description bool true if this instance can generate the specified parameter; otherwise, false. See Also IGenerator | Improve this Doc View Source Next(ParameterInfo?, object?, object?) Generates the next object of the specified parameter type. Declaration public object? Next(ParameterInfo? parameter, object? min, object? max) Parameters Type Name Description ParameterInfo parameter The parameter. object min The minimum. object max The maximum. Returns Type Description object The next object. See Also IGenerator Implements IGenerator Extension Methods UtilsExtensions.IsInfinite(object?) See Also IGenerator"
-  },
-  "api/Mecha.Core.Generator.DefaultGenerators.html": {
-    "href": "api/Mecha.Core.Generator.DefaultGenerators.html",
-    "title": "Namespace Mecha.Core.Generator.DefaultGenerators | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Generator.DefaultGenerators Classes ArrayGenerator Array generator DefaultGenerator Default generator DefaultValueGenerator Default value generator DefaultValueLookup Default value lookup FileStreamGenerator File stream generator HttpClientGenerator HttpClient Generator InterfaceGenerator Interface generator MaxBoundaryGenerator Max Boundary generator MinBoundaryGenerator Min Boundary generator NegationGenerator Negation generator ParameterDefaultValueGenerator Parameter default value generator SliceGenerator Slice generator StreamGenerator Stream generator"
   },
   "api/Mecha.Core.Generator.DefaultGenerators.HttpClientGenerator.html": {
     "href": "api/Mecha.Core.Generator.DefaultGenerators.HttpClientGenerator.html",
@@ -159,11 +149,6 @@
     "title": "Class BasicTypesLookup | Mecha API Reference",
     "keywords": "Class BasicTypesLookup Basic types lookup Inheritance object BasicTypesLookup Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Generator.DefaultGenerators.Utils Assembly: Mecha.Core.dll Syntax public static class BasicTypesLookup Fields | Improve this Doc View Source Types The types Declaration public static Type[] Types Field Value Type Description Type[]"
   },
-  "api/Mecha.Core.Generator.DefaultGenerators.Utils.html": {
-    "href": "api/Mecha.Core.Generator.DefaultGenerators.Utils.html",
-    "title": "Namespace Mecha.Core.Generator.DefaultGenerators.Utils | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Generator.DefaultGenerators.Utils Classes BasicTypesLookup Basic types lookup BasicTypesLookup.DummyClass Dummy class MaxValueLookup Max value lookup MinValueLookup Min value lookup NegateValueLookup Negate value lookup SliceValueLookup Slice value lookup"
-  },
   "api/Mecha.Core.Generator.DefaultGenerators.Utils.MaxValueLookup.html": {
     "href": "api/Mecha.Core.Generator.DefaultGenerators.Utils.MaxValueLookup.html",
     "title": "Class MaxValueLookup | Mecha API Reference",
@@ -183,6 +168,16 @@
     "href": "api/Mecha.Core.Generator.DefaultGenerators.Utils.SliceValueLookup.html",
     "title": "Class SliceValueLookup | Mecha API Reference",
     "keywords": "Class SliceValueLookup Slice value lookup Inheritance object SliceValueLookup Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Generator.DefaultGenerators.Utils Assembly: Mecha.Core.dll Syntax public static class SliceValueLookup Properties | Improve this Doc View Source Slice Slices the items and gets the mid point between the two values. Declaration public static Dictionary<int, Func<object, object, object>>? Slice { get; } Property Value Type Description Dictionary<int, Func<object, object, object>> The mid point between the two values."
+  },
+  "api/Mecha.Core.Generator.DefaultGenerators.Utils.html": {
+    "href": "api/Mecha.Core.Generator.DefaultGenerators.Utils.html",
+    "title": "Namespace Mecha.Core.Generator.DefaultGenerators.Utils | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Generator.DefaultGenerators.Utils Classes BasicTypesLookup Basic types lookup BasicTypesLookup.DummyClass Dummy class MaxValueLookup Max value lookup MinValueLookup Min value lookup NegateValueLookup Negate value lookup SliceValueLookup Slice value lookup"
+  },
+  "api/Mecha.Core.Generator.DefaultGenerators.html": {
+    "href": "api/Mecha.Core.Generator.DefaultGenerators.html",
+    "title": "Namespace Mecha.Core.Generator.DefaultGenerators | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Generator.DefaultGenerators Classes ArrayGenerator Array generator DefaultGenerator Default generator DefaultValueGenerator Default value generator DefaultValueLookup Default value lookup FileStreamGenerator File stream generator HttpClientGenerator HttpClient Generator InterfaceGenerator Interface generator MaxBoundaryGenerator Max Boundary generator MinBoundaryGenerator Min Boundary generator NegationGenerator Negation generator ParameterDefaultValueGenerator Parameter default value generator SliceGenerator Slice generator StreamGenerator Stream generator"
   },
   "api/Mecha.Core.Generator.GeneratorManager.html": {
     "href": "api/Mecha.Core.Generator.GeneratorManager.html",
@@ -224,30 +219,25 @@
     "title": "Namespace Mecha.Core.Generator.Helpers | Mecha API Reference",
     "keywords": "Namespace Mecha.Core.Generator.Helpers Classes EmptyFileStream Empty file stream EmptyHttpClient Empty HTTP Client EmptyStream Empty stream (does nothing) FaultyFileStream Faulty file stream FaultyHttpClient Faulty HTTP Client FaultyStream Stream that throws faults"
   },
-  "api/Mecha.Core.Generator.html": {
-    "href": "api/Mecha.Core.Generator.html",
-    "title": "Namespace Mecha.Core.Generator | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Generator Classes GeneratorManager Generator manager ParameterValues Parameter values"
+  "api/Mecha.Core.Generator.Interfaces.IGenerator.html": {
+    "href": "api/Mecha.Core.Generator.Interfaces.IGenerator.html",
+    "title": "Interface IGenerator | Mecha API Reference",
+    "keywords": "Interface IGenerator Generator interface. Namespace: Mecha.Core.Generator.Interfaces Assembly: Mecha.Core.dll Syntax public interface IGenerator Properties | Improve this Doc View Source Order Gets the order. Declaration int Order { get; } Property Value Type Description int The order. Methods | Improve this Doc View Source CanGenerate(ParameterInfo?) Determines whether this instance can generate the specified parameter. Declaration bool CanGenerate(ParameterInfo? parameter) Parameters Type Name Description ParameterInfo parameter The parameter. Returns Type Description bool true if this instance can generate the specified parameter; otherwise, false. | Improve this Doc View Source Next(ParameterInfo?, object?, object?) Generates the next object of the specified parameter type. Declaration object? Next(ParameterInfo? parameter, object? min, object? max) Parameters Type Name Description ParameterInfo parameter The parameter. object min The minimum. object max The maximum. Returns Type Description object The next object. Extension Methods UtilsExtensions.IsInfinite(object?)"
   },
   "api/Mecha.Core.Generator.Interfaces.html": {
     "href": "api/Mecha.Core.Generator.Interfaces.html",
     "title": "Namespace Mecha.Core.Generator.Interfaces | Mecha API Reference",
     "keywords": "Namespace Mecha.Core.Generator.Interfaces Interfaces IGenerator Generator interface."
   },
-  "api/Mecha.Core.Generator.Interfaces.IGenerator.html": {
-    "href": "api/Mecha.Core.Generator.Interfaces.IGenerator.html",
-    "title": "Interface IGenerator | Mecha API Reference",
-    "keywords": "Interface IGenerator Generator interface. Namespace: Mecha.Core.Generator.Interfaces Assembly: Mecha.Core.dll Syntax public interface IGenerator Properties | Improve this Doc View Source Order Gets the order. Declaration int Order { get; } Property Value Type Description int The order. Methods | Improve this Doc View Source CanGenerate(ParameterInfo?) Determines whether this instance can generate the specified parameter. Declaration bool CanGenerate(ParameterInfo? parameter) Parameters Type Name Description ParameterInfo parameter The parameter. Returns Type Description bool true if this instance can generate the specified parameter; otherwise, false. | Improve this Doc View Source Next(ParameterInfo?, object?, object?) Generates the next object of the specified parameter type. Declaration object? Next(ParameterInfo? parameter, object? min, object? max) Parameters Type Name Description ParameterInfo parameter The parameter. object min The minimum. object max The maximum. Returns Type Description object The next object. Extension Methods UtilsExtensions.IsInfinite(object?)"
-  },
   "api/Mecha.Core.Generator.ParameterValues.html": {
     "href": "api/Mecha.Core.Generator.ParameterValues.html",
     "title": "Class ParameterValues | Mecha API Reference",
     "keywords": "Class ParameterValues Parameter values Inheritance object ParameterValues Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Generator Assembly: Mecha.Core.dll Syntax public class ParameterValues Constructors | Improve this Doc View Source ParameterValues(ParameterInfo) Initializes a new instance of the ParameterValues class. Declaration public ParameterValues(ParameterInfo parameter) Parameters Type Name Description ParameterInfo parameter The parameter. Properties | Improve this Doc View Source GeneratedValues Gets the generated values. Declaration public List<object?> GeneratedValues { get; } Property Value Type Description List<object> The generated values. | Improve this Doc View Source Parameter Gets or sets the parameter. Declaration public ParameterInfo? Parameter { get; set; } Property Value Type Description ParameterInfo The parameter. Methods | Improve this Doc View Source AddValue(object?) Adds the value specified if it is valid. Declaration public void AddValue(object? value) Parameters Type Name Description object value The value. Extension Methods UtilsExtensions.IsInfinite(object?)"
   },
-  "api/Mecha.Core.html": {
-    "href": "api/Mecha.Core.html",
-    "title": "Namespace Mecha.Core | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core Classes DoNotBreakAttribute Property attribute ExceptionHandler Exception handler Mech Main class for breaking the Options Options OptionsExtensions Options extensions"
+  "api/Mecha.Core.Generator.html": {
+    "href": "api/Mecha.Core.Generator.html",
+    "title": "Namespace Mecha.Core.Generator | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Generator Classes GeneratorManager Generator manager ParameterValues Parameter values"
   },
   "api/Mecha.Core.Mech.html": {
     "href": "api/Mecha.Core.Mech.html",
@@ -264,35 +254,35 @@
     "title": "Namespace Mecha.Core.Modules | Mecha API Reference",
     "keywords": "Namespace Mecha.Core.Modules Classes CanisterModule Canister module"
   },
-  "api/Mecha.Core.Mutator.Defaults.html": {
-    "href": "api/Mecha.Core.Mutator.Defaults.html",
-    "title": "Namespace Mecha.Core.Mutator.Defaults | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Mutator.Defaults Classes StringMutator String mutator"
-  },
   "api/Mecha.Core.Mutator.Defaults.StringMutator.html": {
     "href": "api/Mecha.Core.Mutator.Defaults.StringMutator.html",
     "title": "Class StringMutator | Mecha API Reference",
     "keywords": "Class StringMutator String mutator Inheritance object StringMutator Implements IMutator Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Mutator.Defaults Assembly: Mecha.Core.dll Syntax public class StringMutator : IMutator Constructors | Improve this Doc View Source StringMutator(Random) Initializes a new instance of the StringMutator class. Declaration public StringMutator(Random random) Parameters Type Name Description Random random The random. See Also IMutator Methods | Improve this Doc View Source CanMutate(object?) Determines whether this instance can mutate the specified value. Declaration public bool CanMutate(object? value) Parameters Type Name Description object value The value. Returns Type Description bool true if this instance can mutate the specified value; otherwise, false. See Also IMutator | Improve this Doc View Source Mutate(object?) Mutates the specified value. Declaration public object? Mutate(object? value) Parameters Type Name Description object value The value. Returns Type Description object The mutated value. See Also IMutator Implements IMutator Extension Methods UtilsExtensions.IsInfinite(object?) See Also IMutator"
   },
-  "api/Mecha.Core.Mutator.html": {
-    "href": "api/Mecha.Core.Mutator.html",
-    "title": "Namespace Mecha.Core.Mutator | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Mutator Classes MutatorManager Mutator manager"
-  },
-  "api/Mecha.Core.Mutator.Interfaces.html": {
-    "href": "api/Mecha.Core.Mutator.Interfaces.html",
-    "title": "Namespace Mecha.Core.Mutator.Interfaces | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Mutator.Interfaces Interfaces IMutator Mutator interface"
+  "api/Mecha.Core.Mutator.Defaults.html": {
+    "href": "api/Mecha.Core.Mutator.Defaults.html",
+    "title": "Namespace Mecha.Core.Mutator.Defaults | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Mutator.Defaults Classes StringMutator String mutator"
   },
   "api/Mecha.Core.Mutator.Interfaces.IMutator.html": {
     "href": "api/Mecha.Core.Mutator.Interfaces.IMutator.html",
     "title": "Interface IMutator | Mecha API Reference",
     "keywords": "Interface IMutator Mutator interface Namespace: Mecha.Core.Mutator.Interfaces Assembly: Mecha.Core.dll Syntax public interface IMutator Methods | Improve this Doc View Source CanMutate(object?) Determines whether this instance can mutate the specified value. Declaration bool CanMutate(object? value) Parameters Type Name Description object value The value. Returns Type Description bool true if this instance can mutate the specified value; otherwise, false. | Improve this Doc View Source Mutate(object?) Mutates the specified value. Declaration object? Mutate(object? value) Parameters Type Name Description object value The value. Returns Type Description object The mutated value. Extension Methods UtilsExtensions.IsInfinite(object?)"
   },
+  "api/Mecha.Core.Mutator.Interfaces.html": {
+    "href": "api/Mecha.Core.Mutator.Interfaces.html",
+    "title": "Namespace Mecha.Core.Mutator.Interfaces | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Mutator.Interfaces Interfaces IMutator Mutator interface"
+  },
   "api/Mecha.Core.Mutator.MutatorManager.html": {
     "href": "api/Mecha.Core.Mutator.MutatorManager.html",
     "title": "Class MutatorManager | Mecha API Reference",
     "keywords": "Class MutatorManager Mutator manager Inheritance object MutatorManager Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Mutator Assembly: Mecha.Core.dll Syntax public class MutatorManager Constructors | Improve this Doc View Source MutatorManager(IEnumerable<IMutator>) Initializes a new instance of the MutatorManager class. Declaration public MutatorManager(IEnumerable<IMutator> mutators) Parameters Type Name Description IEnumerable<IMutator> mutators The mutators. Methods | Improve this Doc View Source Mutate(object?) Mutates the specified value. Declaration public object? Mutate(object? value) Parameters Type Name Description object value The value. Returns Type Description object The mutated value. Extension Methods UtilsExtensions.IsInfinite(object?)"
+  },
+  "api/Mecha.Core.Mutator.html": {
+    "href": "api/Mecha.Core.Mutator.html",
+    "title": "Namespace Mecha.Core.Mutator | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Mutator Classes MutatorManager Mutator manager"
   },
   "api/Mecha.Core.Options.html": {
     "href": "api/Mecha.Core.Options.html",
@@ -304,35 +294,30 @@
     "title": "Class OptionsExtensions | Mecha API Reference",
     "keywords": "Class OptionsExtensions Options extensions Inheritance object OptionsExtensions Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core Assembly: Mecha.Core.dll Syntax public static class OptionsExtensions Methods | Improve this Doc View Source Initialize(Options?) Initializes the specified options. Declaration public static Options Initialize(this Options? options) Parameters Type Name Description Options options The options. Returns Type Description Options Options after being initialized."
   },
-  "api/Mecha.Core.Runner.BaseClasses.html": {
-    "href": "api/Mecha.Core.Runner.BaseClasses.html",
-    "title": "Namespace Mecha.Core.Runner.BaseClasses | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Runner.BaseClasses Classes RunnerBaseClass Runner base class"
-  },
   "api/Mecha.Core.Runner.BaseClasses.RunnerBaseClass.html": {
     "href": "api/Mecha.Core.Runner.BaseClasses.RunnerBaseClass.html",
     "title": "Class RunnerBaseClass | Mecha API Reference",
     "keywords": "Class RunnerBaseClass Runner base class Inheritance object RunnerBaseClass DefaultRunner Implements IRunner Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Runner.BaseClasses Assembly: Mecha.Core.dll Syntax public abstract class RunnerBaseClass : IRunner Constructors | Improve this Doc View Source RunnerBaseClass(Random) Initializes a new instance of the RunnerBaseClass class. Declaration protected RunnerBaseClass(Random random) Parameters Type Name Description Random random Properties | Improve this Doc View Source Manager Gets or sets the manager. Declaration protected Mech? Manager { get; set; } Property Value Type Description Mech The manager. | Improve this Doc View Source Random Gets the random. Declaration protected Random Random { get; } Property Value Type Description Random The random. Methods | Improve this Doc View Source FinishRun(MethodInfo, object?, Options, List<RunResult>) Finishes the run and converts the list of runs to a finished result. Declaration protected abstract Result FinishRun(MethodInfo runMethod, object? target, Options options, List<RunResult> results) Parameters Type Name Description MethodInfo runMethod The run method. object target The target. Options options The options. List<RunResult> results The results. Returns Type Description Result The result for the run. | Improve this Doc View Source GenerateArguments(MethodInfo, Options) Generates the arguments. Declaration protected ParameterValues[] GenerateArguments(MethodInfo methodInfo, Options options) Parameters Type Name Description MethodInfo methodInfo The method information. Options options The options. Returns Type Description ParameterValues[] The generated arguments. | Improve this Doc View Source MutateAsync(List<RunResult>, Options) Attempts to mutate the successful runs asynchronously. Declaration protected Task<List<RunResult>> MutateAsync(List<RunResult> runs, Options options) Parameters Type Name Description List<RunResult> runs The runs. Options options The options. Returns Type Description Task<List<RunResult>> The resulting runs. | Improve this Doc View Source ReloadTests(MethodInfo) Reloads the arguments. Declaration protected List<object?[]> ReloadTests(MethodInfo methodInfo) Parameters Type Name Description MethodInfo methodInfo The method information. Returns Type Description List<object[]> | Improve this Doc View Source RunAsync(MethodInfo?, object?, Options) Runs the specified method on the target class. Declaration public Task<Result> RunAsync(MethodInfo? runMethod, object? target, Options options) Parameters Type Name Description MethodInfo runMethod The run method. object target The target. Options options The options. Returns Type Description Task<Result> The result. | Improve this Doc View Source SaveArguments(MethodInfo, object?[]) Saves the arguments. Declaration protected void SaveArguments(MethodInfo method, object?[] data) Parameters Type Name Description MethodInfo method The method. object[] data The data. | Improve this Doc View Source ShrinkAsync(List<RunResult>, Options) Shrinks this instance. Declaration protected Task<List<RunResult>> ShrinkAsync(List<RunResult> runs, Options options) Parameters Type Name Description List<RunResult> runs The runs. Options options The options. Returns Type Description Task<List<RunResult>> The shrunk run. | Improve this Doc View Source StartRun(MethodInfo, object?, Options) Called at the start of the run. Declaration protected abstract void StartRun(MethodInfo runMethod, object? target, Options options) Parameters Type Name Description MethodInfo runMethod The run method. object target The target. Options options The options. Implements IRunner Extension Methods UtilsExtensions.IsInfinite(object?)"
+  },
+  "api/Mecha.Core.Runner.BaseClasses.html": {
+    "href": "api/Mecha.Core.Runner.BaseClasses.html",
+    "title": "Namespace Mecha.Core.Runner.BaseClasses | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Runner.BaseClasses Classes RunnerBaseClass Runner base class"
   },
   "api/Mecha.Core.Runner.DefaultRunner.html": {
     "href": "api/Mecha.Core.Runner.DefaultRunner.html",
     "title": "Class DefaultRunner | Mecha API Reference",
     "keywords": "Class DefaultRunner Default runner Inheritance object RunnerBaseClass DefaultRunner Implements IRunner Inherited Members RunnerBaseClass.Random RunnerBaseClass.Manager RunnerBaseClass.RunAsync(MethodInfo, object, Options) RunnerBaseClass.GenerateArguments(MethodInfo, Options) RunnerBaseClass.MutateAsync(List<RunResult>, Options) RunnerBaseClass.ReloadTests(MethodInfo) RunnerBaseClass.SaveArguments(MethodInfo, object[]) RunnerBaseClass.ShrinkAsync(List<RunResult>, Options) object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Runner Assembly: Mecha.Core.dll Syntax public class DefaultRunner : RunnerBaseClass, IRunner Constructors | Improve this Doc View Source DefaultRunner(Random) Initializes a new instance of the DefaultRunner class. Declaration public DefaultRunner(Random random) Parameters Type Name Description Random random See Also IRunner Methods | Improve this Doc View Source FinishRun(MethodInfo, object?, Options, List<RunResult>) Finishes the run and converts the list of runs to a finished result. Declaration protected override Result FinishRun(MethodInfo runMethod, object? target, Options options, List<RunResult> results) Parameters Type Name Description MethodInfo runMethod The run method. object target The target. Options options The options. List<RunResult> results The results. Returns Type Description Result The result for the run. Overrides RunnerBaseClass.FinishRun(MethodInfo, object?, Options, List<RunResult>) See Also IRunner | Improve this Doc View Source StartRun(MethodInfo, object?, Options) Called at the start of the run. Declaration protected override void StartRun(MethodInfo runMethod, object? target, Options options) Parameters Type Name Description MethodInfo runMethod The run method. object target The target. Options options The options. Overrides RunnerBaseClass.StartRun(MethodInfo, object?, Options) See Also IRunner Implements IRunner Extension Methods UtilsExtensions.IsInfinite(object?) See Also IRunner"
   },
-  "api/Mecha.Core.Runner.html": {
-    "href": "api/Mecha.Core.Runner.html",
-    "title": "Namespace Mecha.Core.Runner | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Runner Classes DefaultRunner Default runner Parameter Parameter value Result Result data holder RunResult Individual run result TestRunnerManager Test runner manager"
+  "api/Mecha.Core.Runner.Interfaces.IRunner.html": {
+    "href": "api/Mecha.Core.Runner.Interfaces.IRunner.html",
+    "title": "Interface IRunner | Mecha API Reference",
+    "keywords": "Interface IRunner Test runner interface Namespace: Mecha.Core.Runner.Interfaces Assembly: Mecha.Core.dll Syntax public interface IRunner Methods | Improve this Doc View Source RunAsync(MethodInfo?, object?, Options) Runs the specified method on the target class. Declaration Task<Result> RunAsync(MethodInfo? runMethod, object? target, Options options) Parameters Type Name Description MethodInfo runMethod The run method. object target The target. Options options The options. Returns Type Description Task<Result> The result. Extension Methods UtilsExtensions.IsInfinite(object?)"
   },
   "api/Mecha.Core.Runner.Interfaces.html": {
     "href": "api/Mecha.Core.Runner.Interfaces.html",
     "title": "Namespace Mecha.Core.Runner.Interfaces | Mecha API Reference",
     "keywords": "Namespace Mecha.Core.Runner.Interfaces Interfaces IRunner Test runner interface"
-  },
-  "api/Mecha.Core.Runner.Interfaces.IRunner.html": {
-    "href": "api/Mecha.Core.Runner.Interfaces.IRunner.html",
-    "title": "Interface IRunner | Mecha API Reference",
-    "keywords": "Interface IRunner Test runner interface Namespace: Mecha.Core.Runner.Interfaces Assembly: Mecha.Core.dll Syntax public interface IRunner Methods | Improve this Doc View Source RunAsync(MethodInfo?, object?, Options) Runs the specified method on the target class. Declaration Task<Result> RunAsync(MethodInfo? runMethod, object? target, Options options) Parameters Type Name Description MethodInfo runMethod The run method. object target The target. Options options The options. Returns Type Description Task<Result> The result. Extension Methods UtilsExtensions.IsInfinite(object?)"
   },
   "api/Mecha.Core.Runner.Parameter.html": {
     "href": "api/Mecha.Core.Runner.Parameter.html",
@@ -354,6 +339,11 @@
     "title": "Class TestRunnerManager | Mecha API Reference",
     "keywords": "Class TestRunnerManager Test runner manager Inheritance object TestRunnerManager Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Runner Assembly: Mecha.Core.dll Syntax public class TestRunnerManager Constructors | Improve this Doc View Source TestRunnerManager(IEnumerable<IRunner>) Initializes a new instance of the TestRunnerManager class. Declaration public TestRunnerManager(IEnumerable<IRunner> runners) Parameters Type Name Description IEnumerable<IRunner> runners The runners. Methods | Improve this Doc View Source RunAsync(MethodInfo?, object?, Options) Runs the specified method information. Declaration public Task<Result> RunAsync(MethodInfo? methodInfo, object? target, Options options) Parameters Type Name Description MethodInfo methodInfo The method information. object target The target. Options options The options. Returns Type Description Task<Result> Results Extension Methods UtilsExtensions.IsInfinite(object?)"
   },
+  "api/Mecha.Core.Runner.html": {
+    "href": "api/Mecha.Core.Runner.html",
+    "title": "Namespace Mecha.Core.Runner | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Runner Classes DefaultRunner Default runner Parameter Parameter value Result Result data holder RunResult Individual run result TestRunnerManager Test runner manager"
+  },
   "api/Mecha.Core.Shrinker.Defaults.ArrayShrinker.html": {
     "href": "api/Mecha.Core.Shrinker.Defaults.ArrayShrinker.html",
     "title": "Class ArrayShrinker | Mecha API Reference",
@@ -363,11 +353,6 @@
     "href": "api/Mecha.Core.Shrinker.Defaults.DictionaryShrinker.html",
     "title": "Class DictionaryShrinker | Mecha API Reference",
     "keywords": "Class DictionaryShrinker List shrinker Inheritance object DictionaryShrinker Implements IShrinker Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Shrinker.Defaults Assembly: Mecha.Core.dll Syntax public class DictionaryShrinker : IShrinker Methods | Improve this Doc View Source CanShrink(object?) Determines whether this instance can shrink. Declaration public bool CanShrink(object? value) Parameters Type Name Description object value Returns Type Description bool true if this instance can shrink; otherwise, false. See Also IShrinker | Improve this Doc View Source Shrink(object?) Shrinks the specified value. Declaration public object? Shrink(object? value) Parameters Type Name Description object value The value. Returns Type Description object See Also IShrinker Implements IShrinker Extension Methods UtilsExtensions.IsInfinite(object?) See Also IShrinker"
-  },
-  "api/Mecha.Core.Shrinker.Defaults.html": {
-    "href": "api/Mecha.Core.Shrinker.Defaults.html",
-    "title": "Namespace Mecha.Core.Shrinker.Defaults | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Shrinker.Defaults Classes ArrayShrinker Array shrinker DictionaryShrinker List shrinker ListShrinker List shrinker NumberShrinker Number shrinker StringShrinker String shrinker"
   },
   "api/Mecha.Core.Shrinker.Defaults.ListShrinker.html": {
     "href": "api/Mecha.Core.Shrinker.Defaults.ListShrinker.html",
@@ -384,30 +369,35 @@
     "title": "Class StringShrinker | Mecha API Reference",
     "keywords": "Class StringShrinker String shrinker Inheritance object StringShrinker Implements IShrinker Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Shrinker.Defaults Assembly: Mecha.Core.dll Syntax public class StringShrinker : IShrinker Methods | Improve this Doc View Source CanShrink(object?) Determines whether this instance can shrink. Declaration public bool CanShrink(object? value) Parameters Type Name Description object value Returns Type Description bool true if this instance can shrink; otherwise, false. See Also IShrinker | Improve this Doc View Source Shrink(object?) Shrinks the specified value. Declaration public object? Shrink(object? value) Parameters Type Name Description object value The value. Returns Type Description object See Also IShrinker Implements IShrinker Extension Methods UtilsExtensions.IsInfinite(object?) See Also IShrinker"
   },
-  "api/Mecha.Core.Shrinker.html": {
-    "href": "api/Mecha.Core.Shrinker.html",
-    "title": "Namespace Mecha.Core.Shrinker | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Shrinker Classes ShrinkerManager Shrinker manager"
-  },
-  "api/Mecha.Core.Shrinker.Interfaces.html": {
-    "href": "api/Mecha.Core.Shrinker.Interfaces.html",
-    "title": "Namespace Mecha.Core.Shrinker.Interfaces | Mecha API Reference",
-    "keywords": "Namespace Mecha.Core.Shrinker.Interfaces Interfaces IShrinker Shrinker interface"
+  "api/Mecha.Core.Shrinker.Defaults.html": {
+    "href": "api/Mecha.Core.Shrinker.Defaults.html",
+    "title": "Namespace Mecha.Core.Shrinker.Defaults | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Shrinker.Defaults Classes ArrayShrinker Array shrinker DictionaryShrinker List shrinker ListShrinker List shrinker NumberShrinker Number shrinker StringShrinker String shrinker"
   },
   "api/Mecha.Core.Shrinker.Interfaces.IShrinker.html": {
     "href": "api/Mecha.Core.Shrinker.Interfaces.IShrinker.html",
     "title": "Interface IShrinker | Mecha API Reference",
     "keywords": "Interface IShrinker Shrinker interface Namespace: Mecha.Core.Shrinker.Interfaces Assembly: Mecha.Core.dll Syntax public interface IShrinker Methods | Improve this Doc View Source CanShrink(object?) Determines whether this instance can shrink. Declaration bool CanShrink(object? value) Parameters Type Name Description object value Returns Type Description bool true if this instance can shrink; otherwise, false. | Improve this Doc View Source Shrink(object?) Shrinks the specified value. Declaration object? Shrink(object? value) Parameters Type Name Description object value The value. Returns Type Description object The \"shrunk\" value. Extension Methods UtilsExtensions.IsInfinite(object?)"
   },
+  "api/Mecha.Core.Shrinker.Interfaces.html": {
+    "href": "api/Mecha.Core.Shrinker.Interfaces.html",
+    "title": "Namespace Mecha.Core.Shrinker.Interfaces | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Shrinker.Interfaces Interfaces IShrinker Shrinker interface"
+  },
   "api/Mecha.Core.Shrinker.ShrinkerManager.html": {
     "href": "api/Mecha.Core.Shrinker.ShrinkerManager.html",
     "title": "Class ShrinkerManager | Mecha API Reference",
     "keywords": "Class ShrinkerManager Shrinker manager Inheritance object ShrinkerManager Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.Core.Shrinker Assembly: Mecha.Core.dll Syntax public class ShrinkerManager Constructors | Improve this Doc View Source ShrinkerManager(IEnumerable<IShrinker>) Initializes a new instance of the ShrinkerManager class. Declaration public ShrinkerManager(IEnumerable<IShrinker> shrinkers) Parameters Type Name Description IEnumerable<IShrinker> shrinkers The shrinkers. Methods | Improve this Doc View Source Shrink(object?) Shrinks the specified value. Declaration public object? Shrink(object? value) Parameters Type Name Description object value The value. Returns Type Description object The \"shrunk\" value Extension Methods UtilsExtensions.IsInfinite(object?)"
   },
-  "api/Mecha.xUnit.html": {
-    "href": "api/Mecha.xUnit.html",
-    "title": "Namespace Mecha.xUnit | Mecha API Reference",
-    "keywords": "Namespace Mecha.xUnit Classes PropertyAttribute Property attribute PropertyDiscoverer Property discoverer PropertyTestCase Property test case"
+  "api/Mecha.Core.Shrinker.html": {
+    "href": "api/Mecha.Core.Shrinker.html",
+    "title": "Namespace Mecha.Core.Shrinker | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core.Shrinker Classes ShrinkerManager Shrinker manager"
+  },
+  "api/Mecha.Core.html": {
+    "href": "api/Mecha.Core.html",
+    "title": "Namespace Mecha.Core | Mecha API Reference",
+    "keywords": "Namespace Mecha.Core Classes DoNotBreakAttribute Property attribute ExceptionHandler Exception handler Mech Main class for breaking the Options Options OptionsExtensions Options extensions"
   },
   "api/Mecha.xUnit.PropertyAttribute.html": {
     "href": "api/Mecha.xUnit.PropertyAttribute.html",
@@ -424,6 +414,11 @@
     "title": "Class PropertyTestCase | Mecha API Reference",
     "keywords": "Class PropertyTestCase Property test case Inheritance object LongLivedMarshalByRefObject TestMethodTestCase XunitTestCase PropertyTestCase Implements IDisposable IXunitTestCase ITestCase IXunitSerializable Inherited Members XunitTestCase.GetDisplayName(IAttributeInfo, string) XunitTestCase.GetSkipReason(IAttributeInfo) XunitTestCase.GetTimeout(IAttributeInfo) XunitTestCase.Initialize() XunitTestCase.Serialize(IXunitSerializationInfo) XunitTestCase.Deserialize(IXunitSerializationInfo) XunitTestCase.DiagnosticMessageSink XunitTestCase.Timeout TestMethodTestCase.Dispose() TestMethodTestCase.EnsureInitialized() TestMethodTestCase.GetUniqueID() TestMethodTestCase.BaseDisplayName TestMethodTestCase.DefaultMethodDisplay TestMethodTestCase.DefaultMethodDisplayOptions TestMethodTestCase.DisplayName TestMethodTestCase.InitializationException TestMethodTestCase.Method TestMethodTestCase.MethodGenericTypes TestMethodTestCase.SkipReason TestMethodTestCase.SourceInformation TestMethodTestCase.TestMethod TestMethodTestCase.TestMethodArguments TestMethodTestCase.Traits TestMethodTestCase.UniqueID LongLivedMarshalByRefObject.DisconnectAll() object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString() Namespace: Mecha.xUnit Assembly: Mecha.xUnit.dll Syntax public class PropertyTestCase : XunitTestCase, IDisposable, IXunitTestCase, ITestCase, IXunitSerializable Constructors | Improve this Doc View Source PropertyTestCase() Initializes a new instance of the PropertyTestCase class. Declaration public PropertyTestCase() See Also XunitTestCase | Improve this Doc View Source PropertyTestCase(IMessageSink?, TestMethodDisplay, TestMethodDisplayOptions, ITestMethod, object[]?) Initializes a new instance of the PropertyTestCase class. Declaration public PropertyTestCase(IMessageSink? diagnosticMessageSink, TestMethodDisplay defaultMethodDisplay, TestMethodDisplayOptions methodDisplayOptions, ITestMethod testMethod, object[]? testMethodArguments = null) Parameters Type Name Description IMessageSink diagnosticMessageSink The message sink used to send diagnostic messages TestMethodDisplay defaultMethodDisplay Default method display to use (when not customized). TestMethodDisplayOptions methodDisplayOptions The method display options. ITestMethod testMethod The test method this test case belongs to. object[] testMethodArguments The arguments for the test method. See Also XunitTestCase Methods | Improve this Doc View Source Init(IMessageBus, CancellationTokenSource) Initializes the specified output helper. Declaration public void Init(IMessageBus messageBus, CancellationTokenSource cancellationTokenSource) Parameters Type Name Description IMessageBus messageBus CancellationTokenSource cancellationTokenSource See Also XunitTestCase | Improve this Doc View Source RunAsync(IMessageSink, IMessageBus, object[], ExceptionAggregator, CancellationTokenSource) Runs the asynchronous. Declaration public override Task<RunSummary> RunAsync(IMessageSink diagnosticMessageSink, IMessageBus messageBus, object[] constructorArguments, ExceptionAggregator aggregator, CancellationTokenSource cancellationTokenSource) Parameters Type Name Description IMessageSink diagnosticMessageSink The diagnostic message sink. IMessageBus messageBus The message bus. object[] constructorArguments The constructor arguments. ExceptionAggregator aggregator The aggregator. CancellationTokenSource cancellationTokenSource The cancellation token source. Returns Type Description Task<RunSummary> Overrides XunitTestCase.RunAsync(IMessageSink, IMessageBus, object[], ExceptionAggregator, CancellationTokenSource) See Also XunitTestCase Implements IDisposable Xunit.Sdk.IXunitTestCase Xunit.Abstractions.ITestCase Xunit.Abstractions.IXunitSerializable Extension Methods UtilsExtensions.IsInfinite(object?) See Also XunitTestCase"
   },
+  "api/Mecha.xUnit.html": {
+    "href": "api/Mecha.xUnit.html",
+    "title": "Namespace Mecha.xUnit | Mecha API Reference",
+    "keywords": "Namespace Mecha.xUnit Classes PropertyAttribute Property attribute PropertyDiscoverer Property discoverer PropertyTestCase Property test case"
+  },
   "api/Microsoft.Extensions.DependencyInjection.CanisterMethods.html": {
     "href": "api/Microsoft.Extensions.DependencyInjection.CanisterMethods.html",
     "title": "Class CanisterMethods | Mecha API Reference",
@@ -433,6 +428,11 @@
     "href": "api/Microsoft.Extensions.DependencyInjection.html",
     "title": "Namespace Microsoft.Extensions.DependencyInjection | Mecha API Reference",
     "keywords": "Namespace Microsoft.Extensions.DependencyInjection Classes CanisterMethods Canister methods"
+  },
+  "api/index.html": {
+    "href": "api/index.html",
+    "title": "Welcome | Mecha API Reference",
+    "keywords": "Welcome Welcome to the API browser."
   },
   "articles/intro.html": {
     "href": "articles/intro.html",

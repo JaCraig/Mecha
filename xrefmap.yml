@@ -348,15 +348,6 @@ references:
   fullName.vb: Mecha.Core.Exceptions.GeneratorException.New(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
   nameWithType: GeneratorException.GeneratorException(SerializationInfo, StreamingContext)
   nameWithType.vb: GeneratorException.New(SerializationInfo, StreamingContext)
-- uid: Mecha.Core.Exceptions.GeneratorException.#ctor(System.String,System.Exception)
-  name: GeneratorException(string, Exception)
-  href: api/Mecha.Core.Exceptions.GeneratorException.html#Mecha_Core_Exceptions_GeneratorException__ctor_System_String_System_Exception_
-  commentId: M:Mecha.Core.Exceptions.GeneratorException.#ctor(System.String,System.Exception)
-  name.vb: New(String, Exception)
-  fullName: Mecha.Core.Exceptions.GeneratorException.GeneratorException(string, System.Exception)
-  fullName.vb: Mecha.Core.Exceptions.GeneratorException.New(String, System.Exception)
-  nameWithType: GeneratorException.GeneratorException(string, Exception)
-  nameWithType.vb: GeneratorException.New(String, Exception)
 - uid: Mecha.Core.Exceptions.GeneratorException.#ctor(System.String)
   name: GeneratorException(string)
   href: api/Mecha.Core.Exceptions.GeneratorException.html#Mecha_Core_Exceptions_GeneratorException__ctor_System_String_
@@ -366,6 +357,15 @@ references:
   fullName.vb: Mecha.Core.Exceptions.GeneratorException.New(String)
   nameWithType: GeneratorException.GeneratorException(string)
   nameWithType.vb: GeneratorException.New(String)
+- uid: Mecha.Core.Exceptions.GeneratorException.#ctor(System.String,System.Exception)
+  name: GeneratorException(string, Exception)
+  href: api/Mecha.Core.Exceptions.GeneratorException.html#Mecha_Core_Exceptions_GeneratorException__ctor_System_String_System_Exception_
+  commentId: M:Mecha.Core.Exceptions.GeneratorException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Mecha.Core.Exceptions.GeneratorException.GeneratorException(string, System.Exception)
+  fullName.vb: Mecha.Core.Exceptions.GeneratorException.New(String, System.Exception)
+  nameWithType: GeneratorException.GeneratorException(string, Exception)
+  nameWithType.vb: GeneratorException.New(String, Exception)
 - uid: Mecha.Core.Exceptions.GeneratorException.#ctor*
   name: GeneratorException
   href: api/Mecha.Core.Exceptions.GeneratorException.html#Mecha_Core_Exceptions_GeneratorException__ctor_
@@ -391,15 +391,6 @@ references:
   fullName.vb: Mecha.Core.Exceptions.MethodBrokenException.New()
   nameWithType: MethodBrokenException.MethodBrokenException()
   nameWithType.vb: MethodBrokenException.New()
-- uid: Mecha.Core.Exceptions.MethodBrokenException.#ctor(System.String,System.Exception)
-  name: MethodBrokenException(string?, Exception?)
-  href: api/Mecha.Core.Exceptions.MethodBrokenException.html#Mecha_Core_Exceptions_MethodBrokenException__ctor_System_String_System_Exception_
-  commentId: M:Mecha.Core.Exceptions.MethodBrokenException.#ctor(System.String,System.Exception)
-  name.vb: New(String, Exception)
-  fullName: Mecha.Core.Exceptions.MethodBrokenException.MethodBrokenException(string?, System.Exception?)
-  fullName.vb: Mecha.Core.Exceptions.MethodBrokenException.New(String, System.Exception)
-  nameWithType: MethodBrokenException.MethodBrokenException(string?, Exception?)
-  nameWithType.vb: MethodBrokenException.New(String, Exception)
 - uid: Mecha.Core.Exceptions.MethodBrokenException.#ctor(System.String)
   name: MethodBrokenException(string?)
   href: api/Mecha.Core.Exceptions.MethodBrokenException.html#Mecha_Core_Exceptions_MethodBrokenException__ctor_System_String_
@@ -409,6 +400,15 @@ references:
   fullName.vb: Mecha.Core.Exceptions.MethodBrokenException.New(String)
   nameWithType: MethodBrokenException.MethodBrokenException(string?)
   nameWithType.vb: MethodBrokenException.New(String)
+- uid: Mecha.Core.Exceptions.MethodBrokenException.#ctor(System.String,System.Exception)
+  name: MethodBrokenException(string?, Exception?)
+  href: api/Mecha.Core.Exceptions.MethodBrokenException.html#Mecha_Core_Exceptions_MethodBrokenException__ctor_System_String_System_Exception_
+  commentId: M:Mecha.Core.Exceptions.MethodBrokenException.#ctor(System.String,System.Exception)
+  name.vb: New(String, Exception)
+  fullName: Mecha.Core.Exceptions.MethodBrokenException.MethodBrokenException(string?, System.Exception?)
+  fullName.vb: Mecha.Core.Exceptions.MethodBrokenException.New(String, System.Exception)
+  nameWithType: MethodBrokenException.MethodBrokenException(string?, Exception?)
+  nameWithType.vb: MethodBrokenException.New(String, Exception)
 - uid: Mecha.Core.Exceptions.MethodBrokenException.#ctor*
   name: MethodBrokenException
   href: api/Mecha.Core.Exceptions.MethodBrokenException.html#Mecha_Core_Exceptions_MethodBrokenException__ctor_
@@ -3103,15 +3103,6 @@ references:
   isSpec: "True"
   fullName: Mecha.Core.Mech.BreakAsync
   nameWithType: Mech.BreakAsync
-- uid: Mecha.Core.Mech.BreakAsync``1(``0,Mecha.Core.Options)
-  name: BreakAsync<TClass>(TClass, Options?)
-  href: api/Mecha.Core.Mech.html#Mecha_Core_Mech_BreakAsync__1___0_Mecha_Core_Options_
-  commentId: M:Mecha.Core.Mech.BreakAsync``1(``0,Mecha.Core.Options)
-  name.vb: BreakAsync(Of TClass)(TClass, Options)
-  fullName: Mecha.Core.Mech.BreakAsync<TClass>(TClass, Mecha.Core.Options?)
-  fullName.vb: Mecha.Core.Mech.BreakAsync(Of TClass)(TClass, Mecha.Core.Options)
-  nameWithType: Mech.BreakAsync<TClass>(TClass, Options?)
-  nameWithType.vb: Mech.BreakAsync(Of TClass)(TClass, Options)
 - uid: Mecha.Core.Mech.BreakAsync``1(Mecha.Core.Options)
   name: BreakAsync<TClass>(Options?)
   href: api/Mecha.Core.Mech.html#Mecha_Core_Mech_BreakAsync__1_Mecha_Core_Options_
@@ -3130,6 +3121,15 @@ references:
   fullName.vb: Mecha.Core.Mech.BreakAsync(Of TValue1)(System.Action(Of TValue1), Mecha.Core.Options)
   nameWithType: Mech.BreakAsync<TValue1>(Action<TValue1>, Options?)
   nameWithType.vb: Mech.BreakAsync(Of TValue1)(Action(Of TValue1), Options)
+- uid: Mecha.Core.Mech.BreakAsync``1(``0,Mecha.Core.Options)
+  name: BreakAsync<TClass>(TClass, Options?)
+  href: api/Mecha.Core.Mech.html#Mecha_Core_Mech_BreakAsync__1___0_Mecha_Core_Options_
+  commentId: M:Mecha.Core.Mech.BreakAsync``1(``0,Mecha.Core.Options)
+  name.vb: BreakAsync(Of TClass)(TClass, Options)
+  fullName: Mecha.Core.Mech.BreakAsync<TClass>(TClass, Mecha.Core.Options?)
+  fullName.vb: Mecha.Core.Mech.BreakAsync(Of TClass)(TClass, Mecha.Core.Options)
+  nameWithType: Mech.BreakAsync<TClass>(TClass, Options?)
+  nameWithType.vb: Mech.BreakAsync(Of TClass)(TClass, Options)
 - uid: Mecha.Core.Mech.BreakAsync``2(System.Action{``0,``1},Mecha.Core.Options)
   name: BreakAsync<TValue1, TValue2>(Action<TValue1, TValue2>, Options?)
   href: api/Mecha.Core.Mech.html#Mecha_Core_Mech_BreakAsync__2_System_Action___0___1__Mecha_Core_Options_
@@ -3894,24 +3894,6 @@ references:
   commentId: T:Mecha.Core.Runner.Parameter
   fullName: Mecha.Core.Runner.Parameter
   nameWithType: Parameter
-- uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.Int32,System.Int32)
-  name: Parameter(ParameterInfo, object?, int, int)
-  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_System_Object_System_Int32_System_Int32_
-  commentId: M:Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.Int32,System.Int32)
-  name.vb: New(ParameterInfo, Object, Integer, Integer)
-  fullName: Mecha.Core.Runner.Parameter.Parameter(System.Reflection.ParameterInfo, object?, int, int)
-  fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo, Object, Integer, Integer)
-  nameWithType: Parameter.Parameter(ParameterInfo, object?, int, int)
-  nameWithType.vb: Parameter.New(ParameterInfo, Object, Integer, Integer)
-- uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object)
-  name: Parameter(ParameterInfo, object?)
-  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_System_Object_
-  commentId: M:Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object)
-  name.vb: New(ParameterInfo, Object)
-  fullName: Mecha.Core.Runner.Parameter.Parameter(System.Reflection.ParameterInfo, object?)
-  fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo, Object)
-  nameWithType: Parameter.Parameter(ParameterInfo, object?)
-  nameWithType.vb: Parameter.New(ParameterInfo, Object)
 - uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo)
   name: Parameter(ParameterInfo)
   href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_
@@ -3921,6 +3903,24 @@ references:
   fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo)
   nameWithType: Parameter.Parameter(ParameterInfo)
   nameWithType.vb: Parameter.New(ParameterInfo)
+- uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object)
+  name: Parameter(ParameterInfo, object?)
+  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_System_Object_
+  commentId: M:Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object)
+  name.vb: New(ParameterInfo, Object)
+  fullName: Mecha.Core.Runner.Parameter.Parameter(System.Reflection.ParameterInfo, object?)
+  fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo, Object)
+  nameWithType: Parameter.Parameter(ParameterInfo, object?)
+  nameWithType.vb: Parameter.New(ParameterInfo, Object)
+- uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.Int32,System.Int32)
+  name: Parameter(ParameterInfo, object?, int, int)
+  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_System_Object_System_Int32_System_Int32_
+  commentId: M:Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.Int32,System.Int32)
+  name.vb: New(ParameterInfo, Object, Integer, Integer)
+  fullName: Mecha.Core.Runner.Parameter.Parameter(System.Reflection.ParameterInfo, object?, int, int)
+  fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo, Object, Integer, Integer)
+  nameWithType: Parameter.Parameter(ParameterInfo, object?, int, int)
+  nameWithType.vb: Parameter.New(ParameterInfo, Object, Integer, Integer)
 - uid: Mecha.Core.Runner.Parameter.#ctor*
   name: Parameter
   href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_
