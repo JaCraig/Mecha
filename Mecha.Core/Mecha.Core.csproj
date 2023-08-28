@@ -53,7 +53,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FileCurator" Version="4.0.13" />
+    <PackageReference Include="FileCurator" Version="4.0.14" />
     <PackageReference Include="Mirage" Version="4.0.15" />
     <PackageReference Include="NSubstitute" Version="5.0.0" />
     <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7">
