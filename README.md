@@ -1,6 +1,6 @@
 ![Mecha Logo](https://repository-images.githubusercontent.com/337571372/3bfdaf00-a467-11eb-9e15-c30893f31981)
 
- [![Build status](https://ci.appveyor.com/api/projects/status/46292g2dtkhw1hyg?svg=true)](https://ci.appveyor.com/project/JaCraig/mecha)
+ [![.NET Publish](https://github.com/JaCraig/Mecha/actions/workflows/dotnet-publish.yml/badge.svg)](https://github.com/JaCraig/Mecha/actions/workflows/dotnet-publish.yml)
 
 > I try to make idiot proof software but the world keeps making better idiots.
 
