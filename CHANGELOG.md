@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.0.32"></a>
+## [2.0.32](https://www.github.com/JaCraig/Mecha/releases/tag/v2.0.32) (2023-9-12)
+
+### Bug Fixes
+
+* bump the dependencies group with 2 updates ([55f7fc7](https://www.github.com/JaCraig/Mecha/commit/55f7fc7814b05871c21fb6a315f082cfa12dedc1))
+
+### Other
+
+* Merge pull request #116 from JaCraig/dependabot/nuget/dependencies-5fb36a8a4b ([049255d](https://www.github.com/JaCraig/Mecha/commit/049255dc99760b113d977983a77b5dd0e21868a5))
+
 <a name="2.0.31"></a>
 ## [2.0.31](https://www.github.com/JaCraig/Mecha/releases/tag/v2.0.31) (2023-9-11)
 
