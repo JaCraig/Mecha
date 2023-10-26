@@ -54,7 +54,7 @@
 
   <ItemGroup>
     <PackageReference Include="FileCurator" Version="4.0.30" />
-    <PackageReference Include="Mirage" Version="4.0.35" />
+    <PackageReference Include="Mirage" Version="4.0.36" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />
     <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7">
       <PrivateAssets>all</PrivateAssets>
