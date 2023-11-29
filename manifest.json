@@ -22,20 +22,30 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Mecha.Core.Datasources.DefaultDatasource.yml",
+      "source_relative_path": "api/Mecha.Core.Datasources.Defaults.DefaultDatasource.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Mecha.Core.Datasources.DefaultDatasource.html"
+          "relative_path": "api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html"
         }
       },
       "version": ""
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Mecha.Core.Datasources.DefaultSerializer.yml",
+      "source_relative_path": "api/Mecha.Core.Datasources.Defaults.DefaultSerializer.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Mecha.Core.Datasources.DefaultSerializer.html"
+          "relative_path": "api/Mecha.Core.Datasources.Defaults.DefaultSerializer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Datasources.Defaults.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Datasources.Defaults.html"
         }
       },
       "version": ""
@@ -132,6 +142,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.ExtensionMethods.CanisterMethods.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.ExtensionMethods.CanisterMethods.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mecha.Core.ExtensionMethods.ServiceCollectionExtensions.yml",
       "output": {
         ".html": {
@@ -186,16 +206,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultValueGenerator.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.html"
         }
       },
       "version": ""
@@ -306,6 +316,16 @@
       "output": {
         ".html": {
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.html"
         }
       },
       "version": ""
@@ -846,26 +866,6 @@
       "output": {
         ".html": {
           "relative_path": "api/Mecha.xUnit.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.CanisterMethods.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Microsoft.Extensions.DependencyInjection.CanisterMethods.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Microsoft.Extensions.DependencyInjection.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Microsoft.Extensions.DependencyInjection.html"
         }
       },
       "version": ""

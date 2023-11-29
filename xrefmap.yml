@@ -80,110 +80,116 @@ references:
   isSpec: "True"
   fullName: Mecha.Core.Datasources.DataManager.Save
   nameWithType: DataManager.Save
-- uid: Mecha.Core.Datasources.DefaultDatasource
+- uid: Mecha.Core.Datasources.Defaults
+  name: Mecha.Core.Datasources.Defaults
+  href: api/Mecha.Core.Datasources.Defaults.html
+  commentId: N:Mecha.Core.Datasources.Defaults
+  fullName: Mecha.Core.Datasources.Defaults
+  nameWithType: Mecha.Core.Datasources.Defaults
+- uid: Mecha.Core.Datasources.Defaults.DefaultDatasource
   name: DefaultDatasource
-  href: api/Mecha.Core.Datasources.DefaultDatasource.html
-  commentId: T:Mecha.Core.Datasources.DefaultDatasource
-  fullName: Mecha.Core.Datasources.DefaultDatasource
+  href: api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html
+  commentId: T:Mecha.Core.Datasources.Defaults.DefaultDatasource
+  fullName: Mecha.Core.Datasources.Defaults.DefaultDatasource
   nameWithType: DefaultDatasource
-- uid: Mecha.Core.Datasources.DefaultDatasource.#ctor
+- uid: Mecha.Core.Datasources.Defaults.DefaultDatasource.#ctor
   name: DefaultDatasource()
-  href: api/Mecha.Core.Datasources.DefaultDatasource.html#Mecha_Core_Datasources_DefaultDatasource__ctor
-  commentId: M:Mecha.Core.Datasources.DefaultDatasource.#ctor
+  href: api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html#Mecha_Core_Datasources_Defaults_DefaultDatasource__ctor
+  commentId: M:Mecha.Core.Datasources.Defaults.DefaultDatasource.#ctor
   name.vb: New()
-  fullName: Mecha.Core.Datasources.DefaultDatasource.DefaultDatasource()
-  fullName.vb: Mecha.Core.Datasources.DefaultDatasource.New()
+  fullName: Mecha.Core.Datasources.Defaults.DefaultDatasource.DefaultDatasource()
+  fullName.vb: Mecha.Core.Datasources.Defaults.DefaultDatasource.New()
   nameWithType: DefaultDatasource.DefaultDatasource()
   nameWithType.vb: DefaultDatasource.New()
-- uid: Mecha.Core.Datasources.DefaultDatasource.#ctor*
+- uid: Mecha.Core.Datasources.Defaults.DefaultDatasource.#ctor*
   name: DefaultDatasource
-  href: api/Mecha.Core.Datasources.DefaultDatasource.html#Mecha_Core_Datasources_DefaultDatasource__ctor_
-  commentId: Overload:Mecha.Core.Datasources.DefaultDatasource.#ctor
+  href: api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html#Mecha_Core_Datasources_Defaults_DefaultDatasource__ctor_
+  commentId: Overload:Mecha.Core.Datasources.Defaults.DefaultDatasource.#ctor
   isSpec: "True"
   name.vb: New
-  fullName: Mecha.Core.Datasources.DefaultDatasource.DefaultDatasource
-  fullName.vb: Mecha.Core.Datasources.DefaultDatasource.New
+  fullName: Mecha.Core.Datasources.Defaults.DefaultDatasource.DefaultDatasource
+  fullName.vb: Mecha.Core.Datasources.Defaults.DefaultDatasource.New
   nameWithType: DefaultDatasource.DefaultDatasource
   nameWithType.vb: DefaultDatasource.New
-- uid: Mecha.Core.Datasources.DefaultDatasource.Clear(System.Reflection.MethodInfo)
+- uid: Mecha.Core.Datasources.Defaults.DefaultDatasource.Clear(System.Reflection.MethodInfo)
   name: Clear(MethodInfo)
-  href: api/Mecha.Core.Datasources.DefaultDatasource.html#Mecha_Core_Datasources_DefaultDatasource_Clear_System_Reflection_MethodInfo_
-  commentId: M:Mecha.Core.Datasources.DefaultDatasource.Clear(System.Reflection.MethodInfo)
-  fullName: Mecha.Core.Datasources.DefaultDatasource.Clear(System.Reflection.MethodInfo)
+  href: api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html#Mecha_Core_Datasources_Defaults_DefaultDatasource_Clear_System_Reflection_MethodInfo_
+  commentId: M:Mecha.Core.Datasources.Defaults.DefaultDatasource.Clear(System.Reflection.MethodInfo)
+  fullName: Mecha.Core.Datasources.Defaults.DefaultDatasource.Clear(System.Reflection.MethodInfo)
   nameWithType: DefaultDatasource.Clear(MethodInfo)
-- uid: Mecha.Core.Datasources.DefaultDatasource.Clear*
+- uid: Mecha.Core.Datasources.Defaults.DefaultDatasource.Clear*
   name: Clear
-  href: api/Mecha.Core.Datasources.DefaultDatasource.html#Mecha_Core_Datasources_DefaultDatasource_Clear_
-  commentId: Overload:Mecha.Core.Datasources.DefaultDatasource.Clear
+  href: api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html#Mecha_Core_Datasources_Defaults_DefaultDatasource_Clear_
+  commentId: Overload:Mecha.Core.Datasources.Defaults.DefaultDatasource.Clear
   isSpec: "True"
-  fullName: Mecha.Core.Datasources.DefaultDatasource.Clear
+  fullName: Mecha.Core.Datasources.Defaults.DefaultDatasource.Clear
   nameWithType: DefaultDatasource.Clear
-- uid: Mecha.Core.Datasources.DefaultDatasource.Read(System.Reflection.MethodInfo,Mecha.Core.Datasources.Interfaces.ISerializer)
+- uid: Mecha.Core.Datasources.Defaults.DefaultDatasource.Read(System.Reflection.MethodInfo,Mecha.Core.Datasources.Interfaces.ISerializer)
   name: Read(MethodInfo, ISerializer)
-  href: api/Mecha.Core.Datasources.DefaultDatasource.html#Mecha_Core_Datasources_DefaultDatasource_Read_System_Reflection_MethodInfo_Mecha_Core_Datasources_Interfaces_ISerializer_
-  commentId: M:Mecha.Core.Datasources.DefaultDatasource.Read(System.Reflection.MethodInfo,Mecha.Core.Datasources.Interfaces.ISerializer)
-  fullName: Mecha.Core.Datasources.DefaultDatasource.Read(System.Reflection.MethodInfo, Mecha.Core.Datasources.Interfaces.ISerializer)
+  href: api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html#Mecha_Core_Datasources_Defaults_DefaultDatasource_Read_System_Reflection_MethodInfo_Mecha_Core_Datasources_Interfaces_ISerializer_
+  commentId: M:Mecha.Core.Datasources.Defaults.DefaultDatasource.Read(System.Reflection.MethodInfo,Mecha.Core.Datasources.Interfaces.ISerializer)
+  fullName: Mecha.Core.Datasources.Defaults.DefaultDatasource.Read(System.Reflection.MethodInfo, Mecha.Core.Datasources.Interfaces.ISerializer)
   nameWithType: DefaultDatasource.Read(MethodInfo, ISerializer)
-- uid: Mecha.Core.Datasources.DefaultDatasource.Read*
+- uid: Mecha.Core.Datasources.Defaults.DefaultDatasource.Read*
   name: Read
-  href: api/Mecha.Core.Datasources.DefaultDatasource.html#Mecha_Core_Datasources_DefaultDatasource_Read_
-  commentId: Overload:Mecha.Core.Datasources.DefaultDatasource.Read
+  href: api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html#Mecha_Core_Datasources_Defaults_DefaultDatasource_Read_
+  commentId: Overload:Mecha.Core.Datasources.Defaults.DefaultDatasource.Read
   isSpec: "True"
-  fullName: Mecha.Core.Datasources.DefaultDatasource.Read
+  fullName: Mecha.Core.Datasources.Defaults.DefaultDatasource.Read
   nameWithType: DefaultDatasource.Read
-- uid: Mecha.Core.Datasources.DefaultDatasource.Save(System.Reflection.MethodInfo,System.Object[],Mecha.Core.Datasources.Interfaces.ISerializer)
+- uid: Mecha.Core.Datasources.Defaults.DefaultDatasource.Save(System.Reflection.MethodInfo,System.Object[],Mecha.Core.Datasources.Interfaces.ISerializer)
   name: Save(MethodInfo, object?[], ISerializer)
-  href: api/Mecha.Core.Datasources.DefaultDatasource.html#Mecha_Core_Datasources_DefaultDatasource_Save_System_Reflection_MethodInfo_System_Object___Mecha_Core_Datasources_Interfaces_ISerializer_
-  commentId: M:Mecha.Core.Datasources.DefaultDatasource.Save(System.Reflection.MethodInfo,System.Object[],Mecha.Core.Datasources.Interfaces.ISerializer)
+  href: api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html#Mecha_Core_Datasources_Defaults_DefaultDatasource_Save_System_Reflection_MethodInfo_System_Object___Mecha_Core_Datasources_Interfaces_ISerializer_
+  commentId: M:Mecha.Core.Datasources.Defaults.DefaultDatasource.Save(System.Reflection.MethodInfo,System.Object[],Mecha.Core.Datasources.Interfaces.ISerializer)
   name.vb: Save(MethodInfo, Object(), ISerializer)
-  fullName: Mecha.Core.Datasources.DefaultDatasource.Save(System.Reflection.MethodInfo, object?[], Mecha.Core.Datasources.Interfaces.ISerializer)
-  fullName.vb: Mecha.Core.Datasources.DefaultDatasource.Save(System.Reflection.MethodInfo, Object(), Mecha.Core.Datasources.Interfaces.ISerializer)
+  fullName: Mecha.Core.Datasources.Defaults.DefaultDatasource.Save(System.Reflection.MethodInfo, object?[], Mecha.Core.Datasources.Interfaces.ISerializer)
+  fullName.vb: Mecha.Core.Datasources.Defaults.DefaultDatasource.Save(System.Reflection.MethodInfo, Object(), Mecha.Core.Datasources.Interfaces.ISerializer)
   nameWithType: DefaultDatasource.Save(MethodInfo, object?[], ISerializer)
   nameWithType.vb: DefaultDatasource.Save(MethodInfo, Object(), ISerializer)
-- uid: Mecha.Core.Datasources.DefaultDatasource.Save*
+- uid: Mecha.Core.Datasources.Defaults.DefaultDatasource.Save*
   name: Save
-  href: api/Mecha.Core.Datasources.DefaultDatasource.html#Mecha_Core_Datasources_DefaultDatasource_Save_
-  commentId: Overload:Mecha.Core.Datasources.DefaultDatasource.Save
+  href: api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html#Mecha_Core_Datasources_Defaults_DefaultDatasource_Save_
+  commentId: Overload:Mecha.Core.Datasources.Defaults.DefaultDatasource.Save
   isSpec: "True"
-  fullName: Mecha.Core.Datasources.DefaultDatasource.Save
+  fullName: Mecha.Core.Datasources.Defaults.DefaultDatasource.Save
   nameWithType: DefaultDatasource.Save
-- uid: Mecha.Core.Datasources.DefaultSerializer
+- uid: Mecha.Core.Datasources.Defaults.DefaultSerializer
   name: DefaultSerializer
-  href: api/Mecha.Core.Datasources.DefaultSerializer.html
-  commentId: T:Mecha.Core.Datasources.DefaultSerializer
-  fullName: Mecha.Core.Datasources.DefaultSerializer
+  href: api/Mecha.Core.Datasources.Defaults.DefaultSerializer.html
+  commentId: T:Mecha.Core.Datasources.Defaults.DefaultSerializer
+  fullName: Mecha.Core.Datasources.Defaults.DefaultSerializer
   nameWithType: DefaultSerializer
-- uid: Mecha.Core.Datasources.DefaultSerializer.Deserialize(System.Type,System.String)
+- uid: Mecha.Core.Datasources.Defaults.DefaultSerializer.Deserialize(System.Type,System.String)
   name: Deserialize(Type, string?)
-  href: api/Mecha.Core.Datasources.DefaultSerializer.html#Mecha_Core_Datasources_DefaultSerializer_Deserialize_System_Type_System_String_
-  commentId: M:Mecha.Core.Datasources.DefaultSerializer.Deserialize(System.Type,System.String)
+  href: api/Mecha.Core.Datasources.Defaults.DefaultSerializer.html#Mecha_Core_Datasources_Defaults_DefaultSerializer_Deserialize_System_Type_System_String_
+  commentId: M:Mecha.Core.Datasources.Defaults.DefaultSerializer.Deserialize(System.Type,System.String)
   name.vb: Deserialize(Type, String)
-  fullName: Mecha.Core.Datasources.DefaultSerializer.Deserialize(System.Type, string?)
-  fullName.vb: Mecha.Core.Datasources.DefaultSerializer.Deserialize(System.Type, String)
+  fullName: Mecha.Core.Datasources.Defaults.DefaultSerializer.Deserialize(System.Type, string?)
+  fullName.vb: Mecha.Core.Datasources.Defaults.DefaultSerializer.Deserialize(System.Type, String)
   nameWithType: DefaultSerializer.Deserialize(Type, string?)
   nameWithType.vb: DefaultSerializer.Deserialize(Type, String)
-- uid: Mecha.Core.Datasources.DefaultSerializer.Deserialize*
+- uid: Mecha.Core.Datasources.Defaults.DefaultSerializer.Deserialize*
   name: Deserialize
-  href: api/Mecha.Core.Datasources.DefaultSerializer.html#Mecha_Core_Datasources_DefaultSerializer_Deserialize_
-  commentId: Overload:Mecha.Core.Datasources.DefaultSerializer.Deserialize
+  href: api/Mecha.Core.Datasources.Defaults.DefaultSerializer.html#Mecha_Core_Datasources_Defaults_DefaultSerializer_Deserialize_
+  commentId: Overload:Mecha.Core.Datasources.Defaults.DefaultSerializer.Deserialize
   isSpec: "True"
-  fullName: Mecha.Core.Datasources.DefaultSerializer.Deserialize
+  fullName: Mecha.Core.Datasources.Defaults.DefaultSerializer.Deserialize
   nameWithType: DefaultSerializer.Deserialize
-- uid: Mecha.Core.Datasources.DefaultSerializer.Serialize(System.Type,System.Object)
+- uid: Mecha.Core.Datasources.Defaults.DefaultSerializer.Serialize(System.Type,System.Object)
   name: Serialize(Type, object?)
-  href: api/Mecha.Core.Datasources.DefaultSerializer.html#Mecha_Core_Datasources_DefaultSerializer_Serialize_System_Type_System_Object_
-  commentId: M:Mecha.Core.Datasources.DefaultSerializer.Serialize(System.Type,System.Object)
+  href: api/Mecha.Core.Datasources.Defaults.DefaultSerializer.html#Mecha_Core_Datasources_Defaults_DefaultSerializer_Serialize_System_Type_System_Object_
+  commentId: M:Mecha.Core.Datasources.Defaults.DefaultSerializer.Serialize(System.Type,System.Object)
   name.vb: Serialize(Type, Object)
-  fullName: Mecha.Core.Datasources.DefaultSerializer.Serialize(System.Type, object?)
-  fullName.vb: Mecha.Core.Datasources.DefaultSerializer.Serialize(System.Type, Object)
+  fullName: Mecha.Core.Datasources.Defaults.DefaultSerializer.Serialize(System.Type, object?)
+  fullName.vb: Mecha.Core.Datasources.Defaults.DefaultSerializer.Serialize(System.Type, Object)
   nameWithType: DefaultSerializer.Serialize(Type, object?)
   nameWithType.vb: DefaultSerializer.Serialize(Type, Object)
-- uid: Mecha.Core.Datasources.DefaultSerializer.Serialize*
+- uid: Mecha.Core.Datasources.Defaults.DefaultSerializer.Serialize*
   name: Serialize
-  href: api/Mecha.Core.Datasources.DefaultSerializer.html#Mecha_Core_Datasources_DefaultSerializer_Serialize_
-  commentId: Overload:Mecha.Core.Datasources.DefaultSerializer.Serialize
+  href: api/Mecha.Core.Datasources.Defaults.DefaultSerializer.html#Mecha_Core_Datasources_Defaults_DefaultSerializer_Serialize_
+  commentId: Overload:Mecha.Core.Datasources.Defaults.DefaultSerializer.Serialize
   isSpec: "True"
-  fullName: Mecha.Core.Datasources.DefaultSerializer.Serialize
+  fullName: Mecha.Core.Datasources.Defaults.DefaultSerializer.Serialize
   nameWithType: DefaultSerializer.Serialize
 - uid: Mecha.Core.Datasources.Interfaces
   name: Mecha.Core.Datasources.Interfaces
@@ -425,6 +431,28 @@ references:
   commentId: N:Mecha.Core.ExtensionMethods
   fullName: Mecha.Core.ExtensionMethods
   nameWithType: Mecha.Core.ExtensionMethods
+- uid: Mecha.Core.ExtensionMethods.CanisterMethods
+  name: CanisterMethods
+  href: api/Mecha.Core.ExtensionMethods.CanisterMethods.html
+  commentId: T:Mecha.Core.ExtensionMethods.CanisterMethods
+  fullName: Mecha.Core.ExtensionMethods.CanisterMethods
+  nameWithType: CanisterMethods
+- uid: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha(Canister.Interfaces.ICanisterConfiguration)
+  name: RegisterMecha(ICanisterConfiguration?)
+  href: api/Mecha.Core.ExtensionMethods.CanisterMethods.html#Mecha_Core_ExtensionMethods_CanisterMethods_RegisterMecha_Canister_Interfaces_ICanisterConfiguration_
+  commentId: M:Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha(Canister.Interfaces.ICanisterConfiguration)
+  name.vb: RegisterMecha(ICanisterConfiguration)
+  fullName: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha(Canister.Interfaces.ICanisterConfiguration?)
+  fullName.vb: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha(Canister.Interfaces.ICanisterConfiguration)
+  nameWithType: CanisterMethods.RegisterMecha(ICanisterConfiguration?)
+  nameWithType.vb: CanisterMethods.RegisterMecha(ICanisterConfiguration)
+- uid: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha*
+  name: RegisterMecha
+  href: api/Mecha.Core.ExtensionMethods.CanisterMethods.html#Mecha_Core_ExtensionMethods_CanisterMethods_RegisterMecha_
+  commentId: Overload:Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha
+  nameWithType: CanisterMethods.RegisterMecha
 - uid: Mecha.Core.ExtensionMethods.ServiceCollectionExtensions
   name: ServiceCollectionExtensions
   href: api/Mecha.Core.ExtensionMethods.ServiceCollectionExtensions.html
@@ -488,13 +516,13 @@ references:
   fullName: Mecha.Core.Generator.DefaultGenerators.ArrayGenerator
   nameWithType: ArrayGenerator
 - uid: Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.#ctor(Mirage.Random)
-  name: ArrayGenerator(Random)
+  name: ArrayGenerator(Random?)
   href: api/Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.html#Mecha_Core_Generator_DefaultGenerators_ArrayGenerator__ctor_Mirage_Random_
   commentId: M:Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.#ctor(Mirage.Random)
   name.vb: New(Random)
-  fullName: Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.ArrayGenerator(Mirage.Random)
+  fullName: Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.ArrayGenerator(Mirage.Random?)
   fullName.vb: Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.New(Mirage.Random)
-  nameWithType: ArrayGenerator.ArrayGenerator(Random)
+  nameWithType: ArrayGenerator.ArrayGenerator(Random?)
   nameWithType.vb: ArrayGenerator.New(Random)
 - uid: Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.#ctor*
   name: ArrayGenerator
@@ -672,25 +700,6 @@ references:
   isSpec: "True"
   fullName: Mecha.Core.Generator.DefaultGenerators.DefaultValueGenerator.Order
   nameWithType: DefaultValueGenerator.Order
-- uid: Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup
-  name: DefaultValueLookup
-  href: api/Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.html
-  commentId: T:Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup
-  fullName: Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup
-  nameWithType: DefaultValueLookup
-- uid: Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.Values
-  name: Values
-  href: api/Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.html#Mecha_Core_Generator_DefaultGenerators_DefaultValueLookup_Values
-  commentId: P:Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.Values
-  fullName: Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.Values
-  nameWithType: DefaultValueLookup.Values
-- uid: Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.Values*
-  name: Values
-  href: api/Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.html#Mecha_Core_Generator_DefaultGenerators_DefaultValueLookup_Values_
-  commentId: Overload:Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.Values
-  isSpec: "True"
-  fullName: Mecha.Core.Generator.DefaultGenerators.DefaultValueLookup.Values
-  nameWithType: DefaultValueLookup.Values
 - uid: Mecha.Core.Generator.DefaultGenerators.FileStreamGenerator
   name: FileStreamGenerator
   href: api/Mecha.Core.Generator.DefaultGenerators.FileStreamGenerator.html
@@ -1289,6 +1298,25 @@ references:
   commentId: F:Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.Types
   fullName: Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.Types
   nameWithType: BasicTypesLookup.Types
+- uid: Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup
+  name: DefaultValueLookup
+  href: api/Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.html
+  commentId: T:Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup
+  fullName: Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup
+  nameWithType: DefaultValueLookup
+- uid: Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.Values
+  name: Values
+  href: api/Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.html#Mecha_Core_Generator_DefaultGenerators_Utils_DefaultValueLookup_Values
+  commentId: P:Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.Values
+  fullName: Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.Values
+  nameWithType: DefaultValueLookup.Values
+- uid: Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.Values*
+  name: Values
+  href: api/Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.html#Mecha_Core_Generator_DefaultGenerators_Utils_DefaultValueLookup_Values_
+  commentId: Overload:Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.Values
+  isSpec: "True"
+  fullName: Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.Values
+  nameWithType: DefaultValueLookup.Values
 - uid: Mecha.Core.Generator.DefaultGenerators.Utils.MaxValueLookup
   name: MaxValueLookup
   href: api/Mecha.Core.Generator.DefaultGenerators.Utils.MaxValueLookup.html
@@ -4853,31 +4881,3 @@ references:
   isSpec: "True"
   fullName: Mecha.xUnit.PropertyTestCase.RunAsync
   nameWithType: PropertyTestCase.RunAsync
-- uid: Microsoft.Extensions.DependencyInjection
-  name: Microsoft.Extensions.DependencyInjection
-  href: api/Microsoft.Extensions.DependencyInjection.html
-  commentId: N:Microsoft.Extensions.DependencyInjection
-  fullName: Microsoft.Extensions.DependencyInjection
-  nameWithType: Microsoft.Extensions.DependencyInjection
-- uid: Microsoft.Extensions.DependencyInjection.CanisterMethods
-  name: CanisterMethods
-  href: api/Microsoft.Extensions.DependencyInjection.CanisterMethods.html
-  commentId: T:Microsoft.Extensions.DependencyInjection.CanisterMethods
-  fullName: Microsoft.Extensions.DependencyInjection.CanisterMethods
-  nameWithType: CanisterMethods
-- uid: Microsoft.Extensions.DependencyInjection.CanisterMethods.RegisterMecha(Canister.Interfaces.ICanisterConfiguration)
-  name: RegisterMecha(ICanisterConfiguration?)
-  href: api/Microsoft.Extensions.DependencyInjection.CanisterMethods.html#Microsoft_Extensions_DependencyInjection_CanisterMethods_RegisterMecha_Canister_Interfaces_ICanisterConfiguration_
-  commentId: M:Microsoft.Extensions.DependencyInjection.CanisterMethods.RegisterMecha(Canister.Interfaces.ICanisterConfiguration)
-  name.vb: RegisterMecha(ICanisterConfiguration)
-  fullName: Microsoft.Extensions.DependencyInjection.CanisterMethods.RegisterMecha(Canister.Interfaces.ICanisterConfiguration?)
-  fullName.vb: Microsoft.Extensions.DependencyInjection.CanisterMethods.RegisterMecha(Canister.Interfaces.ICanisterConfiguration)
-  nameWithType: CanisterMethods.RegisterMecha(ICanisterConfiguration?)
-  nameWithType.vb: CanisterMethods.RegisterMecha(ICanisterConfiguration)
-- uid: Microsoft.Extensions.DependencyInjection.CanisterMethods.RegisterMecha*
-  name: RegisterMecha
-  href: api/Microsoft.Extensions.DependencyInjection.CanisterMethods.html#Microsoft_Extensions_DependencyInjection_CanisterMethods_RegisterMecha_
-  commentId: Overload:Microsoft.Extensions.DependencyInjection.CanisterMethods.RegisterMecha
-  isSpec: "True"
-  fullName: Microsoft.Extensions.DependencyInjection.CanisterMethods.RegisterMecha
-  nameWithType: CanisterMethods.RegisterMecha
