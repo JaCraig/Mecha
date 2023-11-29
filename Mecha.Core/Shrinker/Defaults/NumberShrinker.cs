@@ -1,5 +1,4 @@
-﻿using Mecha.Core.Generator.DefaultGenerators;
-using Mecha.Core.Generator.DefaultGenerators.Utils;
+﻿using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Shrinker.Interfaces;
 
 namespace Mecha.Core.Shrinker.Defaults
@@ -15,13 +14,7 @@ namespace Mecha.Core.Shrinker.Defaults
         /// </summary>
         /// <param name="value"></param>
         /// <returns><c>true</c> if this instance can shrink; otherwise, <c>false</c>.</returns>
-        public bool CanShrink(object? value)
-        {
-            if (value is null)
-                return false;
-
-            return SliceValueLookup.Slice?.ContainsKey(value.GetType().GetHashCode()) ?? false;
-        }
+        public bool CanShrink(object? value) => value is not null && (SliceValueLookup.Slice?.ContainsKey(value.GetType().GetHashCode()) ?? false);
 
         /// <summary>
         /// Shrinks the specified value.

@@ -27,7 +27,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         [Property]
         public void RangeTest(int min, int max)
         {
-            var Parameters = TestMethodInfo.GetParameters();
+            System.Reflection.ParameterInfo[] Parameters = TestMethodInfo.GetParameters();
             Assert.Equal(Parameters[0].DefaultValue, TestObject.Next(Parameters[0], min, max));
         }
     }

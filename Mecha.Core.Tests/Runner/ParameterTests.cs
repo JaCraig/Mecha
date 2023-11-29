@@ -26,7 +26,7 @@ namespace Mecha.Core.Tests.Runner
         [Fact]
         public void Copy()
         {
-            var Result = TestObject.Copy();
+            Parameter Result = TestObject.Copy();
             Assert.NotNull(Result);
             Assert.Equal(TestObject.ParameterInfo, Result.ParameterInfo);
             Assert.Equal(0, Result.ShrinkCount);
@@ -34,22 +34,16 @@ namespace Mecha.Core.Tests.Runner
         }
 
         [Fact]
-        public void Mutate()
-        {
-            Assert.False(TestObject.Mutate(new Core.Mutator.MutatorManager(new[] { new StringMutator(Random) }), new System.Collections.Generic.List<RunResult>()));
-        }
+        public void Mutate() => Assert.False(TestObject.Mutate(new Core.Mutator.MutatorManager(new[] { new StringMutator(Random!) }), new System.Collections.Generic.List<RunResult>()));
 
         [Fact]
         public void Same()
         {
-            var Result = TestObject.Copy();
+            Parameter Result = TestObject.Copy();
             Assert.True(TestObject.Same(Result));
         }
 
         [Fact]
-        public void Shrink()
-        {
-            Assert.False(TestObject.Shrink(new Core.Shrinker.ShrinkerManager(new[] { new NumberShrinker() }), new System.Collections.Generic.List<RunResult>()));
-        }
+        public void Shrink() => Assert.False(TestObject.Shrink(new Core.Shrinker.ShrinkerManager(new[] { new NumberShrinker() }), new System.Collections.Generic.List<RunResult>()));
     }
 }

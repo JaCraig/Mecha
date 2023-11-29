@@ -26,11 +26,11 @@ namespace Mecha.Core.Runner
         {
             Method = method;
             Target = target;
-            var TempParameters = method.GetParameters();
+            ParameterInfo[] TempParameters = method.GetParameters();
             Parameters = new Parameter[TempParameters.Length];
-            for (var x = 0; x < TempParameters.Length; ++x)
+            for (var X = 0; X < TempParameters.Length; ++X)
             {
-                Parameters[x] = new Parameter(TempParameters[x], parameterValues[x]);
+                Parameters[X] = new Parameter(TempParameters[X], parameterValues[X]);
             }
         }
 
@@ -117,10 +117,7 @@ namespace Mecha.Core.Runner
         /// Copies this instance.
         /// </summary>
         /// <returns>The copy.</returns>
-        public RunResult Copy()
-        {
-            return new RunResult(Method, Target, Parameters, ShrinkCount, MutationCount, ReturnedValue, Exception, ElapsedTime);
-        }
+        public RunResult Copy() => new(Method, Target, Parameters, ShrinkCount, MutationCount, ReturnedValue, Exception, ElapsedTime);
 
         /// <summary>
         /// Mutates the specified mutator.
@@ -135,7 +132,7 @@ namespace Mecha.Core.Runner
             if (MutationCount >= options.MaxMutationCount || Exception is not null)
                 return false;
             var Result = false;
-            foreach (var Parameter in Parameters)
+            foreach (Parameter Parameter in Parameters)
             {
                 Result |= Parameter.Mutate(mutator, results);
             }
@@ -159,16 +156,16 @@ namespace Mecha.Core.Runner
             try
             {
                 ReturnedValue = Method.Invoke(Target, Parameters.ToArray(x => x?.Value));
-                if (ReturnedValue is Task awaitableReturnValue)
-                    await awaitableReturnValue.ConfigureAwait(false);
+                if (ReturnedValue is Task AwaitableReturnValue)
+                    await AwaitableReturnValue.ConfigureAwait(false);
                 Result = true;
             }
-            catch (Exception e)
+            catch (Exception E)
             {
-                Result = options.ExceptionHandlers?.CanIgnore(e, Method) ?? false;
+                Result = options.ExceptionHandlers?.CanIgnore(E, Method) ?? false;
                 if (!Result)
                 {
-                    Exception = e.InnerException ?? e;
+                    Exception = E.InnerException ?? E;
                 }
             }
             timer.Stop();
@@ -185,9 +182,9 @@ namespace Mecha.Core.Runner
         {
             if (runResult is null || runResult.Parameters.Length != Parameters.Length)
                 return false;
-            for (int x = 0; x < Parameters.Length; ++x)
+            for (var X = 0; X < Parameters.Length; ++X)
             {
-                if (!Parameters[x].Same(runResult.Parameters[x]))
+                if (!Parameters[X].Same(runResult.Parameters[X]))
                     return false;
             }
             return true;
@@ -206,7 +203,7 @@ namespace Mecha.Core.Runner
             if (ShrinkCount >= options.MaxShrinkCount || Exception is null)
                 return false;
             var Result = false;
-            foreach (var Parameter in Parameters)
+            foreach (Parameter Parameter in Parameters)
             {
                 Result |= Parameter.Shrink(shrinker, results);
             }
@@ -218,7 +215,7 @@ namespace Mecha.Core.Runner
         /// <summary>
         /// Converts to string.
         /// </summary>
-        /// <returns>A <see cref="System.String"/> that represents this instance.</returns>
+        /// <returns>A <see cref="string"/> that represents this instance.</returns>
         public override string ToString()
         {
             if (Method is null)
@@ -243,7 +240,7 @@ namespace Mecha.Core.Runner
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns></returns>
-        private static string GetValue(object? value)
+        private static string? GetValue(object? value)
         {
             if (value is null)
                 return "null";
@@ -281,9 +278,6 @@ namespace Mecha.Core.Runner
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>The values of the parameter.</returns>
-        private static string GetValue(Parameter value)
-        {
-            return value.ParameterInfo.Name + ": " + GetValue(value.Value);
-        }
+        private static string GetValue(Parameter value) => value.ParameterInfo.Name + ": " + GetValue(value.Value);
     }
 }

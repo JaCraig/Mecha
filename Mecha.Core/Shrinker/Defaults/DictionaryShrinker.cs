@@ -19,7 +19,7 @@ namespace Mecha.Core.Shrinker.Defaults
         {
             if (value is null)
                 return false;
-            var ValueType = value?.GetType();
+            System.Type? ValueType = value?.GetType();
 
             return typeof(IDictionary).IsAssignableFrom(ValueType);
         }
@@ -37,12 +37,8 @@ namespace Mecha.Core.Shrinker.Defaults
             if (Val.Count == 0)
                 return value;
             Val = CopyDictionary(Val);
-            var Keys = Val.Keys;
-            if (Keys.Count > 10)
-            {
-                return RemoveItems(Val, Keys, Keys.Count / 5);
-            }
-            return RemoveItems(Val, Keys, 1);
+            ICollection Keys = Val.Keys;
+            return Keys.Count > 10 ? RemoveItems(Val, Keys, Keys.Count / 5) : (object)RemoveItems(Val, Keys, 1);
         }
 
         /// <summary>
@@ -52,7 +48,7 @@ namespace Mecha.Core.Shrinker.Defaults
         /// <returns></returns>
         private static IDictionary CopyDictionary(IDictionary Val)
         {
-            IDictionary NewVal = (IDictionary)FastActivator.CreateInstance(Val.GetType());
+            var NewVal = (IDictionary)FastActivator.CreateInstance(Val.GetType());
             foreach (var Item in Val.Keys)
                 NewVal.Add(Item, Val[Item]);
             return NewVal;

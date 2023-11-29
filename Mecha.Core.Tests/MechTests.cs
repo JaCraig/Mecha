@@ -6,12 +6,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Mecha.Core.Tests.Runner
+namespace Mecha.Core.Tests
 {
     /// <summary>
     /// Mech tests
     /// </summary>
-    /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Shrinker.Mech}"/>
+    /// <seealso cref="TestBaseClass{Core.Shrinker.Mech}"/>
     public class MechTests : TestBaseClass<Mech>
     {
         /// <summary>
@@ -25,9 +25,9 @@ namespace Mecha.Core.Tests.Runner
         [Fact]
         public Task BreakStaticMethods()
         {
-            var StaticMethods = typeof(Mech).GetMethods();
+            System.Reflection.MethodInfo[] StaticMethods = typeof(Mech).GetMethods();
             var Tasks = new List<Task>();
-            foreach (var Method in StaticMethods.Where(x => x.IsStatic))
+            foreach (System.Reflection.MethodInfo? Method in StaticMethods.Where(x => x.IsStatic))
             {
                 Tasks.Add(Mech.BreakAsync(Method, null, Options.Default));
             }
@@ -41,10 +41,10 @@ namespace Mecha.Core.Tests.Runner
         [Fact]
         public async Task RunAsync()
         {
-            var Result = await TestObject.RunAsync(TestMethodInfo, this, Options.Default).ConfigureAwait(false);
+            Core.Runner.Result Result = await TestObject.RunAsync(TestMethodInfo, this, Options.Default);
             Assert.Null(Result.Exception);
             Assert.True(Result.ExecutionTime >= 0);
-            Assert.NotEmpty(Result.Output);
+            Assert.NotEmpty(Result.Output ?? "");
             Assert.True(Result.Passed);
         }
 
@@ -53,9 +53,6 @@ namespace Mecha.Core.Tests.Runner
         /// </summary>
         /// <param name="value">The value.</param>
         [Property(GenerationCount = 100)]
-        public void ValidationTest([Required] string value)
-        {
-            Assert.True(!string.IsNullOrEmpty(value));
-        }
+        public void ValidationTest([Required] string value) => Assert.False(string.IsNullOrEmpty(value));
     }
 }

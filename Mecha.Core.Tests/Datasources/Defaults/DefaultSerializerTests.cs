@@ -1,4 +1,4 @@
-﻿using Mecha.Core.Datasources;
+﻿using Mecha.Core.Datasources.Defaults;
 using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
 using Xunit;
@@ -8,7 +8,7 @@ namespace Mecha.Core.Tests.Datasources.Defaults
     /// <summary>
     /// Default serializer tests
     /// </summary>
-    /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Datasources.DefaultSerializer}"/>
+    /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{DefaultSerializer}"/>
     public class DefaultSerializerTests : TestBaseClass<DefaultSerializer>
     {
         /// <summary>

@@ -31,11 +31,11 @@ namespace Mecha.Core.ExtensionMethods
         /// <summary>
         /// The service provider lock
         /// </summary>
-        private static readonly object ServiceProviderLock = new object();
+        private static readonly object ServiceProviderLock = new();
 
         /// <summary>
         /// The service provider
         /// </summary>
-        private static IServiceProvider _ServiceProvider;
+        private static IServiceProvider? _ServiceProvider;
     }
 }

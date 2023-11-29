@@ -43,7 +43,7 @@ namespace Mecha.Core
             Mutator = mutator;
             try
             {
-                new DirectoryInfo("./Mech").EnumerateFiles().ForEach(x => x.Delete());
+                _ = new DirectoryInfo("./Mech").EnumerateFiles().ForEach(x => x.Delete());
             }
             catch { }
         }
@@ -58,7 +58,7 @@ namespace Mecha.Core
             {
                 if (_Default is not null)
                     return _Default;
-                lock (LockObject)
+                lock (_LockObject)
                 {
                     if (_Default is not null)
                         return _Default;
@@ -108,7 +108,7 @@ namespace Mecha.Core
         /// <summary>
         /// The lock object
         /// </summary>
-        private static readonly object LockObject = new object();
+        private static readonly object _LockObject = new();
 
         /// <summary>
         /// The default
@@ -122,12 +122,7 @@ namespace Mecha.Core
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <exception cref="AggregateException"></exception>
-        public static Task BreakAsync<TClass>(TClass target, Options? options = null)
-        {
-            if (target is null || Default is null)
-                return Task.CompletedTask;
-            return BreakAsync(target, target.GetType(), options);
-        }
+        public static Task BreakAsync<TClass>(TClass target, Options? options = null) => target is null || Default is null ? Task.CompletedTask : BreakAsync(target, target.GetType(), options);
 
         /// <summary>
         /// Breaks the action.
@@ -138,9 +133,9 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1>(Action<TValue1> action, Options? options = null)
         {
-            if (action is null)
-                return Task.CompletedTask;
-            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            return action is null
+                ? Task.CompletedTask
+                : BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>
@@ -153,9 +148,9 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2>(Action<TValue1, TValue2> action, Options? options = null)
         {
-            if (action is null)
-                return Task.CompletedTask;
-            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            return action is null
+                ? Task.CompletedTask
+                : BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>
@@ -169,9 +164,9 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3>(Action<TValue1, TValue2, TValue3> action, Options? options = null)
         {
-            if (action is null)
-                return Task.CompletedTask;
-            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            return action is null
+                ? Task.CompletedTask
+                : BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>
@@ -186,9 +181,9 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3, TValue4>(Action<TValue1, TValue2, TValue3, TValue4> action, Options? options = null)
         {
-            if (action is null)
-                return Task.CompletedTask;
-            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            return action is null
+                ? Task.CompletedTask
+                : BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>
@@ -204,9 +199,9 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3, TValue4, TValue5>(Action<TValue1, TValue2, TValue3, TValue4, TValue5> action, Options? options = null)
         {
-            if (action is null)
-                return Task.CompletedTask;
-            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            return action is null
+                ? Task.CompletedTask
+                : BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>
@@ -223,9 +218,9 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3, TValue4, TValue5, TValue6>(Action<TValue1, TValue2, TValue3, TValue4, TValue5, TValue6> action, Options? options = null)
         {
-            if (action is null)
-                return Task.CompletedTask;
-            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            return action is null
+                ? Task.CompletedTask
+                : BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>
@@ -243,9 +238,9 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync<TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7>(Action<TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7> action, Options? options = null)
         {
-            if (action is null)
-                return Task.CompletedTask;
-            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            return action is null
+                ? Task.CompletedTask
+                : BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>
@@ -256,9 +251,9 @@ namespace Mecha.Core
         /// <returns></returns>
         public static Task BreakAsync(Action action, Options? options = null)
         {
-            if (action is null)
-                return Task.CompletedTask;
-            return BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
+            return action is null
+                ? Task.CompletedTask
+                : BreakAsync(action.Method, FastActivator.CreateInstance(action.Method.DeclaringType), options);
         }
 
         /// <summary>
@@ -271,7 +266,7 @@ namespace Mecha.Core
         {
             if (Default is null)
                 return;
-            var Result = await Default.RunAsync(method, target, options).ConfigureAwait(false);
+            Result Result = await Default.RunAsync(method, target, options).ConfigureAwait(false);
             if (!Result.Passed)
                 throw new MethodBrokenException(Result.Output, Result.Exception);
         }
@@ -281,10 +276,7 @@ namespace Mecha.Core
         /// </summary>
         /// <typeparam name="TClass">The type of the class.</typeparam>
         /// <returns>The async task.</returns>
-        public static Task BreakAsync<TClass>(Options? options = null)
-        {
-            return BreakAsync(typeof(TClass), options);
-        }
+        public static Task BreakAsync<TClass>(Options? options = null) => BreakAsync(typeof(TClass), options);
 
         /// <summary>
         /// Finds the methods of the class type specified and tries to break them.
@@ -294,11 +286,11 @@ namespace Mecha.Core
         /// <returns>The async task.</returns>
         public static Task BreakAsync(Type classType, Options? options = null)
         {
-            if (classType is null)
-                return Task.CompletedTask;
-            if (classType.IsAbstract && classType.IsSealed) //Static class
-                return BreakAsync(default(object), classType, options);
-            return BreakAsync(FastActivator.CreateInstance(classType), options);
+            return classType is null
+                ? Task.CompletedTask
+                : classType.IsAbstract && classType.IsSealed
+                ? BreakAsync(default(object), classType, options)
+                : BreakAsync(FastActivator.CreateInstance(classType), options);
         }
 
         /// <summary>
@@ -315,53 +307,48 @@ namespace Mecha.Core
                 return Task.FromResult(Result.Skipped);
             }
             runMethod = FixMethod(runMethod);
-            if (runMethod?.IsGenericMethodDefinition != false)
-            {
-                return Task.FromResult(Result.Skipped);
-            }
-
-            return TestRunnerManager.RunAsync(runMethod, target, options.Initialize());
+            return runMethod?.IsGenericMethodDefinition != false
+                ? Task.FromResult(Result.Skipped)
+                : TestRunnerManager.RunAsync(runMethod, target, options.Initialize());
         }
 
         /// <summary>
         /// Attempts to find the type using basic lookup.
         /// </summary>
-        /// <param name="Args">The arguments.</param>
+        /// <param name="args">The arguments.</param>
         /// <returns>The type.</returns>
-        private static Type AttemptToFindBasic(Type Args)
-        {
-            return Array.Find(BasicTypesLookup.Types, y => Args.BaseType.IsAssignableFrom(y) && Args.GetInterfaces().All(z => z.IsAssignableFrom(y)));
-        }
+        private static Type? AttemptToFindBasic(Type args) => Array.Find(BasicTypesLookup.Types, y => args.BaseType?.IsAssignableFrom(y) == true && args.GetInterfaces().All(z => z.IsAssignableFrom(y)));
 
         /// <summary>
         /// Attempts to resolve the type.
         /// </summary>
-        /// <param name="Arg">The argument.</param>
-        /// <param name="Type">The type.</param>
+        /// <param name="arg">The argument.</param>
+        /// <param name="type">The type.</param>
         /// <returns>The type</returns>
-        private static Type? AttemptToResolveType(Type Arg, Type? Type)
+        private static Type? AttemptToResolveType(Type arg, Type? type)
         {
-            if (Type is not null)
-                return Type;
+            if (type is not null)
+                return type;
             try
             {
-                return Services.ServiceProvider.GetService(Arg.BaseType)?.GetType() ?? Type;
+                if (arg.BaseType is not null)
+                    return Services.ServiceProvider.GetService(arg.BaseType)?.GetType() ?? type;
             }
             catch
             {
-                foreach (var Interface in Arg.GetInterfaces())
+            }
+            foreach (Type Interface in arg.GetInterfaces())
+            {
+                try
                 {
-                    try
-                    {
-                        return Services.ServiceProvider.GetService(Interface)?.GetType() ?? Type;
-                    }
-                    catch
-                    {
-                    }
+                    return Services.ServiceProvider.GetService(Interface)?.GetType() ?? type;
+                }
+                catch
+                {
                 }
             }
 
-            return Type;
+            return type;
         }
 
         /// <summary>
@@ -374,7 +361,7 @@ namespace Mecha.Core
         {
             if (type is not null)
                 return type;
-            var FinalTypes = new List<Type> { args.BaseType };
+            List<Type> FinalTypes = args.BaseType is not null ? new List<Type> { args.BaseType } : new List<Type>();
             FinalTypes.AddRange(args.GetInterfaces());
             try
             {
@@ -396,9 +383,9 @@ namespace Mecha.Core
             if (Default is null)
                 return;
             var Exceptions = new List<Exception>();
-            foreach (var Method in classType.GetMethods())
+            foreach (MethodInfo Method in classType.GetMethods())
             {
-                var Result = await Default.RunAsync(Method, target, options).ConfigureAwait(false);
+                Result Result = await Default.RunAsync(Method, target, options).ConfigureAwait(false);
                 if (Result.Exception is not null)
                     Exceptions.Add(Result.Exception);
             }
@@ -417,16 +404,16 @@ namespace Mecha.Core
                 return method;
             if (!method.IsGenericMethodDefinition)
                 return method;
-            var Args = method.GetGenericArguments();
+            Type[] Args = method.GetGenericArguments();
             var ResultingItems = new Type[Args.Length];
-            for (var x = 0; x < ResultingItems.Length; ++x)
+            for (var X = 0; X < ResultingItems.Length; ++X)
             {
-                Type? Type = AttemptToFindBasic(Args[x]);
-                Type = AttemptToSubstitute(Args[x], Type);
-                Type = AttemptToResolveType(Args[x], Type);
+                Type? Type = AttemptToFindBasic(Args[X]);
+                Type = AttemptToSubstitute(Args[X], Type);
+                Type = AttemptToResolveType(Args[X], Type);
                 if (Type is null)
                     return method;
-                ResultingItems[x] = Type;
+                ResultingItems[X] = Type;
             }
             return method.MakeGenericMethod(ResultingItems);
         }

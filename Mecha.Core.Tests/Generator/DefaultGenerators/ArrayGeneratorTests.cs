@@ -20,7 +20,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         public ArrayGeneratorTests()
         {
             TestObject = new ArrayGenerator(new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Mirage.Random>());
-            TestMethodInfo2 = Array.Find(GetType().GetMethods(), x => x.Name == "TestMethod2");
+            TestMethodInfo2 = Array.Find(GetType().GetMethods(BindingFlags.NonPublic | BindingFlags.Static), x => x.Name == "TestMethod2");
         }
 
         /// <summary>
@@ -33,10 +33,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// Determines whether this instance can generate.
         /// </summary>
         [Fact]
-        public void CanGenerate()
-        {
-            Assert.True(TestObject.CanGenerate(TestMethodInfo2.GetParameters()[0]));
-        }
+        public void CanGenerate() => Assert.True(TestObject.CanGenerate(TestMethodInfo2.GetParameters()[0]));
 
         /// <summary>
         /// Ranges the test.
@@ -46,7 +43,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         [Property]
         public void RangeTest(int testNumber)
         {
-            var Parameters = TestMethodInfo2.GetParameters();
+            ParameterInfo[] Parameters = TestMethodInfo2.GetParameters();
             Assert.InRange(((int[])TestObject.Next(Parameters[0], 0, 50)).Length, 0, 100);
         }
 
@@ -54,7 +51,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// Tests the method2.
         /// </summary>
         /// <param name="args">The arguments.</param>
-        public void TestMethod2(params int[] args)
+        private static void TestMethod2(params int[] args)
         {
         }
     }

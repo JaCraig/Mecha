@@ -95,7 +95,7 @@ namespace Mecha.xUnit
             MessageBus = messageBus;
             OutputHelper = new TestOutputHelper();
             OutputHelper.Initialize(messageBus, Test);
-            var RunTimeMethod = Method.ToRuntimeMethod();
+            System.Reflection.MethodInfo RunTimeMethod = Method.ToRuntimeMethod();
             var PropertyAttribute = RunTimeMethod.GetCustomAttributes(typeof(PropertyAttribute), true).FirstOrDefault() as PropertyAttribute;
             Options = new Options()
             {
@@ -123,7 +123,7 @@ namespace Mecha.xUnit
         /// <returns></returns>
         public override Task<RunSummary> RunAsync(IMessageSink diagnosticMessageSink, IMessageBus messageBus, object[] constructorArguments, ExceptionAggregator aggregator, CancellationTokenSource cancellationTokenSource)
         {
-            var TempMethod = Method.ToRuntimeMethod();
+            System.Reflection.MethodInfo TempMethod = Method.ToRuntimeMethod();
 
             Init(messageBus, cancellationTokenSource);
             Timer = new ExecutionTimer();
@@ -134,18 +134,14 @@ namespace Mecha.xUnit
             if (!messageBus.QueueMessage(new TestStarting(Test)))
                 cancellationTokenSource.Cancel();
 
-            if (!string.IsNullOrEmpty(SkipReason))
-            {
-                if (!messageBus.QueueMessage(new TestSkipped(Test, SkipReason)))
-                    cancellationTokenSource.Cancel();
-                if (!messageBus.QueueMessage(new TestCaseFinished(this, 1, 0, 0, 1)))
-                    cancellationTokenSource.Cancel();
-                return Task.FromResult(new RunSummary { Skipped = 1, Total = 1 });
-            }
-            else
-            {
+            if (string.IsNullOrEmpty(SkipReason))
                 return Task.Run(RunTest);
-            }
+            if (!messageBus.QueueMessage(new TestSkipped(Test, SkipReason)))
+                cancellationTokenSource.Cancel();
+            if (!messageBus.QueueMessage(new TestCaseFinished(this, 1, 0, 0, 1)))
+                cancellationTokenSource.Cancel();
+
+            return Task.FromResult(new RunSummary { Skipped = 1, Total = 1 });
         }
 
         /// <summary>
@@ -156,9 +152,9 @@ namespace Mecha.xUnit
         {
             if (Manager is null)
                 return new RunSummary();
-            var RunMethod = TestMethod.Method.ToRuntimeMethod();
+            System.Reflection.MethodInfo RunMethod = TestMethod.Method.ToRuntimeMethod();
             object? Target = null;
-            var TestClass = TestMethod.TestClass.Class.ToRuntimeType();
+            Type TestClass = TestMethod.TestClass.Class.ToRuntimeType();
             if (!TestMethod.Method.IsStatic)
             {
                 Target = Test.CreateTestClass(TestClass, TestMethodArguments, MessageBus, Timer, CancellationTokenSource);
@@ -166,10 +162,10 @@ namespace Mecha.xUnit
             Result? Result = null;
 
             Timer?.Aggregate(() => Result = AsyncHelper.RunSync(() => Manager.RunAsync(RunMethod, Target, Options)));
-            if (Target is IDisposable disposable)
-                disposable.Dispose();
+            if (Target is IDisposable Disposable)
+                Disposable.Dispose();
 
-            RunSummary ReturnValue = new RunSummary
+            var ReturnValue = new RunSummary
             {
                 Time = Result?.ExecutionTime ?? 0,
                 Failed = Result?.Passed == true ? 0 : 1,
@@ -180,10 +176,10 @@ namespace Mecha.xUnit
 
             IMessageSinkMessage ResultMessage = Result?.Passed == true
                 ? new TestPassed(Test, Timer?.Total ?? 0, Result?.Output)
-                : (IMessageSinkMessage)new TestFailed(Test, Timer?.Total ?? 0, Result?.Output, Result?.Exception);
+                : new TestFailed(Test, Timer?.Total ?? 0, Result?.Output, Result?.Exception);
 
             OutputHelper?.Uninitialize();
-            MessageBus?.QueueMessage(ResultMessage);
+            _ = (MessageBus?.QueueMessage(ResultMessage));
             if (MessageBus?.QueueMessage(new TestFinished(Test, ReturnValue.Time, Result?.Output)) == false)
                 CancellationTokenSource?.Cancel();
             if (MessageBus?.QueueMessage(new TestCaseFinished(this, ReturnValue.Time, ReturnValue.Total, ReturnValue.Failed, ReturnValue.Skipped)) == false)

@@ -65,15 +65,15 @@ namespace Mecha.Core.Generator
             var ReturnValue = new ParameterValues[parameters.Length];
             for (var x = 0; x < parameters.Length; ++x)
             {
-                var CurrentParameter = ReturnValue[x] = new ParameterValues(parameters[x]);
-                bool Finished = false;
+                ParameterValues CurrentParameter = ReturnValue[x] = new ParameterValues(parameters[x]);
+                var Finished = false;
                 using var InternalTimer = new Timer(options.MaxDuration);
                 InternalTimer.Elapsed += (sender, e) => Finished = true;
                 InternalTimer.Start();
-                int Index = 0;
+                var Index = 0;
                 while (!Finished)
                 {
-                    var Generator = Generators[Index];
+                    IGenerator Generator = Generators[Index];
                     Index = (Index + 1) % Generators.Length;
                     if (!Generator.CanGenerate(CurrentParameter.Parameter))
                         continue;

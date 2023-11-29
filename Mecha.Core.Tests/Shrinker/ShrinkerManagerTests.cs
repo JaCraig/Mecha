@@ -4,12 +4,12 @@ using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
 using Xunit;
 
-namespace Mecha.Core.Tests.Runner
+namespace Mecha.Core.Tests.Shrinker
 {
     /// <summary>
     /// ShrinkerManager tests
     /// </summary>
-    /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Shrinker.ShrinkerManager}"/>
+    /// <seealso cref="TestBaseClass{ShrinkerManager}"/>
     public class ShrinkerManagerTests : TestBaseClass<ShrinkerManager>
     {
         /// <summary>

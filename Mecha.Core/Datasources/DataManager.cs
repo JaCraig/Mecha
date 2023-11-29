@@ -1,4 +1,5 @@
-﻿using Mecha.Core.Datasources.Interfaces;
+﻿using Mecha.Core.Datasources.Defaults;
+using Mecha.Core.Datasources.Interfaces;
 using Mecha.Core.ExtensionMethods;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace Mecha.Core.Datasources
         /// <param name="serializers">The serializers.</param>
         public DataManager(IEnumerable<IDatasource> datasources, IEnumerable<ISerializer> serializers)
         {
-            var MechaCoreAssembly = TypeCache<Mech>.Assembly;
+            Assembly MechaCoreAssembly = TypeCache<Mech>.Assembly;
             Datasource = datasources.FirstOrDefault(x => x.GetType().Assembly != MechaCoreAssembly) ?? new DefaultDatasource();
             Serializer = serializers.FirstOrDefault(x => x.GetType().Assembly != MechaCoreAssembly) ?? new DefaultSerializer();
         }
@@ -39,29 +40,20 @@ namespace Mecha.Core.Datasources
         /// Clears the specified method data.
         /// </summary>
         /// <param name="method">The method.</param>
-        public void Clear(MethodInfo method)
-        {
-            Datasource.Clear(method);
-        }
+        public void Clear(MethodInfo method) => Datasource.Clear(method);
 
         /// <summary>
         /// Reads the specified method's data.
         /// </summary>
         /// <param name="method">The method.</param>
         /// <returns>The data specified.</returns>
-        public List<object?[]> Read(MethodInfo method)
-        {
-            return Datasource.Read(method, Serializer);
-        }
+        public List<object?[]> Read(MethodInfo method) => Datasource.Read(method, Serializer);
 
         /// <summary>
         /// Saves the specified method's data.
         /// </summary>
         /// <param name="method">The method.</param>
         /// <param name="data">The data.</param>
-        public void Save(MethodInfo method, object?[] data)
-        {
-            Datasource.Save(method, data, Serializer);
-        }
+        public void Save(MethodInfo method, object?[] data) => Datasource.Save(method, data, Serializer);
     }
 }

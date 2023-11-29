@@ -17,7 +17,7 @@ limitations under the License.
 using System;
 using System.Collections.Generic;
 
-namespace Mecha.Core.Generator.DefaultGenerators
+namespace Mecha.Core.Generator.DefaultGenerators.Utils
 {
     /// <summary>
     /// Default value lookup

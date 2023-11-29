@@ -13,10 +13,7 @@ namespace Mecha.Core.Shrinker.Defaults
         /// </summary>
         /// <param name="value"></param>
         /// <returns><c>true</c> if this instance can shrink; otherwise, <c>false</c>.</returns>
-        public bool CanShrink(object? value)
-        {
-            return value?.GetType() == typeof(string);
-        }
+        public bool CanShrink(object? value) => value?.GetType() == typeof(string);
 
         /// <summary>
         /// Shrinks the specified value.
@@ -28,9 +25,7 @@ namespace Mecha.Core.Shrinker.Defaults
             if (!CanShrink(value))
                 return value;
             var StringVal = (string?)value;
-            if (string.IsNullOrEmpty(StringVal))
-                return StringVal;
-            return StringVal.Remove(StringVal.Length - 1, 1);
+            return string.IsNullOrEmpty(StringVal) ? StringVal : (object)StringVal.Remove(StringVal.Length - 1, 1);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Mecha.Core.Shrinker
         /// <param name="shrinkers">The shrinkers.</param>
         public ShrinkerManager(IEnumerable<IShrinker> shrinkers)
         {
-            var MechaCoreAssembly = TypeCache<Mech>.Assembly;
+            System.Reflection.Assembly MechaCoreAssembly = TypeCache<Mech>.Assembly;
             var TempShrinkers = shrinkers.Where(x => x.GetType().Assembly != MechaCoreAssembly).ToList();
             TempShrinkers.AddRange(shrinkers.Where(x => x.GetType().Assembly == MechaCoreAssembly));
             Shrinkers = TempShrinkers.ToArray();
@@ -35,7 +35,7 @@ namespace Mecha.Core.Shrinker
         /// <returns>The "shrunk" value</returns>
         public object? Shrink(object? value)
         {
-            foreach (var Shrinker in Shrinkers)
+            foreach (IShrinker Shrinker in Shrinkers)
             {
                 if (Shrinker.CanShrink(value))
                     return Shrinker.Shrink(value);

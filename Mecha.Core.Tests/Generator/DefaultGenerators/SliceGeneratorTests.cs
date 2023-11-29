@@ -27,7 +27,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         [Property]
         public void NullableRangeTest(int? min, int? max)
         {
-            var Parameters = TestMethodInfo.GetParameters();
+            System.Reflection.ParameterInfo[] Parameters = TestMethodInfo.GetParameters();
             Assert.NotNull(TestObject.Next(Parameters[0], min, max));
         }
 
@@ -41,11 +41,9 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         {
             if (min > max)
             {
-                var Value = min;
-                min = max;
-                max = Value;
+                (max, min) = (min, max);
             }
-            var Parameters = TestMethodInfo.GetParameters();
+            System.Reflection.ParameterInfo[] Parameters = TestMethodInfo.GetParameters();
             Assert.Equal((min / 2) + (max / 2), TestObject.Next(Parameters[0], min, max));
         }
     }

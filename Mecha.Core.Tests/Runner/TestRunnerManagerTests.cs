@@ -16,7 +16,7 @@ namespace Mecha.Core.Tests.Runner
         /// </summary>
         public TestRunnerManagerTests()
         {
-            TestObject = new TestRunnerManager(new[] { new DefaultRunner(Random) });
+            TestObject = new TestRunnerManager(new[] { new DefaultRunner(Random!) });
         }
 
         /// <summary>
@@ -25,10 +25,10 @@ namespace Mecha.Core.Tests.Runner
         [Fact]
         public async Task RunAsync()
         {
-            var Results = await TestObject.RunAsync(TestMethodInfo, this, Options.Default).ConfigureAwait(false);
+            Result Results = await TestObject.RunAsync(TestMethodInfo, this, Options.Default);
             Assert.Null(Results.Exception);
             Assert.True(Results.ExecutionTime >= 0);
-            Assert.NotEmpty(Results.Output);
+            Assert.NotEmpty(Results.Output ?? "");
             Assert.True(Results.Passed);
         }
     }

@@ -31,10 +31,7 @@ namespace Mecha.Core.Mutator.Defaults
         /// <returns>
         /// <c>true</c> if this instance can mutate the specified value; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanMutate(object? value)
-        {
-            return value?.GetType() == typeof(string);
-        }
+        public bool CanMutate(object? value) => value?.GetType() == typeof(string);
 
         /// <summary>
         /// Mutates the specified value.

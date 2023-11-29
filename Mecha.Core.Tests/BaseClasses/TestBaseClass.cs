@@ -37,10 +37,7 @@ namespace Mecha.Core.Tests.BaseClasses
         /// </summary>
         /// <returns>The async task.</returns>
         [Fact]
-        public Task BreakObject()
-        {
-            return Mech.BreakAsync(TestObject, new Options { MaxDuration = 100 });
-        }
+        public Task BreakObject() => Mech.BreakAsync(TestObject, new Options { MaxDuration = 100 });
     }
 
     /// <summary>
@@ -60,10 +57,7 @@ namespace Mecha.Core.Tests.BaseClasses
             {
                 lock (LockObj)
                 {
-                    if (Random is null)
-                    {
-                        Random = new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Mirage.Random>();
-                    }
+                    Random ??= new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Mirage.Random>();
                 }
             }
         }
@@ -71,7 +65,7 @@ namespace Mecha.Core.Tests.BaseClasses
         /// <summary>
         /// The lock object
         /// </summary>
-        private static object LockObj = new object();
+        private static readonly object LockObj = new();
 
         /// <summary>
         /// Gets the random.
@@ -102,10 +96,7 @@ namespace Mecha.Core.Tests.BaseClasses
         /// </summary>
         /// <returns>The async task.</returns>
         [Fact]
-        public Task BreakType()
-        {
-            return Mech.BreakAsync(ObjectType, new Options { MaxDuration = 100 });
-        }
+        public Task BreakType() => Mech.BreakAsync(ObjectType, new Options { MaxDuration = 100 });
 
         /// <summary>
         /// Tests the method.
@@ -121,9 +112,6 @@ namespace Mecha.Core.Tests.BaseClasses
         /// </summary>
         /// <param name="val1">The val1.</param>
         /// <exception cref="ArgumentException">val1</exception>
-        public void TestMethodWithException(int val1)
-        {
-            throw new ArgumentOutOfRangeException(nameof(val1));
-        }
+        public void TestMethodWithException(int val1) => throw new ArgumentOutOfRangeException(nameof(val1));
     }
 }

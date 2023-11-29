@@ -16,7 +16,7 @@ namespace Mecha.Core.Tests.Generator
         /// </summary>
         public GeneratorManagerTests()
         {
-            TestObject = new GeneratorManager(new[] { new DefaultGenerator(Random) }, Random);
+            TestObject = new GeneratorManager(new[] { new DefaultGenerator(Random!) }, Random!);
         }
 
         /// <summary>
@@ -27,8 +27,8 @@ namespace Mecha.Core.Tests.Generator
         [Fact]
         public void RangeTest()
         {
-            var Parameters = TestMethodInfo.GetParameters();
-            var Values = TestObject.GenerateParameterValues(Parameters, Options.Default);
+            System.Reflection.ParameterInfo[] Parameters = TestMethodInfo.GetParameters();
+            ParameterValues[] Values = TestObject.GenerateParameterValues(Parameters, Options.Default);
             Assert.Equal(2, Values.Length);
             Assert.Equal(10, Values[0].GeneratedValues.Count);
             Assert.Equal(10, Values[1].GeneratedValues.Count);

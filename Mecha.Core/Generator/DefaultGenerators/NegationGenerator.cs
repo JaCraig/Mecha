@@ -40,9 +40,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo? parameter)
         {
-            if (parameter is null)
-                return false;
-            return !parameter.HasDefaultValue
+            return parameter?.HasDefaultValue == false
                 && (NegateValueLookup.Negate?.ContainsKey(parameter.ParameterType.GetHashCode()) ?? false);
         }
 

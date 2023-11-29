@@ -24,11 +24,11 @@ namespace Mecha.Core.Generator.Helpers
         /// </summary>
         ~EmptyFileStream()
         {
-            foreach (var File in new FileCurator.DirectoryInfo("./Mecha/").EnumerateFiles())
+            foreach (FileCurator.Interfaces.IFile File in new FileCurator.DirectoryInfo("./Mecha/").EnumerateFiles())
             {
                 try
                 {
-                    File.Delete();
+                    _ = File.Delete();
                 }
                 catch { }
             }
@@ -106,10 +106,7 @@ namespace Mecha.Core.Generator.Helpers
         /// </param>
         /// <returns>An object that references the asynchronous read.</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override IAsyncResult BeginRead(byte[] array, int offset, int numBytes, AsyncCallback callback, object state)
-        {
-            return null!;
-        }
+        public override IAsyncResult BeginRead(byte[] array, int offset, int numBytes, AsyncCallback callback, object state) => null!;
 
         /// <summary>
         /// Begins an asynchronous write operation. Consider using <see
@@ -130,10 +127,7 @@ namespace Mecha.Core.Generator.Helpers
         /// </param>
         /// <returns>An object that references the asynchronous write.</returns>
         /// <exception cref="EndOfStreamException"></exception>
-        public override IAsyncResult BeginWrite(byte[] array, int offset, int numBytes, AsyncCallback callback, object state)
-        {
-            return null!;
-        }
+        public override IAsyncResult BeginWrite(byte[] array, int offset, int numBytes, AsyncCallback callback, object state) => null!;
 
         /// <summary>
         /// Closes the current stream and releases any resources (such as sockets and file handles)
@@ -168,10 +162,7 @@ namespace Mecha.Core.Generator.Helpers
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
         /// <exception cref="EndOfStreamException"></exception>
-        public override Task CopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken)
-        {
-            return Task.CompletedTask;
-        }
+        public override Task CopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken) => Task.CompletedTask;
 
         /// <summary>
         /// Waits for the pending asynchronous read operation to complete. (Consider using <see
@@ -186,10 +177,7 @@ namespace Mecha.Core.Generator.Helpers
         /// until at least 1 byte is available.
         /// </returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override int EndRead(IAsyncResult asyncResult)
-        {
-            return 0;
-        }
+        public override int EndRead(IAsyncResult asyncResult) => 0;
 
         /// <summary>
         /// Ends an asynchronous write operation and blocks until the I/O operation is complete.
@@ -229,10 +217,7 @@ namespace Mecha.Core.Generator.Helpers
         /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         /// <returns>A task that represents the asynchronous flush operation.</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override Task FlushAsync(CancellationToken cancellationToken)
-        {
-            return Task.CompletedTask;
-        }
+        public override Task FlushAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
         /// <summary>
         /// Obtains a lifetime service object to control the lifetime policy for this instance.
@@ -244,10 +229,8 @@ namespace Mecha.Core.Generator.Helpers
         /// initialized to the value of the <see
         /// cref="P:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime"/> property.
         /// </returns>
-        public override object InitializeLifetimeService()
-        {
-            return null!;
-        }
+        [Obsolete]
+        public override object InitializeLifetimeService() => null!;
 
         /// <summary>
         /// Prevents other processes from reading from or writing to the <see cref="T:System.IO.FileStream"/>.
@@ -279,10 +262,7 @@ namespace Mecha.Core.Generator.Helpers
         /// of the stream is reached.
         /// </returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override int Read(byte[] array, int offset, int count)
-        {
-            return 0;
-        }
+        public override int Read(byte[] array, int offset, int count) => 0;
 
         /// <summary>
         /// Reads the specified buffer.
@@ -290,10 +270,7 @@ namespace Mecha.Core.Generator.Helpers
         /// <param name="buffer">The buffer.</param>
         /// <returns></returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override int Read(Span<byte> buffer)
-        {
-            return 0;
-        }
+        public override int Read(Span<byte> buffer) => 0;
 
         /// <summary>
         /// Asynchronously reads a sequence of bytes from the current file stream and writes them to
@@ -313,10 +290,7 @@ namespace Mecha.Core.Generator.Helpers
         /// or it can be 0 (zero) if the end of the stream has been reached.
         /// </returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
-        {
-            return Task.FromResult(0);
-        }
+        public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken) => Task.FromResult(0);
 
         /// <summary>
         /// Reads the asynchronous.
@@ -325,10 +299,7 @@ namespace Mecha.Core.Generator.Helpers
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override ValueTask<int> ReadAsync(Memory<byte> buffer, CancellationToken cancellationToken = default)
-        {
-            return new ValueTask<int>(0);
-        }
+        public override ValueTask<int> ReadAsync(Memory<byte> buffer, CancellationToken cancellationToken = default) => new(0);
 
         /// <summary>
         /// Reads a byte from the file and advances the read position one byte.
@@ -338,10 +309,7 @@ namespace Mecha.Core.Generator.Helpers
         /// been reached.
         /// </returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override int ReadByte()
-        {
-            return 0;
-        }
+        public override int ReadByte() => 0;
 
         /// <summary>
         /// Sets the current position of this stream to the given value.
@@ -355,10 +323,7 @@ namespace Mecha.Core.Generator.Helpers
         /// </param>
         /// <returns>The new position in the stream.</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override long Seek(long offset, SeekOrigin origin)
-        {
-            return 0;
-        }
+        public override long Seek(long offset, SeekOrigin origin) => 0;
 
         /// <summary>
         /// Sets the length of this stream to the given value.
@@ -413,10 +378,7 @@ namespace Mecha.Core.Generator.Helpers
         /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         /// <returns>A task that represents the asynchronous write operation.</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
-        {
-            return Task.CompletedTask;
-        }
+        public override Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken) => Task.CompletedTask;
 
         /// <summary>
         /// Writes the asynchronous.
@@ -425,10 +387,7 @@ namespace Mecha.Core.Generator.Helpers
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns></returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override ValueTask WriteAsync(ReadOnlyMemory<byte> buffer, CancellationToken cancellationToken = default)
-        {
-            return new ValueTask();
-        }
+        public override ValueTask WriteAsync(ReadOnlyMemory<byte> buffer, CancellationToken cancellationToken = default) => new();
 
         /// <summary>
         /// Writes a byte to the current position in the file stream.

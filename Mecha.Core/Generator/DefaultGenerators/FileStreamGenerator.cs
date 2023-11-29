@@ -48,9 +48,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo? parameter)
         {
-            if (parameter is null)
-                return false;
-            return !parameter.HasDefaultValue
+            return parameter?.HasDefaultValue == false
                 && typeof(FileStream).IsAssignableFrom(parameter.ParameterType);
         }
 
@@ -61,9 +59,6 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo? parameter, object? min, object? max)
-        {
-            return RandomObj.Next(Streams);
-        }
+        public object? Next(ParameterInfo? parameter, object? min, object? max) => RandomObj.Next(Streams);
     }
 }

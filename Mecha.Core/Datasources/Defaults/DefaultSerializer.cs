@@ -19,7 +19,7 @@ using Mecha.Core.ExtensionMethods;
 using System;
 using System.Text.Json;
 
-namespace Mecha.Core.Datasources
+namespace Mecha.Core.Datasources.Defaults
 {
     /// <summary>
     /// Default serializer (goes to JSON)

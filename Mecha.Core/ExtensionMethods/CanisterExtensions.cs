@@ -15,8 +15,9 @@ limitations under the License.
 */
 
 using Canister.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Microsoft.Extensions.DependencyInjection
+namespace Mecha.Core.ExtensionMethods
 {
     /// <summary>
     /// Canister methods

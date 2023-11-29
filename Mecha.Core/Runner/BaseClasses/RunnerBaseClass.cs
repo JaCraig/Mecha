@@ -52,10 +52,10 @@ namespace Mecha.Core.Runner.BaseClasses
             StartRun(runMethod, target, options);
             var Count = options.GenerationCount;
             var TempTimer = new Stopwatch();
-            bool Finished = false;
+            var Finished = false;
 
-            var Results = ReloadTests(runMethod).ConvertAll(x => new RunResult(runMethod, target, x));
-            var GeneratedParameters = GenerateArguments(runMethod, options);
+            List<RunResult> Results = ReloadTests(runMethod).ConvertAll(x => new RunResult(runMethod, target, x));
+            ParameterValues[] GeneratedParameters = GenerateArguments(runMethod, options);
             using (var InternalTimer = new Timer(options.MaxDuration))
             {
                 InternalTimer.Elapsed += (sender, e) => Finished = true;
@@ -93,7 +93,7 @@ namespace Mecha.Core.Runner.BaseClasses
             Results = await MutateAsync(Results, options).ConfigureAwait(false);
             Results = await ShrinkAsync(Results, options).ConfigureAwait(false);
             Manager?.DataManager.Clear(runMethod);
-            foreach (var Result in Results.Where(x => x.Exception is not null))
+            foreach (RunResult? Result in Results.Where(x => x.Exception is not null))
             {
                 SaveArguments(runMethod, Result.Parameters.ToArray(x => x?.Value));
             }
@@ -116,10 +116,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="methodInfo">The method information.</param>
         /// <param name="options">The options.</param>
         /// <returns>The generated arguments.</returns>
-        protected ParameterValues[] GenerateArguments(MethodInfo methodInfo, Options options)
-        {
-            return Manager?.GeneratorManager.GenerateParameterValues(methodInfo.GetParameters(), options) ?? Array.Empty<ParameterValues>();
-        }
+        protected ParameterValues[] GenerateArguments(MethodInfo methodInfo, Options options) => Manager?.GeneratorManager.GenerateParameterValues(methodInfo.GetParameters(), options) ?? Array.Empty<ParameterValues>();
 
         /// <summary>
         /// Attempts to mutate the successful runs asynchronously.
@@ -133,10 +130,10 @@ namespace Mecha.Core.Runner.BaseClasses
             var TempTimer = new Stopwatch();
             for (var x = 0; x < SuccessfulRuns.Count; ++x)
             {
-                var CurrentRun = SuccessfulRuns[x];
+                RunResult? CurrentRun = SuccessfulRuns[x];
                 if (CurrentRun is null)
                     continue;
-                var CopiedRun = CurrentRun.Copy();
+                RunResult CopiedRun = CurrentRun.Copy();
                 while (CopiedRun.Mutate(Manager?.Mutator, runs, options))
                 {
                     if (!await CopiedRun.RunAsync(TempTimer, options).ConfigureAwait(false))
@@ -157,10 +154,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// </summary>
         /// <param name="methodInfo">The method information.</param>
         /// <returns></returns>
-        protected List<object?[]> ReloadTests(MethodInfo methodInfo)
-        {
-            return Manager?.DataManager.Read(methodInfo) ?? new List<object?[]>();
-        }
+        protected List<object?[]> ReloadTests(MethodInfo methodInfo) => Manager?.DataManager.Read(methodInfo) ?? new List<object?[]>();
 
         /// <summary>
         /// Saves the arguments.
@@ -187,10 +181,10 @@ namespace Mecha.Core.Runner.BaseClasses
             var TempTimer = new Stopwatch();
             for (var x = 0; x < FailedRuns.Count; ++x)
             {
-                var CurrentRun = FailedRuns[x];
+                RunResult? CurrentRun = FailedRuns[x];
                 if (CurrentRun is null)
                     continue;
-                var CopiedRun = CurrentRun.Copy();
+                RunResult CopiedRun = CurrentRun.Copy();
                 while (CurrentRun.Shrink(Manager?.Shrinker, FinalRuns, options))
                 {
                     if (await CurrentRun.RunAsync(TempTimer, options).ConfigureAwait(false))
@@ -219,10 +213,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="val1">The val1.</param>
         /// <param name="val2">The val2.</param>
         /// <returns><c>true</c> if [is the same] [the specified val1]; otherwise, <c>false</c>.</returns>
-        private static bool IsTheSame(RunResult val1, RunResult val2)
-        {
-            return val1.Same(val2);
-        }
+        private static bool IsTheSame(RunResult val1, RunResult val2) => val1.Same(val2);
 
         /// <summary>
         /// Shrinks the runs reported.
@@ -232,10 +223,10 @@ namespace Mecha.Core.Runner.BaseClasses
         {
             for (var x = 0; x < FinalRuns.Count; ++x)
             {
-                var Runs = FinalRuns.FindAll(y => FinalRuns[x].Same(y));
+                List<RunResult> Runs = FinalRuns.FindAll(y => FinalRuns[x].Same(y));
                 for (var y = 1; y < Runs.Count; ++y)
                 {
-                    FinalRuns.Remove(Runs[y]);
+                    _ = FinalRuns.Remove(Runs[y]);
                 }
             }
         }
@@ -244,9 +235,6 @@ namespace Mecha.Core.Runner.BaseClasses
         /// Initializes this instance.
         /// </summary>
         /// <returns></returns>
-        private void Init()
-        {
-            Manager = Mech.Default;
-        }
+        private void Init() => Manager = Mech.Default;
     }
 }

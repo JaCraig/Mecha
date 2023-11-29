@@ -16,7 +16,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// </summary>
         public NegationGeneratorTests()
         {
-            TestObject = new NegationGenerator(Random);
+            TestObject = new NegationGenerator(Random!);
         }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         [Property]
         public void RangeTest(int min, int max)
         {
-            var Parameters = TestMethodInfo.GetParameters();
+            System.Reflection.ParameterInfo[] Parameters = TestMethodInfo.GetParameters();
             Assert.Equal(-min, TestObject.Next(Parameters[0], min, min));
             Assert.Equal(-max, TestObject.Next(Parameters[0], max, max));
         }

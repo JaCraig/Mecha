@@ -16,7 +16,7 @@ namespace Mecha.Core.Mutator
         /// <param name="mutators">The mutators.</param>
         public MutatorManager(IEnumerable<IMutator> mutators)
         {
-            var MechaCoreAssembly = TypeCache<Mech>.Assembly;
+            System.Reflection.Assembly MechaCoreAssembly = TypeCache<Mech>.Assembly;
             var TempMutators = mutators.Where(x => x.GetType().Assembly != MechaCoreAssembly).ToList();
             TempMutators.AddRange(mutators.Where(x => x.GetType().Assembly == MechaCoreAssembly));
             Mutators = TempMutators.ToArray();
@@ -35,7 +35,7 @@ namespace Mecha.Core.Mutator
         /// <returns>The mutated value.</returns>
         public object? Mutate(object? value)
         {
-            foreach (var Mutator in Mutators)
+            foreach (IMutator Mutator in Mutators)
             {
                 if (Mutator.CanMutate(value))
                     return Mutator.Mutate(value);

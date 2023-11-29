@@ -11,7 +11,7 @@ namespace Mecha.Core.ExtensionMethods
         /// <summary>
         /// The methods
         /// </summary>
-        private static readonly Dictionary<Type, Func<object, bool>> Methods = new Dictionary<Type, Func<object, bool>>
+        private static readonly Dictionary<Type, Func<object, bool>> Methods = new()
         {
             [typeof(float)] = value => !float.IsFinite((float)value),
             [typeof(float?)] = value => !float.IsFinite((float)value),
@@ -27,7 +27,7 @@ namespace Mecha.Core.ExtensionMethods
         public static bool IsInfinite(this object? value)
         {
             return value is not null
-                && Methods.TryGetValue(value.GetType(), out var Result)
+                && Methods.TryGetValue(value.GetType(), out Func<object, bool>? Result)
                 && Result(value);
         }
     }

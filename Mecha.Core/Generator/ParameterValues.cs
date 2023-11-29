@@ -50,7 +50,7 @@ namespace Mecha.Core.Generator
         {
             if (GeneratedValues.Contains(value) || ValidationAttributes.Any(x => !x.IsValid(value)))
                 return;
-            GeneratedValues.AddIfUnique(Same, value);
+            _ = GeneratedValues.AddIfUnique(Same, value);
         }
 
         /// <summary>

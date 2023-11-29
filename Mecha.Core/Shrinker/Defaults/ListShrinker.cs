@@ -19,7 +19,7 @@ namespace Mecha.Core.Shrinker.Defaults
         {
             if (value is null)
                 return false;
-            var ValueType = value?.GetType();
+            System.Type? ValueType = value?.GetType();
 
             return typeof(IList).IsAssignableFrom(ValueType) && ValueType?.IsArray == false;
         }
@@ -52,9 +52,9 @@ namespace Mecha.Core.Shrinker.Defaults
         /// <returns></returns>
         private static IList CopyList(IList Val)
         {
-            IList NewVal = (IList)FastActivator.CreateInstance(Val.GetType());
+            var NewVal = (IList)FastActivator.CreateInstance(Val.GetType());
             foreach (var Item in Val)
-                NewVal.Add(Item);
+                _ = NewVal.Add(Item);
             return NewVal;
         }
 

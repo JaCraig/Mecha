@@ -3,12 +3,12 @@ using Mecha.Core.Tests.BaseClasses;
 using System.Collections.Generic;
 using Xunit;
 
-namespace Mecha.Core.Tests.Runner
+namespace Mecha.Core.Tests.Shrinker.Defaults
 {
     /// <summary>
     /// ListShrinker tests
     /// </summary>
-    /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Runner.ListShrinker}"/>
+    /// <seealso cref="TestBaseClass{Core.Runner.ListShrinker}"/>
     public class ListShrinkerTests : TestBaseClass<ListShrinker>
     {
         /// <summary>
@@ -23,16 +23,13 @@ namespace Mecha.Core.Tests.Runner
         /// RunAsync test
         /// </summary>
         [Fact]
-        public void CanShrink()
-        {
-            Assert.True(TestObject.CanShrink(new List<string>()));
-        }
+        public void CanShrink() => Assert.True(TestObject.CanShrink(new List<string>()));
 
         [Fact]
         public void Shrink()
         {
             var Result = (List<string>)TestObject.Shrink(new List<string> { "B", "A" });
-            Assert.Single(Result);
+            _ = Assert.Single(Result!);
             Assert.Equal("B", Result[0]);
         }
     }

@@ -57,9 +57,9 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>The next object.</returns>
         public object? Next(ParameterInfo? parameter, object? min, object? max)
         {
-            if (parameter is null || !CanGenerate(parameter))
-                return null;
-            return Substitute.For(new Type[] { parameter.ParameterType }, Array.Empty<object?>());
+            return parameter is null || !CanGenerate(parameter)
+                ? null
+                : Substitute.For(new Type[] { parameter.ParameterType }, Array.Empty<object?>());
         }
     }
 }

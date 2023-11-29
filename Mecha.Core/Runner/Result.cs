@@ -11,7 +11,7 @@ namespace Mecha.Core.Runner
         /// Gets the skipped.
         /// </summary>
         /// <value>The skipped.</value>
-        public static Result Skipped => new Result
+        public static Result Skipped => new()
         {
             Passed = true,
             Output = "Skipped"

@@ -2,12 +2,12 @@
 using Mecha.Core.Tests.BaseClasses;
 using Xunit;
 
-namespace Mecha.Core.Tests.Runner
+namespace Mecha.Core.Tests.Shrinker.Defaults
 {
     /// <summary>
     /// NumberShrinker tests
     /// </summary>
-    /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Runner.NumberShrinker}"/>
+    /// <seealso cref="TestBaseClass{Core.Runner.NumberShrinker}"/>
     public class NumberShrinkerTests : TestBaseClass<NumberShrinker>
     {
         /// <summary>
@@ -22,10 +22,7 @@ namespace Mecha.Core.Tests.Runner
         /// RunAsync test
         /// </summary>
         [Fact]
-        public void CanShrink()
-        {
-            Assert.True(TestObject.CanShrink(1111));
-        }
+        public void CanShrink() => Assert.True(TestObject.CanShrink(1111));
 
         [Fact]
         public void Shrink()

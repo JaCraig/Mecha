@@ -8,12 +8,12 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using Xunit;
 
-namespace Mecha.Core.Tests.Runner
+namespace Mecha.Core.Tests.Shrinker.Defaults
 {
     /// <summary>
     /// DictionaryShrinker tests
     /// </summary>
-    /// <seealso cref="Mecha.Core.Tests.BaseClasses.TestBaseClass{Mecha.Core.Runner.DictionaryShrinker}"/>
+    /// <seealso cref="TestBaseClass{Core.Runner.DictionaryShrinker}"/>
     public class DictionaryShrinkerTests : TestBaseClass<DictionaryShrinker>
     {
         /// <summary>
@@ -28,10 +28,7 @@ namespace Mecha.Core.Tests.Runner
         /// RunAsync test
         /// </summary>
         [Fact]
-        public void CanShrink()
-        {
-            Assert.True(TestObject.CanShrink(new Dictionary<string, string>()));
-        }
+        public void CanShrink() => Assert.True(TestObject.CanShrink(new Dictionary<string, string>()));
 
         /// <summary>
         /// Shrinks this instance.
@@ -40,7 +37,7 @@ namespace Mecha.Core.Tests.Runner
         public void Shrink()
         {
             var Result = (Dictionary<string, string>)TestObject.Shrink(new Dictionary<string, string> { ["A"] = "B", ["B"] = "A" });
-            Assert.Single(Result);
+            _ = Assert.Single(Result!);
             Assert.True(Result.TryGetValue("B", out var Value));
             Assert.Equal("A", Value);
         }

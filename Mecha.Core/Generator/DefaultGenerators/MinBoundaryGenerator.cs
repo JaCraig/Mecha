@@ -26,9 +26,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo? parameter)
         {
-            if (parameter is null)
-                return false;
-            return !parameter.HasDefaultValue
+            return parameter?.HasDefaultValue == false
                 && (MinValueLookup.Min?.ContainsKey(parameter.ParameterType.GetHashCode()) ?? false);
         }
 
@@ -44,7 +42,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
             if (parameter is null || !CanGenerate(parameter))
                 return null;
             var Key = parameter.ParameterType.GetHashCode();
-            var Range = parameter.GetCustomAttribute<RangeAttribute>();
+            RangeAttribute? Range = parameter.GetCustomAttribute<RangeAttribute>();
             return Range?.Minimum ?? MinValueLookup.Min?[Key] ?? false;
         }
     }

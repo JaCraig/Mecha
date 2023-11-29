@@ -19,7 +19,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         public InterfaceGeneratorTest()
         {
             TestObject = new InterfaceGenerator();
-            MethodParam = Array.Find(typeof(InterfaceGeneratorTest).GetMethods(), x => string.Equals(x.Name, "InterfaceMethod", StringComparison.OrdinalIgnoreCase))?.GetParameters()[0];
+            MethodParam = Array.Find(typeof(InterfaceGeneratorTest).GetMethods(BindingFlags.NonPublic | BindingFlags.Static), x => string.Equals(x.Name, "InterfaceMethod", StringComparison.OrdinalIgnoreCase))?.GetParameters()[0];
         }
 
         /// <summary>
@@ -29,20 +29,17 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         private ParameterInfo? MethodParam { get; }
 
         /// <summary>
-        /// Interfaces the method.
-        /// </summary>
-        /// <param name="convertible">The convertible.</param>
-        public void InterfaceMethod(IConvertible convertible)
-        {
-        }
-
-        /// <summary>
         /// Ranges the test.
         /// </summary>
         [Property]
-        public void RangeTest()
+        public void RangeTest() => Assert.IsAssignableFrom<IConvertible>(TestObject.Next(MethodParam, null, null));
+
+        /// <summary>
+        /// Interfaces the method.
+        /// </summary>
+        /// <param name="convertible">The convertible.</param>
+        private static void InterfaceMethod(IConvertible convertible)
         {
-            Assert.IsAssignableFrom<IConvertible>(TestObject.Next(MethodParam, null, null));
         }
     }
 }

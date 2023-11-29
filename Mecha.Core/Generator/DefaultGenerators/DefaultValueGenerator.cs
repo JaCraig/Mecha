@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using Fast.Activator;
+using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Generator.Interfaces;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
@@ -40,10 +41,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>
         /// <c>true</c> if this instance can generate the specified parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanGenerate(ParameterInfo? parameter)
-        {
-            return !parameter?.HasDefaultValue ?? false;
-        }
+        public bool CanGenerate(ParameterInfo? parameter) => !parameter?.HasDefaultValue ?? false;
 
         /// <summary>
         /// Generates the next object of the specified parameter type.
@@ -56,8 +54,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         {
             if (parameter is null || !CanGenerate(parameter))
                 return null;
-            var NotNullable = parameter.GetCustomAttribute<DisallowNullAttribute>();
-            var ResultType = parameter.ParameterType;
+            DisallowNullAttribute? NotNullable = parameter.GetCustomAttribute<DisallowNullAttribute>();
+            System.Type ResultType = parameter.ParameterType;
             if (!ResultType.IsValueType && NotNullable is null)
                 return null;
             try

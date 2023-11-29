@@ -42,9 +42,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// </returns>
         public bool CanGenerate(ParameterInfo? parameter)
         {
-            if (parameter is null)
-                return false;
-            return !parameter.HasDefaultValue
+            return parameter?.HasDefaultValue == false
                 && (SliceValueLookup.Slice?.ContainsKey(parameter.ParameterType.GetHashCode()) ?? false);
         }
 
@@ -61,10 +59,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
                 return null;
             try
             {
-                if (min is null)
-                    min = max;
-                if (max is null)
-                    max = min;
+                min ??= max;
+                max ??= min;
                 if (min is null)
                     return FastActivator.CreateInstance(parameter.ParameterType);
                 var Key = parameter.ParameterType.GetHashCode();

@@ -16,7 +16,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Initializes a new instance of the <see cref="ArrayGenerator"/> class.
         /// </summary>
         /// <param name="random">The random.</param>
-        public ArrayGenerator(Mirage.Random random)
+        public ArrayGenerator(Mirage.Random? random)
         {
             Random = random;
         }
@@ -31,7 +31,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Gets the random.
         /// </summary>
         /// <value>The random.</value>
-        private Mirage.Random Random { get; }
+        private Mirage.Random? Random { get; }
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.
@@ -40,10 +40,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>
         /// <c>true</c> if this instance can generate the specified parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanGenerate(ParameterInfo? parameter)
-        {
-            return parameter?.HasDefaultValue == false && parameter.ParameterType.IsArray;
-        }
+        public bool CanGenerate(ParameterInfo? parameter) => parameter?.HasDefaultValue == false && parameter.ParameterType.IsArray;
 
         /// <summary>
         /// Generates the next object of the specified parameter type.
@@ -56,13 +53,13 @@ namespace Mecha.Core.Generator.DefaultGenerators
         {
             if (parameter is null || !CanGenerate(parameter))
                 return null;
-            var Amount = Random.Next(0, 100);
-            var ElementType = parameter.ParameterType.GetElementType();
+            var Amount = Random?.Next(0, 100) ?? 0;
+            Type? ElementType = parameter.ParameterType.GetElementType();
             var ArrayInstance = (Array)FastActivator.CreateInstance(parameter.ParameterType, new object[] { Amount });
-            if (!ElementType.GetConstructors().Any(IsDefaultConstructor))
+            if (ElementType?.GetConstructors().Any(IsDefaultConstructor) != true)
                 return ArrayInstance;
-            int Index = 0;
-            foreach (var Item in Random.Next(ElementType, Amount))
+            var Index = 0;
+            foreach (var Item in Random?.Next(ElementType, Amount) ?? Array.Empty<object?>())
             {
                 ArrayInstance.SetValue(Item, Index);
                 ++Index;
@@ -77,9 +74,6 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>
         /// <c>true</c> if [is default constructor] [the specified constructor]; otherwise, <c>false</c>.
         /// </returns>
-        private static bool IsDefaultConstructor(ConstructorInfo constructor)
-        {
-            return constructor.GetParameters().Length == 0;
-        }
+        private static bool IsDefaultConstructor(ConstructorInfo constructor) => constructor.GetParameters().Length == 0;
     }
 }

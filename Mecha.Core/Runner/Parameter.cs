@@ -1,5 +1,5 @@
 ﻿using Mecha.Core.ExtensionMethods;
-using Mecha.Core.Generator.DefaultGenerators;
+using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Mutator;
 using Mecha.Core.Shrinker;
 using System.Collections.Generic;
@@ -34,7 +34,7 @@ namespace Mecha.Core.Runner
             if (value is not null && !parameter.ParameterType.IsAssignableFrom(value?.GetType()))
                 value = null;
             if (value is null)
-                DefaultValueLookup.Values.TryGetValue(parameter.ParameterType.GetHashCode(), out value);
+                _ = DefaultValueLookup.Values.TryGetValue(parameter.ParameterType.GetHashCode(), out value);
             Value = value;
         }
 
@@ -79,10 +79,7 @@ namespace Mecha.Core.Runner
         /// Copies this instance.
         /// </summary>
         /// <returns></returns>
-        public Parameter Copy()
-        {
-            return new Parameter(ParameterInfo, Value, ShrinkCount, MutationCount);
-        }
+        public Parameter Copy() => new(ParameterInfo, Value, ShrinkCount, MutationCount);
 
         /// <summary>
         /// Mutates the parameter.
@@ -110,10 +107,7 @@ namespace Mecha.Core.Runner
         /// </summary>
         /// <param name="value">The value.</param>
         /// <returns>True if they are, false otherwise</returns>
-        public bool Same(Parameter value)
-        {
-            return Same(this, value);
-        }
+        public bool Same(Parameter value) => Same(this, value);
 
         /// <summary>
         /// Shrinks the specified shrinker.
@@ -138,11 +132,8 @@ namespace Mecha.Core.Runner
         /// <summary>
         /// Converts to string.
         /// </summary>
-        /// <returns>A <see cref="System.String"/> that represents this instance.</returns>
-        public override string ToString()
-        {
-            return $"{ParameterInfo?.Name} shrink count: {ShrinkCount}";
-        }
+        /// <returns>A <see cref="string"/> that represents this instance.</returns>
+        public override string ToString() => $"{ParameterInfo?.Name} shrink count: {ShrinkCount}";
 
         /// <summary>
         /// Sames the specified value1.
@@ -150,12 +141,7 @@ namespace Mecha.Core.Runner
         /// <param name="value1">The value1.</param>
         /// <param name="value2">The value2.</param>
         /// <returns>True if they are the same, false otherwise.</returns>
-        private static bool Same(Parameter? value1, Parameter? value2)
-        {
-            if (value1 is null || value2 is null || value1.ParameterInfo != value2.ParameterInfo)
-                return false;
-            return Same(value1.Value, value2.Value);
-        }
+        private static bool Same(Parameter? value1, Parameter? value2) => value1 is not null && value2 is not null && value1.ParameterInfo == value2.ParameterInfo && Same(value1.Value, value2.Value);
 
         /// <summary>
         /// Sames the specified value1.

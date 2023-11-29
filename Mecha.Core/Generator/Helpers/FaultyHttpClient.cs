@@ -25,10 +25,7 @@ namespace Mecha.Core.Generator.Helpers
         /// <param name="cancellationToken">The cancellation token to cancel operation.</param>
         /// <returns>The task object representing the asynchronous operation.</returns>
         /// <exception cref="HttpRequestException">Website not accessible</exception>
-        public override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-        {
-            throw new HttpRequestException("Website not accessible");
-        }
+        public override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken) => throw new HttpRequestException("Website not accessible");
 
         /// <summary>
         /// Message handler
@@ -43,10 +40,7 @@ namespace Mecha.Core.Generator.Helpers
             /// <param name="cancellationToken">The cancellation token.</param>
             /// <returns></returns>
             /// <exception cref="HttpRequestException">Website not accessible</exception>
-            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-            {
-                throw new HttpRequestException("Website not accessible");
-            }
+            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken) => throw new HttpRequestException("Website not accessible");
         }
     }
 }

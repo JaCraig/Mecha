@@ -15,10 +15,7 @@ namespace Mecha.Core.Shrinker.Defaults
         /// </summary>
         /// <param name="value"></param>
         /// <returns><c>true</c> if this instance can shrink; otherwise, <c>false</c>.</returns>
-        public bool CanShrink(object? value)
-        {
-            return value is not null && value.GetType().IsArray;
-        }
+        public bool CanShrink(object? value) => value?.GetType().IsArray == true;
 
         /// <summary>
         /// Shrinks the specified value.
@@ -32,7 +29,7 @@ namespace Mecha.Core.Shrinker.Defaults
             var OriginalArray = (Array)value;
             if (OriginalArray.Length == 0)
                 return value;
-            var NewLength = (4 * OriginalArray.Length) / 5;
+            var NewLength = 4 * OriginalArray.Length / 5;
             var ArrayInstance = (Array)FastActivator.CreateInstance(value.GetType(), new object[] { NewLength });
             for (var x = 0; x < NewLength; ++x)
             {

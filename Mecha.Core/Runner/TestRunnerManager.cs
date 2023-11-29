@@ -24,7 +24,7 @@ namespace Mecha.Core.Runner
         /// Gets the runners.
         /// </summary>
         /// <value>The runners.</value>
-        private IRunner Runner { get; }
+        private IRunner? Runner { get; }
 
         /// <summary>
         /// Runs the specified method information.
@@ -33,9 +33,6 @@ namespace Mecha.Core.Runner
         /// <param name="target">The target.</param>
         /// <param name="options">The options.</param>
         /// <returns>Results</returns>
-        public Task<Result> RunAsync(MethodInfo? methodInfo, object? target, Options options)
-        {
-            return Runner.RunAsync(methodInfo, target, options);
-        }
+        public Task<Result> RunAsync(MethodInfo? methodInfo, object? target, Options options) => Runner?.RunAsync(methodInfo, target, options) ?? Task.FromResult(new Result { Exception = new System.Exception("Unable to find runner") });
     }
 }

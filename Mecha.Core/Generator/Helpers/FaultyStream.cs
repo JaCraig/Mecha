@@ -41,10 +41,7 @@ namespace Mecha.Core.Generator.Helpers
         /// buffered data to be written to the underlying device.
         /// </summary>
         /// <exception cref="EndOfStreamException"></exception>
-        public override void Flush()
-        {
-            throw new EndOfStreamException();
-        }
+        public override void Flush() => throw new EndOfStreamException();
 
         /// <summary>
         /// When overridden in a derived class, reads a sequence of bytes from the current stream
@@ -66,10 +63,7 @@ namespace Mecha.Core.Generator.Helpers
         /// of the stream has been reached.
         /// </returns>
         /// <exception cref="EndOfStreamException"></exception>
-        public override int Read(byte[] buffer, int offset, int count)
-        {
-            throw new EndOfStreamException();
-        }
+        public override int Read(byte[] buffer, int offset, int count) => throw new EndOfStreamException();
 
         /// <summary>
         /// When overridden in a derived class, sets the position within the current stream.
@@ -81,20 +75,14 @@ namespace Mecha.Core.Generator.Helpers
         /// </param>
         /// <returns>The new position within the current stream.</returns>
         /// <exception cref="EndOfStreamException"></exception>
-        public override long Seek(long offset, SeekOrigin origin)
-        {
-            throw new EndOfStreamException();
-        }
+        public override long Seek(long offset, SeekOrigin origin) => throw new EndOfStreamException();
 
         /// <summary>
         /// When overridden in a derived class, sets the length of the current stream.
         /// </summary>
         /// <param name="value">The desired length of the current stream in bytes.</param>
         /// <exception cref="EndOfStreamException"></exception>
-        public override void SetLength(long value)
-        {
-            throw new EndOfStreamException();
-        }
+        public override void SetLength(long value) => throw new EndOfStreamException();
 
         /// <summary>
         /// When overridden in a derived class, writes a sequence of bytes to the current stream and
@@ -110,9 +98,6 @@ namespace Mecha.Core.Generator.Helpers
         /// </param>
         /// <param name="count">The number of bytes to be written to the current stream.</param>
         /// <exception cref="EndOfStreamException"></exception>
-        public override void Write(byte[] buffer, int offset, int count)
-        {
-            throw new EndOfStreamException();
-        }
+        public override void Write(byte[] buffer, int offset, int count) => throw new EndOfStreamException();
     }
 }

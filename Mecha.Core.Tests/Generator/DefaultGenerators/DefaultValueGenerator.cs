@@ -29,11 +29,9 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         {
             if (min > max)
             {
-                var Value = min;
-                min = max;
-                max = Value;
+                (max, min) = (min, max);
             }
-            var Parameters = TestMethodInfo.GetParameters();
+            System.Reflection.ParameterInfo[] Parameters = TestMethodInfo.GetParameters();
             Assert.Equal(0, (int)TestObject.Next(Parameters[0], min, max));
         }
     }

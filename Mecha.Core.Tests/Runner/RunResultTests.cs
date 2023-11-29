@@ -20,7 +20,7 @@ namespace Mecha.Core.Tests.Runner
         /// </summary>
         public RunResultTests()
         {
-            TestObject = new RunResult(TestMethodInfo, this, new object[] { 0, 0 });
+            TestObject = new RunResult(TestMethodInfo!, this, new object[] { 0, 0 });
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace Mecha.Core.Tests.Runner
         [Fact]
         public void Copy()
         {
-            var Result = TestObject.Copy();
+            RunResult Result = TestObject.Copy();
             Assert.NotNull(Result);
             Assert.Equal(TestObject.ElapsedTime, Result.ElapsedTime);
             Assert.Equal(TestObject.Exception, Result.Exception);
@@ -44,28 +44,19 @@ namespace Mecha.Core.Tests.Runner
         /// Shrinks this instance.
         /// </summary>
         [Fact]
-        public void Mutate()
-        {
-            Assert.False(TestObject.Mutate(new Core.Mutator.MutatorManager(new[] { new StringMutator(new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Random>()) }), new System.Collections.Generic.List<RunResult>(), Options.Default));
-        }
+        public void Mutate() => Assert.False(TestObject.Mutate(new Core.Mutator.MutatorManager(new[] { new StringMutator(new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Random>()) }), new System.Collections.Generic.List<RunResult>(), Options.Default));
 
         /// <summary>
         /// Runs the asynchronous.
         /// </summary>
         [Fact]
-        public async Task RunAsync()
-        {
-            Assert.True(await TestObject.RunAsync(new System.Diagnostics.Stopwatch(), Options.Default).ConfigureAwait(false));
-        }
+        public async Task RunAsync() => Assert.True(await TestObject.RunAsync(new System.Diagnostics.Stopwatch(), Options.Default));
 
         /// <summary>
         /// Runs the with ignored exception asynchronous.
         /// </summary>
         [Fact]
-        public async Task RunWithIgnoredExceptionAsync()
-        {
-            Assert.True(await new RunResult(TestMethodWithExceptionInfo, this, new object[] { 0 }).RunAsync(new System.Diagnostics.Stopwatch(), Options.Default).ConfigureAwait(false));
-        }
+        public async Task RunWithIgnoredExceptionAsync() => Assert.True(await new RunResult(TestMethodWithExceptionInfo!, this, new object[] { 0 }).RunAsync(new System.Diagnostics.Stopwatch(), Options.Default));
 
         /// <summary>
         /// Sames this instance.
@@ -73,7 +64,7 @@ namespace Mecha.Core.Tests.Runner
         [Fact]
         public void Same()
         {
-            var Result = TestObject.Copy();
+            RunResult Result = TestObject.Copy();
             Assert.True(TestObject.Same(Result));
         }
 
@@ -81,9 +72,6 @@ namespace Mecha.Core.Tests.Runner
         /// Shrinks this instance.
         /// </summary>
         [Fact]
-        public void Shrink()
-        {
-            Assert.False(TestObject.Shrink(new Core.Shrinker.ShrinkerManager(new[] { new NumberShrinker() }), new System.Collections.Generic.List<RunResult>(), Options.Default));
-        }
+        public void Shrink() => Assert.False(TestObject.Shrink(new Core.Shrinker.ShrinkerManager(new[] { new NumberShrinker() }), new System.Collections.Generic.List<RunResult>(), Options.Default));
     }
 }

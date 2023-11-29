@@ -17,14 +17,14 @@ limitations under the License.
 using BigBook;
 using FileCurator;
 using Mecha.Core.Datasources.Interfaces;
-using Mecha.Core.Generator.DefaultGenerators;
+using Mecha.Core.Generator.DefaultGenerators.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text.Json;
 
-namespace Mecha.Core.Datasources
+namespace Mecha.Core.Datasources.Defaults
 {
     /// <summary>
     /// Default datasource (exports to local directory)
@@ -61,7 +61,7 @@ namespace Mecha.Core.Datasources
         {
             if (method is null)
                 return;
-            GetDirectory(DataDirectory, method)?.Delete();
+            _ = (GetDirectory(DataDirectory, method)?.Delete());
         }
 
         /// <summary>
@@ -93,7 +93,7 @@ namespace Mecha.Core.Datasources
                     if (TempResult[x] is null && DefaultValueLookup.Values.TryGetValue(Parameter.ParameterType.GetHashCode(), out var DefaultValue))
                         TempResult[x] = DefaultValue;
                 }
-                Results.AddIfUnique(Same, TempResult);
+                _ = Results.AddIfUnique(Same, TempResult);
             }
             return Results;
         }
@@ -117,7 +117,7 @@ namespace Mecha.Core.Datasources
                 return;
             for (var x = 0; x < Parameters.Length; ++x)
             {
-                new FileInfo($"{DataDirectoryInfo.FullName}/{x}.json").Write(serializer.Serialize(Parameters[x].ParameterType, paramData[x]) ?? "");
+                _ = new FileInfo($"{DataDirectoryInfo.FullName}/{x}.json").Write(serializer.Serialize(Parameters[x].ParameterType, paramData[x]) ?? "");
             }
         }
 

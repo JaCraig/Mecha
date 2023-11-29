@@ -1,4 +1,5 @@
 ﻿using Mecha.Core.Datasources;
+using Mecha.Core.Datasources.Defaults;
 using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
 using System.Linq;
@@ -28,15 +29,15 @@ namespace Mecha.Core.Tests.Datasources
         [Property]
         public void SerializeAndDeserialize(int value1, int value2)
         {
-            TestObject.Save(TestMethodInfo, new object?[] { value1, value2 });
-            System.Collections.Generic.List<object?[]> Results = TestObject.Read(TestMethodInfo);
+            TestObject.Save(TestMethodInfo!, new object?[] { value1, value2 });
+            System.Collections.Generic.List<object?[]> Results = TestObject.Read(TestMethodInfo!);
             if (!Results.Any())
                 return;
-            Assert.Single(Results);
+            _ = Assert.Single(Results);
             Assert.Equal(2, Results[0].Length);
             Assert.Equal(value1, Results[0][0]);
             Assert.Equal(value2, Results[0][1]);
-            TestObject.Clear(TestMethodInfo);
+            TestObject.Clear(TestMethodInfo!);
         }
     }
 }

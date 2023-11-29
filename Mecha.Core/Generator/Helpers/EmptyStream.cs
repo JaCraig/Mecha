@@ -84,10 +84,7 @@ namespace Mecha.Core.Generator.Helpers
         /// An <see cref="T:System.IAsyncResult"/> that represents the asynchronous read, which
         /// could still be pending.
         /// </returns>
-        public override IAsyncResult? BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, object state)
-        {
-            return null;
-        }
+        public override IAsyncResult? BeginRead(byte[] buffer, int offset, int count, AsyncCallback callback, object state) => null;
 
         /// <summary>
         /// Begins an asynchronous write operation. (Consider using <see
@@ -109,10 +106,7 @@ namespace Mecha.Core.Generator.Helpers
         /// An <see langword="IAsyncResult"/> that represents the asynchronous write, which could
         /// still be pending.
         /// </returns>
-        public override IAsyncResult? BeginWrite(byte[] buffer, int offset, int count, AsyncCallback callback, object state)
-        {
-            return null;
-        }
+        public override IAsyncResult? BeginWrite(byte[] buffer, int offset, int count, AsyncCallback callback, object state) => null;
 
         /// <summary>
         /// Closes the current stream and releases any resources (such as sockets and file handles)
@@ -152,10 +146,7 @@ namespace Mecha.Core.Generator.Helpers
         /// The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.
         /// </param>
         /// <returns>A task that represents the asynchronous copy operation.</returns>
-        public override Task CopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken)
-        {
-            return Task.CompletedTask;
-        }
+        public override Task CopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken) => Task.CompletedTask;
 
         /// <summary>
         /// Waits for the pending asynchronous read to complete. (Consider using <see
@@ -167,10 +158,7 @@ namespace Mecha.Core.Generator.Helpers
         /// requested. Streams return zero (0) only at the end of the stream, otherwise, they should
         /// block until at least one byte is available.
         /// </returns>
-        public override int EndRead(IAsyncResult asyncResult)
-        {
-            return 0;
-        }
+        public override int EndRead(IAsyncResult asyncResult) => 0;
 
         /// <summary>
         /// Ends an asynchronous write operation. (Consider using <see
@@ -197,10 +185,7 @@ namespace Mecha.Core.Generator.Helpers
         /// The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.
         /// </param>
         /// <returns>A task that represents the asynchronous flush operation.</returns>
-        public override Task FlushAsync(CancellationToken cancellationToken)
-        {
-            return Task.CompletedTask;
-        }
+        public override Task FlushAsync(CancellationToken cancellationToken) => Task.CompletedTask;
 
         /// <summary>
         /// Obtains a lifetime service object to control the lifetime policy for this instance.
@@ -212,10 +197,8 @@ namespace Mecha.Core.Generator.Helpers
         /// initialized to the value of the <see
         /// cref="P:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime"/> property.
         /// </returns>
-        public override object? InitializeLifetimeService()
-        {
-            return null;
-        }
+        [Obsolete]
+        public override object? InitializeLifetimeService() => null;
 
         /// <summary>
         /// When overridden in a derived class, reads a sequence of bytes from the current stream
@@ -262,10 +245,7 @@ namespace Mecha.Core.Generator.Helpers
         /// bytes allocated in the buffer if that many bytes are not currently available, or zero
         /// (0) if the end of the stream has been reached.
         /// </returns>
-        public override int Read(Span<byte> buffer)
-        {
-            return 0;
-        }
+        public override int Read(Span<byte> buffer) => 0;
 
         /// <summary>
         /// Asynchronously reads a sequence of bytes from the current stream, advances the position
@@ -282,10 +262,7 @@ namespace Mecha.Core.Generator.Helpers
         /// allocated in the buffer if that many bytes are not currently available, or it can be 0
         /// (zero) if the end of the stream has been reached.
         /// </returns>
-        public override ValueTask<int> ReadAsync(Memory<byte> buffer, CancellationToken cancellationToken = default)
-        {
-            return new ValueTask<int>(0);
-        }
+        public override ValueTask<int> ReadAsync(Memory<byte> buffer, CancellationToken cancellationToken = default) => new(0);
 
         /// <summary>
         /// Asynchronously reads a sequence of bytes from the current stream, advances the position
@@ -305,10 +282,7 @@ namespace Mecha.Core.Generator.Helpers
         /// than the number of bytes requested if the number of bytes currently available is less
         /// than the requested number, or it can be 0 (zero) if the end of the stream has been reached.
         /// </returns>
-        public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
-        {
-            return Task.FromResult(0);
-        }
+        public override Task<int> ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken) => Task.FromResult(0);
 
         /// <summary>
         /// Reads a byte from the stream and advances the position within the stream by one byte, or
@@ -317,10 +291,7 @@ namespace Mecha.Core.Generator.Helpers
         /// <returns>
         /// The unsigned byte cast to an <see langword="Int32"/>, or -1 if at the end of the stream.
         /// </returns>
-        public override int ReadByte()
-        {
-            return 0;
-        }
+        public override int ReadByte() => 0;
 
         /// <summary>
         /// When overridden in a derived class, sets the position within the current stream.
@@ -332,10 +303,7 @@ namespace Mecha.Core.Generator.Helpers
         /// </param>
         /// <returns>The new position within the current stream.</returns>
         /// <exception cref="EndOfStreamException"></exception>
-        public override long Seek(long offset, SeekOrigin origin)
-        {
-            return offset;
-        }
+        public override long Seek(long offset, SeekOrigin origin) => offset;
 
         /// <summary>
         /// When overridden in a derived class, sets the length of the current stream.
@@ -382,10 +350,7 @@ namespace Mecha.Core.Generator.Helpers
         /// The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.
         /// </param>
         /// <returns>A task that represents the asynchronous write operation.</returns>
-        public override ValueTask WriteAsync(ReadOnlyMemory<byte> buffer, CancellationToken cancellationToken = default)
-        {
-            return new ValueTask();
-        }
+        public override ValueTask WriteAsync(ReadOnlyMemory<byte> buffer, CancellationToken cancellationToken = default) => new();
 
         /// <summary>
         /// Asynchronously writes a sequence of bytes to the current stream, advances the current
@@ -401,10 +366,7 @@ namespace Mecha.Core.Generator.Helpers
         /// The token to monitor for cancellation requests. The default value is <see cref="P:System.Threading.CancellationToken.None"/>.
         /// </param>
         /// <returns>A task that represents the asynchronous write operation.</returns>
-        public override Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)
-        {
-            return Task.CompletedTask;
-        }
+        public override Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken) => Task.CompletedTask;
 
         /// <summary>
         /// Writes a byte to the current position in the stream and advances the position within the
@@ -420,9 +382,6 @@ namespace Mecha.Core.Generator.Helpers
         /// </summary>
         /// <returns>A reference to the allocated <see langword="WaitHandle"/>.</returns>
         [Obsolete("Reasons")]
-        protected override WaitHandle? CreateWaitHandle()
-        {
-            return null;
-        }
+        protected override WaitHandle? CreateWaitHandle() => null;
     }
 }

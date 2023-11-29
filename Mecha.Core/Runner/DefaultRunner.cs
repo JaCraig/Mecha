@@ -38,9 +38,9 @@ namespace Mecha.Core.Runner
             };
             if (results.Any(x => x.Exception is not null))
             {
-                var Exceptions = results.Where(x => x.Exception is not null).Select(x => x.Exception).ToArray();
+                Exception?[] Exceptions = results.Where(x => x.Exception is not null).Select(x => x.Exception).ToArray();
                 ReturnValue.Passed = false;
-                ReturnValue.Exception = Exceptions.Length == 1 ? Exceptions[0] : new AggregateException("Run failed with the following exceptions", Exceptions);
+                ReturnValue.Exception = Exceptions.Length == 1 ? Exceptions[0] : new AggregateException("Run failed with the following exceptions", Exceptions!);
                 ReturnValue.Output = $"The run failed with the following stats:\n\n{results.Count} generations.\n{Exceptions.Length} exceptions.\n\nFailed Tests:\n\n{results.Where(x => x.Exception is not null).ToString(x => x.ToString(), "\n\n")}\n\nPassed Tests:\n\n{results.Where(x => x.Exception is null).ToString(x => x.ToString(), "\n\n")}";
             }
             else

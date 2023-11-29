@@ -14,7 +14,7 @@ namespace Mecha.Core
         /// <returns>Options after being initialized.</returns>
         public static Options Initialize(this Options? options)
         {
-            var TempDefault = Options.Default;
+            Options TempDefault = Options.Default;
             if (options is null)
                 return TempDefault;
             if (options.GenerationCount == 0)
@@ -39,7 +39,7 @@ namespace Mecha.Core
         /// Gets the default.
         /// </summary>
         /// <value>The default.</value>
-        public static Options Default => new Options
+        public static Options Default => new()
         {
             GenerationCount = 10,
             MaxDuration = 1000,

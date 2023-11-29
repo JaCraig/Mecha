@@ -27,15 +27,13 @@ namespace Mecha.Core
         /// </returns>
         public bool CanIgnore(Exception exception, MethodInfo method)
         {
-            if (exception is null || method is null)
-                return true;
-            if (TryGetValue(exception.GetType(), out var Handler))
-                return Handler(exception, method);
-            if (exception.InnerException is null)
-                return false;
-            if (TryGetValue(exception.InnerException.GetType(), out var InnerHandler))
-                return InnerHandler(exception.InnerException, method);
-            return false;
+            return exception is null
+                   || method is null
+                   || (TryGetValue(exception.GetType(), out Func<Exception, MethodInfo, bool>? Handler)
+                       ? Handler(exception, method)
+                       : exception.InnerException is not null
+                           && TryGetValue(exception.InnerException.GetType(), out Func<Exception, MethodInfo, bool>? InnerHandler)
+                           && InnerHandler(exception.InnerException, method));
         }
 
         /// <summary>
@@ -56,7 +54,7 @@ namespace Mecha.Core
         /// <param name="left">The left.</param>
         /// <param name="right">The right.</param>
         /// <returns>True if they are, false otherwise.</returns>
-        private static bool AreMethodsEqual(MethodBase left, MethodBase right)
+        private static bool AreMethodsEqual(MethodBase? left, MethodBase? right)
         {
             if (left is null && right is null)
                 return true;
@@ -66,13 +64,11 @@ namespace Mecha.Core
                 return true;
             try
             {
-                var RightMethod = left.DeclaringType.GetMethod(right.Name, right.GetGenericArguments().Length, right.GetParameters().Select(p => p.ParameterType).ToArray());
+                MethodInfo? RightMethod = left.DeclaringType?.GetMethod(right.Name, right.GetGenericArguments().Length, right.GetParameters().Select(p => p.ParameterType).ToArray());
                 if (RightMethod is null)
                     return false;
-                var LeftMethod = left.DeclaringType.GetMethod(left.Name, left.GetGenericArguments().Length, left.GetParameters().Select(p => p.ParameterType).ToArray());
-                if (LeftMethod is null)
-                    return false;
-                return LeftMethod.Equals(RightMethod);
+                MethodInfo? LeftMethod = left.DeclaringType?.GetMethod(left.Name, left.GetGenericArguments().Length, left.GetParameters().Select(p => p.ParameterType).ToArray());
+                return LeftMethod?.Equals(RightMethod) == true;
             }
             catch
             {
@@ -88,7 +84,7 @@ namespace Mecha.Core
         /// <returns>True if it can be ignored, false otherwise.</returns>
         private static bool DefaultHandler(Exception exception, MethodInfo method)
         {
-            var GenericMethod = method.IsGenericMethod ? method.GetGenericMethodDefinition() : method;
+            MethodInfo GenericMethod = method.IsGenericMethod ? method.GetGenericMethodDefinition() : method;
             var ParameterCheckReturn = ParameterCheck(exception as ArgumentException, method.GetParameters());
             return typeof(Task).IsAssignableFrom(GenericMethod.ReturnType) || (AreMethodsEqual(GenericMethod, exception.TargetSite) && ParameterCheckReturn);
         }
@@ -115,7 +111,7 @@ namespace Mecha.Core
         /// <returns>True if it is found, false otherwise.</returns>
         private bool TryGetValue(Type type, out Func<Exception, MethodInfo, bool> handler)
         {
-            var HandlerKey = ExceptionHandlers.Keys.FirstOrDefault(x => x.IsAssignableFrom(type));
+            Type? HandlerKey = ExceptionHandlers.Keys.FirstOrDefault(x => x.IsAssignableFrom(type));
             if (HandlerKey is null)
             {
                 handler = (_, __) => false;

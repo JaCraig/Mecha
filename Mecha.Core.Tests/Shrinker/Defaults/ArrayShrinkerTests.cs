@@ -33,10 +33,10 @@ namespace Mecha.Core.Tests.Shrinker.Defaults
         public void Shrink()
         {
             var Result = (string[])TestObject.Shrink(new string[] { "B", "A" });
-            Assert.Single(Result);
+            _ = Assert.Single(Result!);
             Assert.Equal("B", Result[0]);
             Result = (string[])TestObject.Shrink(Array.Empty<string>());
-            Assert.Empty(Result);
+            Assert.Empty(Result!);
         }
     }
 }

@@ -38,10 +38,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>
         /// <c>true</c> if this instance can generate the specified parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanGenerate(ParameterInfo? parameter)
-        {
-            return parameter?.HasDefaultValue ?? false;
-        }
+        public bool CanGenerate(ParameterInfo? parameter) => parameter?.HasDefaultValue ?? false;
 
         /// <summary>
         /// Generates the next object of the specified parameter type.
@@ -50,9 +47,6 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo? parameter, object? min, object? max)
-        {
-            return parameter?.DefaultValue;
-        }
+        public object? Next(ParameterInfo? parameter, object? min, object? max) => parameter?.DefaultValue;
     }
 }

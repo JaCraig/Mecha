@@ -48,10 +48,7 @@ namespace Mecha.Core.Generator.Helpers
             /// <param name="cancellationToken">The cancellation token.</param>
             /// <returns></returns>
             /// <exception cref="HttpRequestException">Website not accessible</exception>
-            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-            {
-                return Task.FromResult(new HttpResponseMessage(Random.Next<System.Net.HttpStatusCode>()));
-            }
+            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken) => Task.FromResult(new HttpResponseMessage(Random.Next<System.Net.HttpStatusCode>()));
         }
     }
 }

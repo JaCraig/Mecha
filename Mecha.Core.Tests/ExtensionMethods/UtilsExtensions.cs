@@ -31,7 +31,7 @@ namespace Mecha.Core.Tests.ExtensionMethods
         [Property]
         public void NotInfiniteTest(double value)
         {
-            if (value == double.NegativeInfinity || value == double.PositiveInfinity)
+            if (value is double.NegativeInfinity or double.PositiveInfinity)
                 return;
             Assert.False(value.IsInfinite());
         }

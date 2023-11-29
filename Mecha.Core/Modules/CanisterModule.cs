@@ -46,7 +46,7 @@ namespace Mecha.Core.Modules
         /// <param name="bootstrapper">The bootstrapper.</param>
         public void Load(IServiceCollection? bootstrapper)
         {
-            bootstrapper?.AddAllSingleton<ISerializer>()
+            _ = (bootstrapper?.AddAllSingleton<ISerializer>()
                          .AddAllSingleton<IDatasource>()
                          .AddSingleton<DataManager>()
                          .AddAllSingleton<IGenerator>()
@@ -57,7 +57,7 @@ namespace Mecha.Core.Modules
                          .AddAllSingleton<IShrinker>()
                          .AddSingleton<ShrinkerManager>()
                          .AddAllSingleton<IMutator>()
-                         .AddSingleton<MutatorManager>();
+                         .AddSingleton<MutatorManager>());
         }
     }
 }

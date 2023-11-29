@@ -23,10 +23,7 @@ namespace Mecha.Core.Tests.Mutator.Defaults
         /// RunAsync test
         /// </summary>
         [Fact]
-        public void CanMutate()
-        {
-            Assert.True(TestObject.CanMutate("AAAA"));
-        }
+        public void CanMutate() => Assert.True(TestObject.CanMutate("AAAA"));
 
         /// <summary>
         /// Mutates this instance.
