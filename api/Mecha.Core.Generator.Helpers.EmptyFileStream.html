@@ -1,126 +1,138 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class EmptyFileStream
  | Mecha API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class EmptyFileStream
  | Mecha API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Mecha" class="logomark">
-              <span class="brand-title">Mecha</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Mecha">
+            Mecha
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Mecha" class="logomark">
-                          <span class="brand-title">Mecha</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Mecha'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream">
+        <article data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream">
 
 
 
-  <h1 id="Mecha_Core_Generator_Helpers_EmptyFileStream" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream" class="text-break">Class EmptyFileStream
-</h1>
-  <div class="markdown level0 summary"><p>Empty file stream</p>
+  <h1 id="Mecha_Core_Generator_Helpers_EmptyFileStream" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream" class="text-break">
+    Class EmptyFileStream
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Mecha.html">Mecha</a>.<a class="xref" href="Mecha.Core.html">Core</a>.<a class="xref" href="Mecha.Core.Generator.html">Generator</a>.<a class="xref" href="Mecha.Core.Generator.Helpers.html">Helpers</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Mecha.Core.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Empty file stream</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject">MarshalByRefObject</a></div>
-    <div class="level2"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></div>
-    <div class="level3"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-    <div class="level4"><span class="xref">EmptyFileStream</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class EmptyFileStream : FileStream, IAsyncDisposable, IDisposable</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject">MarshalByRefObject</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
+      <div><span class="xref">EmptyFileStream</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a></div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.dispose">FileStream.Dispose(bool)</a>
     </div>
@@ -202,2117 +214,1531 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
+  <div>
+      <a class="xref" href="Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsInfinite_System_Object_">UtilsExtensions.IsInfinite(object?)</a>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mecha.html">Mecha</a>.<a class="xref" href="Mecha.Core.html">Core</a>.<a class="xref" href="Mecha.Core.Generator.html">Generator</a>.<a class="xref" href="Mecha.Core.Generator.Helpers.html">Helpers</a></h6>
-  <h6><strong>Assembly</strong>: Mecha.Core.dll</h6>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class EmptyFileStream : FileStream, IAsyncDisposable, IDisposable</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream__ctor.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L17">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream__ctor_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.#ctor*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream__ctor" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.#ctor">EmptyFileStream()</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream__ctor" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.#ctor">
+  EmptyFileStream()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mecha.Core.Generator.Helpers.EmptyFileStream.html">EmptyFileStream</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public EmptyFileStream()</code></pre>
   </div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream__ctor_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_CanRead.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.CanRead%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L40">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanRead_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanRead*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanRead" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanRead">CanRead</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanRead" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanRead">
+  CanRead
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a value that indicates whether the current stream supports reading.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool CanRead { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.canread">FileStream.CanRead</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanRead_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_CanSeek.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.CanSeek%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L45">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanSeek_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanSeek*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanSeek" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanSeek">CanSeek</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanSeek" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanSeek">
+  CanSeek
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a value that indicates whether the current stream supports seeking.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool CanSeek { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.canseek">FileStream.CanSeek</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanSeek_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_CanTimeout.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.CanTimeout%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L50">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanTimeout_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanTimeout*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanTimeout" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanTimeout">CanTimeout</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanTimeout" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanTimeout">
+  CanTimeout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a value that determines whether the current stream can time out.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool CanTimeout { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.cantimeout">Stream.CanTimeout</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanTimeout_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_CanWrite.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.CanWrite%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L55">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanWrite_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanWrite*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanWrite" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanWrite">CanWrite</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanWrite" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CanWrite">
+  CanWrite
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a value that indicates whether the current stream supports writing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool CanWrite { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.canwrite">FileStream.CanWrite</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CanWrite_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Handle.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Handle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L60">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Handle_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Handle*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Handle" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Handle">Handle</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Handle" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Handle">
+  Handle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the operating system file handle for the file that the current object encapsulates.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Obsolete(&quot;Handle no longer used&quot;)]
 public override IntPtr Handle { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.handle">FileStream.Handle</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Handle_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_IsAsync.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.IsAsync%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L67">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">IntPtr</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_IsAsync_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.IsAsync*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_IsAsync" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.IsAsync">IsAsync</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_IsAsync" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.IsAsync">
+  IsAsync
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a value that indicates whether the <code>FileStream</code> was opened
 asynchronously or synchronously.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override bool IsAsync { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.isasync">FileStream.IsAsync</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_IsAsync_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Length.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Length%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L72">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Length_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Length*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Length" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Length">Length</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Length" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Length">
+  Length
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the length in bytes of the stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override long Length { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.length">FileStream.Length</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Length_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Position.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Position%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L77">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Position_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Position*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Position" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Position">Position</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Position" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Position">
+  Position
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets the current position of this stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override long Position { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.position">FileStream.Position</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Position_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_ReadTimeout.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.ReadTimeout%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L83">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadTimeout_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadTimeout*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadTimeout" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadTimeout">ReadTimeout</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadTimeout" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadTimeout">
+  ReadTimeout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets a value, in milliseconds, that determines how long the stream will attempt
 to read before timing out.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int ReadTimeout { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.readtimeout">Stream.ReadTimeout</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadTimeout_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_WriteTimeout.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.WriteTimeout%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L89">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteTimeout_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteTimeout*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteTimeout" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteTimeout">WriteTimeout</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteTimeout" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteTimeout">
+  WriteTimeout
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets a value, in milliseconds, that determines how long the stream will attempt
 to write before timing out.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int WriteTimeout { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.writetimeout">Stream.WriteTimeout</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteTimeout_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_BeginRead_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.AsyncCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L109">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginRead_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginRead_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">BeginRead(byte[], int, int, AsyncCallback, object)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginRead_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+  BeginRead(byte[], int, int, AsyncCallback, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L109"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Begins an asynchronous read operation. Consider using <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.readasync#system-io-filestream-readasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">ReadAsync(byte[], int, int, CancellationToken)</a> instead.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IAsyncResult BeginRead(byte[] array, int offset, int numBytes, AsyncCallback callback, object state)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">array</span></td>
-        <td><p>The buffer to read data into.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">offset</span></td>
-        <td><p>The byte offset in <code class="paramref">array</code> at which to begin reading.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">numBytes</span></td>
-        <td><p>The maximum number of bytes to read.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td><p>The method to be called when the asynchronous read operation is completed.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">state</span></td>
-        <td><p>A user-provided object that distinguishes this particular asynchronous read request from
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The buffer to read data into.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The byte offset in <code class="paramref">array</code> at which to begin reading.</p>
+</dd>
+    <dt><code>numBytes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum number of bytes to read.</p>
+</dd>
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a></dt>
+    <dd><p>The method to be called when the asynchronous read operation is completed.</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>A user-provided object that distinguishes this particular asynchronous read request from
 other requests.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></td>
-        <td><p>An object that references the asynchronous read.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.beginread">FileStream.BeginRead(byte[], int, int, AsyncCallback, object)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginRead_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_BeginWrite_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.AsyncCallback%2CSystem.Object)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L130">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></dt>
+    <dd><p>An object that references the asynchronous read.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginWrite_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginWrite_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">BeginWrite(byte[], int, int, AsyncCallback, object)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginWrite_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+  BeginWrite(byte[], int, int, AsyncCallback, object)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Begins an asynchronous write operation. Consider using <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.writeasync#system-io-filestream-writeasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">WriteAsync(byte[], int, int, CancellationToken)</a> instead.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override IAsyncResult BeginWrite(byte[] array, int offset, int numBytes, AsyncCallback callback, object state)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">array</span></td>
-        <td><p>The buffer containing data to write to the current stream.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">offset</span></td>
-        <td><p>The zero-based byte offset in <code class="paramref">array</code> at which to begin copying bytes
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The buffer containing data to write to the current stream.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based byte offset in <code class="paramref">array</code> at which to begin copying bytes
 to the current stream.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">numBytes</span></td>
-        <td><p>The maximum number of bytes to write.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a></td>
-        <td><span class="parametername">callback</span></td>
-        <td><p>The method to be called when the asynchronous write operation is completed.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">state</span></td>
-        <td><p>A user-provided object that distinguishes this particular asynchronous write request
+</dd>
+    <dt><code>numBytes</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum number of bytes to write.</p>
+</dd>
+    <dt><code>callback</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.asynccallback">AsyncCallback</a></dt>
+    <dd><p>The method to be called when the asynchronous write operation is completed.</p>
+</dd>
+    <dt><code>state</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>A user-provided object that distinguishes this particular asynchronous write request
 from other requests.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></td>
-        <td><p>An object that references the asynchronous write.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.beginwrite">FileStream.BeginWrite(byte[], int, int, AsyncCallback, object)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.endofstreamexception">EndOfStreamException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginWrite_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Close.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Close%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L138">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></dt>
+    <dd><p>An object that references the asynchronous write.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.endofstreamexception">EndOfStreamException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Close_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Close*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Close" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Close">Close()</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Close" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Close">
+  Close()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Closes the current stream and releases any resources (such as sockets and file handles)
 associated with the current stream. Instead of calling this method, ensure that the
 stream is properly disposed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Close()</code></pre>
   </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.close">Stream.Close()</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.endofstreamexception">EndOfStreamException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Close_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_CopyTo_System_IO_Stream_System_Int32_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.CopyTo(System.IO.Stream%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L153">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.endofstreamexception">EndOfStreamException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_CopyTo_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CopyTo*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CopyTo_System_IO_Stream_System_Int32_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CopyTo(System.IO.Stream,System.Int32)">CopyTo(Stream, int)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CopyTo_System_IO_Stream_System_Int32_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CopyTo(System.IO.Stream,System.Int32)">
+  CopyTo(Stream, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L153"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the bytes from the current stream and writes them to another stream, using a
 specified buffer size.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void CopyTo(Stream destination, int bufferSize)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
-        <td><span class="parametername">destination</span></td>
-        <td><p>The stream to which the contents of the current stream will be copied.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">bufferSize</span></td>
-        <td><p>The size of the buffer. This value must be greater than zero. The default size is 81920.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream.copyto#system-io-stream-copyto(system-io-stream-system-int32)">Stream.CopyTo(Stream, int)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.endofstreamexception">EndOfStreamException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CopyTo_System_IO_Stream_System_Int32__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_CopyToAsync_System_IO_Stream_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.CopyToAsync(System.IO.Stream%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L165">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>destination</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The stream to which the contents of the current stream will be copied.</p>
+</dd>
+    <dt><code>bufferSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The size of the buffer. This value must be greater than zero. The default size is 81920.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.endofstreamexception">EndOfStreamException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_CopyToAsync_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CopyToAsync*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CopyToAsync_System_IO_Stream_System_Int32_System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)">CopyToAsync(Stream, int, CancellationToken)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CopyToAsync_System_IO_Stream_System_Int32_System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.CopyToAsync(System.IO.Stream,System.Int32,System.Threading.CancellationToken)">
+  CopyToAsync(Stream, int, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Copies to asynchronous.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override Task CopyToAsync(Stream destination, int bufferSize, CancellationToken cancellationToken)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
-        <td><span class="parametername">destination</span></td>
-        <td><p>The destination.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">bufferSize</span></td>
-        <td><p>Size of the buffer.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The cancellation token.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.copytoasync">FileStream.CopyToAsync(Stream, int, CancellationToken)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.endofstreamexception">EndOfStreamException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_CopyToAsync_System_IO_Stream_System_Int32_System_Threading_CancellationToken__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_EndRead_System_IAsyncResult_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.EndRead(System.IAsyncResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L180">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>destination</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></dt>
+    <dd><p>The destination.</p>
+</dd>
+    <dt><code>bufferSize</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>Size of the buffer.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.endofstreamexception">EndOfStreamException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_EndRead_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.EndRead*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_EndRead_System_IAsyncResult_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.EndRead(System.IAsyncResult)">EndRead(IAsyncResult)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_EndRead_System_IAsyncResult_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.EndRead(System.IAsyncResult)">
+  EndRead(IAsyncResult)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L180"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Waits for the pending asynchronous read operation to complete. (Consider using <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.readasync#system-io-filestream-readasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">ReadAsync(byte[], int, int, CancellationToken)</a> instead.)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int EndRead(IAsyncResult asyncResult)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></td>
-        <td><span class="parametername">asyncResult</span></td>
-        <td><p>The reference to the pending asynchronous request to wait for.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>The number of bytes read from the stream, between 0 and the number of bytes you
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>asyncResult</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></dt>
+    <dd><p>The reference to the pending asynchronous request to wait for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of bytes read from the stream, between 0 and the number of bytes you
 requested. Streams only return 0 at the end of the stream, otherwise, they should block
 until at least 1 byte is available.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.endread">FileStream.EndRead(IAsyncResult)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_EndRead_System_IAsyncResult__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_EndWrite_System_IAsyncResult_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.EndWrite(System.IAsyncResult)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L189">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_EndWrite_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.EndWrite*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_EndWrite_System_IAsyncResult_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.EndWrite(System.IAsyncResult)">EndWrite(IAsyncResult)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_EndWrite_System_IAsyncResult_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.EndWrite(System.IAsyncResult)">
+  EndWrite(IAsyncResult)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L189"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Ends an asynchronous write operation and blocks until the I/O operation is complete.
 (Consider using <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.writeasync#system-io-filestream-writeasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">WriteAsync(byte[], int, int, CancellationToken)</a> instead.)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void EndWrite(IAsyncResult asyncResult)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></td>
-        <td><span class="parametername">asyncResult</span></td>
-        <td><p>The pending asynchronous I/O request.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.endwrite">FileStream.EndWrite(IAsyncResult)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_EndWrite_System_IAsyncResult__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Finalize.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Finalize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L25">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>asyncResult</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncresult">IAsyncResult</a></dt>
+    <dd><p>The pending asynchronous I/O request.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Finalize_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Finalize*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Finalize" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Finalize">~EmptyFileStream()</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Finalize" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Finalize">
+  ~EmptyFileStream()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Finalizes an instance of the <a class="xref" href="Mecha.Core.Generator.Helpers.FaultyFileStream.html">FaultyFileStream</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">protected ~EmptyFileStream()</code></pre>
   </div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Finalize_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Flush.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Flush%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L197">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Flush_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Flush*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Flush" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Flush">Flush()</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Flush" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Flush">
+  Flush()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L197"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Clears buffers for this stream and causes any buffered data to be written to the file.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Flush()</code></pre>
   </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.flush#system-io-filestream-flush">FileStream.Flush()</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Flush_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Flush_System_Boolean_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Flush(System.Boolean)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L209">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Flush_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Flush*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Flush_System_Boolean_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Flush(System.Boolean)">Flush(bool)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Flush_System_Boolean_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Flush(System.Boolean)">
+  Flush(bool)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L209"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Clears buffers for this stream and causes any buffered data to be written to the file,
 and also clears all intermediate file buffers.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Flush(bool flushToDisk)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">flushToDisk</span></td>
-        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> to flush all intermediate file buffers; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.flush#system-io-filestream-flush(system-boolean)">FileStream.Flush(bool)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Flush_System_Boolean__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_FlushAsync_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.FlushAsync(System.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L220">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>flushToDisk</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> to flush all intermediate file buffers; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_FlushAsync_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.FlushAsync*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_FlushAsync_System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.FlushAsync(System.Threading.CancellationToken)">FlushAsync(CancellationToken)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_FlushAsync_System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.FlushAsync(System.Threading.CancellationToken)">
+  FlushAsync(CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Asynchronously clears all buffers for this stream, causes any buffered data to be
 written to the underlying device, and monitors cancellation requests.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override Task FlushAsync(CancellationToken cancellationToken)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The token to monitor for cancellation requests.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td><p>A task that represents the asynchronous flush operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.flushasync">FileStream.FlushAsync(CancellationToken)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_FlushAsync_System_Threading_CancellationToken__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_InitializeLifetimeService.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.InitializeLifetimeService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L232">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The token to monitor for cancellation requests.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task that represents the asynchronous flush operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_InitializeLifetimeService_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.InitializeLifetimeService*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_InitializeLifetimeService" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.InitializeLifetimeService">InitializeLifetimeService()</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_InitializeLifetimeService" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.InitializeLifetimeService">
+  InitializeLifetimeService()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L232"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Obtains a lifetime service object to control the lifetime policy for this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Obsolete]
 public override object InitializeLifetimeService()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><p>An object of type <span class="xref">System.Runtime.Remoting.Lifetime.ILease</span> used to
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>An object of type <span class="xref">System.Runtime.Remoting.Lifetime.ILease</span> used to
 control the lifetime policy for this instance. This is the current lifetime service
 object for this instance if one exists; otherwise, a new lifetime service object
 initialized to the value of the <span class="xref">System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime</span> property.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.marshalbyrefobject.initializelifetimeservice">MarshalByRefObject.InitializeLifetimeService()</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_InitializeLifetimeService_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Lock_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Lock(System.Int64%2CSystem.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L243">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Lock_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Lock*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Lock_System_Int64_System_Int64_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Lock(System.Int64,System.Int64)">Lock(long, long)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Lock_System_Int64_System_Int64_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Lock(System.Int64,System.Int64)">
+  Lock(long, long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L243"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Prevents other processes from reading from or writing to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Lock(long position, long length)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">position</span></td>
-        <td><p>The beginning of the range to lock. The value of this parameter must be equal to or
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The beginning of the range to lock. The value of this parameter must be equal to or
 greater than zero (0).</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">length</span></td>
-        <td><p>The range to be locked.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.lock">FileStream.Lock(long, long)</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Lock_System_Int64_System_Int64__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Read_System_Byte___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Read(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L265">View Source</a>
-  </span>
+</dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The range to be locked.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Read_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Read*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Read_System_Byte___System_Int32_System_Int32_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Read(System.Byte[],System.Int32,System.Int32)">Read(byte[], int, int)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Read_System_Byte___System_Int32_System_Int32_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Read(System.Byte[],System.Int32,System.Int32)">
+  Read(byte[], int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads a block of bytes from the stream and writes the data in a given buffer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int Read(byte[] array, int offset, int count)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">array</span></td>
-        <td><p>When this method returns, contains the specified byte array with the values between
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>When this method returns, contains the specified byte array with the values between
 <code class="paramref">offset</code> and ( <code class="paramref">offset</code> + <code class="paramref">count</code> - 1
 <code>)</code> replaced by the bytes read from the current source.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">offset</span></td>
-        <td><p>The byte offset in <code class="paramref">array</code> at which the read bytes will be placed.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">count</span></td>
-        <td><p>The maximum number of bytes to read.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>The total number of bytes read into the buffer. This might be less than the number of
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The byte offset in <code class="paramref">array</code> at which the read bytes will be placed.</p>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum number of bytes to read.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The total number of bytes read into the buffer. This might be less than the number of
 bytes requested if that number of bytes are not currently available, or zero if the end
 of the stream is reached.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.read#system-io-filestream-read(system-byte()-system-int32-system-int32)">FileStream.Read(byte[], int, int)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Read_System_Byte___System_Int32_System_Int32__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Read_System_Span_System_Byte__.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Read(System.Span%7BSystem.Byte%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L273">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Read_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Read*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Read_System_Span_System_Byte__" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Read(System.Span{System.Byte})">Read(Span&lt;byte&gt;)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Read_System_Span_System_Byte__" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Read(System.Span{System.Byte})">
+  Read(Span&lt;byte&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the specified buffer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int Read(Span&lt;byte&gt; buffer)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</td>
-        <td><span class="parametername">buffer</span></td>
-        <td><p>The buffer.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.read#system-io-filestream-read(system-span((system-byte)))">FileStream.Read(Span&lt;byte&gt;)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Read_System_Span_System_Byte___seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.ReadAsync(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L293">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.span-1">Span</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd><p>The buffer.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadAsync*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">ReadAsync(byte[], int, int, CancellationToken)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+  ReadAsync(byte[], int, int, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L293"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Asynchronously reads a sequence of bytes from the current file stream and writes them to
 a byte array beginning at a specified offset, advances the position within the file
 stream by the number of bytes read, and monitors cancellation requests.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override Task&lt;int&gt; ReadAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">buffer</span></td>
-        <td><p>The buffer to write the data into.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">offset</span></td>
-        <td><p>The byte offset in <code class="paramref">buffer</code> at which to begin writing data from the stream.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">count</span></td>
-        <td><p>The maximum number of bytes to read.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The token to monitor for cancellation requests.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
-        <td><p>A task that represents the asynchronous read operation and wraps the total number of
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The buffer to write the data into.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The byte offset in <code class="paramref">buffer</code> at which to begin writing data from the stream.</p>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum number of bytes to read.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The token to monitor for cancellation requests.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd><p>A task that represents the asynchronous read operation and wraps the total number of
 bytes read into the buffer. The result value can be less than the number of bytes
 requested if the number of bytes currently available is less than the requested number,
 or it can be 0 (zero) if the end of the stream has been reached.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.readasync#system-io-filestream-readasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">FileStream.ReadAsync(byte[], int, int, CancellationToken)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_System_Memory_System_Byte__System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.ReadAsync(System.Memory%7BSystem.Byte%7D%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L302">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadAsync*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_System_Memory_System_Byte__System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadAsync(System.Memory{System.Byte},System.Threading.CancellationToken)">ReadAsync(Memory&lt;byte&gt;, CancellationToken)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_System_Memory_System_Byte__System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadAsync(System.Memory{System.Byte},System.Threading.CancellationToken)">
+  ReadAsync(Memory&lt;byte&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L302"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads the asynchronous.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override ValueTask&lt;int&gt; ReadAsync(Memory&lt;byte&gt; buffer, CancellationToken cancellationToken = default)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</td>
-        <td><span class="parametername">buffer</span></td>
-        <td><p>The buffer.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The cancellation token.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.readasync#system-io-filestream-readasync(system-memory((system-byte))-system-threading-cancellationtoken)">FileStream.ReadAsync(Memory&lt;byte&gt;, CancellationToken)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadAsync_System_Memory_System_Byte__System_Threading_CancellationToken__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_ReadByte.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.ReadByte%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L312">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.memory-1">Memory</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd><p>The buffer.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask-1">ValueTask</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadByte_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadByte*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadByte" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadByte">ReadByte()</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadByte" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.ReadByte">
+  ReadByte()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L312"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Reads a byte from the file and advances the read position one byte.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override int ReadByte()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>The byte, cast to an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, or -1 if the end of the stream has
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The byte, cast to an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, or -1 if the end of the stream has
 been reached.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.readbyte">FileStream.ReadByte()</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_ReadByte_seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Seek_System_Int64_System_IO_SeekOrigin_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Seek(System.Int64%2CSystem.IO.SeekOrigin)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L326">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Seek_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Seek*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Seek_System_Int64_System_IO_SeekOrigin_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Seek(System.Int64,System.IO.SeekOrigin)">Seek(long, SeekOrigin)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Seek_System_Int64_System_IO_SeekOrigin_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Seek(System.Int64,System.IO.SeekOrigin)">
+  Seek(long, SeekOrigin)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets the current position of this stream to the given value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override long Seek(long offset, SeekOrigin origin)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">offset</span></td>
-        <td><p>The point relative to <code class="paramref">origin</code> from which to begin seeking.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.seekorigin">SeekOrigin</a></td>
-        <td><span class="parametername">origin</span></td>
-        <td><p>Specifies the beginning, the end, or the current position as a reference point for
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The point relative to <code class="paramref">origin</code> from which to begin seeking.</p>
+</dd>
+    <dt><code>origin</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.seekorigin">SeekOrigin</a></dt>
+    <dd><p>Specifies the beginning, the end, or the current position as a reference point for
 <code class="paramref">offset</code>, using a value of type <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.seekorigin">SeekOrigin</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><p>The new position in the stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.seek">FileStream.Seek(long, SeekOrigin)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Seek_System_Int64_System_IO_SeekOrigin__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_SetLength_System_Int64_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.SetLength(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L332">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The new position in the stream.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_SetLength_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.SetLength*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_SetLength_System_Int64_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.SetLength(System.Int64)">SetLength(long)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_SetLength_System_Int64_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.SetLength(System.Int64)">
+  SetLength(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L332"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Sets the length of this stream to the given value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void SetLength(long value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>The new length of the stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.setlength">FileStream.SetLength(long)</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_SetLength_System_Int64__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Unlock_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Unlock(System.Int64%2CSystem.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L341">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The new length of the stream.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Unlock_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Unlock*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Unlock_System_Int64_System_Int64_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Unlock(System.Int64,System.Int64)">Unlock(long, long)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Unlock_System_Int64_System_Int64_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Unlock(System.Int64,System.Int64)">
+  Unlock(long, long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L341"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Allows access by other processes to all or part of a file that was previously locked.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Unlock(long position, long length)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">position</span></td>
-        <td><p>The beginning of the range to unlock.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">length</span></td>
-        <td><p>The range to be unlocked.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.unlock">FileStream.Unlock(long, long)</a></div>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Unlock_System_Int64_System_Int64__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Write_System_Byte___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Write(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L355">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The beginning of the range to unlock.</p>
+</dd>
+    <dt><code>length</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The range to be unlocked.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Write_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Write*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Write_System_Byte___System_Int32_System_Int32_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Write(System.Byte[],System.Int32,System.Int32)">Write(byte[], int, int)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Write_System_Byte___System_Int32_System_Int32_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Write(System.Byte[],System.Int32,System.Int32)">
+  Write(byte[], int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L355"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes a block of bytes to the file stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Write(byte[] array, int offset, int count)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">array</span></td>
-        <td><p>The buffer containing data to write to the stream.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">offset</span></td>
-        <td><p>The zero-based byte offset in <code class="paramref">array</code> from which to begin copying bytes
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The buffer containing data to write to the stream.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based byte offset in <code class="paramref">array</code> from which to begin copying bytes
 to the stream.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">count</span></td>
-        <td><p>The maximum number of bytes to write.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.write#system-io-filestream-write(system-byte()-system-int32-system-int32)">FileStream.Write(byte[], int, int)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Write_System_Byte___System_Int32_System_Int32__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_Write_System_ReadOnlySpan_System_Byte__.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.Write(System.ReadOnlySpan%7BSystem.Byte%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L364">View Source</a>
-  </span>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum number of bytes to write.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_Write_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Write*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Write_System_ReadOnlySpan_System_Byte__" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Write(System.ReadOnlySpan{System.Byte})">Write(ReadOnlySpan&lt;byte&gt;)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Write_System_ReadOnlySpan_System_Byte__" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.Write(System.ReadOnlySpan{System.Byte})">
+  Write(ReadOnlySpan&lt;byte&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L364"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the specified buffer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void Write(ReadOnlySpan&lt;byte&gt; buffer)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</td>
-        <td><span class="parametername">buffer</span></td>
-        <td><p>The buffer.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.write#system-io-filestream-write(system-readonlyspan((system-byte)))">FileStream.Write(ReadOnlySpan&lt;byte&gt;)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_Write_System_ReadOnlySpan_System_Byte___seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.WriteAsync(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L381">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlyspan-1">ReadOnlySpan</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd><p>The buffer.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteAsync*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">WriteAsync(byte[], int, int, CancellationToken)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteAsync(System.Byte[],System.Int32,System.Int32,System.Threading.CancellationToken)">
+  WriteAsync(byte[], int, int, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L381"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Asynchronously writes a sequence of bytes to the current stream, advances the current
 position within this stream by the number of bytes written, and monitors cancellation requests.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override Task WriteAsync(byte[] buffer, int offset, int count, CancellationToken cancellationToken)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
-        <td><span class="parametername">buffer</span></td>
-        <td><p>The buffer to write data from.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">offset</span></td>
-        <td><p>The zero-based byte offset in <code class="paramref">buffer</code> from which to begin copying
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</dt>
+    <dd><p>The buffer to write data from.</p>
+</dd>
+    <dt><code>offset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based byte offset in <code class="paramref">buffer</code> from which to begin copying
 bytes to the stream.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">count</span></td>
-        <td><p>The maximum number of bytes to write.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The token to monitor for cancellation requests.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td><p>A task that represents the asynchronous write operation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.writeasync#system-io-filestream-writeasync(system-byte()-system-int32-system-int32-system-threading-cancellationtoken)">FileStream.WriteAsync(byte[], int, int, CancellationToken)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_System_Byte___System_Int32_System_Int32_System_Threading_CancellationToken__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_System_ReadOnlyMemory_System_Byte__System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.WriteAsync(System.ReadOnlyMemory%7BSystem.Byte%7D%2CSystem.Threading.CancellationToken)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L390">View Source</a>
-  </span>
+</dd>
+    <dt><code>count</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The maximum number of bytes to write.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The token to monitor for cancellation requests.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>A task that represents the asynchronous write operation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteAsync*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_System_ReadOnlyMemory_System_Byte__System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)">WriteAsync(ReadOnlyMemory&lt;byte&gt;, CancellationToken)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_System_ReadOnlyMemory_System_Byte__System_Threading_CancellationToken_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteAsync(System.ReadOnlyMemory{System.Byte},System.Threading.CancellationToken)">
+  WriteAsync(ReadOnlyMemory&lt;byte&gt;, CancellationToken)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L390"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes the asynchronous.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override ValueTask WriteAsync(ReadOnlyMemory&lt;byte&gt; buffer, CancellationToken cancellationToken = default)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</td>
-        <td><span class="parametername">buffer</span></td>
-        <td><p>The buffer.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></td>
-        <td><span class="parametername">cancellationToken</span></td>
-        <td><p>The cancellation token.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask">ValueTask</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.writeasync#system-io-filestream-writeasync(system-readonlymemory((system-byte))-system-threading-cancellationtoken)">FileStream.WriteAsync(ReadOnlyMemory&lt;byte&gt;, CancellationToken)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteAsync_System_ReadOnlyMemory_System_Byte__System_Threading_CancellationToken__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Generator_Helpers_EmptyFileStream_WriteByte_System_Byte_.md&amp;value=---%0Auid%3A%20Mecha.Core.Generator.Helpers.EmptyFileStream.WriteByte(System.Byte)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L397">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>buffer</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.readonlymemory-1">ReadOnlyMemory</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</dt>
+    <dd><p>The buffer.</p>
+</dd>
+    <dt><code>cancellationToken</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">CancellationToken</a></dt>
+    <dd><p>The cancellation token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.valuetask">ValueTask</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteByte_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteByte*"></a>
-  <h4 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteByte_System_Byte_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteByte(System.Byte)">WriteByte(byte)</h4>
+
+  <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteByte_System_Byte_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.WriteByte(System.Byte)">
+  WriteByte(byte)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L397"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Writes a byte to the current position in the file stream.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override void WriteByte(byte value)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
-        <td><span class="parametername">value</span></td>
-        <td><p>A byte to write to the stream.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream.writebyte">FileStream.WriteByte(byte)</a></div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="Mecha_Core_Generator_Helpers_EmptyFileStream_WriteByte_System_Byte__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
-  </div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iasyncdisposable">IAsyncDisposable</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
-  </div>
-  <h3 id="extensionmethods">Extension Methods</h3>
-  <div>
-      <a class="xref" href="Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsInfinite_System_Object_">UtilsExtensions.IsInfinite(object?)</a>
-  </div>
-  <h3 id="seealso">See Also</h3>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd><p>A byte to write to the stream.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filenotfoundexception">FileNotFoundException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h2 id="seealso">See Also</h2>
   <div class="seealso">
       <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.filestream">FileStream</a></div>
   </div>
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L12" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Mecha'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

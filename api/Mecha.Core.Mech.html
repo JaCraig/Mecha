@@ -1,118 +1,128 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
-    <head>
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
       <title>Class Mech
  | Mecha API Reference </title>
-      <meta name="viewport" content="width=device-width">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class Mech
  | Mecha API Reference ">
-      <meta name="generator" content="docfx ">
-  
-      <link rel="shortcut icon" href="../favicon.ico">
-      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/night-owl.min.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" integrity="sha384-EvBWSlnoFgZlXJvpzS+MAUEjvN7+gcCwH+qh7GRFOGgZO0PuwOFro7qPOJnLfe7l" crossorigin="anonymous">
-      <link rel="stylesheet" href="../styles/config.css">
-      <link rel="stylesheet" href="../styles/discord.css">
-      <link rel="stylesheet" href="../styles/singulink.css">
-      <link rel="stylesheet" href="../styles/main.css">
-      <meta property="docfx:navrel" content="../toc.json">
-      <meta property="docfx:tocrel" content="toc.json">
-  
-  <meta property="docfx:rel" content="../">
-  <meta property="docfx:newtab" content="true">
-    </head>
-    <body>
-        <div class="top-navbar">
-            <a class="burger-icon" onclick="toggleMenu()">
-                <svg name="Hamburger" style="vertical-align: middle;" width="34" height="34" viewbox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20 6H4V9H20V6ZM4 10.999H20V13.999H4V10.999ZM4 15.999H20V18.999H4V15.999Z"></path></svg>
-            </a>
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
+
+  <script type="module" src="./../public/docfx.min.js"></script>
+
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
 
 
-            <a class="brand" href="../index.html">
-              <img src="../images/icon.png" alt="Mecha" class="logomark">
-              <span class="brand-title">Mecha</span>
-            </a>        </div>
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../images/icon.png" alt="Mecha">
+            Mecha
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-        <div class="body-content">
-            <div id="blackout" class="blackout" onclick="toggleMenu()"></div>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
 
-            <nav id="sidebar" role="navigation">
-                <div class="sidebar">
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                    <div>
-                      <div class="mobile-hide">
+          <nav id="breadcrumb"></nav>
+        </div>
 
-                        <a class="brand" href="../index.html">
-                          <img src="../images/icon.png" alt="Mecha" class="logomark">
-                          <span class="brand-title">Mecha</span>
-                        </a>                      </div>
-
-                      <div class="sidesearch">
-                        <form id="search" role="search" class="search">
-                            <i class="bi bi-search search-icon"></i>
-                            <input type="text" id="search-query" placeholder="Search" autocomplete="off">
-                        </form>
-                      </div>
-
-                      <div id="navbar">
-                      </div>
-                    </div>                    <div class="sidebar-item-separator"></div>
-
-                        <div id="sidetoggle">
-                          <div id="sidetoc"></div>
-                        </div>
-                </div>
-                <div class="footer">
-  <strong><a href='https://github.com/JaCraig/Mecha'>Open in Github</a></strong>
-  
-                </div>            </nav>
-
-            <main class="main-panel">
-
-                <div id="search-results" style="display: none;">
-                  <h1 class="search-list">Search Results for <span></span></h1>
-                  <div class="sr-items">
-                    <p><i class="bi bi-hourglass-split index-loading"></i></p>
-                  </div>
-                  <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
-                </div>
- 
-
-                <div role="main" class="hide-when-search">
-
-                        <div class="subnav navbar navbar-default">
-                          <div class="container hide-when-search" id="breadcrumb">
-                            <ul class="breadcrumb">
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-
-                         <div id="contribution">
-                               <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                         </div>
-
-                    <article class="content wrap" id="_content" data-uid="Mecha.Core.Mech">
+        <article data-uid="Mecha.Core.Mech">
 
 
 
-  <h1 id="Mecha_Core_Mech" data-uid="Mecha.Core.Mech" class="text-break">Class Mech
-</h1>
-  <div class="markdown level0 summary"><p>Main class for breaking the</p>
-</div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">Mech</span></div>
+  <h1 id="Mecha_Core_Mech" data-uid="Mecha.Core.Mech" class="text-break">
+    Class Mech
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Mecha.html">Mecha</a>.<a class="xref" href="Mecha.Core.html">Core</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Mecha.Core.dll</dd></dl>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+  <div class="markdown summary"><p>Main class for breaking the</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Mech</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Mech</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -134,1318 +144,994 @@
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Mecha.html">Mecha</a>.<a class="xref" href="Mecha.Core.html">Core</a></h6>
-  <h6><strong>Assembly</strong>: Mecha.Core.dll</h6>
-  <h5 id="Mecha_Core_Mech_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Mech</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech__ctor_Mecha_Core_Generator_GeneratorManager_Mecha_Core_Datasources_DataManager_Mecha_Core_Runner_TestRunnerManager_Mirage_Random_Mecha_Core_Shrinker_ShrinkerManager_Mecha_Core_Mutator_MutatorManager_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.%23ctor(Mecha.Core.Generator.GeneratorManager%2CMecha.Core.Datasources.DataManager%2CMecha.Core.Runner.TestRunnerManager%2CMirage.Random%2CMecha.Core.Shrinker.ShrinkerManager%2CMecha.Core.Mutator.MutatorManager)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L36">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech__ctor_" data-uid="Mecha.Core.Mech.#ctor*"></a>
-  <h4 id="Mecha_Core_Mech__ctor_Mecha_Core_Generator_GeneratorManager_Mecha_Core_Datasources_DataManager_Mecha_Core_Runner_TestRunnerManager_Mirage_Random_Mecha_Core_Shrinker_ShrinkerManager_Mecha_Core_Mutator_MutatorManager_" data-uid="Mecha.Core.Mech.#ctor(Mecha.Core.Generator.GeneratorManager,Mecha.Core.Datasources.DataManager,Mecha.Core.Runner.TestRunnerManager,Mirage.Random,Mecha.Core.Shrinker.ShrinkerManager,Mecha.Core.Mutator.MutatorManager)">Mech(GeneratorManager, DataManager, TestRunnerManager, Random, ShrinkerManager, MutatorManager)</h4>
-  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mecha.Core.Mech.html">Mech</a> class.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Mech(GeneratorManager generatorManager, DataManager dataManager, TestRunnerManager testRunnerManager, Random random, ShrinkerManager shrinker, MutatorManager mutator)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Generator.GeneratorManager.html">GeneratorManager</a></td>
-        <td><span class="parametername">generatorManager</span></td>
-        <td><p>The generator manager.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Datasources.DataManager.html">DataManager</a></td>
-        <td><span class="parametername">dataManager</span></td>
-        <td><p>The data manager.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Runner.TestRunnerManager.html">TestRunnerManager</a></td>
-        <td><span class="parametername">testRunnerManager</span></td>
-        <td><p>The test runner manager.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://github.com/JaCraig/Mirage/blob/main/src/Mirage/Random.cs">Random</a></td>
-        <td><span class="parametername">random</span></td>
-        <td><p>The random.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Shrinker.ShrinkerManager.html">ShrinkerManager</a></td>
-        <td><span class="parametername">shrinker</span></td>
-        <td><p>The shrinker.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Mutator.MutatorManager.html">MutatorManager</a></td>
-        <td><span class="parametername">mutator</span></td>
-        <td><p>The mutator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_DataManager.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.DataManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L76">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_DataManager_" data-uid="Mecha.Core.Mech.DataManager*"></a>
-  <h4 id="Mecha_Core_Mech_DataManager" data-uid="Mecha.Core.Mech.DataManager">DataManager</h4>
-  <div class="markdown level1 summary"><p>Gets the data manager.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DataManager DataManager { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Datasources.DataManager.html">DataManager</a></td>
-        <td><p>The data manager.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_Default.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.Default%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L55">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_Default_" data-uid="Mecha.Core.Mech.Default*"></a>
-  <h4 id="Mecha_Core_Mech_Default" data-uid="Mecha.Core.Mech.Default">Default</h4>
-  <div class="markdown level1 summary"><p>Gets the default.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Mech? Default { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Mech.html">Mech</a></td>
-        <td><p>The default.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_GeneratorManager.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.GeneratorManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L82">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_GeneratorManager_" data-uid="Mecha.Core.Mech.GeneratorManager*"></a>
-  <h4 id="Mecha_Core_Mech_GeneratorManager" data-uid="Mecha.Core.Mech.GeneratorManager">GeneratorManager</h4>
-  <div class="markdown level1 summary"><p>Gets the generator manager.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public GeneratorManager GeneratorManager { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Generator.GeneratorManager.html">GeneratorManager</a></td>
-        <td><p>The generator manager.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_Mutator.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.Mutator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L88">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_Mutator_" data-uid="Mecha.Core.Mech.Mutator*"></a>
-  <h4 id="Mecha_Core_Mech_Mutator" data-uid="Mecha.Core.Mech.Mutator">Mutator</h4>
-  <div class="markdown level1 summary"><p>Gets the mutator.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MutatorManager? Mutator { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Mutator.MutatorManager.html">MutatorManager</a></td>
-        <td><p>The mutator.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_Random.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.Random%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L94">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_Random_" data-uid="Mecha.Core.Mech.Random*"></a>
-  <h4 id="Mecha_Core_Mech_Random" data-uid="Mecha.Core.Mech.Random">Random</h4>
-  <div class="markdown level1 summary"><p>Gets the random.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Random Random { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://github.com/JaCraig/Mirage/blob/main/src/Mirage/Random.cs">Random</a></td>
-        <td><p>The random.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_Shrinker.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.Shrinker%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L100">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_Shrinker_" data-uid="Mecha.Core.Mech.Shrinker*"></a>
-  <h4 id="Mecha_Core_Mech_Shrinker" data-uid="Mecha.Core.Mech.Shrinker">Shrinker</h4>
-  <div class="markdown level1 summary"><p>Gets the shrinker.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ShrinkerManager Shrinker { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Shrinker.ShrinkerManager.html">ShrinkerManager</a></td>
-        <td><p>The shrinker.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_TestRunnerManager.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.TestRunnerManager%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L106">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_TestRunnerManager_" data-uid="Mecha.Core.Mech.TestRunnerManager*"></a>
-  <h4 id="Mecha_Core_Mech_TestRunnerManager" data-uid="Mecha.Core.Mech.TestRunnerManager">TestRunnerManager</h4>
-  <div class="markdown level1 summary"><p>Gets the test runner manager.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TestRunnerManager TestRunnerManager { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Runner.TestRunnerManager.html">TestRunnerManager</a></td>
-        <td><p>The test runner manager.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync_System_Action_Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync(System.Action%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L252">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync_System_Action_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync(System.Action,Mecha.Core.Options)">BreakAsync(Action, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync(Action action, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The action.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync_System_Reflection_MethodInfo_System_Object_Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync(System.Reflection.MethodInfo%2CSystem.Object%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L265">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync_System_Reflection_MethodInfo_System_Object_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync(System.Reflection.MethodInfo,System.Object,Mecha.Core.Options)">BreakAsync(MethodInfo, object?, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the method.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync(MethodInfo method, object? target, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
-        <td><span class="parametername">method</span></td>
-        <td><p>The method.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">target</span></td>
-        <td><p>The target.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync_System_Type_Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync(System.Type%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L287">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync_System_Type_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync(System.Type,Mecha.Core.Options)">BreakAsync(Type, Options?)</h4>
-  <div class="markdown level1 summary"><p>Finds the methods of the class type specified and tries to break them.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync(Type classType, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
-        <td><span class="parametername">classType</span></td>
-        <td><p>Type of the class.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td><p>The async task.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync__1_Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync%60%601(Mecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L279">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync__1_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``1(Mecha.Core.Options)">BreakAsync&lt;TClass&gt;(Options?)</h4>
-  <div class="markdown level1 summary"><p>Finds the methods of the class type specified and tries to break them.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TClass&gt;(Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td><p>The async task.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TClass</span></td>
-        <td><p>The type of the class.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync__1_System_Action___0__Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync%60%601(System.Action%7B%60%600%7D%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L134">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync__1_System_Action___0__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``1(System.Action{``0},Mecha.Core.Options)">BreakAsync&lt;TValue1&gt;(Action&lt;TValue1&gt;, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1&gt;(Action&lt;TValue1&gt; action, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;TValue1&gt;</td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The action.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TValue1</span></td>
-        <td><p>The type of the value1.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync__1___0_Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync%60%601(%60%600%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L125">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync__1___0_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``1(``0,Mecha.Core.Options)">BreakAsync&lt;TClass&gt;(TClass, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the specified target.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TClass&gt;(TClass target, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">TClass</span></td>
-        <td><span class="parametername">target</span></td>
-        <td><p>The target.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TClass</span></td>
-        <td><p>The type of the class.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.aggregateexception">AggregateException</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync__2_System_Action___0___1__Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync%60%602(System.Action%7B%60%600%2C%60%601%7D%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L149">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync__2_System_Action___0___1__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``2(System.Action{``0,``1},Mecha.Core.Options)">BreakAsync&lt;TValue1, TValue2&gt;(Action&lt;TValue1, TValue2&gt;, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2&gt;(Action&lt;TValue1, TValue2&gt; action, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;TValue1, TValue2&gt;</td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The action.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TValue1</span></td>
-        <td><p>The type of the value1.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue2</span></td>
-        <td><p>The type of the value2.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync__3_System_Action___0___1___2__Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync%60%603(System.Action%7B%60%600%2C%60%601%2C%60%602%7D%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L165">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync__3_System_Action___0___1___2__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``3(System.Action{``0,``1,``2},Mecha.Core.Options)">BreakAsync&lt;TValue1, TValue2, TValue3&gt;(Action&lt;TValue1, TValue2, TValue3&gt;, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3&gt;(Action&lt;TValue1, TValue2, TValue3&gt; action, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-3">Action</a>&lt;TValue1, TValue2, TValue3&gt;</td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The action.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TValue1</span></td>
-        <td><p>The type of the value1.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue2</span></td>
-        <td><p>The type of the value2.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue3</span></td>
-        <td><p>The type of the value3.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync__4_System_Action___0___1___2___3__Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync%60%604(System.Action%7B%60%600%2C%60%601%2C%60%602%2C%60%603%7D%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L182">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync__4_System_Action___0___1___2___3__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``4(System.Action{``0,``1,``2,``3},Mecha.Core.Options)">BreakAsync&lt;TValue1, TValue2, TValue3, TValue4&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4&gt;, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3, TValue4&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4&gt; action, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;TValue1, TValue2, TValue3, TValue4&gt;</td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The action.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TValue1</span></td>
-        <td><p>The type of the value1.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue2</span></td>
-        <td><p>The type of the value2.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue3</span></td>
-        <td><p>The type of the value3.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue4</span></td>
-        <td><p>The type of the value4.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync__5_System_Action___0___1___2___3___4__Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync%60%605(System.Action%7B%60%600%2C%60%601%2C%60%602%2C%60%603%2C%60%604%7D%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L200">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync__5_System_Action___0___1___2___3___4__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``5(System.Action{``0,``1,``2,``3,``4},Mecha.Core.Options)">BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt;, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt; action, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-5">Action</a>&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt;</td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The action.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TValue1</span></td>
-        <td><p>The type of the value1.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue2</span></td>
-        <td><p>The type of the value2.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue3</span></td>
-        <td><p>The type of the value3.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue4</span></td>
-        <td><p>The type of the value4.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue5</span></td>
-        <td><p>The type of the value5.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync__6_System_Action___0___1___2___3___4___5__Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync%60%606(System.Action%7B%60%600%2C%60%601%2C%60%602%2C%60%603%2C%60%604%2C%60%605%7D%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L219">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync__6_System_Action___0___1___2___3___4___5__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``6(System.Action{``0,``1,``2,``3,``4,``5},Mecha.Core.Options)">BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt;, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt; action, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-6">Action</a>&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt;</td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The action.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TValue1</span></td>
-        <td><p>The type of the value1.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue2</span></td>
-        <td><p>The type of the value2.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue3</span></td>
-        <td><p>The type of the value3.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue4</span></td>
-        <td><p>The type of the value4.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue5</span></td>
-        <td><p>The type of the value5.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue6</span></td>
-        <td><p>The type of the value6.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_BreakAsync__7_System_Action___0___1___2___3___4___5___6__Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.BreakAsync%60%607(System.Action%7B%60%600%2C%60%601%2C%60%602%2C%60%603%2C%60%604%2C%60%605%2C%60%606%7D%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L239">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
-  <h4 id="Mecha_Core_Mech_BreakAsync__7_System_Action___0___1___2___3___4___5___6__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``7(System.Action{``0,``1,``2,``3,``4,``5,``6},Mecha.Core.Options)">BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt;, Options?)</h4>
-  <div class="markdown level1 summary"><p>Breaks the action.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt; action, Options? options = null)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-7">Action</a>&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt;</td>
-        <td><span class="parametername">action</span></td>
-        <td><p>The action.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">TValue1</span></td>
-        <td><p>The type of the value1.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue2</span></td>
-        <td><p>The type of the value2.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue3</span></td>
-        <td><p>The type of the value3.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue4</span></td>
-        <td><p>The type of the value4.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue5</span></td>
-        <td><p>The type of the value5.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue6</span></td>
-        <td><p>The type of the value6.</p>
-</td>
-      </tr>
-      <tr>
-        <td><span class="parametername">TValue7</span></td>
-        <td><p>The type of the value7.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/JaCraig/Mecha/new/main/apiSpec/new?filename=Mecha_Core_Mech_RunAsync_System_Reflection_MethodInfo_System_Object_Mecha_Core_Options_.md&amp;value=---%0Auid%3A%20Mecha.Core.Mech.RunAsync(System.Reflection.MethodInfo%2CSystem.Object%2CMecha.Core.Options)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L303">View Source</a>
-  </span>
-  <a id="Mecha_Core_Mech_RunAsync_" data-uid="Mecha.Core.Mech.RunAsync*"></a>
-  <h4 id="Mecha_Core_Mech_RunAsync_System_Reflection_MethodInfo_System_Object_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.RunAsync(System.Reflection.MethodInfo,System.Object,Mecha.Core.Options)">RunAsync(MethodInfo?, object?, Options?)</h4>
-  <div class="markdown level1 summary"><p>Runs the specified method.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Task&lt;Result&gt; RunAsync(MethodInfo? runMethod, object? target, Options? options)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></td>
-        <td><span class="parametername">runMethod</span></td>
-        <td><p>The run method.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></td>
-        <td><span class="parametername">target</span></td>
-        <td><p>The target.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Mecha.Core.Options.html">Options</a></td>
-        <td><span class="parametername">options</span></td>
-        <td><p>The options.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Mecha.Core.Runner.Result.html">Result</a>&gt;</td>
-        <td><p>The result</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="extensionmethods">Extension Methods</h3>
+  </dd></dl>
+
+  <dl class="typelist extensionMethods">
+    <dt>Extension Methods</dt>
+    <dd>
   <div>
       <a class="xref" href="Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsInfinite_System_Object_">UtilsExtensions.IsInfinite(object?)</a>
   </div>
+  </dd></dl>
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Mecha_Core_Mech__ctor_" data-uid="Mecha.Core.Mech.#ctor*"></a>
+
+  <h3 id="Mecha_Core_Mech__ctor_Mecha_Core_Generator_GeneratorManager_Mecha_Core_Datasources_DataManager_Mecha_Core_Runner_TestRunnerManager_Mirage_Random_Mecha_Core_Shrinker_ShrinkerManager_Mecha_Core_Mutator_MutatorManager_" data-uid="Mecha.Core.Mech.#ctor(Mecha.Core.Generator.GeneratorManager,Mecha.Core.Datasources.DataManager,Mecha.Core.Runner.TestRunnerManager,Mirage.Random,Mecha.Core.Shrinker.ShrinkerManager,Mecha.Core.Mutator.MutatorManager)">
+  Mech(GeneratorManager, DataManager, TestRunnerManager, Random, ShrinkerManager, MutatorManager)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="Mecha.Core.Mech.html">Mech</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Mech(GeneratorManager generatorManager, DataManager dataManager, TestRunnerManager testRunnerManager, Random random, ShrinkerManager shrinker, MutatorManager mutator)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>generatorManager</code> <a class="xref" href="Mecha.Core.Generator.GeneratorManager.html">GeneratorManager</a></dt>
+    <dd><p>The generator manager.</p>
+</dd>
+    <dt><code>dataManager</code> <a class="xref" href="Mecha.Core.Datasources.DataManager.html">DataManager</a></dt>
+    <dd><p>The data manager.</p>
+</dd>
+    <dt><code>testRunnerManager</code> <a class="xref" href="Mecha.Core.Runner.TestRunnerManager.html">TestRunnerManager</a></dt>
+    <dd><p>The test runner manager.</p>
+</dd>
+    <dt><code>random</code> <a class="xref" href="https://github.com/JaCraig/Mirage/blob/main/src/Mirage/Random.cs">Random</a></dt>
+    <dd><p>The random.</p>
+</dd>
+    <dt><code>shrinker</code> <a class="xref" href="Mecha.Core.Shrinker.ShrinkerManager.html">ShrinkerManager</a></dt>
+    <dd><p>The shrinker.</p>
+</dd>
+    <dt><code>mutator</code> <a class="xref" href="Mecha.Core.Mutator.MutatorManager.html">MutatorManager</a></dt>
+    <dd><p>The mutator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Mecha_Core_Mech_DataManager_" data-uid="Mecha.Core.Mech.DataManager*"></a>
+
+  <h3 id="Mecha_Core_Mech_DataManager" data-uid="Mecha.Core.Mech.DataManager">
+  DataManager
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the data manager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataManager DataManager { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mecha.Core.Datasources.DataManager.html">DataManager</a></dt>
+    <dd><p>The data manager.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_Default_" data-uid="Mecha.Core.Mech.Default*"></a>
+
+  <h3 id="Mecha_Core_Mech_Default" data-uid="Mecha.Core.Mech.Default">
+  Default
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the default.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Mech? Default { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mecha.Core.Mech.html">Mech</a></dt>
+    <dd><p>The default.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_GeneratorManager_" data-uid="Mecha.Core.Mech.GeneratorManager*"></a>
+
+  <h3 id="Mecha_Core_Mech_GeneratorManager" data-uid="Mecha.Core.Mech.GeneratorManager">
+  GeneratorManager
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the generator manager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GeneratorManager GeneratorManager { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mecha.Core.Generator.GeneratorManager.html">GeneratorManager</a></dt>
+    <dd><p>The generator manager.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_Mutator_" data-uid="Mecha.Core.Mech.Mutator*"></a>
+
+  <h3 id="Mecha_Core_Mech_Mutator" data-uid="Mecha.Core.Mech.Mutator">
+  Mutator
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L88"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the mutator.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MutatorManager? Mutator { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mecha.Core.Mutator.MutatorManager.html">MutatorManager</a></dt>
+    <dd><p>The mutator.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_Random_" data-uid="Mecha.Core.Mech.Random*"></a>
+
+  <h3 id="Mecha_Core_Mech_Random" data-uid="Mecha.Core.Mech.Random">
+  Random
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the random.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Random Random { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://github.com/JaCraig/Mirage/blob/main/src/Mirage/Random.cs">Random</a></dt>
+    <dd><p>The random.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_Shrinker_" data-uid="Mecha.Core.Mech.Shrinker*"></a>
+
+  <h3 id="Mecha_Core_Mech_Shrinker" data-uid="Mecha.Core.Mech.Shrinker">
+  Shrinker
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L100"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the shrinker.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ShrinkerManager Shrinker { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mecha.Core.Shrinker.ShrinkerManager.html">ShrinkerManager</a></dt>
+    <dd><p>The shrinker.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_TestRunnerManager_" data-uid="Mecha.Core.Mech.TestRunnerManager*"></a>
+
+  <h3 id="Mecha_Core_Mech_TestRunnerManager" data-uid="Mecha.Core.Mech.TestRunnerManager">
+  TestRunnerManager
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the test runner manager.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TestRunnerManager TestRunnerManager { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Mecha.Core.Runner.TestRunnerManager.html">TestRunnerManager</a></dt>
+    <dd><p>The test runner manager.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync_System_Action_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync(System.Action,Mecha.Core.Options)">
+  BreakAsync(Action, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync(Action action, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd><p>The action.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync_System_Reflection_MethodInfo_System_Object_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync(System.Reflection.MethodInfo,System.Object,Mecha.Core.Options)">
+  BreakAsync(MethodInfo, object?, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync(MethodInfo method, object? target, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>method</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></dt>
+    <dd><p>The method.</p>
+</dd>
+    <dt><code>target</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The target.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync_System_Type_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync(System.Type,Mecha.Core.Options)">
+  BreakAsync(Type, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L287"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the methods of the class type specified and tries to break them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync(Type classType, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>classType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>Type of the class.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The async task.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync__1_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``1(Mecha.Core.Options)">
+  BreakAsync&lt;TClass&gt;(Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L279"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Finds the methods of the class type specified and tries to break them.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TClass&gt;(Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd><p>The async task.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TClass</code></dt>
+    <dd><p>The type of the class.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync__1_System_Action___0__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``1(System.Action{``0},Mecha.Core.Options)">
+  BreakAsync&lt;TValue1&gt;(Action&lt;TValue1&gt;, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L134"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1&gt;(Action&lt;TValue1&gt; action, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;TValue1&gt;</dt>
+    <dd><p>The action.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TValue1</code></dt>
+    <dd><p>The type of the value1.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync__1___0_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``1(``0,Mecha.Core.Options)">
+  BreakAsync&lt;TClass&gt;(TClass, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the specified target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TClass&gt;(TClass target, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <span class="xref">TClass</span></dt>
+    <dd><p>The target.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TClass</code></dt>
+    <dd><p>The type of the class.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.aggregateexception">AggregateException</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync__2_System_Action___0___1__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``2(System.Action{``0,``1},Mecha.Core.Options)">
+  BreakAsync&lt;TValue1, TValue2&gt;(Action&lt;TValue1, TValue2&gt;, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2&gt;(Action&lt;TValue1, TValue2&gt; action, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;TValue1, TValue2&gt;</dt>
+    <dd><p>The action.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TValue1</code></dt>
+    <dd><p>The type of the value1.</p>
+</dd>
+    <dt><code>TValue2</code></dt>
+    <dd><p>The type of the value2.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync__3_System_Action___0___1___2__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``3(System.Action{``0,``1,``2},Mecha.Core.Options)">
+  BreakAsync&lt;TValue1, TValue2, TValue3&gt;(Action&lt;TValue1, TValue2, TValue3&gt;, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L165"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3&gt;(Action&lt;TValue1, TValue2, TValue3&gt; action, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-3">Action</a>&lt;TValue1, TValue2, TValue3&gt;</dt>
+    <dd><p>The action.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TValue1</code></dt>
+    <dd><p>The type of the value1.</p>
+</dd>
+    <dt><code>TValue2</code></dt>
+    <dd><p>The type of the value2.</p>
+</dd>
+    <dt><code>TValue3</code></dt>
+    <dd><p>The type of the value3.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync__4_System_Action___0___1___2___3__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``4(System.Action{``0,``1,``2,``3},Mecha.Core.Options)">
+  BreakAsync&lt;TValue1, TValue2, TValue3, TValue4&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4&gt;, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L182"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3, TValue4&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4&gt; action, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-4">Action</a>&lt;TValue1, TValue2, TValue3, TValue4&gt;</dt>
+    <dd><p>The action.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TValue1</code></dt>
+    <dd><p>The type of the value1.</p>
+</dd>
+    <dt><code>TValue2</code></dt>
+    <dd><p>The type of the value2.</p>
+</dd>
+    <dt><code>TValue3</code></dt>
+    <dd><p>The type of the value3.</p>
+</dd>
+    <dt><code>TValue4</code></dt>
+    <dd><p>The type of the value4.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync__5_System_Action___0___1___2___3___4__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``5(System.Action{``0,``1,``2,``3,``4},Mecha.Core.Options)">
+  BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt;, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt; action, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-5">Action</a>&lt;TValue1, TValue2, TValue3, TValue4, TValue5&gt;</dt>
+    <dd><p>The action.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TValue1</code></dt>
+    <dd><p>The type of the value1.</p>
+</dd>
+    <dt><code>TValue2</code></dt>
+    <dd><p>The type of the value2.</p>
+</dd>
+    <dt><code>TValue3</code></dt>
+    <dd><p>The type of the value3.</p>
+</dd>
+    <dt><code>TValue4</code></dt>
+    <dd><p>The type of the value4.</p>
+</dd>
+    <dt><code>TValue5</code></dt>
+    <dd><p>The type of the value5.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync__6_System_Action___0___1___2___3___4___5__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``6(System.Action{``0,``1,``2,``3,``4,``5},Mecha.Core.Options)">
+  BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt;, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L219"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt; action, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-6">Action</a>&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6&gt;</dt>
+    <dd><p>The action.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TValue1</code></dt>
+    <dd><p>The type of the value1.</p>
+</dd>
+    <dt><code>TValue2</code></dt>
+    <dd><p>The type of the value2.</p>
+</dd>
+    <dt><code>TValue3</code></dt>
+    <dd><p>The type of the value3.</p>
+</dd>
+    <dt><code>TValue4</code></dt>
+    <dd><p>The type of the value4.</p>
+</dd>
+    <dt><code>TValue5</code></dt>
+    <dd><p>The type of the value5.</p>
+</dd>
+    <dt><code>TValue6</code></dt>
+    <dd><p>The type of the value6.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_BreakAsync_" data-uid="Mecha.Core.Mech.BreakAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_BreakAsync__7_System_Action___0___1___2___3___4___5___6__Mecha_Core_Options_" data-uid="Mecha.Core.Mech.BreakAsync``7(System.Action{``0,``1,``2,``3,``4,``5,``6},Mecha.Core.Options)">
+  BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt;, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L239"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Breaks the action.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Task BreakAsync&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt;(Action&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt; action, Options? options = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>action</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-7">Action</a>&lt;TValue1, TValue2, TValue3, TValue4, TValue5, TValue6, TValue7&gt;</dt>
+    <dd><p>The action.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task">Task</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>TValue1</code></dt>
+    <dd><p>The type of the value1.</p>
+</dd>
+    <dt><code>TValue2</code></dt>
+    <dd><p>The type of the value2.</p>
+</dd>
+    <dt><code>TValue3</code></dt>
+    <dd><p>The type of the value3.</p>
+</dd>
+    <dt><code>TValue4</code></dt>
+    <dd><p>The type of the value4.</p>
+</dd>
+    <dt><code>TValue5</code></dt>
+    <dd><p>The type of the value5.</p>
+</dd>
+    <dt><code>TValue6</code></dt>
+    <dd><p>The type of the value6.</p>
+</dd>
+    <dt><code>TValue7</code></dt>
+    <dd><p>The type of the value7.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_Mech_RunAsync_" data-uid="Mecha.Core.Mech.RunAsync*"></a>
+
+  <h3 id="Mecha_Core_Mech_RunAsync_System_Reflection_MethodInfo_System_Object_Mecha_Core_Options_" data-uid="Mecha.Core.Mech.RunAsync(System.Reflection.MethodInfo,System.Object,Mecha.Core.Options)">
+  RunAsync(MethodInfo?, object?, Options?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L303"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Runs the specified method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Result&gt; RunAsync(MethodInfo? runMethod, object? target, Options? options)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>runMethod</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.reflection.methodinfo">MethodInfo</a></dt>
+    <dd><p>The run method.</p>
+</dd>
+    <dt><code>target</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The target.</p>
+</dd>
+    <dt><code>options</code> <a class="xref" href="Mecha.Core.Options.html">Options</a></dt>
+    <dd><p>The options.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1">Task</a>&lt;<a class="xref" href="Mecha.Core.Runner.Result.html">Result</a>&gt;</dt>
+    <dd><p>The result</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-                </div>
 
-                <div class="copyright-footer">
-                    <span>&#169; James Craig. All rights reserved.</span>
-                </div>
-            </main>
+        <div class="contribution d-print-none">
+          <a href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Mech.cs/#L25" class="edit-link">Edit this page</a>
         </div>
 
 
-        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-        <script type="text/javascript" src="../styles/jquery.twbsPagination.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
-        <script type="text/javascript" src="../styles/url.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/anchor-js@5.0.0/anchor.min.js"></script>
-        <script type="text/javascript" src="../styles/docfx.js"></script>
-        <script type="text/javascript" src="../styles/main.js"></script>
-        <script type="text/javascript" src="../styles/singulink.js"></script>    </body>
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <strong><a href='https://github.com/JaCraig/Mecha'>Open in Github</a></strong>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
