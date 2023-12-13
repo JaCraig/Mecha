@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.0.67"></a>
+## [2.0.67](https://www.github.com/JaCraig/Mecha/releases/tag/v2.0.67) (2023-12-13)
+
+### Bug Fixes
+
+* bump the dependencies group with 3 updates ([52be77c](https://www.github.com/JaCraig/Mecha/commit/52be77ca4440f092736b849779aa00349d818c08))
+* bump the dependencies group with 3 updates ([3eb9369](https://www.github.com/JaCraig/Mecha/commit/3eb9369e456d056876b483a8b7b8aaf7607d831b))
+* bump the dependencies group with 3 updates ([096e000](https://www.github.com/JaCraig/Mecha/commit/096e0004255014b83341d42eba58ba38b57a02cd))
+
+### Other
+
+* Merge pull request #153 from JaCraig/dependabot/nuget/dependencies-cb398c477f ([c9f40f1](https://www.github.com/JaCraig/Mecha/commit/c9f40f1c87ae83595c57263aa205ab0316aa7dcd))
+* Merge pull request #154 from JaCraig/dependabot/nuget/dependencies-f2600b6887 ([6c06050](https://www.github.com/JaCraig/Mecha/commit/6c0605056b4add658e19dd012e7b422f9d373a4b))
+* Merge pull request #155 from JaCraig/dependabot/github_actions/dependencies-cac7d13037 ([21c79fc](https://www.github.com/JaCraig/Mecha/commit/21c79fc58d9b34e2a907719aa72e67dd3c1c908d))
+* Merge pull request #156 from JaCraig/dependabot/nuget/dependencies-a183d81ad7 ([d240737](https://www.github.com/JaCraig/Mecha/commit/d240737d115fdce99dfaffdf9211ef44bee1ebf3))
+* bump the dependencies group with 1 update ([96a0ae1](https://www.github.com/JaCraig/Mecha/commit/96a0ae12b610cd09c3976f8ce11a530fdf75610f))
+
 <a name="2.0.66"></a>
 ## [2.0.66](https://www.github.com/JaCraig/Mecha/releases/tag/v2.0.66) (2023-12-05)
 
