@@ -11,18 +11,27 @@ namespace Mecha.Core.Runner.Helpers
     /// </summary>
     /// <remarks>Method invoker constructor</remarks>
     /// <remarks>Initializes a new instance of the <see cref="MethodInvoker{TTarget}"/> class.</remarks>
-    /// <param name="method">The method</param>
-    public class MethodInvoker<TTarget>(MethodInfo method) : IMethodInvoker
+    public class MethodInvoker<TTarget> : IMethodInvoker
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MethodInvoker{TTarget}"/> class.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        public MethodInvoker(MethodInfo method)
+        {
+            Method = method;
+            InternalExpression = MethodInvoker<TTarget>.CreateExpression(method) ?? ((__, _) => throw new Exception("Couldn't create invoke method and InternalExpression is null"));
+        }
+
         /// <summary>
         /// The method to invoke
         /// </summary>
-        public MethodInfo? Method { get; set; } = method;
+        public MethodInfo? Method { get; set; }
 
         /// <summary>
         /// The internal expression
         /// </summary>
-        private Func<TTarget?, object?[], object?> InternalExpression { get; } = MethodInvoker<TTarget>.CreateExpression(method) ?? ((__, _) => throw new Exception("Couldn't create invoke method and InternalExpression is null"));
+        private Func<TTarget?, object?[], object?> InternalExpression { get; }
 
         /// <summary>
         /// Invokes the method
