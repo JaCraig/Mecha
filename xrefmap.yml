@@ -481,6 +481,38 @@ references:
   commentId: T:Mecha.Core.ExtensionMethods.UtilsExtensions
   fullName: Mecha.Core.ExtensionMethods.UtilsExtensions
   nameWithType: UtilsExtensions
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.GetUnderlyingArrayType(System.Type)
+  name: GetUnderlyingArrayType(Type?)
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_GetUnderlyingArrayType_System_Type_
+  commentId: M:Mecha.Core.ExtensionMethods.UtilsExtensions.GetUnderlyingArrayType(System.Type)
+  name.vb: GetUnderlyingArrayType(Type)
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.GetUnderlyingArrayType(System.Type?)
+  fullName.vb: Mecha.Core.ExtensionMethods.UtilsExtensions.GetUnderlyingArrayType(System.Type)
+  nameWithType: UtilsExtensions.GetUnderlyingArrayType(Type?)
+  nameWithType.vb: UtilsExtensions.GetUnderlyingArrayType(Type)
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.GetUnderlyingArrayType*
+  name: GetUnderlyingArrayType
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_GetUnderlyingArrayType_
+  commentId: Overload:Mecha.Core.ExtensionMethods.UtilsExtensions.GetUnderlyingArrayType
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.GetUnderlyingArrayType
+  nameWithType: UtilsExtensions.GetUnderlyingArrayType
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsArraySegment(System.Type)
+  name: IsArraySegment(Type?)
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsArraySegment_System_Type_
+  commentId: M:Mecha.Core.ExtensionMethods.UtilsExtensions.IsArraySegment(System.Type)
+  name.vb: IsArraySegment(Type)
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsArraySegment(System.Type?)
+  fullName.vb: Mecha.Core.ExtensionMethods.UtilsExtensions.IsArraySegment(System.Type)
+  nameWithType: UtilsExtensions.IsArraySegment(Type?)
+  nameWithType.vb: UtilsExtensions.IsArraySegment(Type)
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsArraySegment*
+  name: IsArraySegment
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsArraySegment_
+  commentId: Overload:Mecha.Core.ExtensionMethods.UtilsExtensions.IsArraySegment
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsArraySegment
+  nameWithType: UtilsExtensions.IsArraySegment
 - uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsInfinite(System.Object)
   name: IsInfinite(object?)
   href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsInfinite_System_Object_
@@ -497,6 +529,118 @@ references:
   isSpec: "True"
   fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsInfinite
   nameWithType: UtilsExtensions.IsInfinite
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsMemory(System.Type)
+  name: IsMemory(Type?)
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsMemory_System_Type_
+  commentId: M:Mecha.Core.ExtensionMethods.UtilsExtensions.IsMemory(System.Type)
+  name.vb: IsMemory(Type)
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsMemory(System.Type?)
+  fullName.vb: Mecha.Core.ExtensionMethods.UtilsExtensions.IsMemory(System.Type)
+  nameWithType: UtilsExtensions.IsMemory(Type?)
+  nameWithType.vb: UtilsExtensions.IsMemory(Type)
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsMemory*
+  name: IsMemory
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsMemory_
+  commentId: Overload:Mecha.Core.ExtensionMethods.UtilsExtensions.IsMemory
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsMemory
+  nameWithType: UtilsExtensions.IsMemory
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsNullable(System.Type)
+  name: IsNullable(Type?)
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsNullable_System_Type_
+  commentId: M:Mecha.Core.ExtensionMethods.UtilsExtensions.IsNullable(System.Type)
+  name.vb: IsNullable(Type)
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsNullable(System.Type?)
+  fullName.vb: Mecha.Core.ExtensionMethods.UtilsExtensions.IsNullable(System.Type)
+  nameWithType: UtilsExtensions.IsNullable(Type?)
+  nameWithType.vb: UtilsExtensions.IsNullable(Type)
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsNullable*
+  name: IsNullable
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsNullable_
+  commentId: Overload:Mecha.Core.ExtensionMethods.UtilsExtensions.IsNullable
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsNullable
+  nameWithType: UtilsExtensions.IsNullable
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlyMemory(System.Type)
+  name: IsReadOnlyMemory(Type?)
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsReadOnlyMemory_System_Type_
+  commentId: M:Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlyMemory(System.Type)
+  name.vb: IsReadOnlyMemory(Type)
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlyMemory(System.Type?)
+  fullName.vb: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlyMemory(System.Type)
+  nameWithType: UtilsExtensions.IsReadOnlyMemory(Type?)
+  nameWithType.vb: UtilsExtensions.IsReadOnlyMemory(Type)
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlyMemory*
+  name: IsReadOnlyMemory
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsReadOnlyMemory_
+  commentId: Overload:Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlyMemory
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlyMemory
+  nameWithType: UtilsExtensions.IsReadOnlyMemory
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlySpan(System.Type)
+  name: IsReadOnlySpan(Type?)
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsReadOnlySpan_System_Type_
+  commentId: M:Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlySpan(System.Type)
+  name.vb: IsReadOnlySpan(Type)
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlySpan(System.Type?)
+  fullName.vb: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlySpan(System.Type)
+  nameWithType: UtilsExtensions.IsReadOnlySpan(Type?)
+  nameWithType.vb: UtilsExtensions.IsReadOnlySpan(Type)
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlySpan*
+  name: IsReadOnlySpan
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsReadOnlySpan_
+  commentId: Overload:Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlySpan
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlySpan
+  nameWithType: UtilsExtensions.IsReadOnlySpan
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpan(System.Type)
+  name: IsSpan(Type?)
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsSpan_System_Type_
+  commentId: M:Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpan(System.Type)
+  name.vb: IsSpan(Type)
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpan(System.Type?)
+  fullName.vb: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpan(System.Type)
+  nameWithType: UtilsExtensions.IsSpan(Type?)
+  nameWithType.vb: UtilsExtensions.IsSpan(Type)
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpan*
+  name: IsSpan
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsSpan_
+  commentId: Overload:Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpan
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpan
+  nameWithType: UtilsExtensions.IsSpan
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpecialType(System.Type,System.Type@)
+  name: IsSpecialType(Type?, out Type?)
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsSpecialType_System_Type_System_Type__
+  commentId: M:Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpecialType(System.Type,System.Type@)
+  name.vb: IsSpecialType(Type, Type)
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpecialType(System.Type?, out System.Type?)
+  fullName.vb: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpecialType(System.Type, System.Type)
+  nameWithType: UtilsExtensions.IsSpecialType(Type?, out Type?)
+  nameWithType.vb: UtilsExtensions.IsSpecialType(Type, Type)
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpecialType*
+  name: IsSpecialType
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsSpecialType_
+  commentId: Overload:Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpecialType
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpecialType
+  nameWithType: UtilsExtensions.IsSpecialType
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsStruct(System.Type)
+  name: IsStruct(Type?)
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsStruct_System_Type_
+  commentId: M:Mecha.Core.ExtensionMethods.UtilsExtensions.IsStruct(System.Type)
+  name.vb: IsStruct(Type)
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsStruct(System.Type?)
+  fullName.vb: Mecha.Core.ExtensionMethods.UtilsExtensions.IsStruct(System.Type)
+  nameWithType: UtilsExtensions.IsStruct(Type?)
+  nameWithType.vb: UtilsExtensions.IsStruct(Type)
+- uid: Mecha.Core.ExtensionMethods.UtilsExtensions.IsStruct*
+  name: IsStruct
+  href: api/Mecha.Core.ExtensionMethods.UtilsExtensions.html#Mecha_Core_ExtensionMethods_UtilsExtensions_IsStruct_
+  commentId: Overload:Mecha.Core.ExtensionMethods.UtilsExtensions.IsStruct
+  isSpec: "True"
+  fullName: Mecha.Core.ExtensionMethods.UtilsExtensions.IsStruct
+  nameWithType: UtilsExtensions.IsStruct
 - uid: Mecha.Core.Generator
   name: Mecha.Core.Generator
   href: api/Mecha.Core.Generator.html
@@ -1191,6 +1335,76 @@ references:
   isSpec: "True"
   fullName: Mecha.Core.Generator.DefaultGenerators.SliceGenerator.Order
   nameWithType: SliceGenerator.Order
+- uid: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator
+  name: SpecialGenerator
+  href: api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html
+  commentId: T:Mecha.Core.Generator.DefaultGenerators.SpecialGenerator
+  fullName: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator
+  nameWithType: SpecialGenerator
+- uid: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.#ctor(Mirage.Random)
+  name: SpecialGenerator(Random?)
+  href: api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html#Mecha_Core_Generator_DefaultGenerators_SpecialGenerator__ctor_Mirage_Random_
+  commentId: M:Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.#ctor(Mirage.Random)
+  name.vb: New(Random)
+  fullName: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.SpecialGenerator(Mirage.Random?)
+  fullName.vb: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.New(Mirage.Random)
+  nameWithType: SpecialGenerator.SpecialGenerator(Random?)
+  nameWithType.vb: SpecialGenerator.New(Random)
+- uid: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.#ctor*
+  name: SpecialGenerator
+  href: api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html#Mecha_Core_Generator_DefaultGenerators_SpecialGenerator__ctor_
+  commentId: Overload:Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.SpecialGenerator
+  fullName.vb: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.New
+  nameWithType: SpecialGenerator.SpecialGenerator
+  nameWithType.vb: SpecialGenerator.New
+- uid: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.CanGenerate(System.Reflection.ParameterInfo)
+  name: CanGenerate(ParameterInfo?)
+  href: api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html#Mecha_Core_Generator_DefaultGenerators_SpecialGenerator_CanGenerate_System_Reflection_ParameterInfo_
+  commentId: M:Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.CanGenerate(System.Reflection.ParameterInfo)
+  name.vb: CanGenerate(ParameterInfo)
+  fullName: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.CanGenerate(System.Reflection.ParameterInfo?)
+  fullName.vb: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.CanGenerate(System.Reflection.ParameterInfo)
+  nameWithType: SpecialGenerator.CanGenerate(ParameterInfo?)
+  nameWithType.vb: SpecialGenerator.CanGenerate(ParameterInfo)
+- uid: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.CanGenerate*
+  name: CanGenerate
+  href: api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html#Mecha_Core_Generator_DefaultGenerators_SpecialGenerator_CanGenerate_
+  commentId: Overload:Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.CanGenerate
+  isSpec: "True"
+  fullName: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.CanGenerate
+  nameWithType: SpecialGenerator.CanGenerate
+- uid: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Next(System.Reflection.ParameterInfo,System.Object,System.Object)
+  name: Next(ParameterInfo?, object?, object?)
+  href: api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html#Mecha_Core_Generator_DefaultGenerators_SpecialGenerator_Next_System_Reflection_ParameterInfo_System_Object_System_Object_
+  commentId: M:Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Next(System.Reflection.ParameterInfo,System.Object,System.Object)
+  name.vb: Next(ParameterInfo, Object, Object)
+  fullName: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Next(System.Reflection.ParameterInfo?, object?, object?)
+  fullName.vb: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Next(System.Reflection.ParameterInfo, Object, Object)
+  nameWithType: SpecialGenerator.Next(ParameterInfo?, object?, object?)
+  nameWithType.vb: SpecialGenerator.Next(ParameterInfo, Object, Object)
+- uid: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Next*
+  name: Next
+  href: api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html#Mecha_Core_Generator_DefaultGenerators_SpecialGenerator_Next_
+  commentId: Overload:Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Next
+  isSpec: "True"
+  fullName: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Next
+  nameWithType: SpecialGenerator.Next
+- uid: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Order
+  name: Order
+  href: api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html#Mecha_Core_Generator_DefaultGenerators_SpecialGenerator_Order
+  commentId: P:Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Order
+  fullName: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Order
+  nameWithType: SpecialGenerator.Order
+- uid: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Order*
+  name: Order
+  href: api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html#Mecha_Core_Generator_DefaultGenerators_SpecialGenerator_Order_
+  commentId: Overload:Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Order
+  isSpec: "True"
+  fullName: Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.Order
+  nameWithType: SpecialGenerator.Order
 - uid: Mecha.Core.Generator.DefaultGenerators.StreamGenerator
   name: StreamGenerator
   href: api/Mecha.Core.Generator.DefaultGenerators.StreamGenerator.html
@@ -3005,6 +3219,57 @@ references:
   isSpec: "True"
   fullName: Mecha.Core.Generator.Interfaces.IGenerator.Order
   nameWithType: IGenerator.Order
+- uid: Mecha.Core.Generator.ParameterValue
+  name: ParameterValue
+  href: api/Mecha.Core.Generator.ParameterValue.html
+  commentId: T:Mecha.Core.Generator.ParameterValue
+  fullName: Mecha.Core.Generator.ParameterValue
+  nameWithType: ParameterValue
+- uid: Mecha.Core.Generator.ParameterValue.#ctor(System.String,System.Object)
+  name: ParameterValue(string, object?)
+  href: api/Mecha.Core.Generator.ParameterValue.html#Mecha_Core_Generator_ParameterValue__ctor_System_String_System_Object_
+  commentId: M:Mecha.Core.Generator.ParameterValue.#ctor(System.String,System.Object)
+  name.vb: New(String, Object)
+  fullName: Mecha.Core.Generator.ParameterValue.ParameterValue(string, object?)
+  fullName.vb: Mecha.Core.Generator.ParameterValue.New(String, Object)
+  nameWithType: ParameterValue.ParameterValue(string, object?)
+  nameWithType.vb: ParameterValue.New(String, Object)
+- uid: Mecha.Core.Generator.ParameterValue.#ctor*
+  name: ParameterValue
+  href: api/Mecha.Core.Generator.ParameterValue.html#Mecha_Core_Generator_ParameterValue__ctor_
+  commentId: Overload:Mecha.Core.Generator.ParameterValue.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mecha.Core.Generator.ParameterValue.ParameterValue
+  fullName.vb: Mecha.Core.Generator.ParameterValue.New
+  nameWithType: ParameterValue.ParameterValue
+  nameWithType.vb: ParameterValue.New
+- uid: Mecha.Core.Generator.ParameterValue.CreatedBy
+  name: CreatedBy
+  href: api/Mecha.Core.Generator.ParameterValue.html#Mecha_Core_Generator_ParameterValue_CreatedBy
+  commentId: P:Mecha.Core.Generator.ParameterValue.CreatedBy
+  fullName: Mecha.Core.Generator.ParameterValue.CreatedBy
+  nameWithType: ParameterValue.CreatedBy
+- uid: Mecha.Core.Generator.ParameterValue.CreatedBy*
+  name: CreatedBy
+  href: api/Mecha.Core.Generator.ParameterValue.html#Mecha_Core_Generator_ParameterValue_CreatedBy_
+  commentId: Overload:Mecha.Core.Generator.ParameterValue.CreatedBy
+  isSpec: "True"
+  fullName: Mecha.Core.Generator.ParameterValue.CreatedBy
+  nameWithType: ParameterValue.CreatedBy
+- uid: Mecha.Core.Generator.ParameterValue.Value
+  name: Value
+  href: api/Mecha.Core.Generator.ParameterValue.html#Mecha_Core_Generator_ParameterValue_Value
+  commentId: P:Mecha.Core.Generator.ParameterValue.Value
+  fullName: Mecha.Core.Generator.ParameterValue.Value
+  nameWithType: ParameterValue.Value
+- uid: Mecha.Core.Generator.ParameterValue.Value*
+  name: Value
+  href: api/Mecha.Core.Generator.ParameterValue.html#Mecha_Core_Generator_ParameterValue_Value_
+  commentId: Overload:Mecha.Core.Generator.ParameterValue.Value
+  isSpec: "True"
+  fullName: Mecha.Core.Generator.ParameterValue.Value
+  nameWithType: ParameterValue.Value
 - uid: Mecha.Core.Generator.ParameterValues
   name: ParameterValues
   href: api/Mecha.Core.Generator.ParameterValues.html
@@ -3030,15 +3295,12 @@ references:
   fullName.vb: Mecha.Core.Generator.ParameterValues.New
   nameWithType: ParameterValues.ParameterValues
   nameWithType.vb: ParameterValues.New
-- uid: Mecha.Core.Generator.ParameterValues.AddValue(System.Object)
-  name: AddValue(object?)
-  href: api/Mecha.Core.Generator.ParameterValues.html#Mecha_Core_Generator_ParameterValues_AddValue_System_Object_
-  commentId: M:Mecha.Core.Generator.ParameterValues.AddValue(System.Object)
-  name.vb: AddValue(Object)
-  fullName: Mecha.Core.Generator.ParameterValues.AddValue(object?)
-  fullName.vb: Mecha.Core.Generator.ParameterValues.AddValue(Object)
-  nameWithType: ParameterValues.AddValue(object?)
-  nameWithType.vb: ParameterValues.AddValue(Object)
+- uid: Mecha.Core.Generator.ParameterValues.AddValue(Mecha.Core.Generator.ParameterValue)
+  name: AddValue(ParameterValue)
+  href: api/Mecha.Core.Generator.ParameterValues.html#Mecha_Core_Generator_ParameterValues_AddValue_Mecha_Core_Generator_ParameterValue_
+  commentId: M:Mecha.Core.Generator.ParameterValues.AddValue(Mecha.Core.Generator.ParameterValue)
+  fullName: Mecha.Core.Generator.ParameterValues.AddValue(Mecha.Core.Generator.ParameterValue)
+  nameWithType: ParameterValues.AddValue(ParameterValue)
 - uid: Mecha.Core.Generator.ParameterValues.AddValue*
   name: AddValue
   href: api/Mecha.Core.Generator.ParameterValues.html#Mecha_Core_Generator_ParameterValues_AddValue_
@@ -3888,12 +4150,116 @@ references:
   isSpec: "True"
   fullName: Mecha.Core.Runner.DefaultRunner.StartRun
   nameWithType: DefaultRunner.StartRun
+- uid: Mecha.Core.Runner.Helpers
+  name: Mecha.Core.Runner.Helpers
+  href: api/Mecha.Core.Runner.Helpers.html
+  commentId: N:Mecha.Core.Runner.Helpers
+  fullName: Mecha.Core.Runner.Helpers
+  nameWithType: Mecha.Core.Runner.Helpers
+- uid: Mecha.Core.Runner.Helpers.MethodInvoker`1
+  name: MethodInvoker<TTarget>
+  href: api/Mecha.Core.Runner.Helpers.MethodInvoker-1.html
+  commentId: T:Mecha.Core.Runner.Helpers.MethodInvoker`1
+  name.vb: MethodInvoker(Of TTarget)
+  fullName: Mecha.Core.Runner.Helpers.MethodInvoker<TTarget>
+  fullName.vb: Mecha.Core.Runner.Helpers.MethodInvoker(Of TTarget)
+  nameWithType: MethodInvoker<TTarget>
+  nameWithType.vb: MethodInvoker(Of TTarget)
+- uid: Mecha.Core.Runner.Helpers.MethodInvoker`1.#ctor(System.Reflection.MethodInfo)
+  name: MethodInvoker(MethodInfo)
+  href: api/Mecha.Core.Runner.Helpers.MethodInvoker-1.html#Mecha_Core_Runner_Helpers_MethodInvoker_1__ctor_System_Reflection_MethodInfo_
+  commentId: M:Mecha.Core.Runner.Helpers.MethodInvoker`1.#ctor(System.Reflection.MethodInfo)
+  name.vb: New(MethodInfo)
+  fullName: Mecha.Core.Runner.Helpers.MethodInvoker<TTarget>.MethodInvoker(System.Reflection.MethodInfo)
+  fullName.vb: Mecha.Core.Runner.Helpers.MethodInvoker(Of TTarget).New(System.Reflection.MethodInfo)
+  nameWithType: MethodInvoker<TTarget>.MethodInvoker(MethodInfo)
+  nameWithType.vb: MethodInvoker(Of TTarget).New(MethodInfo)
+- uid: Mecha.Core.Runner.Helpers.MethodInvoker`1.#ctor*
+  name: MethodInvoker
+  href: api/Mecha.Core.Runner.Helpers.MethodInvoker-1.html#Mecha_Core_Runner_Helpers_MethodInvoker_1__ctor_
+  commentId: Overload:Mecha.Core.Runner.Helpers.MethodInvoker`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Mecha.Core.Runner.Helpers.MethodInvoker<TTarget>.MethodInvoker
+  fullName.vb: Mecha.Core.Runner.Helpers.MethodInvoker(Of TTarget).New
+  nameWithType: MethodInvoker<TTarget>.MethodInvoker
+  nameWithType.vb: MethodInvoker(Of TTarget).New
+- uid: Mecha.Core.Runner.Helpers.MethodInvoker`1.Invoke(System.Object,System.Object[])
+  name: Invoke(object?, object?[])
+  href: api/Mecha.Core.Runner.Helpers.MethodInvoker-1.html#Mecha_Core_Runner_Helpers_MethodInvoker_1_Invoke_System_Object_System_Object___
+  commentId: M:Mecha.Core.Runner.Helpers.MethodInvoker`1.Invoke(System.Object,System.Object[])
+  name.vb: Invoke(Object, Object())
+  fullName: Mecha.Core.Runner.Helpers.MethodInvoker<TTarget>.Invoke(object?, object?[])
+  fullName.vb: Mecha.Core.Runner.Helpers.MethodInvoker(Of TTarget).Invoke(Object, Object())
+  nameWithType: MethodInvoker<TTarget>.Invoke(object?, object?[])
+  nameWithType.vb: MethodInvoker(Of TTarget).Invoke(Object, Object())
+- uid: Mecha.Core.Runner.Helpers.MethodInvoker`1.Invoke*
+  name: Invoke
+  href: api/Mecha.Core.Runner.Helpers.MethodInvoker-1.html#Mecha_Core_Runner_Helpers_MethodInvoker_1_Invoke_
+  commentId: Overload:Mecha.Core.Runner.Helpers.MethodInvoker`1.Invoke
+  isSpec: "True"
+  fullName: Mecha.Core.Runner.Helpers.MethodInvoker<TTarget>.Invoke
+  fullName.vb: Mecha.Core.Runner.Helpers.MethodInvoker(Of TTarget).Invoke
+  nameWithType: MethodInvoker<TTarget>.Invoke
+  nameWithType.vb: MethodInvoker(Of TTarget).Invoke
+- uid: Mecha.Core.Runner.Helpers.MethodInvoker`1.Method
+  name: Method
+  href: api/Mecha.Core.Runner.Helpers.MethodInvoker-1.html#Mecha_Core_Runner_Helpers_MethodInvoker_1_Method
+  commentId: P:Mecha.Core.Runner.Helpers.MethodInvoker`1.Method
+  fullName: Mecha.Core.Runner.Helpers.MethodInvoker<TTarget>.Method
+  fullName.vb: Mecha.Core.Runner.Helpers.MethodInvoker(Of TTarget).Method
+  nameWithType: MethodInvoker<TTarget>.Method
+  nameWithType.vb: MethodInvoker(Of TTarget).Method
+- uid: Mecha.Core.Runner.Helpers.MethodInvoker`1.Method*
+  name: Method
+  href: api/Mecha.Core.Runner.Helpers.MethodInvoker-1.html#Mecha_Core_Runner_Helpers_MethodInvoker_1_Method_
+  commentId: Overload:Mecha.Core.Runner.Helpers.MethodInvoker`1.Method
+  isSpec: "True"
+  fullName: Mecha.Core.Runner.Helpers.MethodInvoker<TTarget>.Method
+  fullName.vb: Mecha.Core.Runner.Helpers.MethodInvoker(Of TTarget).Method
+  nameWithType: MethodInvoker<TTarget>.Method
+  nameWithType.vb: MethodInvoker(Of TTarget).Method
 - uid: Mecha.Core.Runner.Interfaces
   name: Mecha.Core.Runner.Interfaces
   href: api/Mecha.Core.Runner.Interfaces.html
   commentId: N:Mecha.Core.Runner.Interfaces
   fullName: Mecha.Core.Runner.Interfaces
   nameWithType: Mecha.Core.Runner.Interfaces
+- uid: Mecha.Core.Runner.Interfaces.IMethodInvoker
+  name: IMethodInvoker
+  href: api/Mecha.Core.Runner.Interfaces.IMethodInvoker.html
+  commentId: T:Mecha.Core.Runner.Interfaces.IMethodInvoker
+  fullName: Mecha.Core.Runner.Interfaces.IMethodInvoker
+  nameWithType: IMethodInvoker
+- uid: Mecha.Core.Runner.Interfaces.IMethodInvoker.Invoke(System.Object,System.Object[])
+  name: Invoke(object?, object?[])
+  href: api/Mecha.Core.Runner.Interfaces.IMethodInvoker.html#Mecha_Core_Runner_Interfaces_IMethodInvoker_Invoke_System_Object_System_Object___
+  commentId: M:Mecha.Core.Runner.Interfaces.IMethodInvoker.Invoke(System.Object,System.Object[])
+  name.vb: Invoke(Object, Object())
+  fullName: Mecha.Core.Runner.Interfaces.IMethodInvoker.Invoke(object?, object?[])
+  fullName.vb: Mecha.Core.Runner.Interfaces.IMethodInvoker.Invoke(Object, Object())
+  nameWithType: IMethodInvoker.Invoke(object?, object?[])
+  nameWithType.vb: IMethodInvoker.Invoke(Object, Object())
+- uid: Mecha.Core.Runner.Interfaces.IMethodInvoker.Invoke*
+  name: Invoke
+  href: api/Mecha.Core.Runner.Interfaces.IMethodInvoker.html#Mecha_Core_Runner_Interfaces_IMethodInvoker_Invoke_
+  commentId: Overload:Mecha.Core.Runner.Interfaces.IMethodInvoker.Invoke
+  isSpec: "True"
+  fullName: Mecha.Core.Runner.Interfaces.IMethodInvoker.Invoke
+  nameWithType: IMethodInvoker.Invoke
+- uid: Mecha.Core.Runner.Interfaces.IMethodInvoker.Method
+  name: Method
+  href: api/Mecha.Core.Runner.Interfaces.IMethodInvoker.html#Mecha_Core_Runner_Interfaces_IMethodInvoker_Method
+  commentId: P:Mecha.Core.Runner.Interfaces.IMethodInvoker.Method
+  fullName: Mecha.Core.Runner.Interfaces.IMethodInvoker.Method
+  nameWithType: IMethodInvoker.Method
+- uid: Mecha.Core.Runner.Interfaces.IMethodInvoker.Method*
+  name: Method
+  href: api/Mecha.Core.Runner.Interfaces.IMethodInvoker.html#Mecha_Core_Runner_Interfaces_IMethodInvoker_Method_
+  commentId: Overload:Mecha.Core.Runner.Interfaces.IMethodInvoker.Method
+  isSpec: "True"
+  fullName: Mecha.Core.Runner.Interfaces.IMethodInvoker.Method
+  nameWithType: IMethodInvoker.Method
 - uid: Mecha.Core.Runner.Interfaces.IRunner
   name: IRunner
   href: api/Mecha.Core.Runner.Interfaces.IRunner.html
@@ -3922,33 +4288,24 @@ references:
   commentId: T:Mecha.Core.Runner.Parameter
   fullName: Mecha.Core.Runner.Parameter
   nameWithType: Parameter
-- uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo)
-  name: Parameter(ParameterInfo)
-  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_
-  commentId: M:Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo)
-  name.vb: New(ParameterInfo)
-  fullName: Mecha.Core.Runner.Parameter.Parameter(System.Reflection.ParameterInfo)
-  fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo)
-  nameWithType: Parameter.Parameter(ParameterInfo)
-  nameWithType.vb: Parameter.New(ParameterInfo)
-- uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object)
-  name: Parameter(ParameterInfo, object?)
-  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_System_Object_
-  commentId: M:Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object)
-  name.vb: New(ParameterInfo, Object)
-  fullName: Mecha.Core.Runner.Parameter.Parameter(System.Reflection.ParameterInfo, object?)
-  fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo, Object)
-  nameWithType: Parameter.Parameter(ParameterInfo, object?)
-  nameWithType.vb: Parameter.New(ParameterInfo, Object)
-- uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.Int32,System.Int32)
-  name: Parameter(ParameterInfo, object?, int, int)
-  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_System_Object_System_Int32_System_Int32_
-  commentId: M:Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.Int32,System.Int32)
-  name.vb: New(ParameterInfo, Object, Integer, Integer)
-  fullName: Mecha.Core.Runner.Parameter.Parameter(System.Reflection.ParameterInfo, object?, int, int)
-  fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo, Object, Integer, Integer)
-  nameWithType: Parameter.Parameter(ParameterInfo, object?, int, int)
-  nameWithType.vb: Parameter.New(ParameterInfo, Object, Integer, Integer)
+- uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.String)
+  name: Parameter(ParameterInfo, object?, string)
+  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_System_Object_System_String_
+  commentId: M:Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.String)
+  name.vb: New(ParameterInfo, Object, String)
+  fullName: Mecha.Core.Runner.Parameter.Parameter(System.Reflection.ParameterInfo, object?, string)
+  fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo, Object, String)
+  nameWithType: Parameter.Parameter(ParameterInfo, object?, string)
+  nameWithType.vb: Parameter.New(ParameterInfo, Object, String)
+- uid: Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.String,System.Int32,System.Int32)
+  name: Parameter(ParameterInfo, object?, string, int, int)
+  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_System_Reflection_ParameterInfo_System_Object_System_String_System_Int32_System_Int32_
+  commentId: M:Mecha.Core.Runner.Parameter.#ctor(System.Reflection.ParameterInfo,System.Object,System.String,System.Int32,System.Int32)
+  name.vb: New(ParameterInfo, Object, String, Integer, Integer)
+  fullName: Mecha.Core.Runner.Parameter.Parameter(System.Reflection.ParameterInfo, object?, string, int, int)
+  fullName.vb: Mecha.Core.Runner.Parameter.New(System.Reflection.ParameterInfo, Object, String, Integer, Integer)
+  nameWithType: Parameter.Parameter(ParameterInfo, object?, string, int, int)
+  nameWithType.vb: Parameter.New(ParameterInfo, Object, String, Integer, Integer)
 - uid: Mecha.Core.Runner.Parameter.#ctor*
   name: Parameter
   href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter__ctor_
@@ -3972,6 +4329,19 @@ references:
   isSpec: "True"
   fullName: Mecha.Core.Runner.Parameter.Copy
   nameWithType: Parameter.Copy
+- uid: Mecha.Core.Runner.Parameter.CreatedBy
+  name: CreatedBy
+  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter_CreatedBy
+  commentId: P:Mecha.Core.Runner.Parameter.CreatedBy
+  fullName: Mecha.Core.Runner.Parameter.CreatedBy
+  nameWithType: Parameter.CreatedBy
+- uid: Mecha.Core.Runner.Parameter.CreatedBy*
+  name: CreatedBy
+  href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter_CreatedBy_
+  commentId: Overload:Mecha.Core.Runner.Parameter.CreatedBy
+  isSpec: "True"
+  fullName: Mecha.Core.Runner.Parameter.CreatedBy
+  nameWithType: Parameter.CreatedBy
 - uid: Mecha.Core.Runner.Parameter.Mutate(Mecha.Core.Mutator.MutatorManager,System.Collections.Generic.List{Mecha.Core.Runner.RunResult})
   name: Mutate(MutatorManager?, List<RunResult>)
   href: api/Mecha.Core.Runner.Parameter.html#Mecha_Core_Runner_Parameter_Mutate_Mecha_Core_Mutator_MutatorManager_System_Collections_Generic_List_Mecha_Core_Runner_RunResult__
@@ -4159,6 +4529,15 @@ references:
   commentId: T:Mecha.Core.Runner.RunResult
   fullName: Mecha.Core.Runner.RunResult
   nameWithType: RunResult
+- uid: Mecha.Core.Runner.RunResult.#ctor(System.Reflection.MethodInfo,System.Object,Mecha.Core.Generator.ParameterValue[])
+  name: RunResult(MethodInfo, object?, ParameterValue?[])
+  href: api/Mecha.Core.Runner.RunResult.html#Mecha_Core_Runner_RunResult__ctor_System_Reflection_MethodInfo_System_Object_Mecha_Core_Generator_ParameterValue___
+  commentId: M:Mecha.Core.Runner.RunResult.#ctor(System.Reflection.MethodInfo,System.Object,Mecha.Core.Generator.ParameterValue[])
+  name.vb: New(MethodInfo, Object, ParameterValue())
+  fullName: Mecha.Core.Runner.RunResult.RunResult(System.Reflection.MethodInfo, object?, Mecha.Core.Generator.ParameterValue?[])
+  fullName.vb: Mecha.Core.Runner.RunResult.New(System.Reflection.MethodInfo, Object, Mecha.Core.Generator.ParameterValue())
+  nameWithType: RunResult.RunResult(MethodInfo, object?, ParameterValue?[])
+  nameWithType.vb: RunResult.New(MethodInfo, Object, ParameterValue())
 - uid: Mecha.Core.Runner.RunResult.#ctor(System.Reflection.MethodInfo,System.Object,System.Object[])
   name: RunResult(MethodInfo, object?, object?[])
   href: api/Mecha.Core.Runner.RunResult.html#Mecha_Core_Runner_RunResult__ctor_System_Reflection_MethodInfo_System_Object_System_Object___

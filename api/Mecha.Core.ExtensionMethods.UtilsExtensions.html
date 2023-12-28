@@ -155,11 +155,89 @@
 </h2>
 
 
+  <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_GetUnderlyingArrayType_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.GetUnderlyingArrayType*"></a>
+
+  <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_GetUnderlyingArrayType_System_Type_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.GetUnderlyingArrayType(System.Type)">
+  GetUnderlyingArrayType(Type?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the underlying array type if it exists</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Type? GetUnderlyingArrayType(this Type? type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>Type to check.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The underlying array type if it exists, null otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsArraySegment_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsArraySegment*"></a>
+
+  <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsArraySegment_System_Type_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsArraySegment(System.Type)">
+  IsArraySegment(Type?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified type is an array segment.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsArraySegment(this Type? type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if it is an array segment, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsInfinite_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsInfinite*"></a>
 
   <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsInfinite_System_Object_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsInfinite(System.Object)">
   IsInfinite(object?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L68"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines whether the specified value is infinite.</p>
@@ -181,6 +259,282 @@
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
     <dd><p><code>true</code> if the specified value is infinite; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsMemory_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsMemory*"></a>
+
+  <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsMemory_System_Type_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsMemory(System.Type)">
+  IsMemory(Type?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L80"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified type is a Memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsMemory(this Type? type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if it is a Memory, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsNullable_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsNullable*"></a>
+
+  <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsNullable_System_Type_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsNullable(System.Type)">
+  IsNullable(Type?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified type is a nullable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsNullable(this Type? type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if it is a nullable, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsReadOnlyMemory_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlyMemory*"></a>
+
+  <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsReadOnlyMemory_System_Type_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlyMemory(System.Type)">
+  IsReadOnlyMemory(Type?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified type is a ReadOnlyMemory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsReadOnlyMemory(this Type? type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if it is a ReadOnlyMemory, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsReadOnlySpan_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlySpan*"></a>
+
+  <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsReadOnlySpan_System_Type_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsReadOnlySpan(System.Type)">
+  IsReadOnlySpan(Type?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified type is a ReadOnlySpan.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsReadOnlySpan(this Type? type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if it is a ReadOnlySpan, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsSpan_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpan*"></a>
+
+  <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsSpan_System_Type_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpan(System.Type)">
+  IsSpan(Type?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified type is a Span.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSpan(this Type? type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if it is a Span, false otherwise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsSpecialType_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpecialType*"></a>
+
+  <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsSpecialType_System_Type_System_Type__" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsSpecialType(System.Type,System.Type@)">
+  IsSpecialType(Type?, out Type?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified type is one of the special types.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsSpecialType(this Type? type, out Type? specialType)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type.</p>
+</dd>
+    <dt><code>specialType</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The special type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if it is a special case type, false otherweise.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsStruct_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsStruct*"></a>
+
+  <h3 id="Mecha_Core_ExtensionMethods_UtilsExtensions_IsStruct_System_Type_" data-uid="Mecha.Core.ExtensionMethods.UtilsExtensions.IsStruct(System.Type)">
+  IsStruct(Type?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExtensionMethods/UtilsExtensions.cs/#L157"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified type is a struct.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsStruct(this Type? type)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></dt>
+    <dd><p>The type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if it is a struct, false otherwise.</p>
 </dd>
   </dl>
 

@@ -292,6 +292,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mecha.Core.Generator.DefaultGenerators.StreamGenerator.yml",
       "output": {
         ".html": {
@@ -492,6 +502,16 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Generator.ParameterValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Generator.ParameterValue.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Mecha.Core.Generator.ParameterValues.yml",
       "output": {
         ".html": {
@@ -646,6 +666,36 @@
       "output": {
         ".html": {
           "relative_path": "api/Mecha.Core.Runner.DefaultRunner.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.Helpers.MethodInvoker-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.Helpers.MethodInvoker-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.Helpers.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.Helpers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Mecha.Core.Runner.Interfaces.IMethodInvoker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Mecha.Core.Runner.Interfaces.IMethodInvoker.html"
         }
       },
       "version": ""
