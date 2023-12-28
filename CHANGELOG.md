@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.0"></a>
+## [2.1.0](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.0) (2023-12-28)
+
+### Features
+
+* Updating to .Net 8 and improvements to method invocation ([b80cf53](https://www.github.com/JaCraig/Mecha/commit/b80cf53b4918b45f42c49370f0189ddc12958c36))
+
+### Bug Fixes
+
+* Fixing build ([bdd77b8](https://www.github.com/JaCraig/Mecha/commit/bdd77b887c81dd8bd05cb5d91277dbaf405cfe96))
+* merge ([9a65d08](https://www.github.com/JaCraig/Mecha/commit/9a65d08134c7167e77e9b940658f675a93724fa1))
+
 <a name="2.0.74"></a>
 ## [2.0.74](https://www.github.com/JaCraig/Mecha/releases/tag/v2.0.74) (2023-12-27)
 
