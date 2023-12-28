@@ -15,6 +15,11 @@ namespace Mecha.Core.Tests.Generator.Helpers
         public EmptyStreamTests()
         {
             TestObject = new EmptyStream();
+            Options = new Options
+            {
+                MaxDuration = 100,
+                DiscoverInheritedMethods = false,
+            };
         }
     }
 }

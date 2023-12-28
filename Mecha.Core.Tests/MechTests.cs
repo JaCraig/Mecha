@@ -37,7 +37,6 @@ namespace Mecha.Core.Tests
         /// <summary>
         /// Shrinks the specified value.
         /// </summary>
-        /// <param name="value">The value.</param>
         [Fact]
         public async Task RunAsync()
         {

@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using Fast.Activator;
+using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Generator.Interfaces;
 using System.Reflection;
 
@@ -47,6 +49,14 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo? parameter, object? min, object? max) => parameter?.DefaultValue;
+        public ParameterValue Next(ParameterInfo? parameter, object? min, object? max)
+        {
+            if (parameter is null || !CanGenerate(parameter))
+                return new ParameterValue("ParameterDefault Generator", null);
+            var DefaultValue = parameter.DefaultValue;
+            if (DefaultValue == null && parameter.ParameterType.IsStruct() && !parameter.ParameterType.IsNullable())
+                DefaultValue = FastActivator.CreateInstance(parameter.ParameterType);
+            return new("ParameterDefault Generator", DefaultValue);
+        }
     }
 }

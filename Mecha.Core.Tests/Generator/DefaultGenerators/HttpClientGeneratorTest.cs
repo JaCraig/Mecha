@@ -25,6 +25,6 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// Ranges the test.
         /// </summary>
         [Property]
-        public void RangeTest() => Assert.IsAssignableFrom<HttpClient>(TestObject.Next(null, null, null));
+        public void RangeTest() => Assert.IsAssignableFrom<HttpClient>(TestObject.Next(null, null, null).Value);
     }
 }

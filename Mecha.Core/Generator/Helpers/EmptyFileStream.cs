@@ -20,21 +20,6 @@ namespace Mecha.Core.Generator.Helpers
         }
 
         /// <summary>
-        /// Finalizes an instance of the <see cref="FaultyFileStream"/> class.
-        /// </summary>
-        ~EmptyFileStream()
-        {
-            foreach (FileCurator.Interfaces.IFile File in new FileCurator.DirectoryInfo("./Mecha/").EnumerateFiles())
-            {
-                try
-                {
-                    _ = File.Delete();
-                }
-                catch { }
-            }
-        }
-
-        /// <summary>
         /// Gets a value that indicates whether the current stream supports reading.
         /// </summary>
         public override bool CanRead => true;
@@ -396,6 +381,21 @@ namespace Mecha.Core.Generator.Helpers
         /// <exception cref="FileNotFoundException"></exception>
         public override void WriteByte(byte value)
         {
+        }
+
+        /// <summary>
+        /// Finalizes an instance of the <see cref="FaultyFileStream"/> class.
+        /// </summary>
+        ~EmptyFileStream()
+        {
+            foreach (FileCurator.Interfaces.IFile File in new FileCurator.DirectoryInfo("./Mecha/").EnumerateFiles())
+            {
+                try
+                {
+                    _ = File.Delete();
+                }
+                catch { }
+            }
         }
     }
 }

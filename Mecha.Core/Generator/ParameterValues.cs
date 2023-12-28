@@ -28,7 +28,7 @@ namespace Mecha.Core.Generator
         /// Gets the generated values.
         /// </summary>
         /// <value>The generated values.</value>
-        public List<object?> GeneratedValues { get; } = new List<object?>();
+        public List<ParameterValue> GeneratedValues { get; } = new List<ParameterValue>();
 
         /// <summary>
         /// Gets or sets the parameter.
@@ -46,9 +46,9 @@ namespace Mecha.Core.Generator
         /// Adds the value specified if it is valid.
         /// </summary>
         /// <param name="value">The value.</param>
-        public void AddValue(object? value)
+        public void AddValue(ParameterValue value)
         {
-            if (GeneratedValues.Contains(value) || ValidationAttributes.Any(x => !x.IsValid(value)))
+            if (GeneratedValues.Any(x => x.Value == value.Value) || ValidationAttributes.Any(x => !x.IsValid(value.Value)))
                 return;
             _ = GeneratedValues.AddIfUnique(Same, value);
         }
@@ -56,11 +56,13 @@ namespace Mecha.Core.Generator
         /// <summary>
         /// Determines if the 2 arrays are the same.
         /// </summary>
-        /// <param name="value1">The value1.</param>
-        /// <param name="value2">The value2.</param>
+        /// <param name="paramValue1">The parameter value1.</param>
+        /// <param name="paramValue2">The parameter value2.</param>
         /// <returns>True if they are, false otherwise.</returns>
-        private bool Same(object? value1, object? value2)
+        private bool Same(ParameterValue paramValue1, ParameterValue paramValue2)
         {
+            var value1 = paramValue1.Value;
+            var value2 = paramValue2.Value;
             if (value1.IsInfinite() && value2.IsInfinite())
                 return true;
             if (value1.IsInfinite() || value2.IsInfinite())

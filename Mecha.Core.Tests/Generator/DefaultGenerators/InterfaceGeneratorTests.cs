@@ -32,7 +32,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// Ranges the test.
         /// </summary>
         [Property]
-        public void RangeTest() => Assert.IsAssignableFrom<IConvertible>(TestObject.Next(MethodParam, null, null));
+        public void RangeTest() => Assert.IsAssignableFrom<IConvertible>(TestObject.Next(MethodParam, null, null).Value);
 
         /// <summary>
         /// Interfaces the method.

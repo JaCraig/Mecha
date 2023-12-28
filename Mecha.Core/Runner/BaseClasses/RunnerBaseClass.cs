@@ -25,16 +25,16 @@ namespace Mecha.Core.Runner.BaseClasses
         }
 
         /// <summary>
-        /// Gets the random.
-        /// </summary>
-        /// <value>The random.</value>
-        protected Mirage.Random Random { get; }
-
-        /// <summary>
         /// Gets or sets the manager.
         /// </summary>
         /// <value>The manager.</value>
         protected Mech? Manager { get; set; }
+
+        /// <summary>
+        /// Gets the random.
+        /// </summary>
+        /// <value>The random.</value>
+        protected Mirage.Random Random { get; }
 
         /// <summary>
         /// Runs the specified method on the target class.
@@ -64,7 +64,7 @@ namespace Mecha.Core.Runner.BaseClasses
                 {
                     if (Finished)
                         break;
-                    var Arguments = new object?[GeneratedParameters.Length];
+                    var Arguments = new ParameterValue?[GeneratedParameters.Length];
                     for (var y = 0; y < GeneratedParameters.Length; ++y)
                     {
                         Arguments[y] = Random.Next(GeneratedParameters[y].GeneratedValues);

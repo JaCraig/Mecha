@@ -51,20 +51,20 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo? parameter, object? min, object? max)
+        public ParameterValue? Next(ParameterInfo? parameter, object? min, object? max)
         {
             if (parameter is null || !CanGenerate(parameter))
-                return null;
+                return new ParameterValue("Negation Generator", null);
             var Value = RandomObj.Next(0, 1) == 0 ? min : max;
             if (Value is null)
-                return null;
+                return new ParameterValue("Negation Generator", null);
             try
             {
-                return NegateValueLookup.Negate?[parameter.ParameterType.GetHashCode()](Value) ?? false;
+                return new ParameterValue("Negation Generator", NegateValueLookup.Negate?[parameter.ParameterType.GetHashCode()](Value) ?? false);
             }
             catch
             {
-                return Value;
+                return new ParameterValue("Negation Generator", Value);
             }
         }
     }

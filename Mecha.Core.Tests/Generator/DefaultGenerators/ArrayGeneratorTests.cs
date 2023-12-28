@@ -38,13 +38,11 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         /// <summary>
         /// Ranges the test.
         /// </summary>
-        /// <param name="min">The minimum.</param>
-        /// <param name="max">The maximum.</param>
         [Property]
         public void RangeTest(int testNumber)
         {
             ParameterInfo[] Parameters = TestMethodInfo2.GetParameters();
-            Assert.InRange(((int[])TestObject.Next(Parameters[0], 0, 50)).Length, 0, 100);
+            Assert.InRange(((int[])TestObject.Next(Parameters[0], 0, 50).Value).Length, 0, 100);
         }
 
         /// <summary>

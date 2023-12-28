@@ -37,7 +37,7 @@ namespace Mecha.Core.Tests.BaseClasses
         /// </summary>
         /// <returns>The async task.</returns>
         [Fact]
-        public Task BreakObject() => Mech.BreakAsync(TestObject, new Options { MaxDuration = 100 });
+        public Task BreakObject() => Mech.BreakAsync(TestObject, Options);
     }
 
     /// <summary>
@@ -55,17 +55,12 @@ namespace Mecha.Core.Tests.BaseClasses
             TestMethodWithExceptionInfo = Array.Find(GetType().GetMethods(), x => x.Name == "TestMethodWithException");
             if (Random is null)
             {
-                lock (LockObj)
+                lock (_LockObj)
                 {
                     Random ??= new ServiceCollection().AddCanisterModules()?.BuildServiceProvider()?.GetService<Mirage.Random>();
                 }
             }
         }
-
-        /// <summary>
-        /// The lock object
-        /// </summary>
-        private static readonly object LockObj = new();
 
         /// <summary>
         /// Gets the random.
@@ -78,6 +73,8 @@ namespace Mecha.Core.Tests.BaseClasses
         /// </summary>
         /// <value>The type of the object.</value>
         protected abstract Type ObjectType { get; }
+
+        protected Options Options { get; set; } = new Options { MaxDuration = 100 };
 
         /// <summary>
         /// Gets the test method information.
@@ -92,11 +89,16 @@ namespace Mecha.Core.Tests.BaseClasses
         protected MethodInfo? TestMethodWithExceptionInfo { get; }
 
         /// <summary>
+        /// The lock object
+        /// </summary>
+        private static readonly object _LockObj = new();
+
+        /// <summary>
         /// Attempts to break the object.
         /// </summary>
         /// <returns>The async task.</returns>
         [Fact]
-        public Task BreakType() => Mech.BreakAsync(ObjectType, new Options { MaxDuration = 100 });
+        public Task BreakType() => Mech.BreakAsync(ObjectType, Options);
 
         /// <summary>
         /// Tests the method.

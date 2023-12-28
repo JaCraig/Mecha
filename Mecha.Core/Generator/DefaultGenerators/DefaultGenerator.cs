@@ -14,8 +14,10 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Generator.Interfaces;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Reflection;
@@ -69,6 +71,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
             return parameter?.HasDefaultValue == false
                 && !parameter.ParameterType.IsInterface
                 && !parameter.ParameterType.IsAbstract
+                && !parameter.ParameterType.IsSpecialType(out Type? _)
                 && (parameter.ParameterType.IsValueType
                     || parameter.ParameterType.IsEnum
                     || parameter.ParameterType == typeof(string)
@@ -82,22 +85,33 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo? parameter, object? min, object? max)
+        public ParameterValue Next(ParameterInfo? parameter, object? min, object? max)
         {
             if (parameter is null || !CanGenerate(parameter))
-                return null;
+                return new ParameterValue("Default Generator", null);
+            var defaultValue = min;
             if (min == max)
             {
                 max = min = null;
             }
             min = FixMinValue(min, parameter);
             max = FixMaxValue(max, parameter);
+            if (min is not null
+                && max is not null
+                && min.GetType() == max.GetType()
+                && min is IComparable MinValue
+                && max is IComparable MaxValue
+                && MinValue.CompareTo(MaxValue) > 0)
+            {
+                (max, min) = (min, max);
+            }
+
             try
             {
                 MethodInfo? GenericMethod = GenericRandMethod?.MakeGenericMethod(parameter.ParameterType);
-                return GetValue(parameter, min, max, GenericMethod);
+                return new ParameterValue("Default Generator", GetValue(parameter, min, max, GenericMethod));
             }
-            catch { return null; }
+            catch (Exception) { return new ParameterValue("Default Generator", defaultValue); }
         }
 
         /// <summary>

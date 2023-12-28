@@ -1,6 +1,7 @@
 ﻿using Mecha.Core.Generator.DefaultGenerators;
 using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
+using System.Reflection;
 using Xunit;
 
 namespace Mecha.Core.Tests.Generator.DefaultGenerators
@@ -28,7 +29,19 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
         public void RangeTest(int min, int max)
         {
             System.Reflection.ParameterInfo[] Parameters = TestMethodInfo.GetParameters();
-            Assert.Equal(Parameters[0].DefaultValue, TestObject.Next(Parameters[0], min, max));
+            Assert.Null(TestObject.Next(Parameters[0], min, max).Value);
+        }
+
+        [Property]
+        public void RangeTest2(int min, int max)
+        {
+            System.Reflection.MethodInfo? TestMethodInfo2 = GetType().GetMethod(nameof(TestMethod2), BindingFlags.Instance | BindingFlags.NonPublic);
+            System.Reflection.ParameterInfo[] Parameters = TestMethodInfo2.GetParameters();
+            Assert.Equal(100, TestObject.Next(Parameters[0], min, max).Value);
+        }
+
+        private void TestMethod2(int value = 100)
+        {
         }
     }
 }

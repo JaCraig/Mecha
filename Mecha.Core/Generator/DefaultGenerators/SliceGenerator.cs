@@ -53,22 +53,22 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo? parameter, object? min, object? max)
+        public ParameterValue? Next(ParameterInfo? parameter, object? min, object? max)
         {
             if (parameter is null || !CanGenerate(parameter))
-                return null;
+                return new("Slice Generator", null);
             try
             {
                 min ??= max;
                 max ??= min;
                 if (min is null)
-                    return FastActivator.CreateInstance(parameter.ParameterType);
+                    return new("Slice Generator", FastActivator.CreateInstance(parameter.ParameterType));
                 var Key = parameter.ParameterType.GetHashCode();
-                return SliceValueLookup.Slice?[Key](min!, max!) ?? false;
+                return new("Slice Generator", SliceValueLookup.Slice?[Key](min!, max!) ?? false);
             }
             catch
             {
-                return FastActivator.CreateInstance(parameter.ParameterType);
+                return new("Slice Generator", FastActivator.CreateInstance(parameter.ParameterType));
             }
         }
     }

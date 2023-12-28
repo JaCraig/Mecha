@@ -55,11 +55,11 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo? parameter, object? min, object? max)
+        public ParameterValue? Next(ParameterInfo? parameter, object? min, object? max)
         {
-            return parameter is null || !CanGenerate(parameter)
+            return new ParameterValue("Interface Generator", parameter is null || !CanGenerate(parameter)
                 ? null
-                : Substitute.For(new Type[] { parameter.ParameterType }, Array.Empty<object?>());
+                : Substitute.For(new Type[] { parameter.ParameterType }, Array.Empty<object?>()));
         }
     }
 }

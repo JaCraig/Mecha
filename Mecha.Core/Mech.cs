@@ -286,11 +286,16 @@ namespace Mecha.Core
         /// <returns>The async task.</returns>
         public static Task BreakAsync(Type classType, Options? options = null)
         {
-            return classType is null
-                ? Task.CompletedTask
-                : classType.IsAbstract && classType.IsSealed
-                ? BreakAsync(default(object), classType, options)
-                : BreakAsync(FastActivator.CreateInstance(classType), options);
+            if (classType is null)
+            {
+                return Task.CompletedTask;
+            }
+            else
+            {
+                return classType.IsAbstract && classType.IsSealed
+                    ? BreakAsync(default(object), classType, options)
+                    : BreakAsync(FastActivator.CreateInstance(classType), options);
+            }
         }
 
         /// <summary>

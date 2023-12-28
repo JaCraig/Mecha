@@ -1,5 +1,7 @@
 ﻿using BigBook;
+using Mecha.Core.Generator;
 using Mecha.Core.Mutator;
+using Mecha.Core.Runner.Interfaces;
 using Mecha.Core.Shrinker;
 using System;
 using System.Collections;
@@ -30,7 +32,25 @@ namespace Mecha.Core.Runner
             Parameters = new Parameter[TempParameters.Length];
             for (var X = 0; X < TempParameters.Length; ++X)
             {
-                Parameters[X] = new Parameter(TempParameters[X], parameterValues[X]);
+                Parameters[X] = new Parameter(TempParameters[X], parameterValues[X], "reloading");
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="RunResult"/> class.
+        /// </summary>
+        /// <param name="method">The method.</param>
+        /// <param name="target">The target</param>
+        /// <param name="parameterValues">The parameter values.</param>
+        public RunResult(MethodInfo method, object? target, ParameterValue?[] parameterValues)
+        {
+            Method = method;
+            Target = target;
+            ParameterInfo[] TempParameters = method.GetParameters();
+            Parameters = new Parameter[TempParameters.Length];
+            for (var X = 0; X < TempParameters.Length; ++X)
+            {
+                Parameters[X] = new Parameter(TempParameters[X], parameterValues[X].Value, parameterValues[X].CreatedBy);
             }
         }
 
@@ -155,7 +175,10 @@ namespace Mecha.Core.Runner
             timer.Restart();
             try
             {
-                ReturnedValue = Method.Invoke(Target, Parameters.ToArray(x => x?.Value));
+                IMethodInvoker? Invoker = GetMethodInvoker(Method);
+                ReturnedValue = Invoker is not null
+                    ? (Invoker?.Invoke(Target, Parameters.ToArray(x => x?.Value)))
+                    : Method.Invoke(Target, Parameters.ToArray(x => x?.Value));
                 if (ReturnedValue is Task AwaitableReturnValue)
                     await AwaitableReturnValue.ConfigureAwait(false);
                 Result = true;
@@ -232,7 +255,24 @@ namespace Mecha.Core.Runner
                     ShrinkText += Parameters.Where(x => x.ShrinkCount > 1).ToString(x => x.ToString(), "\n") + "\n";
                 ExceptionText = $"\n\nException:\n{Exception}";
             }
-            return $"{Method.Name} ({Parameters.ToString(x => GetValue(x), ", ")}){ReturnVal}{ShrinkText}Elapsed time:\t\t{ElapsedTime} ms{ExceptionText}\n\n-------------------------------------------------------------------------------------------------------------";
+            return $"{Method.Name} ({Parameters.ToString(GetValue, ", ")}){ReturnVal}{ShrinkText}Elapsed time:\t\t{ElapsedTime} ms{ExceptionText}\n\n-------------------------------------------------------------------------------------------------------------";
+        }
+
+        /// <summary>
+        /// Creates a new method invoker
+        /// </summary>
+        /// <typeparam name="TTarget">The target type</typeparam>
+        /// <param name="method">The method</param>
+        /// <returns>The method invoker</returns>
+        private static IMethodInvoker? CreateInvokableMethod<TTarget>(MethodInfo? method) => method is null ? null : (IMethodInvoker)new Helpers.MethodInvoker<TTarget>(method);
+
+        private static IMethodInvoker? GetMethodInvoker(MethodInfo method)
+        {
+            return method is null
+                ? null
+                : (IMethodInvoker?)(Array.Find(typeof(RunResult).GetMethods(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public), x => x.Name == nameof(CreateInvokableMethod) && x.GetGenericArguments().Length == 1)
+                    ?.MakeGenericMethod(method.DeclaringType ?? typeof(object))
+                    .Invoke(null, new object[] { method }));
         }
 
         /// <summary>

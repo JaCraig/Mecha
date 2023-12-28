@@ -53,13 +53,13 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo? parameter, object? min, object? max)
+        public ParameterValue? Next(ParameterInfo? parameter, object? min, object? max)
         {
             if (parameter is null || !CanGenerate(parameter))
-                return null;
+                return new("MaxBoundary Generator", null);
             var Key = parameter.ParameterType.GetHashCode();
             RangeAttribute? Range = parameter.GetCustomAttribute<RangeAttribute>();
-            return Range?.Maximum ?? MaxValueLookup.Max?[Key] ?? false;
+            return new("MaxBoundary Generator", Range?.Maximum ?? MaxValueLookup.Max?[Key] ?? false);
         }
     }
 }

@@ -15,6 +15,7 @@ limitations under the License.
 */
 
 using Fast.Activator;
+using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Generator.DefaultGenerators.Utils;
 using Mecha.Core.Generator.Interfaces;
 using System.Diagnostics.CodeAnalysis;
@@ -41,7 +42,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>
         /// <c>true</c> if this instance can generate the specified parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanGenerate(ParameterInfo? parameter) => !parameter?.HasDefaultValue ?? false;
+        public bool CanGenerate(ParameterInfo? parameter) => (!parameter?.HasDefaultValue ?? false)
+            && (!parameter?.ParameterType.IsSpecialType(out System.Type? _) ?? false);
 
         /// <summary>
         /// Generates the next object of the specified parameter type.
@@ -50,23 +52,25 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        public object? Next(ParameterInfo? parameter, object? min, object? max)
+        public ParameterValue? Next(ParameterInfo? parameter, object? min, object? max)
         {
             if (parameter is null || !CanGenerate(parameter))
-                return null;
+                return new ParameterValue("DefaultValue Generator", null);
             DisallowNullAttribute? NotNullable = parameter.GetCustomAttribute<DisallowNullAttribute>();
-            System.Type ResultType = parameter.ParameterType;
+            System.Type? ResultType = parameter.ParameterType;
             if (!ResultType.IsValueType && NotNullable is null)
-                return null;
+                return new("DefaultValue Generator", null);
+            if (ResultType.IsSpecialType(out System.Type? _))
+                ResultType = ResultType.GetUnderlyingArrayType();
             try
             {
-                return DefaultValueLookup.Values.TryGetValue(ResultType.GetHashCode(), out var ReturnValue)
+                return new ParameterValue("DefaultValue Generator", DefaultValueLookup.Values.TryGetValue(ResultType.GetHashCode(), out var ReturnValue)
                     ? ReturnValue
-                    : FastActivator.CreateInstance(ResultType);
+                    : FastActivator.CreateInstance(ResultType));
             }
             catch
             {
-                return null;
+                return new ParameterValue("DefaultValue Generator", null);
             }
         }
     }

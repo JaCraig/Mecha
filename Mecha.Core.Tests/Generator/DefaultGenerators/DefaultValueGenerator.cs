@@ -32,7 +32,7 @@ namespace Mecha.Core.Tests.Generator.DefaultGenerators
                 (max, min) = (min, max);
             }
             System.Reflection.ParameterInfo[] Parameters = TestMethodInfo.GetParameters();
-            Assert.Equal(0, (int)TestObject.Next(Parameters[0], min, max));
+            Assert.Equal(0, (int)TestObject.Next(Parameters[0], min, max).Value);
         }
     }
 }

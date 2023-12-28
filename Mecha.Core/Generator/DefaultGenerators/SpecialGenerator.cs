@@ -1,4 +1,5 @@
 ﻿using Fast.Activator;
+using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Generator.Interfaces;
 using System;
 using System.Linq;
@@ -7,16 +8,16 @@ using System.Reflection;
 namespace Mecha.Core.Generator.DefaultGenerators
 {
     /// <summary>
-    /// Array generator
+    /// Special generator class.
     /// </summary>
     /// <seealso cref="IGenerator"/>
-    public class ArrayGenerator : IGenerator
+    public class SpecialGenerator : IGenerator
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ArrayGenerator"/> class.
+        /// Initializes a new instance of the <see cref="SpecialGenerator"/> class.
         /// </summary>
-        /// <param name="random">The random.</param>
-        public ArrayGenerator(Mirage.Random? random)
+        /// <param name="random">The random generator.</param>
+        public SpecialGenerator(Mirage.Random? random)
         {
             Random = random;
         }
@@ -25,12 +26,11 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Gets the order.
         /// </summary>
         /// <value>The order.</value>
-        public int Order { get; }
+        public int Order => int.MinValue;
 
         /// <summary>
-        /// Gets the random.
+        /// Gets the random generator.
         /// </summary>
-        /// <value>The random.</value>
         private Mirage.Random? Random { get; }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <returns>
         /// <c>true</c> if this instance can generate the specified parameter; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanGenerate(ParameterInfo? parameter) => parameter?.HasDefaultValue == false && parameter.ParameterType.IsArray;
+        public bool CanGenerate(ParameterInfo? parameter) => parameter?.ParameterType.IsSpecialType(out Type? _) == true;
 
         /// <summary>
         /// Generates the next object of the specified parameter type.
@@ -52,19 +52,20 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public ParameterValue Next(ParameterInfo? parameter, object? min, object? max)
         {
             if (parameter is null || !CanGenerate(parameter))
-                return new ParameterValue("Array Generator", null);
+                return new ParameterValue("Special Case Generator", null);
             var Amount = Random?.Next(0, 100) ?? 0;
-            Type? ElementType = parameter.ParameterType.GetElementType();
-            var ArrayInstance = (Array)FastActivator.CreateInstance(parameter.ParameterType, new object[] { Amount });
+            Type? ArrayType = parameter.ParameterType.GetUnderlyingArrayType();
+            Type? ElementType = ArrayType.GetElementType();
+            var ArrayInstance = (Array)FastActivator.CreateInstance(ArrayType, new object[] { Amount });
             if (ElementType?.GetConstructors().Any(IsDefaultConstructor) != true)
-                return new ParameterValue("Array Generator", ArrayInstance);
+                return new ParameterValue("Special Case Generator", ArrayInstance);
             var Index = 0;
             foreach (var Item in Random?.Next(ElementType, Amount) ?? Array.Empty<object?>())
             {
                 ArrayInstance.SetValue(Item, Index);
                 ++Index;
             }
-            return new ParameterValue("Array Generator", ArrayInstance);
+            return new ParameterValue("Special Case Generator", ArrayInstance);
         }
 
         /// <summary>
