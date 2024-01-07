@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.1"></a>
+## [2.1.1](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.1) (2024-01-07)
+
+### Bug Fixes
+
+* bump the dependencies group with 2 updates ([365616d](https://www.github.com/JaCraig/Mecha/commit/365616d7590cfdb2cd68de76118965fac637b61b))
+* Fixing build ([0f9f218](https://www.github.com/JaCraig/Mecha/commit/0f9f21870b425267be7db573be8d0cfe71bf348e))
+
+### Other
+
+* Merge pull request #167 from JaCraig/dependabot/nuget/dependencies-cd34a9615e ([a44beb3](https://www.github.com/JaCraig/Mecha/commit/a44beb3ec22cca810377de371ced30d14633d323))
+* Update docsfx.yml ([6a00315](https://www.github.com/JaCraig/Mecha/commit/6a00315eb1c57b83799dcc70a98e06194b021591))
+* Update dotnet-publish.yml ([a9d3e9d](https://www.github.com/JaCraig/Mecha/commit/a9d3e9db4cda25e518200a607b0b1dd1f49c4b33))
+* Update dotnet-test.yml ([87fa552](https://www.github.com/JaCraig/Mecha/commit/87fa55281d2b5a541bf1cc04fd6438a28e1f71af))
+
 <a name="2.1.0"></a>
 ## [2.1.0](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.0) (2023-12-28)
 
