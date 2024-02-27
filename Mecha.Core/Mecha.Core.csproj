@@ -6,13 +6,6 @@
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <RootNamespace>Mecha.Core</RootNamespace>
     <AssemblyName>Mecha.Core</AssemblyName>
-
-    <BuildNumber Condition=" '$(APPVEYOR_BUILD_NUMBER)' != '' ">$(APPVEYOR_BUILD_NUMBER)</BuildNumber>
-    <!-- for AppVeyor -->
-    <BuildNumber Condition=" '$(BUILD_NUMBER)' != '' ">$(BUILD_NUMBER)</BuildNumber>
-    <!-- for Team City -->
-    <BuildNumber Condition=" '$(BuildNumber)' == '' ">0</BuildNumber>
-    <!-- if not set -->
     <Description>Mecha is a C# library that enables automatic testing of classes with the goal of finding ways to break the code. It provides various testing capabilities such as unit testing, security testing through data fuzzing, checking for concurrency issues, and verifying fault tolerance. With just a single line of code, Mecha can automatically test every method in a class. The library seamlessly integrates with your existing testing framework.</Description>
     <AssemblyTitle>Mecha.Core</AssemblyTitle>
     <VersionPrefix>2.0.0</VersionPrefix>
@@ -40,6 +33,9 @@
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>https://github.com/JaCraig/Mecha/blob/master/CHANGELOG.md</PackageReleaseNotes>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\build\Icon.png">
@@ -53,13 +49,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FileCurator" Version="4.0.52" />
-    <PackageReference Include="Mirage" Version="4.0.63" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="FileCurator" Version="4.0.61" />
+    <PackageReference Include="Mirage" Version="4.0.76" />
     <PackageReference Include="NSubstitute" Version="5.1.0" />
     <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Text.Json" Version="8.0.1" />
+    <PackageReference Include="System.Text.Json" Version="8.0.2" />
   </ItemGroup>
 </Project>

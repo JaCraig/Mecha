@@ -91,7 +91,7 @@ namespace Mecha.Core.Generator.Helpers
         /// </param>
         /// <returns>An object that references the asynchronous read.</returns>
         /// <exception cref="FileNotFoundException"></exception>
-        public override IAsyncResult BeginRead(byte[] array, int offset, int numBytes, AsyncCallback callback, object state) => null!;
+        public override IAsyncResult BeginRead(byte[] array, int offset, int numBytes, AsyncCallback? callback, object? state) => null!;
 
         /// <summary>
         /// Begins an asynchronous write operation. Consider using <see
@@ -112,7 +112,7 @@ namespace Mecha.Core.Generator.Helpers
         /// </param>
         /// <returns>An object that references the asynchronous write.</returns>
         /// <exception cref="EndOfStreamException"></exception>
-        public override IAsyncResult BeginWrite(byte[] array, int offset, int numBytes, AsyncCallback callback, object state) => null!;
+        public override IAsyncResult BeginWrite(byte[] array, int offset, int numBytes, AsyncCallback? callback, object? state) => null!;
 
         /// <summary>
         /// Closes the current stream and releases any resources (such as sockets and file handles)
@@ -214,7 +214,7 @@ namespace Mecha.Core.Generator.Helpers
         /// initialized to the value of the <see
         /// cref="P:System.Runtime.Remoting.Lifetime.LifetimeServices.LeaseManagerPollTime"/> property.
         /// </returns>
-        [Obsolete]
+        [Obsolete("This Remoting API is not supported and throws PlatformNotSupportedException.", DiagnosticId = "SYSLIB0010", UrlFormat = "https://aka.ms/dotnet-warnings/{0}")]
         public override object InitializeLifetimeService() => null!;
 
         /// <summary>
