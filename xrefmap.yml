@@ -1693,13 +1693,13 @@ references:
   nameWithType: EmptyFileStream.EmptyFileStream
   nameWithType.vb: EmptyFileStream.New
 - uid: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)
-  name: BeginRead(byte[], int, int, AsyncCallback, object)
+  name: BeginRead(byte[], int, int, AsyncCallback?, object?)
   href: api/Mecha.Core.Generator.Helpers.EmptyFileStream.html#Mecha_Core_Generator_Helpers_EmptyFileStream_BeginRead_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_
   commentId: M:Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)
   name.vb: BeginRead(Byte(), Integer, Integer, AsyncCallback, Object)
-  fullName: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead(byte[], int, int, System.AsyncCallback, object)
+  fullName: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead(byte[], int, int, System.AsyncCallback?, object?)
   fullName.vb: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead(Byte(), Integer, Integer, System.AsyncCallback, Object)
-  nameWithType: EmptyFileStream.BeginRead(byte[], int, int, AsyncCallback, object)
+  nameWithType: EmptyFileStream.BeginRead(byte[], int, int, AsyncCallback?, object?)
   nameWithType.vb: EmptyFileStream.BeginRead(Byte(), Integer, Integer, AsyncCallback, Object)
 - uid: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead*
   name: BeginRead
@@ -1709,13 +1709,13 @@ references:
   fullName: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead
   nameWithType: EmptyFileStream.BeginRead
 - uid: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)
-  name: BeginWrite(byte[], int, int, AsyncCallback, object)
+  name: BeginWrite(byte[], int, int, AsyncCallback?, object?)
   href: api/Mecha.Core.Generator.Helpers.EmptyFileStream.html#Mecha_Core_Generator_Helpers_EmptyFileStream_BeginWrite_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_
   commentId: M:Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)
   name.vb: BeginWrite(Byte(), Integer, Integer, AsyncCallback, Object)
-  fullName: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite(byte[], int, int, System.AsyncCallback, object)
+  fullName: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite(byte[], int, int, System.AsyncCallback?, object?)
   fullName.vb: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite(Byte(), Integer, Integer, System.AsyncCallback, Object)
-  nameWithType: EmptyFileStream.BeginWrite(byte[], int, int, AsyncCallback, object)
+  nameWithType: EmptyFileStream.BeginWrite(byte[], int, int, AsyncCallback?, object?)
   nameWithType.vb: EmptyFileStream.BeginWrite(Byte(), Integer, Integer, AsyncCallback, Object)
 - uid: Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite*
   name: BeginWrite

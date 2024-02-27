@@ -592,7 +592,7 @@ to write before timing out.</p>
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginRead_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead*"></a>
 
   <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginRead_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginRead(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
-  BeginRead(byte[], int, int, AsyncCallback, object)
+  BeginRead(byte[], int, int, AsyncCallback?, object?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L94"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -601,7 +601,7 @@ to write before timing out.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override IAsyncResult BeginRead(byte[] array, int offset, int numBytes, AsyncCallback callback, object state)</code></pre>
+    <pre><code class="lang-csharp hljs">public override IAsyncResult BeginRead(byte[] array, int offset, int numBytes, AsyncCallback? callback, object? state)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -649,7 +649,7 @@ other requests.</p>
   <a id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginWrite_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite*"></a>
 
   <h3 id="Mecha_Core_Generator_Helpers_EmptyFileStream_BeginWrite_System_Byte___System_Int32_System_Int32_System_AsyncCallback_System_Object_" data-uid="Mecha.Core.Generator.Helpers.EmptyFileStream.BeginWrite(System.Byte[],System.Int32,System.Int32,System.AsyncCallback,System.Object)">
-  BeginWrite(byte[], int, int, AsyncCallback, object)
+  BeginWrite(byte[], int, int, AsyncCallback?, object?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/Generator/Helpers/EmptyFileStream.cs/#L115"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -658,7 +658,7 @@ other requests.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override IAsyncResult BeginWrite(byte[] array, int offset, int numBytes, AsyncCallback callback, object state)</code></pre>
+    <pre><code class="lang-csharp hljs">public override IAsyncResult BeginWrite(byte[] array, int offset, int numBytes, AsyncCallback? callback, object? state)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -1069,7 +1069,7 @@ written to the underlying device, and monitors cancellation requests.</p>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Obsolete]
+    <pre><code class="lang-csharp hljs">[Obsolete(&quot;This Remoting API is not supported and throws PlatformNotSupportedException.&quot;, DiagnosticId = &quot;SYSLIB0010&quot;, UrlFormat = &quot;https://aka.ms/dotnet-warnings/{0}&quot;)]
 public override object InitializeLifetimeService()</code></pre>
   </div>
 
