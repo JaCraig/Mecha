@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.53"></a>
+## [2.1.53](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.53) (2024-04-10)
+
+### Bug Fixes
+
+* bump FileCurator from 4.0.73 to 4.0.74 in the dependencies group ([1eab15d](https://www.github.com/JaCraig/Mecha/commit/1eab15d853af93666bbeb49542ac5c1a7046c3af))
+
+### Other
+
+* Merge pull request #222 from JaCraig/dependabot/github_actions/dependencies-45223d3826 ([5fc9e0e](https://www.github.com/JaCraig/Mecha/commit/5fc9e0e0d909c396c35e6dce684d1ca17440fe60))
+* Merge pull request #223 from JaCraig/dependabot/nuget/dependencies-80771566af ([3ebec59](https://www.github.com/JaCraig/Mecha/commit/3ebec59a079a17c93fb9583ecedbacc3055fdfa0))
+* bump peaceiris/actions-gh-pages in the dependencies group ([35696aa](https://www.github.com/JaCraig/Mecha/commit/35696aac624ae3569ef2abdfbfa798f06ce2b1bc))
+
 <a name="2.1.52"></a>
 ## [2.1.52](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.52) (2024-04-02)
 
