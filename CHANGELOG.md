@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.74"></a>
+## [2.1.74](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.74) (2024-06-12)
+
+### Bug Fixes
+
+* bump FileCurator from 4.0.87 to 4.0.88 in the dependencies group ([ef077ac](https://www.github.com/JaCraig/Mecha/commit/ef077ac194cd9a62ea6f2b3fbd5833b91d1498d3))
+
+### Other
+
+* Merge pull request #246 from JaCraig/dependabot/nuget/dependencies-461ca76eb7 ([46733cd](https://www.github.com/JaCraig/Mecha/commit/46733cd46631a338521bfb6ba6050a9941f6402b))
+
 <a name="2.1.73"></a>
 ## [2.1.73](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.73) (2024-05-31)
 
