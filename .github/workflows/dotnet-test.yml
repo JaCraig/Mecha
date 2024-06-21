@@ -12,7 +12,6 @@ jobs:
   
     env:
       BUILD_CONFIG: 'Debug'
-      SOLUTION: 'FastActivator.sln'
 
     runs-on: ubuntu-latest
     strategy:
