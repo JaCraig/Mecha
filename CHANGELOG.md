@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.81"></a>
+## [2.1.81](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.81) (2024-06-21)
+
+### Bug Fixes
+
+* package updates ([69ff540](https://www.github.com/JaCraig/Mecha/commit/69ff54018183980b44bd4c832ac4f1d460bcb445))
+
+### Other
+
+* Update README.md ([5f70166](https://www.github.com/JaCraig/Mecha/commit/5f70166be4cfb0c6765a792a41ed133f2bfcc8ae))
+
 <a name="2.1.80"></a>
 ## [2.1.80](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.80) (2024-06-21)
 
