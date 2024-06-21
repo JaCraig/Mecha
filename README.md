@@ -1,6 +1,6 @@
 ![Mecha Logo](https://repository-images.githubusercontent.com/337571372/3bfdaf00-a467-11eb-9e15-c30893f31981)
 
- [![.NET Publish](https://github.com/JaCraig/Mecha/actions/workflows/dotnet-publish.yml/badge.svg)](https://github.com/JaCraig/Mecha/actions/workflows/dotnet-publish.yml)
+ [![.NET Publish](https://github.com/JaCraig/Mecha/actions/workflows/dotnet-publish.yml/badge.svg)](https://github.com/JaCraig/Mecha/actions/workflows/dotnet-publish.yml) [![Coverage Status](https://coveralls.io/repos/github/JaCraig/Mecha/badge.svg?branch=main)](https://coveralls.io/github/JaCraig/Mecha?branch=main)
 
 > I try to make idiot proof software but the world keeps making better idiots.
 
