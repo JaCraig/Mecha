@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.80"></a>
+## [2.1.80](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.80) (2024-06-21)
+
+### Bug Fixes
+
+* Updating packages and setting up coveralls.io upload ([9ebbb20](https://www.github.com/JaCraig/Mecha/commit/9ebbb20f38d75c01bae1f01076070e4b8f16d3e7))
+
 <a name="2.1.79"></a>
 ## [2.1.79](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.79) (2024-06-19)
 
