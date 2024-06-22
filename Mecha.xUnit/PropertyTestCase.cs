@@ -27,7 +27,7 @@ namespace Mecha.xUnit
         public PropertyTestCase(IMessageSink? diagnosticMessageSink,
                                 TestMethodDisplay defaultMethodDisplay,
                                 TestMethodDisplayOptions methodDisplayOptions,
-                                ITestMethod testMethod,
+                                ITestMethod? testMethod,
                                 object[]? testMethodArguments = null)
             : base(diagnosticMessageSink, defaultMethodDisplay, methodDisplayOptions, testMethod, testMethodArguments)
         {
