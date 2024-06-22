@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.82"></a>
+## [2.1.82](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.82) (2024-06-22)
+
+### Bug Fixes
+
+* Adding a couple missed methods in FaultyFileStream ([d2cead7](https://www.github.com/JaCraig/Mecha/commit/d2cead7365712abaf09f7b9ee24277a06f674889))
+* Expand test coverage and enhance exception handling ([0fde411](https://www.github.com/JaCraig/Mecha/commit/0fde41165f4d57d8f237868b519b3c2af3d79645))
+
+### Other
+
+* merge ([e36e73f](https://www.github.com/JaCraig/Mecha/commit/e36e73f5e3a6943d4ac1b4ea82acac272bd79564))
+
 <a name="2.1.81"></a>
 ## [2.1.81](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.81) (2024-06-21)
 
