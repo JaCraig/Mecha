@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.85"></a>
+## [2.1.85](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.85) (2024-06-27)
+
+### Bug Fixes
+
+* bump Mirage from 4.1.2 to 4.1.3 in the dependencies group ([f0e574e](https://www.github.com/JaCraig/Mecha/commit/f0e574e1145d2ce4418db6cdfd1f8ccd7086a626))
+
+### Other
+
+* Merge pull request #254 from JaCraig/dependabot/nuget/dependencies-28e53575b8 ([97bc2fe](https://www.github.com/JaCraig/Mecha/commit/97bc2fe25dadd7e6cbb67e624bbda61d85efda95))
+
 <a name="2.1.84"></a>
 ## [2.1.84](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.84) (2024-06-26)
 
