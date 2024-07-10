@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.87"></a>
+## [2.1.87](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.87) (2024-07-10)
+
+### Bug Fixes
+
+* bump the dependencies group with 4 updates ([6782208](https://www.github.com/JaCraig/Mecha/commit/6782208c869e9392d32bfcd92d52ef3a3beea66c))
+
+### Other
+
+* Merge pull request #256 from JaCraig/dependabot/github_actions/dependencies-c44bf69c3e ([322da89](https://www.github.com/JaCraig/Mecha/commit/322da89a9b721b18994bbc11a435b570cee254b1))
+* Merge pull request #257 from JaCraig/dependabot/nuget/dependencies-3d42999ab1 ([3363e16](https://www.github.com/JaCraig/Mecha/commit/3363e1617e3b935e4ef710f4b0f0a4cc9bb01a0d))
+* Merge pull request #258 from JaCraig/dependabot/github_actions/dependencies-be62d4486d ([92c5a6a](https://www.github.com/JaCraig/Mecha/commit/92c5a6a5a55f3964b10ea09eb90b677f49c37cc0))
+* Merge pull request #259 from JaCraig/dependabot/nuget/Mecha.Core/System.Text.Json-8.0.4 ([0a020b5](https://www.github.com/JaCraig/Mecha/commit/0a020b55492e3009c44d2cfd2825e84e5aa3b646))
+* bump actions/setup-dotnet in the dependencies group ([ed13b66](https://www.github.com/JaCraig/Mecha/commit/ed13b66aa79d3f3beaca50612b63793619f85c04))
+* bump dependabot/fetch-metadata in the dependencies group ([a9b118f](https://www.github.com/JaCraig/Mecha/commit/a9b118f5992c530c02394a368f7d8cc3a1b0c5b4))
+* bump System.Text.Json from 8.0.3 to 8.0.4 in /Mecha.Core ([ac7d3eb](https://www.github.com/JaCraig/Mecha/commit/ac7d3eb1d517630ffe088e681e694e8fc3e1c8a6))
+
 <a name="2.1.86"></a>
 ## [2.1.86](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.86) (2024-07-01)
 
