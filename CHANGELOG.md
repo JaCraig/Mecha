@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.95"></a>
+## [2.1.95](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.95) (2024-08-13)
+
+### Bug Fixes
+
+* bump husky from 0.7.0 to 0.7.1 in the dependencies group ([d44aaf6](https://www.github.com/JaCraig/Mecha/commit/d44aaf6a26c64202d969521136b657d18c520165))
+
+### Other
+
+* Merge pull request #267 from JaCraig/dependabot/nuget/dependencies-9c07900145 ([f53f6f6](https://www.github.com/JaCraig/Mecha/commit/f53f6f67252bbb6207e8b412c80a31ef808f0f29))
+
 <a name="2.1.94"></a>
 ## [2.1.94](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.94) (2024-08-05)
 
