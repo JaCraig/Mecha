@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.107"></a>
+## [2.1.107](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.107) (2024-09-06)
+
+### Bug Fixes
+
+* bump Microsoft.NET.Test.Sdk in the dependencies group ([9380537](https://www.github.com/JaCraig/Mecha/commit/93805374e984d4a31a6d98d7e96f3f5580ce0cb9))
+
+### Other
+
+* Merge pull request #279 from JaCraig/dependabot/nuget/dependencies-78c52a00e0 ([fab39b2](https://www.github.com/JaCraig/Mecha/commit/fab39b247333cc86b0e1ac179dd4635540f729de))
+
 <a name="2.1.106"></a>
 ## [2.1.106](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.106) (2024-09-02)
 
