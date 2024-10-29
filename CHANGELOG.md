@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.118"></a>
+## [2.1.118](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.118) (2024-10-29)
+
+### Bug Fixes
+
+* bump NSubstitute from 5.1.0 to 5.3.0 in the dependencies group ([99ecfd4](https://www.github.com/JaCraig/Mecha/commit/99ecfd46372513adec9ad3746da22b7fffe63669))
+* bump versionize from 1.27.0 to 2.0.0 in the dependencies group ([cfd7c2a](https://www.github.com/JaCraig/Mecha/commit/cfd7c2a077dec0a2fad2c1e1516d2a35d3d98534))
+* bump versionize from 2.0.0 to 2.1.0 in the dependencies group ([042602f](https://www.github.com/JaCraig/Mecha/commit/042602ff31ded40efcb095ac8fb001e80ec39587))
+
+### Other
+
+* Merge pull request #290 from JaCraig/dependabot/github_actions/dependencies-5d0541337a ([fb7e5f1](https://www.github.com/JaCraig/Mecha/commit/fb7e5f1ab56a90925ae8cf27f4827a1364b14cdb))
+* Merge pull request #291 from JaCraig/dependabot/nuget/dependencies-9c36df7c76 ([c859884](https://www.github.com/JaCraig/Mecha/commit/c85988448865349b1a5abdf7bbbcf2e0faba1464))
+* Merge pull request #292 from JaCraig/dependabot/github_actions/dependencies-ffdf47fbe7 ([969d8bb](https://www.github.com/JaCraig/Mecha/commit/969d8bbf4fecbbd8b67e4e84b2bcd40047bd5cc1))
+* Merge pull request #293 from JaCraig/dependabot/github_actions/dependencies-941c69736f ([3927e58](https://www.github.com/JaCraig/Mecha/commit/3927e58b8611e737c444e6ba3b590eb393157d2e))
+* Merge pull request #294 from JaCraig/dependabot/nuget/dependencies-3894128c1d ([98482da](https://www.github.com/JaCraig/Mecha/commit/98482daed6f5f79347c7be6ad2c11f7fea810b07))
+* Merge pull request #295 from JaCraig/dependabot/github_actions/dependencies-18190d55f2 ([8ce9e57](https://www.github.com/JaCraig/Mecha/commit/8ce9e577da59844b1b1b6f397e1cd2228660614a))
+* Merge pull request #296 from JaCraig/dependabot/github_actions/dependencies-9e0328f501 ([85493d5](https://www.github.com/JaCraig/Mecha/commit/85493d58e1006ff7d8a6895d1559d039944fd974))
+* Merge pull request #297 from JaCraig/dependabot/nuget/dependencies-7328e31875 ([17ecac1](https://www.github.com/JaCraig/Mecha/commit/17ecac1b8670c05b00f7ba4f58cc7900e21164e9))
+* bump actions/setup-dotnet in the dependencies group ([434a458](https://www.github.com/JaCraig/Mecha/commit/434a45869ca2f61cb7e2a98107bce02a25362b11))
+* bump coverallsapp/github-action in the dependencies group ([81ece28](https://www.github.com/JaCraig/Mecha/commit/81ece2867256f64c624078f31aae8e094cea1532))
+* bump coverallsapp/github-action in the dependencies group ([2017f64](https://www.github.com/JaCraig/Mecha/commit/2017f6441c72b1bd2ec9ea253ca43f1da960c092))
+* bump coverallsapp/github-action in the dependencies group ([453229e](https://www.github.com/JaCraig/Mecha/commit/453229ed5d75e8c6057e205a28ad37dbc9c7f4fc))
+* bump coverallsapp/github-action in the dependencies group ([d95cb31](https://www.github.com/JaCraig/Mecha/commit/d95cb3172af6ca9cd525442429227efd4d538d91))
+* update versionize command in dotnet-publish.yml ([fd73a0f](https://www.github.com/JaCraig/Mecha/commit/fd73a0f17566ef5843679a300c840d43107ecb34))
+
 <a name="2.1.117"></a>
 ## [2.1.117](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.117) (2024-10-10)
 
