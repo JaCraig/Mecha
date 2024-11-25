@@ -14,7 +14,18 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+using BigBook.Registration;
 using Canister.Interfaces;
+using Mecha.Core.Datasources;
+using Mecha.Core.Datasources.Interfaces;
+using Mecha.Core.Generator;
+using Mecha.Core.Generator.Interfaces;
+using Mecha.Core.Mutator;
+using Mecha.Core.Mutator.Interfaces;
+using Mecha.Core.Runner;
+using Mecha.Core.Runner.Interfaces;
+using Mecha.Core.Shrinker;
+using Mecha.Core.Shrinker.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Mecha.Core.ExtensionMethods
@@ -35,6 +46,32 @@ namespace Mecha.Core.ExtensionMethods
                                 .RegisterMirage()
                                 .RegisterFileCurator()
                                 .RegisterBigBookOfDataTypes();
+        }
+
+        /// <summary>
+        /// Registers the Mecha services with the provided IServiceCollection.
+        /// </summary>
+        /// <param name="services">The service collection to register the services with.</param>
+        /// <returns>The updated service collection.</returns>
+        public static IServiceCollection? RegisterMecha(this IServiceCollection? services)
+        {
+            if (services.Exists<DataManager>())
+                return services;
+            return services?.AddAllSingleton<ISerializer>()
+                         ?.AddAllSingleton<IDatasource>()
+                         ?.AddSingleton<DataManager>()
+                         ?.AddAllSingleton<IGenerator>()
+                         ?.AddSingleton<GeneratorManager>()
+                         ?.AddSingleton<Mech>()
+                         ?.AddSingleton<TestRunnerManager>()
+                         ?.AddAllSingleton<IRunner>()
+                         ?.AddAllSingleton<IShrinker>()
+                         ?.AddSingleton<ShrinkerManager>()
+                         ?.AddAllSingleton<IMutator>()
+                         ?.AddSingleton<MutatorManager>()
+                         ?.RegisterMirage()
+                         ?.RegisterFileCurator()
+                         ?.RegisterBigBookOfDataTypes();
         }
     }
 }

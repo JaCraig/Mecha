@@ -15,16 +15,7 @@ limitations under the License.
 */
 
 using Canister.Interfaces;
-using Mecha.Core.Datasources;
-using Mecha.Core.Datasources.Interfaces;
-using Mecha.Core.Generator;
-using Mecha.Core.Generator.Interfaces;
-using Mecha.Core.Mutator;
-using Mecha.Core.Mutator.Interfaces;
-using Mecha.Core.Runner;
-using Mecha.Core.Runner.Interfaces;
-using Mecha.Core.Shrinker;
-using Mecha.Core.Shrinker.Interfaces;
+using Mecha.Core.ExtensionMethods;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Mecha.Core.Modules
@@ -44,20 +35,6 @@ namespace Mecha.Core.Modules
         /// Loads the module using the bootstrapper
         /// </summary>
         /// <param name="bootstrapper">The bootstrapper.</param>
-        public void Load(IServiceCollection? bootstrapper)
-        {
-            _ = (bootstrapper?.AddAllSingleton<ISerializer>()
-                         .AddAllSingleton<IDatasource>()
-                         .AddSingleton<DataManager>()
-                         .AddAllSingleton<IGenerator>()
-                         .AddSingleton<GeneratorManager>()
-                         .AddSingleton<Mech>()
-                         .AddSingleton<TestRunnerManager>()
-                         .AddAllSingleton<IRunner>()
-                         .AddAllSingleton<IShrinker>()
-                         .AddSingleton<ShrinkerManager>()
-                         .AddAllSingleton<IMutator>()
-                         .AddSingleton<MutatorManager>());
-        }
+        public void Load(IServiceCollection? bootstrapper) => bootstrapper?.RegisterMecha();
     }
 }

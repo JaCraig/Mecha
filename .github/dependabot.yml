@@ -6,7 +6,7 @@
 version: 2
 updates:
   - package-ecosystem: "nuget" # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directory: "/Mecha.Core/" # Location of package manifests
     schedule:
       interval: "daily"
     commit-message:
@@ -15,6 +15,29 @@ updates:
       dependencies:
         patterns: 
           - "*"
+
+  - package-ecosystem: "nuget" # See documentation for possible values
+    directory: "/Mecha.xUnit/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "fix"
+    groups:
+      dependencies:
+        patterns: 
+          - "*"
+
+  - package-ecosystem: "nuget" # See documentation for possible values
+    directory: "/Mecha.Core.Tests/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    commit-message:
+      prefix: "chore"
+    groups:
+      dependencies:
+        patterns: 
+          - "*"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

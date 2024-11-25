@@ -1,8 +1,8 @@
 using Canister.Interfaces;
 using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Tests.BaseClasses;
-using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
+using ObjectCartographer.ExtensionMethods;
 using System;
 using Xunit;
 
