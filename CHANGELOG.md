@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.0"></a>
+## [3.0.0](https://www.github.com/JaCraig/Mecha/releases/tag/v3.0.0) (2024-11-25)
+
+### Features
+
+* Update configs, projects, and code for .NET 9.0 ([3952fa7](https://www.github.com/JaCraig/Mecha/commit/3952fa724e60d225c420df8809a606751476e1a1))
+
+### Breaking Changes
+
+* Update configs, projects, and code for .NET 9.0 ([3952fa7](https://www.github.com/JaCraig/Mecha/commit/3952fa724e60d225c420df8809a606751476e1a1))
+
+### Other
+
+* merge ([cc7b393](https://www.github.com/JaCraig/Mecha/commit/cc7b39307909d3b8af17f54644d4cce7e4f4cf27))
+
 <a name="2.1.124"></a>
 ## [2.1.124](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.124) (2024-11-12)
 
