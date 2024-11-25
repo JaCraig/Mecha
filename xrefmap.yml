@@ -437,6 +437,15 @@ references:
   fullName.vb: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha(Canister.Interfaces.ICanisterConfiguration)
   nameWithType: CanisterMethods.RegisterMecha(ICanisterConfiguration?)
   nameWithType.vb: CanisterMethods.RegisterMecha(ICanisterConfiguration)
+- uid: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name: RegisterMecha(IServiceCollection?)
+  href: api/Mecha.Core.ExtensionMethods.CanisterMethods.html#Mecha_Core_ExtensionMethods_CanisterMethods_RegisterMecha_Microsoft_Extensions_DependencyInjection_IServiceCollection_
+  commentId: M:Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  name.vb: RegisterMecha(IServiceCollection)
+  fullName: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha(Microsoft.Extensions.DependencyInjection.IServiceCollection?)
+  fullName.vb: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha(Microsoft.Extensions.DependencyInjection.IServiceCollection)
+  nameWithType: CanisterMethods.RegisterMecha(IServiceCollection?)
+  nameWithType.vb: CanisterMethods.RegisterMecha(IServiceCollection)
 - uid: Mecha.Core.ExtensionMethods.CanisterMethods.RegisterMecha*
   name: RegisterMecha
   href: api/Mecha.Core.ExtensionMethods.CanisterMethods.html#Mecha_Core_ExtensionMethods_CanisterMethods_RegisterMecha_
