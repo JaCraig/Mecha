@@ -2,6 +2,98 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="2.1.124"></a>
+## [2.1.124](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.124) (2024-11-12)
+
+### Bug Fixes
+
+* bump FileCurator from 4.1.12 to 4.1.13 in the dependencies group ([84817f4](https://www.github.com/JaCraig/Mecha/commit/84817f451ad5e93a06707610c6a8189dd9bbc974))
+
+### Other
+
+* Merge pull request #303 from JaCraig/dependabot/nuget/dependencies-925d9ae332 ([da7a470](https://www.github.com/JaCraig/Mecha/commit/da7a470b41c3a4282ec9560e0c14be28f70876ec))
+
+<a name="2.1.123"></a>
+## [2.1.123](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.123) (2024-11-11)
+
+### Bug Fixes
+
+* bump the dependencies group with 2 updates ([65b3217](https://www.github.com/JaCraig/Mecha/commit/65b3217429ffeeb1a78b59acd455a7b28c0b4903))
+
+### Other
+
+* Merge pull request #302 from JaCraig/dependabot/nuget/dependencies-682c24883f ([e6f4a11](https://www.github.com/JaCraig/Mecha/commit/e6f4a11477ca6f1bdf09e5fead33da93351272bd))
+
+<a name="2.1.122"></a>
+## [2.1.122](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.122) (2024-11-05)
+
+### Bug Fixes
+
+* bump FileCurator from 4.1.10 to 4.1.11 in the dependencies group ([366f623](https://www.github.com/JaCraig/Mecha/commit/366f6234b0756071e1fe9e874a2bb19b15e7f5dd))
+
+### Other
+
+* Merge pull request #301 from JaCraig/dependabot/nuget/dependencies-02378b04b9 ([8070b07](https://www.github.com/JaCraig/Mecha/commit/8070b0733413c694cc5f64fa7f1b0980c91a6556))
+
+<a name="2.1.121"></a>
+## [2.1.121](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.121) (2024-11-04)
+
+### Bug Fixes
+
+* bump the dependencies group with 2 updates ([bca7bc7](https://www.github.com/JaCraig/Mecha/commit/bca7bc795df119a81ffdc23050fa773499ccf1cc))
+
+### Other
+
+* Merge pull request #300 from JaCraig/dependabot/nuget/dependencies-15c2f3d63e ([785b172](https://www.github.com/JaCraig/Mecha/commit/785b1726f34d54cbab07b2db8f4604394b3cf15d))
+
+<a name="2.1.120"></a>
+## [2.1.120](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.120) (2024-10-30)
+
+### Bug Fixes
+
+* bump FileCurator from 4.1.8 to 4.1.9 in the dependencies group ([3e88424](https://www.github.com/JaCraig/Mecha/commit/3e884241a06875711d6cb5388989d150648a6b62))
+
+### Other
+
+* Merge pull request #299 from JaCraig/dependabot/nuget/dependencies-7444e6ab7d ([4b3973b](https://www.github.com/JaCraig/Mecha/commit/4b3973ba13074a0c6963364d8a82380fe458cb85))
+
+<a name="2.1.119"></a>
+## [2.1.119](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.119) (2024-10-29)
+
+### Bug Fixes
+
+* bump FileCurator from 4.1.6 to 4.1.8 in the dependencies group ([8b008af](https://www.github.com/JaCraig/Mecha/commit/8b008af1c862a8f4bc0d0b32dbe549544394dea4))
+
+### Other
+
+* Merge pull request #298 from JaCraig/dependabot/nuget/dependencies-0619604a11 ([6693027](https://www.github.com/JaCraig/Mecha/commit/66930279405fa2a1f435dc9a083f642a958b2663))
+
+<a name="2.1.118"></a>
+## [2.1.118](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.118) (2024-10-29)
+
+### Bug Fixes
+
+* bump NSubstitute from 5.1.0 to 5.3.0 in the dependencies group ([99ecfd4](https://www.github.com/JaCraig/Mecha/commit/99ecfd46372513adec9ad3746da22b7fffe63669))
+* bump versionize from 1.27.0 to 2.0.0 in the dependencies group ([cfd7c2a](https://www.github.com/JaCraig/Mecha/commit/cfd7c2a077dec0a2fad2c1e1516d2a35d3d98534))
+* bump versionize from 2.0.0 to 2.1.0 in the dependencies group ([042602f](https://www.github.com/JaCraig/Mecha/commit/042602ff31ded40efcb095ac8fb001e80ec39587))
+
+### Other
+
+* Merge pull request #290 from JaCraig/dependabot/github_actions/dependencies-5d0541337a ([fb7e5f1](https://www.github.com/JaCraig/Mecha/commit/fb7e5f1ab56a90925ae8cf27f4827a1364b14cdb))
+* Merge pull request #291 from JaCraig/dependabot/nuget/dependencies-9c36df7c76 ([c859884](https://www.github.com/JaCraig/Mecha/commit/c85988448865349b1a5abdf7bbbcf2e0faba1464))
+* Merge pull request #292 from JaCraig/dependabot/github_actions/dependencies-ffdf47fbe7 ([969d8bb](https://www.github.com/JaCraig/Mecha/commit/969d8bbf4fecbbd8b67e4e84b2bcd40047bd5cc1))
+* Merge pull request #293 from JaCraig/dependabot/github_actions/dependencies-941c69736f ([3927e58](https://www.github.com/JaCraig/Mecha/commit/3927e58b8611e737c444e6ba3b590eb393157d2e))
+* Merge pull request #294 from JaCraig/dependabot/nuget/dependencies-3894128c1d ([98482da](https://www.github.com/JaCraig/Mecha/commit/98482daed6f5f79347c7be6ad2c11f7fea810b07))
+* Merge pull request #295 from JaCraig/dependabot/github_actions/dependencies-18190d55f2 ([8ce9e57](https://www.github.com/JaCraig/Mecha/commit/8ce9e577da59844b1b1b6f397e1cd2228660614a))
+* Merge pull request #296 from JaCraig/dependabot/github_actions/dependencies-9e0328f501 ([85493d5](https://www.github.com/JaCraig/Mecha/commit/85493d58e1006ff7d8a6895d1559d039944fd974))
+* Merge pull request #297 from JaCraig/dependabot/nuget/dependencies-7328e31875 ([17ecac1](https://www.github.com/JaCraig/Mecha/commit/17ecac1b8670c05b00f7ba4f58cc7900e21164e9))
+* bump actions/setup-dotnet in the dependencies group ([434a458](https://www.github.com/JaCraig/Mecha/commit/434a45869ca2f61cb7e2a98107bce02a25362b11))
+* bump coverallsapp/github-action in the dependencies group ([81ece28](https://www.github.com/JaCraig/Mecha/commit/81ece2867256f64c624078f31aae8e094cea1532))
+* bump coverallsapp/github-action in the dependencies group ([2017f64](https://www.github.com/JaCraig/Mecha/commit/2017f6441c72b1bd2ec9ea253ca43f1da960c092))
+* bump coverallsapp/github-action in the dependencies group ([453229e](https://www.github.com/JaCraig/Mecha/commit/453229ed5d75e8c6057e205a28ad37dbc9c7f4fc))
+* bump coverallsapp/github-action in the dependencies group ([d95cb31](https://www.github.com/JaCraig/Mecha/commit/d95cb3172af6ca9cd525442429227efd4d538d91))
+* update versionize command in dotnet-publish.yml ([fd73a0f](https://www.github.com/JaCraig/Mecha/commit/fd73a0f17566ef5843679a300c840d43107ecb34))
+
 <a name="2.1.117"></a>
 ## [2.1.117](https://www.github.com/JaCraig/Mecha/releases/tag/v2.1.117) (2024-10-10)
 
