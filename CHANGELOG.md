@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.2"></a>
+## [3.0.2](https://www.github.com/JaCraig/Mecha/releases/tag/v3.0.2) (2025-01-10)
+
+### Bug Fixes
+
+* bump the dependencies group in /Mecha.xUnit with 2 updates ([7f109e8](https://www.github.com/JaCraig/Mecha/commit/7f109e87c1b074215a458269a50825594ec799d8))
+
+### Other
+
+* Merge pull request #308 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-a1d1d0f4d5 ([c1cb2ba](https://www.github.com/JaCraig/Mecha/commit/c1cb2ba823647cfbc805d8a94de4f5b7c8f827ff))
+* Merge pull request #309 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-637ad84d5b ([bf0fb2c](https://www.github.com/JaCraig/Mecha/commit/bf0fb2cc9d0db3d70a11602c426d760120731a76))
+* Merge pull request #310 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-37a7915f86 ([bb80406](https://www.github.com/JaCraig/Mecha/commit/bb80406b447da3406a8edbb91575922cc388b9f0))
+* Merge pull request #311 from JaCraig/dependabot/nuget/Mecha.xUnit/dependencies-775aedfa82 ([4a4c7f4](https://www.github.com/JaCraig/Mecha/commit/4a4c7f4723651485a51dc064b020a61d0c6028e9))
+* Merge pull request #312 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-2d63af336a ([4050f84](https://www.github.com/JaCraig/Mecha/commit/4050f843a3e83872da2316684d75496134e93944))
+* bump Mirage in /Mecha.Core.Tests in the dependencies group ([57dd9d5](https://www.github.com/JaCraig/Mecha/commit/57dd9d5ccfbff6c80c0da02459e103d37e85b229))
+* bump the dependencies group in /Mecha.Core.Tests with 2 updates ([5184485](https://www.github.com/JaCraig/Mecha/commit/518448589fafebb2838ae87ec1479f2a2c1ed706))
+* bump the dependencies group in /Mecha.Core.Tests with 2 updates ([463f861](https://www.github.com/JaCraig/Mecha/commit/463f86121ba0a44c3cacea3ab5170ace7c46bace))
+* bump xunit.runner.visualstudio ([3fc6608](https://www.github.com/JaCraig/Mecha/commit/3fc66088fe4a46f924538112e4a168c921dbcf19))
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://www.github.com/JaCraig/Mecha/releases/tag/v3.0.1) (2024-12-09)
 
