@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.0.3"></a>
+## [3.0.3](https://www.github.com/JaCraig/Mecha/releases/tag/v3.0.3) (2025-01-15)
+
+### Bug Fixes
+
+* bump System.Text.Json in /Mecha.xUnit in the dependencies group ([cae017b](https://www.github.com/JaCraig/Mecha/commit/cae017bcf251d8e01caf890faaa0b7f711b877b4))
+
+### Other
+
+* Merge pull request #313 from JaCraig/dependabot/nuget/Mecha.xUnit/dependencies-494df107dd ([787a55e](https://www.github.com/JaCraig/Mecha/commit/787a55e382022e7e7b2e2f279201b77bc8a8283e))
+
 <a name="3.0.2"></a>
 ## [3.0.2](https://www.github.com/JaCraig/Mecha/releases/tag/v3.0.2) (2025-01-10)
 
