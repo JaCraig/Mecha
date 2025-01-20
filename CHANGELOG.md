@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.1.0"></a>
+## [3.1.0](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.0) (2025-01-20)
+
+### Features
+
+* **core:** enhance exception handling and refactor code ([28b09ab](https://www.github.com/JaCraig/Mecha/commit/28b09abd098b8f42710b7b14d31fc77223bf5c4d))
+
 <a name="3.0.3"></a>
 ## [3.0.3](https://www.github.com/JaCraig/Mecha/releases/tag/v3.0.3) (2025-01-15)
 
