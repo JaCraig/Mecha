@@ -163,7 +163,7 @@ Class ExceptionHandler  <a class="header-action link-secondary" title="View sour
   <a id="Mecha_Core_ExceptionHandler_CanIgnore_" data-uid="Mecha.Core.ExceptionHandler.CanIgnore*"></a>
 
   <h3 id="Mecha_Core_ExceptionHandler_CanIgnore_System_Exception_System_Reflection_MethodInfo_" data-uid="Mecha.Core.ExceptionHandler.CanIgnore(System.Exception,System.Reflection.MethodInfo)">
-  CanIgnore(Exception, MethodInfo)
+  CanIgnore(Exception?, MethodInfo?)
   <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExceptionHandler.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
@@ -172,7 +172,7 @@ Class ExceptionHandler  <a class="header-action link-secondary" title="View sour
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool CanIgnore(Exception exception, MethodInfo method)</code></pre>
+    <pre><code class="lang-csharp hljs">public bool CanIgnore(Exception? exception, MethodInfo? method)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
@@ -206,7 +206,7 @@ Class ExceptionHandler  <a class="header-action link-secondary" title="View sour
 
   <h3 id="Mecha_Core_ExceptionHandler_IgnoreException__1_System_Func_System_Exception_System_Reflection_MethodInfo_System_Boolean__" data-uid="Mecha.Core.ExceptionHandler.IgnoreException``1(System.Func{System.Exception,System.Reflection.MethodInfo,System.Boolean})">
   IgnoreException&lt;TException&gt;(Func&lt;Exception, MethodInfo, bool&gt;?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExceptionHandler.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/JaCraig/Mecha/blob/main/Mecha.Core/ExceptionHandler.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds an exception to the ignore list.</p>

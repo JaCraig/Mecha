@@ -296,11 +296,14 @@ references:
   fullName: Mecha.Core.ExceptionHandler
   nameWithType: ExceptionHandler
 - uid: Mecha.Core.ExceptionHandler.CanIgnore(System.Exception,System.Reflection.MethodInfo)
-  name: CanIgnore(Exception, MethodInfo)
+  name: CanIgnore(Exception?, MethodInfo?)
   href: api/Mecha.Core.ExceptionHandler.html#Mecha_Core_ExceptionHandler_CanIgnore_System_Exception_System_Reflection_MethodInfo_
   commentId: M:Mecha.Core.ExceptionHandler.CanIgnore(System.Exception,System.Reflection.MethodInfo)
-  fullName: Mecha.Core.ExceptionHandler.CanIgnore(System.Exception, System.Reflection.MethodInfo)
-  nameWithType: ExceptionHandler.CanIgnore(Exception, MethodInfo)
+  name.vb: CanIgnore(Exception, MethodInfo)
+  fullName: Mecha.Core.ExceptionHandler.CanIgnore(System.Exception?, System.Reflection.MethodInfo?)
+  fullName.vb: Mecha.Core.ExceptionHandler.CanIgnore(System.Exception, System.Reflection.MethodInfo)
+  nameWithType: ExceptionHandler.CanIgnore(Exception?, MethodInfo?)
+  nameWithType.vb: ExceptionHandler.CanIgnore(Exception, MethodInfo)
 - uid: Mecha.Core.ExceptionHandler.CanIgnore*
   name: CanIgnore
   href: api/Mecha.Core.ExceptionHandler.html#Mecha_Core_ExceptionHandler_CanIgnore_
@@ -3296,11 +3299,14 @@ references:
   nameWithType: ParameterValues.ParameterValues
   nameWithType.vb: ParameterValues.New
 - uid: Mecha.Core.Generator.ParameterValues.AddValue(Mecha.Core.Generator.ParameterValue)
-  name: AddValue(ParameterValue)
+  name: AddValue(ParameterValue?)
   href: api/Mecha.Core.Generator.ParameterValues.html#Mecha_Core_Generator_ParameterValues_AddValue_Mecha_Core_Generator_ParameterValue_
   commentId: M:Mecha.Core.Generator.ParameterValues.AddValue(Mecha.Core.Generator.ParameterValue)
-  fullName: Mecha.Core.Generator.ParameterValues.AddValue(Mecha.Core.Generator.ParameterValue)
-  nameWithType: ParameterValues.AddValue(ParameterValue)
+  name.vb: AddValue(ParameterValue)
+  fullName: Mecha.Core.Generator.ParameterValues.AddValue(Mecha.Core.Generator.ParameterValue?)
+  fullName.vb: Mecha.Core.Generator.ParameterValues.AddValue(Mecha.Core.Generator.ParameterValue)
+  nameWithType: ParameterValues.AddValue(ParameterValue?)
+  nameWithType.vb: ParameterValues.AddValue(ParameterValue)
 - uid: Mecha.Core.Generator.ParameterValues.AddValue*
   name: AddValue
   href: api/Mecha.Core.Generator.ParameterValues.html#Mecha_Core_Generator_ParameterValues_AddValue_
