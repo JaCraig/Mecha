@@ -264,15 +264,20 @@ namespace Mecha.Core.Runner
         /// <typeparam name="TTarget">The target type</typeparam>
         /// <param name="method">The method</param>
         /// <returns>The method invoker</returns>
-        private static IMethodInvoker? CreateInvokableMethod<TTarget>(MethodInfo? method) => method is null ? null : (IMethodInvoker)new Helpers.MethodInvoker<TTarget>(method);
+        private static Helpers.MethodInvoker<TTarget>? CreateInvokableMethod<TTarget>(MethodInfo? method) => method is null ? null : new Helpers.MethodInvoker<TTarget>(method);
 
+        /// <summary>
+        /// Gets the method invoker for the specified method.
+        /// </summary>
+        /// <param name="method">The method information.</param>
+        /// <returns>The method invoker if found; otherwise, null.</returns>
         private static IMethodInvoker? GetMethodInvoker(MethodInfo method)
         {
             return method is null
                 ? null
                 : (IMethodInvoker?)(Array.Find(typeof(RunResult).GetMethods(BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public), x => x.Name == nameof(CreateInvokableMethod) && x.GetGenericArguments().Length == 1)
                     ?.MakeGenericMethod(method.DeclaringType ?? typeof(object))
-                    .Invoke(null, new object[] { method }));
+                    .Invoke(null, [method]));
         }
 
         /// <summary>

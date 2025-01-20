@@ -9,22 +9,10 @@ namespace Mecha.Core.Generator.DefaultGenerators
     /// HttpClient Generator
     /// </summary>
     /// <seealso cref="IGenerator"/>
-    public class HttpClientGenerator : IGenerator
+    /// <remarks>Initializes a new instance of the <see cref="FileStreamGenerator"/> class.</remarks>
+    /// <param name="random">The random.</param>
+    public class HttpClientGenerator(Mirage.Random random) : IGenerator
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FileStreamGenerator"/> class.
-        /// </summary>
-        /// <param name="random">The random.</param>
-        public HttpClientGenerator(Mirage.Random random)
-        {
-            RandomObj = random;
-            Clients = new HttpClient[]
-            {
-                new FaultyHttpClient(),
-                new EmptyHttpClient(random)
-            };
-        }
-
         /// <summary>
         /// Gets the order.
         /// </summary>
@@ -35,13 +23,17 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Gets the random object.
         /// </summary>
         /// <value>The random object.</value>
-        public Mirage.Random RandomObj { get; }
+        public Mirage.Random RandomObj { get; } = random;
 
         /// <summary>
         /// Gets the client.
         /// </summary>
         /// <value>The client.</value>
-        private HttpClient[] Clients { get; }
+        private HttpClient[] Clients { get; } =
+            [
+                new FaultyHttpClient(),
+                new EmptyHttpClient(random)
+            ];
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.

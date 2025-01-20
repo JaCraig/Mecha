@@ -11,17 +11,10 @@ namespace Mecha.Core.Generator.DefaultGenerators
     /// Special generator class.
     /// </summary>
     /// <seealso cref="IGenerator"/>
-    public class SpecialGenerator : IGenerator
+    /// <remarks>Initializes a new instance of the <see cref="SpecialGenerator"/> class.</remarks>
+    /// <param name="random">The random generator.</param>
+    public class SpecialGenerator(Mirage.Random? random) : IGenerator
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SpecialGenerator"/> class.
-        /// </summary>
-        /// <param name="random">The random generator.</param>
-        public SpecialGenerator(Mirage.Random? random)
-        {
-            Random = random;
-        }
-
         /// <summary>
         /// Gets the order.
         /// </summary>
@@ -31,7 +24,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// <summary>
         /// Gets the random generator.
         /// </summary>
-        private Mirage.Random? Random { get; }
+        private Mirage.Random? Random { get; } = random;
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.
@@ -55,12 +48,12 @@ namespace Mecha.Core.Generator.DefaultGenerators
                 return new ParameterValue("Special Case Generator", null);
             var Amount = Random?.Next(0, 100) ?? 0;
             Type? ArrayType = parameter.ParameterType.GetUnderlyingArrayType();
-            Type? ElementType = ArrayType.GetElementType();
-            var ArrayInstance = (Array)FastActivator.CreateInstance(ArrayType, new object[] { Amount });
+            Type? ElementType = ArrayType?.GetElementType();
+            var ArrayInstance = (Array)FastActivator.CreateInstance(ArrayType, [Amount]);
             if (ElementType?.GetConstructors().Any(IsDefaultConstructor) != true)
                 return new ParameterValue("Special Case Generator", ArrayInstance);
             var Index = 0;
-            foreach (var Item in Random?.Next(ElementType, Amount) ?? Array.Empty<object?>())
+            foreach (var Item in Random?.Next(ElementType, Amount) ?? [])
             {
                 ArrayInstance.SetValue(Item, Index);
                 ++Index;

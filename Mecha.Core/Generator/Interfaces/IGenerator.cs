@@ -45,6 +45,6 @@ namespace Mecha.Core.Generator.Interfaces
         /// <param name="min">The minimum.</param>
         /// <param name="max">The maximum.</param>
         /// <returns>The next object.</returns>
-        ParameterValue Next(ParameterInfo? parameter, object? min, object? max);
+        ParameterValue? Next(ParameterInfo? parameter, object? min, object? max);
     }
 }

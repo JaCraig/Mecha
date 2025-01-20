@@ -14,7 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-using BigBook;
 using Mecha.Core.Generator.Interfaces;
 using Mirage;
 using System.Collections.Generic;
@@ -27,30 +26,22 @@ namespace Mecha.Core.Generator
     /// <summary>
     /// Generator manager
     /// </summary>
-    public class GeneratorManager
+    /// <remarks>Initializes a new instance of the <see cref="GeneratorManager"/> class.</remarks>
+    /// <param name="generators">The generators.</param>
+    /// <param name="random">The random.</param>
+    public class GeneratorManager(IEnumerable<IGenerator> generators, Random random)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="GeneratorManager"/> class.
-        /// </summary>
-        /// <param name="generators">The generators.</param>
-        /// <param name="random">The random.</param>
-        public GeneratorManager(IEnumerable<IGenerator> generators, Random random)
-        {
-            Generators = generators.OrderBy(x => x.Order).ToArray();
-            Random = random;
-        }
-
         /// <summary>
         /// Gets the random.
         /// </summary>
         /// <value>The random.</value>
-        public Random Random { get; }
+        public Random Random { get; } = random;
 
         /// <summary>
         /// Gets the generators.
         /// </summary>
         /// <value>The generators.</value>
-        private IGenerator[] Generators { get; }
+        private IGenerator[] Generators { get; } = [.. generators.OrderBy(x => x.Order)];
 
         /// <summary>
         /// Generates the parameter values.
@@ -61,7 +52,7 @@ namespace Mecha.Core.Generator
         public ParameterValues[] GenerateParameterValues(ParameterInfo[] parameters, Options? options)
         {
             options = options.Initialize();
-            parameters ??= System.Array.Empty<ParameterInfo>();
+            parameters ??= [];
             var ReturnValue = new ParameterValues[parameters.Length];
             for (var X = 0; X < parameters.Length; ++X)
             {

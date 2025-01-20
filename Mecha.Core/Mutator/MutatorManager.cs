@@ -19,7 +19,7 @@ namespace Mecha.Core.Mutator
             System.Reflection.Assembly MechaCoreAssembly = TypeCache<Mech>.Assembly;
             var TempMutators = mutators.Where(x => x.GetType().Assembly != MechaCoreAssembly).ToList();
             TempMutators.AddRange(mutators.Where(x => x.GetType().Assembly == MechaCoreAssembly));
-            Mutators = TempMutators.ToArray();
+            Mutators = [.. TempMutators];
         }
 
         /// <summary>

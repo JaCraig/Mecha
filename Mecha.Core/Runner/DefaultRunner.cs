@@ -12,16 +12,10 @@ namespace Mecha.Core.Runner
     /// Default runner
     /// </summary>
     /// <seealso cref="IRunner"/>
-    public class DefaultRunner : RunnerBaseClass
+    /// <remarks>Initializes a new instance of the <see cref="DefaultRunner"/> class.</remarks>
+    /// <param name="random"></param>
+    public class DefaultRunner(Mirage.Random random) : RunnerBaseClass(random)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DefaultRunner"/> class.
-        /// </summary>
-        /// <param name="random"></param>
-        public DefaultRunner(Mirage.Random random) : base(random)
-        {
-        }
-
         /// <summary>
         /// Finishes the run and converts the list of runs to a finished result.
         /// </summary>

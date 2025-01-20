@@ -18,11 +18,11 @@ namespace Mecha.Core.Generator.DefaultGenerators
         public StreamGenerator(Mirage.Random random)
         {
             RandomObj = random;
-            Streams = new Stream[]
-            {
+            Streams =
+            [
                 new EmptyStream(),
                 new FaultyStream()
-            };
+            ];
         }
 
         /// <summary>

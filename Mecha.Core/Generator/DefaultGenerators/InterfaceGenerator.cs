@@ -59,7 +59,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         {
             return new ParameterValue("Interface Generator", parameter is null || !CanGenerate(parameter)
                 ? null
-                : Substitute.For(new Type[] { parameter.ParameterType }, Array.Empty<object?>()));
+                : Substitute.For([parameter.ParameterType], []));
         }
     }
 }

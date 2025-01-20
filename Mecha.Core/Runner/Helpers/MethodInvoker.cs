@@ -11,27 +11,19 @@ namespace Mecha.Core.Runner.Helpers
     /// </summary>
     /// <remarks>Method invoker constructor</remarks>
     /// <remarks>Initializes a new instance of the <see cref="MethodInvoker{TTarget}"/> class.</remarks>
-    public class MethodInvoker<TTarget> : IMethodInvoker
+    /// <remarks>Initializes a new instance of the <see cref="MethodInvoker{TTarget}"/> class.</remarks>
+    /// <param name="method">The method.</param>
+    public class MethodInvoker<TTarget>(MethodInfo method) : IMethodInvoker
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="MethodInvoker{TTarget}"/> class.
-        /// </summary>
-        /// <param name="method">The method.</param>
-        public MethodInvoker(MethodInfo method)
-        {
-            Method = method;
-            InternalExpression = MethodInvoker<TTarget>.CreateExpression(method) ?? ((__, _) => throw new Exception("Couldn't create invoke method and InternalExpression is null"));
-        }
-
         /// <summary>
         /// The method to invoke
         /// </summary>
-        public MethodInfo? Method { get; set; }
+        public MethodInfo? Method { get; set; } = method;
 
         /// <summary>
         /// The internal expression
         /// </summary>
-        private Func<TTarget?, object?[], object?> InternalExpression { get; }
+        private Func<TTarget?, object?[], object?> InternalExpression { get; } = MethodInvoker<TTarget>.CreateExpression(method) ?? ((__, _) => throw new Exception("Couldn't create invoke method and InternalExpression is null"));
 
         /// <summary>
         /// Invokes the method
@@ -69,6 +61,8 @@ namespace Mecha.Core.Runner.Helpers
                 {
                     ParameterType = ParameterType.GetElementType();
                 }
+                if (ParameterType is null)
+                    continue;
                 ParamsExpressions[X] = Expression.ArrayIndex(Params, Expression.Constant(X));
                 if (Parameter.ParameterType.IsSpecialType(out Type? SpecialType) && SpecialType is not null)
                 {
@@ -76,7 +70,7 @@ namespace Mecha.Core.Runner.Helpers
                     Type? ParameterArrayType = ParameterElementType.MakeArrayType();
                     ParamsExpressions[X] = Expression.Convert(ParamsExpressions[X], ParameterArrayType);
                     Type? GenericParameterElementType = SpecialType.MakeGenericType(ParameterElementType!);
-                    ConstructorInfo? SpecialConstructor = GenericParameterElementType.GetConstructor(new[] { ParameterArrayType });
+                    ConstructorInfo? SpecialConstructor = GenericParameterElementType.GetConstructor([ParameterArrayType]);
                     ParamsExpressions[X] = Expression.New(SpecialConstructor!, ParamsExpressions[X]);
                 }
                 else

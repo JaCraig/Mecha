@@ -19,7 +19,7 @@ namespace Mecha.Core.Shrinker
             System.Reflection.Assembly MechaCoreAssembly = TypeCache<Mech>.Assembly;
             var TempShrinkers = shrinkers.Where(x => x.GetType().Assembly != MechaCoreAssembly).ToList();
             TempShrinkers.AddRange(shrinkers.Where(x => x.GetType().Assembly == MechaCoreAssembly));
-            Shrinkers = TempShrinkers.ToArray();
+            Shrinkers = [.. TempShrinkers];
         }
 
         /// <summary>

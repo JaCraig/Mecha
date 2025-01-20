@@ -14,16 +14,9 @@ namespace Mecha.Core.Runner.BaseClasses
     /// <summary>
     /// Runner base class
     /// </summary>
-    public abstract class RunnerBaseClass : IRunner
+    /// <remarks>Initializes a new instance of the <see cref="RunnerBaseClass"/> class.</remarks>
+    public abstract class RunnerBaseClass(Mirage.Random random) : IRunner
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="RunnerBaseClass"/> class.
-        /// </summary>
-        protected RunnerBaseClass(Mirage.Random random)
-        {
-            Random = random;
-        }
-
         /// <summary>
         /// Gets or sets the manager.
         /// </summary>
@@ -34,7 +27,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// Gets the random.
         /// </summary>
         /// <value>The random.</value>
-        protected Mirage.Random Random { get; }
+        protected Mirage.Random Random { get; } = random;
 
         /// <summary>
         /// Runs the specified method on the target class.
@@ -60,17 +53,17 @@ namespace Mecha.Core.Runner.BaseClasses
             {
                 InternalTimer.Elapsed += (sender, e) => Finished = true;
                 InternalTimer.Start();
-                for (var x = Results.Count; x < Count; ++x)
+                for (var X = Results.Count; X < Count; ++X)
                 {
                     if (Finished)
                         break;
                     var Arguments = new ParameterValue?[GeneratedParameters.Length];
-                    for (var y = 0; y < GeneratedParameters.Length; ++y)
+                    for (var Y = 0; Y < GeneratedParameters.Length; ++Y)
                     {
-                        Arguments[y] = Random.Next(GeneratedParameters[y].GeneratedValues);
+                        Arguments[Y] = Random.Next(GeneratedParameters[Y].GeneratedValues);
                     }
                     if (!Results.AddIfUnique(IsTheSame, new RunResult(runMethod, target, Arguments)))
-                        --x;
+                        --X;
                 }
                 InternalTimer.Stop();
             }
@@ -81,11 +74,11 @@ namespace Mecha.Core.Runner.BaseClasses
                 InternalTimer.Elapsed += (sender, e) => Finished = true;
                 InternalTimer.Start();
                 var Tasks = new List<Task>();
-                for (var x = 0; x < Results.Count; ++x)
+                for (var X = 0; X < Results.Count; ++X)
                 {
                     if (Finished)
                         break;
-                    Tasks.Add(Results[x].RunAsync(TempTimer, options));
+                    Tasks.Add(Results[X].RunAsync(TempTimer, options));
                 }
                 await Task.WhenAll(Tasks).ConfigureAwait(false);
                 InternalTimer.Stop();
@@ -116,7 +109,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <param name="methodInfo">The method information.</param>
         /// <param name="options">The options.</param>
         /// <returns>The generated arguments.</returns>
-        protected ParameterValues[] GenerateArguments(MethodInfo methodInfo, Options options) => Manager?.GeneratorManager.GenerateParameterValues(methodInfo.GetParameters(), options) ?? Array.Empty<ParameterValues>();
+        protected ParameterValues[] GenerateArguments(MethodInfo methodInfo, Options options) => Manager?.GeneratorManager.GenerateParameterValues(methodInfo.GetParameters(), options) ?? [];
 
         /// <summary>
         /// Attempts to mutate the successful runs asynchronously.
@@ -128,9 +121,9 @@ namespace Mecha.Core.Runner.BaseClasses
         {
             var SuccessfulRuns = runs.Where(x => x.Exception is null).ToList();
             var TempTimer = new Stopwatch();
-            for (var x = 0; x < SuccessfulRuns.Count; ++x)
+            for (var X = 0; X < SuccessfulRuns.Count; ++X)
             {
-                RunResult? CurrentRun = SuccessfulRuns[x];
+                RunResult? CurrentRun = SuccessfulRuns[X];
                 if (CurrentRun is null)
                     continue;
                 RunResult CopiedRun = CurrentRun.Copy();
@@ -154,7 +147,7 @@ namespace Mecha.Core.Runner.BaseClasses
         /// </summary>
         /// <param name="methodInfo">The method information.</param>
         /// <returns></returns>
-        protected List<object?[]> ReloadTests(MethodInfo methodInfo) => Manager?.DataManager.Read(methodInfo) ?? new List<object?[]>();
+        protected List<object?[]> ReloadTests(MethodInfo methodInfo) => Manager?.DataManager.Read(methodInfo) ?? [];
 
         /// <summary>
         /// Saves the arguments.
@@ -179,9 +172,9 @@ namespace Mecha.Core.Runner.BaseClasses
             var FinalRuns = runs.Where(x => x.Exception is null).ToList();
             var FailedRuns = runs.Where(x => x.Exception is not null).ToList();
             var TempTimer = new Stopwatch();
-            for (var x = 0; x < FailedRuns.Count; ++x)
+            for (var X = 0; X < FailedRuns.Count; ++X)
             {
-                RunResult? CurrentRun = FailedRuns[x];
+                RunResult? CurrentRun = FailedRuns[X];
                 if (CurrentRun is null)
                     continue;
                 RunResult CopiedRun = CurrentRun.Copy();
@@ -218,15 +211,15 @@ namespace Mecha.Core.Runner.BaseClasses
         /// <summary>
         /// Shrinks the runs reported.
         /// </summary>
-        /// <param name="FinalRuns">The final runs.</param>
-        private static void ShrinkRunsReported(List<RunResult> FinalRuns)
+        /// <param name="finalRuns">The final runs.</param>
+        private static void ShrinkRunsReported(List<RunResult> finalRuns)
         {
-            for (var x = 0; x < FinalRuns.Count; ++x)
+            for (var X = 0; X < finalRuns.Count; ++X)
             {
-                List<RunResult> Runs = FinalRuns.FindAll(y => FinalRuns[x].Same(y));
-                for (var y = 1; y < Runs.Count; ++y)
+                List<RunResult> Runs = finalRuns.FindAll(y => finalRuns[X].Same(y));
+                for (var Y = 1; Y < Runs.Count; ++Y)
                 {
-                    _ = FinalRuns.Remove(Runs[y]);
+                    _ = finalRuns.Remove(Runs[Y]);
                 }
             }
         }

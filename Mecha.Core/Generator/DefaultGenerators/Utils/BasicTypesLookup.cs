@@ -10,8 +10,8 @@ namespace Mecha.Core.Generator.DefaultGenerators.Utils
         /// <summary>
         /// The types
         /// </summary>
-        public static Type[] Types = new Type[]
-        {
+        public static Type[] Types =
+        [
             typeof(DummyClass),
             typeof(long),
             typeof(ulong),
@@ -22,7 +22,7 @@ namespace Mecha.Core.Generator.DefaultGenerators.Utils
             typeof(DateTime),
             typeof(DateTimeOffset),
             typeof(TimeSpan)
-        };
+        ];
 
         /// <summary>
         /// Dummy class

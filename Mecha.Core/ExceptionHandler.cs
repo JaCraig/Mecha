@@ -15,7 +15,7 @@ namespace Mecha.Core
         /// Gets the exception handlers.
         /// </summary>
         /// <value>The exception handlers.</value>
-        private Dictionary<Type, Func<Exception, MethodInfo, bool>> ExceptionHandlers { get; } = new Dictionary<Type, Func<Exception, MethodInfo, bool>>();
+        private Dictionary<Type, Func<Exception, MethodInfo, bool>> ExceptionHandlers { get; } = [];
 
         /// <summary>
         /// Determines whether this instance can ignore the specified exception.
@@ -25,15 +25,22 @@ namespace Mecha.Core
         /// <returns>
         /// <c>true</c> if this instance can ignore the specified exception; otherwise, <c>false</c>.
         /// </returns>
-        public bool CanIgnore(Exception exception, MethodInfo method)
+        public bool CanIgnore(Exception? exception, MethodInfo? method)
         {
-            return exception is null
-                   || method is null
-                   || (TryGetValue(exception.GetType(), out Func<Exception, MethodInfo, bool>? Handler)
-                       ? Handler(exception, method)
-                       : exception.InnerException is not null
+            if (exception is null || method is null)
+            {
+                return true;
+            }
+            else if (TryGetValue(exception.GetType(), out Func<Exception, MethodInfo, bool>? Handler))
+            {
+                return Handler(exception, method);
+            }
+            else
+            {
+                return exception.InnerException is not null
                            && TryGetValue(exception.InnerException.GetType(), out Func<Exception, MethodInfo, bool>? InnerHandler)
-                           && InnerHandler(exception.InnerException, method));
+                           && InnerHandler(exception.InnerException, method);
+            }
         }
 
         /// <summary>
@@ -86,7 +93,39 @@ namespace Mecha.Core
         {
             MethodInfo GenericMethod = method.IsGenericMethod ? method.GetGenericMethodDefinition() : method;
             var ParameterCheckReturn = ParameterCheck(exception as ArgumentException, method.GetParameters());
-            return typeof(Task).IsAssignableFrom(GenericMethod.ReturnType) || (AreMethodsEqual(GenericMethod, exception.TargetSite) && ParameterCheckReturn);
+            return typeof(Task).IsAssignableFrom(GenericMethod.ReturnType)
+                || (ParameterCheckReturn && AreMethodsEqual(GenericMethod, exception.TargetSite))
+                || (ParameterCheckReturn && IsFromThrowsMethodOnException(exception, GenericMethod));
+        }
+
+        /// <summary>
+        /// Determines if the exception originated from the specified method but using ThrowsX
+        /// methods on exception classes.
+        /// </summary>
+        /// <param name="exception">The exception to check.</param>
+        /// <param name="method">The method to compare against.</param>
+        /// <returns>
+        /// <c>true</c> if the exception originated from the specified method; otherwise, <c>false</c>.
+        /// </returns>
+        private static bool IsFromThrowsMethodOnException(Exception exception, MethodInfo method)
+        {
+            if (exception is null || method is null)
+                return false;
+
+            if (exception.TargetSite is null || exception.TargetSite.DeclaringType is null)
+                return false;
+            if (!exception.TargetSite.DeclaringType.IsAssignableFrom(exception.GetType()))
+                return false;
+
+            var SplitStackTrace = exception.StackTrace?.Split('\n', StringSplitOptions.RemoveEmptyEntries);
+            if (SplitStackTrace is null || SplitStackTrace.Length < 3)
+                return false;
+            var MethodFullName = method.DeclaringType?.FullName + "." + method.Name;
+
+            if (MethodFullName is null)
+                return false;
+
+            return SplitStackTrace[2].Contains(MethodFullName) || SplitStackTrace[1].Contains(MethodFullName);
         }
 
         /// <summary>
@@ -99,7 +138,7 @@ namespace Mecha.Core
         {
             if (exception is null)
                 return true;
-            parameters ??= Array.Empty<ParameterInfo>();
+            parameters ??= [];
             return parameters.Length == 0 || parameters.Any(x => x.Name == exception.ParamName || x.Name == exception.Message);
         }
 

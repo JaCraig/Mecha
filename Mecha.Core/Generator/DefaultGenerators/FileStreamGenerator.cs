@@ -9,22 +9,10 @@ namespace Mecha.Core.Generator.DefaultGenerators
     /// File stream generator
     /// </summary>
     /// <seealso cref="IGenerator"/>
-    public class FileStreamGenerator : IGenerator
+    /// <remarks>Initializes a new instance of the <see cref="FileStreamGenerator"/> class.</remarks>
+    /// <param name="random">The random.</param>
+    public class FileStreamGenerator(Mirage.Random random) : IGenerator
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FileStreamGenerator"/> class.
-        /// </summary>
-        /// <param name="random">The random.</param>
-        public FileStreamGenerator(Mirage.Random random)
-        {
-            RandomObj = random;
-            Streams = new FileStream[]
-            {
-                new EmptyFileStream(),
-                new FaultyFileStream()
-            };
-        }
-
         /// <summary>
         /// Gets the order.
         /// </summary>
@@ -35,9 +23,13 @@ namespace Mecha.Core.Generator.DefaultGenerators
         /// Gets the random object.
         /// </summary>
         /// <value>The random object.</value>
-        public Mirage.Random RandomObj { get; }
+        public Mirage.Random RandomObj { get; } = random;
 
-        private FileStream[] Streams { get; }
+        private FileStream[] Streams { get; } =
+            [
+                new EmptyFileStream(),
+                new FaultyFileStream()
+            ];
 
         /// <summary>
         /// Determines whether this instance can generate the specified parameter.

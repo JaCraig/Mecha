@@ -62,6 +62,8 @@ namespace Mecha.Core.Generator.DefaultGenerators
                 return new("DefaultValue Generator", null);
             if (ResultType.IsSpecialType(out System.Type? _))
                 ResultType = ResultType.GetUnderlyingArrayType();
+            if (ResultType is null)
+                return new("DefaultValue Generator", null);
             try
             {
                 return new ParameterValue("DefaultValue Generator", DefaultValueLookup.Values.TryGetValue(ResultType.GetHashCode(), out var ReturnValue)

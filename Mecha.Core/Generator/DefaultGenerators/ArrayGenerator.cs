@@ -55,11 +55,11 @@ namespace Mecha.Core.Generator.DefaultGenerators
                 return new ParameterValue("Array Generator", null);
             var Amount = Random?.Next(0, 100) ?? 0;
             Type? ElementType = parameter.ParameterType.GetElementType();
-            var ArrayInstance = (Array)FastActivator.CreateInstance(parameter.ParameterType, new object[] { Amount });
+            var ArrayInstance = (Array)FastActivator.CreateInstance(parameter.ParameterType, [Amount]);
             if (ElementType?.GetConstructors().Any(IsDefaultConstructor) != true)
                 return new ParameterValue("Array Generator", ArrayInstance);
             var Index = 0;
-            foreach (var Item in Random?.Next(ElementType, Amount) ?? Array.Empty<object?>())
+            foreach (var Item in Random?.Next(ElementType, Amount) ?? [])
             {
                 ArrayInstance.SetValue(Item, Index);
                 ++Index;

@@ -155,7 +155,7 @@ namespace Mecha.Core.Generator.DefaultGenerators
         private object? GetValue(ParameterInfo parameter, object? min, object? max, MethodInfo? genericMethod)
         {
             return parameter.ParameterType.IsPrimitive
-                    ? genericMethod?.Invoke(RandomObj, new object?[] { min, max })
+                    ? genericMethod?.Invoke(RandomObj, [min, max])
                     : RandomObj.Next(parameter.ParameterType);
         }
     }

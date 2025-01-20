@@ -39,7 +39,7 @@ namespace Mecha.Core.Datasources.Defaults
         {
             var Items = new List<char>(System.IO.Path.GetInvalidPathChars());
             Items.AddRange(new[] { '<', '>' });
-            InvalidChars = Items.ToArray();
+            InvalidChars = [.. Items];
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Mecha.Core.Datasources.Defaults
         /// <summary>
         /// The invalid chars
         /// </summary>
-        private static char[] InvalidChars = Array.Empty<char>();
+        private static char[] InvalidChars = [];
 
         /// <summary>
         /// Clears the specified method's param data.

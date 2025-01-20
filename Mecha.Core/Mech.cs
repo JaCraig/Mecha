@@ -63,7 +63,7 @@ namespace Mecha.Core
                     if (_Default is not null)
                         return _Default;
                     new System.IO.DirectoryInfo("./Mecha").Create();
-                    _Default = Services.ServiceProvider.GetService<Mech>();
+                    _Default = Services.ServiceProvider?.GetService<Mech>();
                 }
                 return _Default;
             }
@@ -337,7 +337,7 @@ namespace Mecha.Core
             try
             {
                 if (arg.BaseType is not null)
-                    return Services.ServiceProvider.GetService(arg.BaseType)?.GetType() ?? type;
+                    return Services.ServiceProvider?.GetService(arg.BaseType)?.GetType() ?? type;
             }
             catch
             {
@@ -346,7 +346,7 @@ namespace Mecha.Core
             {
                 try
                 {
-                    return Services.ServiceProvider.GetService(Interface)?.GetType() ?? type;
+                    return Services.ServiceProvider?.GetService(Interface)?.GetType() ?? type;
                 }
                 catch
                 {
@@ -366,11 +366,11 @@ namespace Mecha.Core
         {
             if (type is not null)
                 return type;
-            List<Type> FinalTypes = args.BaseType is not null ? new List<Type> { args.BaseType } : new List<Type>();
+            List<Type> FinalTypes = args.BaseType is not null ? [args.BaseType] : [];
             FinalTypes.AddRange(args.GetInterfaces());
             try
             {
-                return NSubstitute.Substitute.For(FinalTypes.ToArray(), Array.Empty<object>())?.GetType() ?? type;
+                return NSubstitute.Substitute.For([.. FinalTypes], [])?.GetType() ?? type;
             }
             catch { }
             return type;
