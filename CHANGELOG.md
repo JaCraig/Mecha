@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.1.1"></a>
+## [3.1.1](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.1) (2025-01-23)
+
+### Bug Fixes
+
+* bump FileCurator in /Mecha.Core in the dependencies group ([ff2f362](https://www.github.com/JaCraig/Mecha/commit/ff2f3629a95fd0348d5b6565c7268242a2d0c269))
+
+### Other
+
+* Merge pull request #314 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-111a81e667 ([cba2f6d](https://www.github.com/JaCraig/Mecha/commit/cba2f6de9aaaff40c4107567b92c09c322026bf9))
+
 <a name="3.1.0"></a>
 ## [3.1.0](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.0) (2025-01-20)
 
