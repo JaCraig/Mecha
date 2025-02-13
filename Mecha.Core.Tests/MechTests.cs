@@ -1,5 +1,7 @@
-﻿using Mecha.Core.Tests.BaseClasses;
+﻿using BigBook.ExtensionMethods;
+using Mecha.Core.Tests.BaseClasses;
 using Mecha.xUnit;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,6 +10,33 @@ using Xunit;
 
 namespace Mecha.Core.Tests
 {
+    public static class StaticTestExtensions
+    {
+        public static bool TryParseDate(this string value, out DateTime date)
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                date = DateTime.MinValue;
+                return false;
+            }
+
+            if (DateTime.TryParse(value, out date))
+                return true;
+
+            if (DateTime.TryParse(value.ToString("##/##/####"), out date))
+                return true;
+
+            if (!double.TryParse(value, out _))
+            {
+                date = DateTime.MinValue;
+                return false;
+            }
+
+            date = DateTime.MaxValue;
+            return true;
+        }
+    }
+
     /// <summary>
     /// Mech tests
     /// </summary>
@@ -20,6 +49,16 @@ namespace Mecha.Core.Tests
         public MechTests()
         {
             TestObject = Mech.Default;
+        }
+
+        [Fact]
+        public async Task BreakAsyncStaticTestExtensions()
+        {
+            // Arrange
+            Type TestType = typeof(StaticTestExtensions);
+
+            // Act
+            await Mech.BreakAsync(TestType, Options.Default);
         }
 
         [Fact]

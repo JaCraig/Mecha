@@ -1,6 +1,8 @@
 ﻿using Mecha.Core.ExtensionMethods;
 using Mecha.Core.Runner.Interfaces;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 
@@ -53,6 +55,7 @@ namespace Mecha.Core.Runner.Helpers
             ParameterInfo[] Parameters = method.GetParameters();
             ParameterExpression Params = Expression.Parameter(typeof(object?[]), "params");
             var ParamsExpressions = new Expression[Parameters.Length];
+            var OutVariables = new List<(ParameterExpression, int)>();
             for (var X = 0; X < Parameters.Length; ++X)
             {
                 ParameterInfo Parameter = Parameters[X];
@@ -77,8 +80,24 @@ namespace Mecha.Core.Runner.Helpers
                 {
                     ParamsExpressions[X] = Expression.Convert(ParamsExpressions[X], ParameterType!);
                 }
+                if (Parameter.IsOut)
+                {
+                    ParameterExpression TempVariable = Expression.Variable(ParameterType, Parameter.Name);
+                    ParamsExpressions[X] = TempVariable;
+                    OutVariables.Add((TempVariable, X));
+                }
             }
             Expression MethodCall = method.IsStatic ? Expression.Call(null, method, ParamsExpressions) : (Expression)Expression.Call(Target, method, ParamsExpressions);
+            if (OutVariables.Count > 0)
+            {
+                var OutExpressions = new List<Expression>();
+                foreach ((ParameterExpression TempVar, var Index) in OutVariables)
+                {
+                    OutExpressions.Add(Expression.Assign(Expression.ArrayAccess(Params, Expression.Constant(Index)), Expression.Convert(TempVar, typeof(object))));
+                }
+                OutExpressions.Add(MethodCall);
+                MethodCall = Expression.Block(OutVariables.Select(v => v.Item1), OutExpressions);
+            }
             if (method.ReturnType == typeof(void))
             {
                 return CreateVoidMethod(Target, Params, MethodCall);
