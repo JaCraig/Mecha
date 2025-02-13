@@ -462,7 +462,7 @@
   "articles/intro.html": {
     "href": "articles/intro.html",
     "title": "Code | Mecha API Reference",
-    "keywords": "Code public void ValidationTest([Required] string value) => Assert.False(string.IsNullOrEmpty(value)); } }"
+    "keywords": "Code public async Task BreakAsyncStaticTestExtensions() { // Arrange Type TestType = typeof(StaticTestExtensions);"
   },
   "index.html": {
     "href": "index.html",

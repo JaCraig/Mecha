@@ -87,9 +87,11 @@
         <article data-uid="">
 <h1 id="code">Code</h1>
 
-<pre><code class="lang-csharp">        public void ValidationTest([Required] string value) =&gt; Assert.False(string.IsNullOrEmpty(value));
-    }
-}
+<pre><code class="lang-csharp">public async Task BreakAsyncStaticTestExtensions()
+{
+    // Arrange
+    Type TestType = typeof(StaticTestExtensions);
+
 </code></pre>
 </article>
 
