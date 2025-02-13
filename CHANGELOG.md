@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.1.4"></a>
+## [3.1.4](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.4) (2025-02-13)
+
+### Bug Fixes
+
+* **tests, core:** update tests and method invocation ([ab13b50](https://www.github.com/JaCraig/Mecha/commit/ab13b509e3ee95c5a6440ff1539e90bab2b56d85))
+
 <a name="3.1.3"></a>
 ## [3.1.3](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.3) (2025-02-12)
 
