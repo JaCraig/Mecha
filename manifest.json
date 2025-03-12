@@ -18,7 +18,11 @@
           "relative_path": "api/Mecha.Core.Datasources.DataManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Datasources.DataManager",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Datasources.DataManager.yml\" sourcestartlinenumber=\"1\">Data manager</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -28,7 +32,11 @@
           "relative_path": "api/Mecha.Core.Datasources.Defaults.DefaultDatasource.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Datasources.Defaults.DefaultDatasource",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Datasources.Defaults.DefaultDatasource.yml\" sourcestartlinenumber=\"1\">Default datasource (exports to local directory)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -38,7 +46,11 @@
           "relative_path": "api/Mecha.Core.Datasources.Defaults.DefaultSerializer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Datasources.Defaults.DefaultSerializer",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Datasources.Defaults.DefaultSerializer.yml\" sourcestartlinenumber=\"1\">Default serializer (goes to JSON)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -48,7 +60,11 @@
           "relative_path": "api/Mecha.Core.Datasources.Defaults.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Datasources.Defaults",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -58,7 +74,11 @@
           "relative_path": "api/Mecha.Core.Datasources.Interfaces.IDatasource.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Datasources.Interfaces.IDatasource",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Datasources.Interfaces.IDatasource.yml\" sourcestartlinenumber=\"1\">Datasource</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -68,7 +88,11 @@
           "relative_path": "api/Mecha.Core.Datasources.Interfaces.ISerializer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Datasources.Interfaces.ISerializer",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Datasources.Interfaces.ISerializer.yml\" sourcestartlinenumber=\"1\">Serializer interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -78,7 +102,11 @@
           "relative_path": "api/Mecha.Core.Datasources.Interfaces.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Datasources.Interfaces",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -88,7 +116,11 @@
           "relative_path": "api/Mecha.Core.Datasources.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Datasources",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -98,7 +130,11 @@
           "relative_path": "api/Mecha.Core.DoNotBreakAttribute.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.DoNotBreakAttribute",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.DoNotBreakAttribute.yml\" sourcestartlinenumber=\"1\">Property attribute</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -108,7 +144,11 @@
           "relative_path": "api/Mecha.Core.ExceptionHandler.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.ExceptionHandler",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.ExceptionHandler.yml\" sourcestartlinenumber=\"1\">Exception handler</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -118,7 +158,11 @@
           "relative_path": "api/Mecha.Core.Exceptions.GeneratorException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Exceptions.GeneratorException",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Exceptions.GeneratorException.yml\" sourcestartlinenumber=\"1\">Generator exception</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -128,7 +172,11 @@
           "relative_path": "api/Mecha.Core.Exceptions.MethodBrokenException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Exceptions.MethodBrokenException",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Exceptions.MethodBrokenException.yml\" sourcestartlinenumber=\"1\">The method threw an exception</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -138,7 +186,11 @@
           "relative_path": "api/Mecha.Core.Exceptions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Exceptions",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -148,7 +200,11 @@
           "relative_path": "api/Mecha.Core.ExtensionMethods.CanisterMethods.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.ExtensionMethods.CanisterMethods",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.ExtensionMethods.CanisterMethods.yml\" sourcestartlinenumber=\"1\">Canister methods</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -158,7 +214,11 @@
           "relative_path": "api/Mecha.Core.ExtensionMethods.ServiceCollectionExtensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.ExtensionMethods.ServiceCollectionExtensions",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.ExtensionMethods.ServiceCollectionExtensions.yml\" sourcestartlinenumber=\"1\">ServiceCollection extension methods.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -168,7 +228,11 @@
           "relative_path": "api/Mecha.Core.ExtensionMethods.UtilsExtensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.ExtensionMethods.UtilsExtensions",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.ExtensionMethods.UtilsExtensions.yml\" sourcestartlinenumber=\"1\">Utils extensions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -178,7 +242,11 @@
           "relative_path": "api/Mecha.Core.ExtensionMethods.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.ExtensionMethods",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -188,7 +256,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.ArrayGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.ArrayGenerator.yml\" sourcestartlinenumber=\"1\">Array generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -198,7 +270,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.DefaultGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.DefaultGenerator.yml\" sourcestartlinenumber=\"1\">Default generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -208,7 +284,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.DefaultValueGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.DefaultValueGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.DefaultValueGenerator.yml\" sourcestartlinenumber=\"1\">Default value generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -218,7 +298,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.FileStreamGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.FileStreamGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.FileStreamGenerator.yml\" sourcestartlinenumber=\"1\">File stream generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -228,7 +312,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.HttpClientGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.HttpClientGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.HttpClientGenerator.yml\" sourcestartlinenumber=\"1\">HttpClient Generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -238,7 +326,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.InterfaceGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.InterfaceGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.InterfaceGenerator.yml\" sourcestartlinenumber=\"1\">Interface generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -248,7 +340,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.MaxBoundaryGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.MaxBoundaryGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.MaxBoundaryGenerator.yml\" sourcestartlinenumber=\"1\">Max Boundary generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -258,7 +354,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.MinBoundaryGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.MinBoundaryGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.MinBoundaryGenerator.yml\" sourcestartlinenumber=\"1\">Min Boundary generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -268,7 +368,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.NegationGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.NegationGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.NegationGenerator.yml\" sourcestartlinenumber=\"1\">Negation generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -278,7 +382,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.ParameterDefaultValueGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.ParameterDefaultValueGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.ParameterDefaultValueGenerator.yml\" sourcestartlinenumber=\"1\">Parameter default value generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -288,7 +396,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.SliceGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.SliceGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.SliceGenerator.yml\" sourcestartlinenumber=\"1\">Slice generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -298,7 +410,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.SpecialGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.SpecialGenerator.yml\" sourcestartlinenumber=\"1\">Special generator class.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -308,7 +424,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.StreamGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.StreamGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.StreamGenerator.yml\" sourcestartlinenumber=\"1\">Stream generator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -318,7 +438,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.DummyClass.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.DummyClass",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.DummyClass.yml\" sourcestartlinenumber=\"1\">Dummy class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -328,7 +452,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.Utils.BasicTypesLookup.yml\" sourcestartlinenumber=\"1\">Basic types lookup</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -338,7 +466,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.Utils.DefaultValueLookup.yml\" sourcestartlinenumber=\"1\">Default value lookup</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -348,7 +480,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.MaxValueLookup.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.Utils.MaxValueLookup",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.Utils.MaxValueLookup.yml\" sourcestartlinenumber=\"1\">Max value lookup</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -358,7 +494,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.MinValueLookup.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.Utils.MinValueLookup",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.Utils.MinValueLookup.yml\" sourcestartlinenumber=\"1\">Min value lookup</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -368,7 +508,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.NegateValueLookup.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.Utils.NegateValueLookup",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.Utils.NegateValueLookup.yml\" sourcestartlinenumber=\"1\">Negate value lookup</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -378,7 +522,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.SliceValueLookup.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.Utils.SliceValueLookup",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.DefaultGenerators.Utils.SliceValueLookup.yml\" sourcestartlinenumber=\"1\">Slice value lookup</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -388,7 +536,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.Utils.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators.Utils",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -398,7 +550,11 @@
           "relative_path": "api/Mecha.Core.Generator.DefaultGenerators.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.DefaultGenerators",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -408,7 +564,11 @@
           "relative_path": "api/Mecha.Core.Generator.GeneratorManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.GeneratorManager",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.GeneratorManager.yml\" sourcestartlinenumber=\"1\">Generator manager</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -418,7 +578,11 @@
           "relative_path": "api/Mecha.Core.Generator.Helpers.EmptyFileStream.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.Helpers.EmptyFileStream",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.Helpers.EmptyFileStream.yml\" sourcestartlinenumber=\"1\">Empty file stream</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -428,7 +592,11 @@
           "relative_path": "api/Mecha.Core.Generator.Helpers.EmptyHttpClient.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.Helpers.EmptyHttpClient",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.Helpers.EmptyHttpClient.yml\" sourcestartlinenumber=\"1\">Empty HTTP Client</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -438,7 +606,11 @@
           "relative_path": "api/Mecha.Core.Generator.Helpers.EmptyStream.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.Helpers.EmptyStream",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.Helpers.EmptyStream.yml\" sourcestartlinenumber=\"1\">Empty stream (does nothing)</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -448,7 +620,11 @@
           "relative_path": "api/Mecha.Core.Generator.Helpers.FaultyFileStream.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.Helpers.FaultyFileStream",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.Helpers.FaultyFileStream.yml\" sourcestartlinenumber=\"1\">Faulty file stream</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -458,7 +634,11 @@
           "relative_path": "api/Mecha.Core.Generator.Helpers.FaultyHttpClient.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.Helpers.FaultyHttpClient",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.Helpers.FaultyHttpClient.yml\" sourcestartlinenumber=\"1\">Faulty HTTP Client</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -468,7 +648,11 @@
           "relative_path": "api/Mecha.Core.Generator.Helpers.FaultyStream.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.Helpers.FaultyStream",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.Helpers.FaultyStream.yml\" sourcestartlinenumber=\"1\">Stream that throws faults</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -478,7 +662,11 @@
           "relative_path": "api/Mecha.Core.Generator.Helpers.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.Helpers",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -488,7 +676,11 @@
           "relative_path": "api/Mecha.Core.Generator.Interfaces.IGenerator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.Interfaces.IGenerator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.Interfaces.IGenerator.yml\" sourcestartlinenumber=\"1\">Generator interface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -498,7 +690,11 @@
           "relative_path": "api/Mecha.Core.Generator.Interfaces.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.Interfaces",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -508,7 +704,11 @@
           "relative_path": "api/Mecha.Core.Generator.ParameterValue.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.ParameterValue",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.ParameterValue.yml\" sourcestartlinenumber=\"1\">Parameter data class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -518,7 +718,11 @@
           "relative_path": "api/Mecha.Core.Generator.ParameterValues.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator.ParameterValues",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Generator.ParameterValues.yml\" sourcestartlinenumber=\"1\">Parameter values</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -528,7 +732,11 @@
           "relative_path": "api/Mecha.Core.Generator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Generator",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -538,7 +746,11 @@
           "relative_path": "api/Mecha.Core.Mech.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Mech",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Mech.yml\" sourcestartlinenumber=\"1\">Main class for breaking the</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -548,7 +760,11 @@
           "relative_path": "api/Mecha.Core.Modules.CanisterModule.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Modules.CanisterModule",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Modules.CanisterModule.yml\" sourcestartlinenumber=\"1\">Canister module</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -558,7 +774,11 @@
           "relative_path": "api/Mecha.Core.Modules.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Modules",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -568,7 +788,11 @@
           "relative_path": "api/Mecha.Core.Mutator.Defaults.StringMutator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Mutator.Defaults.StringMutator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Mutator.Defaults.StringMutator.yml\" sourcestartlinenumber=\"1\">String mutator</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -578,7 +802,11 @@
           "relative_path": "api/Mecha.Core.Mutator.Defaults.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Mutator.Defaults",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -588,7 +816,11 @@
           "relative_path": "api/Mecha.Core.Mutator.Interfaces.IMutator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Mutator.Interfaces.IMutator",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Mutator.Interfaces.IMutator.yml\" sourcestartlinenumber=\"1\">Mutator interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -598,7 +830,11 @@
           "relative_path": "api/Mecha.Core.Mutator.Interfaces.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Mutator.Interfaces",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -608,7 +844,11 @@
           "relative_path": "api/Mecha.Core.Mutator.MutatorManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Mutator.MutatorManager",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Mutator.MutatorManager.yml\" sourcestartlinenumber=\"1\">Mutator manager</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -618,7 +858,11 @@
           "relative_path": "api/Mecha.Core.Mutator.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Mutator",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -628,7 +872,11 @@
           "relative_path": "api/Mecha.Core.Options.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Options",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Options.yml\" sourcestartlinenumber=\"1\">Options</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -638,7 +886,11 @@
           "relative_path": "api/Mecha.Core.OptionsExtensions.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.OptionsExtensions",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.OptionsExtensions.yml\" sourcestartlinenumber=\"1\">Options extensions</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -648,7 +900,11 @@
           "relative_path": "api/Mecha.Core.Runner.BaseClasses.RunnerBaseClass.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.BaseClasses.RunnerBaseClass",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Runner.BaseClasses.RunnerBaseClass.yml\" sourcestartlinenumber=\"1\">Runner base class</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -658,7 +914,11 @@
           "relative_path": "api/Mecha.Core.Runner.BaseClasses.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.BaseClasses",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -668,7 +928,11 @@
           "relative_path": "api/Mecha.Core.Runner.DefaultRunner.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.DefaultRunner",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Runner.DefaultRunner.yml\" sourcestartlinenumber=\"1\">Default runner</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -678,7 +942,11 @@
           "relative_path": "api/Mecha.Core.Runner.Helpers.MethodInvoker-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.Helpers.MethodInvoker<TTarget>",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Runner.Helpers.MethodInvoker-1.yml\" sourcestartlinenumber=\"1\">Method invoker</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -688,7 +956,11 @@
           "relative_path": "api/Mecha.Core.Runner.Helpers.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.Helpers",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -698,7 +970,11 @@
           "relative_path": "api/Mecha.Core.Runner.Interfaces.IMethodInvoker.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.Interfaces.IMethodInvoker",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Runner.Interfaces.IMethodInvoker.yml\" sourcestartlinenumber=\"1\">Method invoker interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -708,7 +984,11 @@
           "relative_path": "api/Mecha.Core.Runner.Interfaces.IRunner.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.Interfaces.IRunner",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Runner.Interfaces.IRunner.yml\" sourcestartlinenumber=\"1\">Test runner interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -718,7 +998,11 @@
           "relative_path": "api/Mecha.Core.Runner.Interfaces.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.Interfaces",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -728,7 +1012,11 @@
           "relative_path": "api/Mecha.Core.Runner.Parameter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.Parameter",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Runner.Parameter.yml\" sourcestartlinenumber=\"1\">Parameter value</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -738,7 +1026,11 @@
           "relative_path": "api/Mecha.Core.Runner.Result.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.Result",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Runner.Result.yml\" sourcestartlinenumber=\"1\">Result data holder</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -748,7 +1040,11 @@
           "relative_path": "api/Mecha.Core.Runner.RunResult.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.RunResult",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Runner.RunResult.yml\" sourcestartlinenumber=\"1\">Individual run result</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -758,7 +1054,11 @@
           "relative_path": "api/Mecha.Core.Runner.TestRunnerManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner.TestRunnerManager",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Runner.TestRunnerManager.yml\" sourcestartlinenumber=\"1\">Test runner manager</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -768,7 +1068,11 @@
           "relative_path": "api/Mecha.Core.Runner.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Runner",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -778,7 +1082,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.Defaults.ArrayShrinker.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker.Defaults.ArrayShrinker",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Shrinker.Defaults.ArrayShrinker.yml\" sourcestartlinenumber=\"1\">Array shrinker</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -788,7 +1096,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.Defaults.DictionaryShrinker.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker.Defaults.DictionaryShrinker",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Shrinker.Defaults.DictionaryShrinker.yml\" sourcestartlinenumber=\"1\">List shrinker</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -798,7 +1110,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.Defaults.ListShrinker.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker.Defaults.ListShrinker",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Shrinker.Defaults.ListShrinker.yml\" sourcestartlinenumber=\"1\">List shrinker</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -808,7 +1124,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.Defaults.NumberShrinker.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker.Defaults.NumberShrinker",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Shrinker.Defaults.NumberShrinker.yml\" sourcestartlinenumber=\"1\">Number shrinker</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -818,7 +1138,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.Defaults.StringShrinker.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker.Defaults.StringShrinker",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Shrinker.Defaults.StringShrinker.yml\" sourcestartlinenumber=\"1\">String shrinker</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -828,7 +1152,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.Defaults.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker.Defaults",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -838,7 +1166,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.Interfaces.IShrinker.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker.Interfaces.IShrinker",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Shrinker.Interfaces.IShrinker.yml\" sourcestartlinenumber=\"1\">Shrinker interface</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -848,7 +1180,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.Interfaces.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker.Interfaces",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -858,7 +1194,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.ShrinkerManager.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker.ShrinkerManager",
+      "Summary": "<p sourcefile=\"api/Mecha.Core.Shrinker.ShrinkerManager.yml\" sourcestartlinenumber=\"1\">Shrinker manager</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -868,7 +1208,11 @@
           "relative_path": "api/Mecha.Core.Shrinker.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core.Shrinker",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -878,7 +1222,11 @@
           "relative_path": "api/Mecha.Core.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.Core",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -888,7 +1236,11 @@
           "relative_path": "api/Mecha.xUnit.PropertyAttribute.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.xUnit.PropertyAttribute",
+      "Summary": "<p sourcefile=\"api/Mecha.xUnit.PropertyAttribute.yml\" sourcestartlinenumber=\"1\">Property attribute</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -898,7 +1250,11 @@
           "relative_path": "api/Mecha.xUnit.PropertyDiscoverer.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.xUnit.PropertyDiscoverer",
+      "Summary": "<p sourcefile=\"api/Mecha.xUnit.PropertyDiscoverer.yml\" sourcestartlinenumber=\"1\">Property discoverer</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -908,7 +1264,11 @@
           "relative_path": "api/Mecha.xUnit.PropertyTestCase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.xUnit.PropertyTestCase",
+      "Summary": "<p sourcefile=\"api/Mecha.xUnit.PropertyTestCase.yml\" sourcestartlinenumber=\"1\">Property test case</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -918,7 +1278,11 @@
           "relative_path": "api/Mecha.xUnit.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Mecha.xUnit",
+      "Summary": null
     },
     {
       "type": "Conceptual",
