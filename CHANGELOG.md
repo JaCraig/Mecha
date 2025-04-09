@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.1.5"></a>
+## [3.1.5](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.5) (2025-04-09)
+
+### Bug Fixes
+
+* bump System.Text.Json in /Mecha.Core in the dependencies group ([01e84df](https://www.github.com/JaCraig/Mecha/commit/01e84dfb45a06039026612c4457b3a75b53c522d))
+
+### Other
+
+* Merge pull request #318 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-a47889329b ([c48ee4a](https://www.github.com/JaCraig/Mecha/commit/c48ee4a98884ac98c2729137370df348104c2fd0))
+* Merge pull request #319 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-ca028a82c2 ([024d724](https://www.github.com/JaCraig/Mecha/commit/024d724a8c6481c6bb6dc742f62f131ef3c67df8))
+* bump System.Text.Json ([238c5ab](https://www.github.com/JaCraig/Mecha/commit/238c5ab13ad36b5b8033221536f982d6a5ecc204))
+
 <a name="3.1.4"></a>
 ## [3.1.4](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.4) (2025-02-13)
 
