@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.1.7"></a>
+## [3.1.7](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.7) (2025-06-02)
+
+### Bug Fixes
+
+* **tests:** update project file and dependencies ([29bb20b](https://www.github.com/JaCraig/Mecha/commit/29bb20bf8724622894ae34d33d706a808e3050df))
+
+### Other
+
+* Merge pull request #321 from JaCraig/dependabot/nuget/Mecha.Core.Tests/xunit.runner.visualstudio-3.1.0 ([677dcb0](https://www.github.com/JaCraig/Mecha/commit/677dcb0d6c03628faa257bcae5fdb3f4301b25a0))
+* Merge pull request #322 from JaCraig/dependabot/nuget/Mecha.Core/System.Text.Json-9.0.5 ([64c3c3a](https://www.github.com/JaCraig/Mecha/commit/64c3c3a1e9016d40df880926019482668b013dfe))
+* Merge pull request #323 from JaCraig/dependabot/nuget/Mecha.xUnit/Microsoft.NET.Test.Sdk-17.14.0 ([2c92fab](https://www.github.com/JaCraig/Mecha/commit/2c92fabe6f316ad95f520260a5a3c8050baf6fb6))
+* Update Microsoft.NET.Test.Sdk to 17.14.0 ([3bc7939](https://www.github.com/JaCraig/Mecha/commit/3bc79395855396858439def3860bceec73aa18a8))
+* Update System.Text.Json to 9.0.5 ([1c2dfbf](https://www.github.com/JaCraig/Mecha/commit/1c2dfbfd7517ebbeb70237b00257c03b6f095b71))
+* Update xunit.runner.visualstudio to 3.1.0 ([ece6ce8](https://www.github.com/JaCraig/Mecha/commit/ece6ce85b2e33b7c11f51252961fd461c457d200))
+
 <a name="3.1.6"></a>
 ## [3.1.6](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.6) (2025-04-29)
 
