@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.1.8"></a>
+## [3.1.8](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.8) (2025-06-03)
+
+### Bug Fixes
+
+* Bump Microsoft.NET.Test.Sdk from 17.14.0 to 17.14.1 ([2046f82](https://www.github.com/JaCraig/Mecha/commit/2046f820fb8b3d8d46b07f9cb9797e6c2169c9df))
+* **tests:** update Microsoft.NET.Test.Sdk version ([a3fd011](https://www.github.com/JaCraig/Mecha/commit/a3fd011102262b6979e8127f6ac0c6337881eceb))
+
+### Other
+
+* Merge pull request #324 from JaCraig/dependabot/nuget/Mecha.xUnit/Microsoft.NET.Test.Sdk-17.14.1 ([c5e6b4d](https://www.github.com/JaCraig/Mecha/commit/c5e6b4d06b2b597d16afb32b22e08eb473935f44))
+
 <a name="3.1.7"></a>
 ## [3.1.7](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.7) (2025-06-02)
 
