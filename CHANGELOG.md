@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.1.9"></a>
+## [3.1.9](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.9) (2025-06-27)
+
+### Bug Fixes
+
+* **dependabot:** correct formatting of patterns in configuration ([4f48d28](https://www.github.com/JaCraig/Mecha/commit/4f48d28ef5daec484b714c35fb21459c7e062832))
+
+### Other
+
+* Merge pull request #325 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-237150b284 ([98f5fe9](https://www.github.com/JaCraig/Mecha/commit/98f5fe95870ab2a2b3f6cd090b2addc1b07452e1))
+* Merge pull request #326 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-e76fa277a6 ([e963b59](https://www.github.com/JaCraig/Mecha/commit/e963b59e3a4f05598f7f8446c8955ded1782bf0c))
+* Bump the dependencies group with 1 update ([e1cd449](https://www.github.com/JaCraig/Mecha/commit/e1cd449d7510ef0d5020f8fdb0503706f7370835))
+* Bump the dependencies group with 1 update ([f7cc647](https://www.github.com/JaCraig/Mecha/commit/f7cc6478342aca6f4b3c68696a1b16422887c39a))
+
 <a name="3.1.8"></a>
 ## [3.1.8](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.8) (2025-06-03)
 
