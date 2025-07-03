@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.1.10"></a>
+## [3.1.10](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.10) (2025-07-03)
+
+### Bug Fixes
+
+* **dependencies:** update FileCurator and Mirage package versions ([67629de](https://www.github.com/JaCraig/Mecha/commit/67629de48e4bde99a7c869029de7a790efc00eab))
+
 <a name="3.1.9"></a>
 ## [3.1.9](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.9) (2025-06-27)
 
