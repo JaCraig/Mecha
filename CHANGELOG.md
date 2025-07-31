@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.1.12"></a>
+## [3.1.12](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.12) (2025-07-31)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([1ab10bd](https://www.github.com/JaCraig/Mecha/commit/1ab10bd90c190c1b30f3f7b5b0ca75f5f7aff8a2))
+
+### Other
+
+* Merge pull request #328 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-f5ef2f2cd0 ([a7f1a57](https://www.github.com/JaCraig/Mecha/commit/a7f1a571751c135c6bc18c5f7a04a2021cbfba23))
+* Merge pull request #329 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-0b34180b1d ([26f4d55](https://www.github.com/JaCraig/Mecha/commit/26f4d55ec688c2923fe588e9e2c6e2234189d797))
+* Merge pull request #330 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-e443c06583 ([09cbd7d](https://www.github.com/JaCraig/Mecha/commit/09cbd7df3a7c823a19063a44891fb4089cf134c8))
+* Bump the dependencies group with 1 update ([90b92a2](https://www.github.com/JaCraig/Mecha/commit/90b92a25ecbd836736deb95e918e637df72f82a2))
+* Bump the dependencies group with 1 update ([cd2edda](https://www.github.com/JaCraig/Mecha/commit/cd2eddab61ed2ad059680f098d7b88f38ae0b192))
+
 <a name="3.1.11"></a>
 ## [3.1.11](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.11) (2025-07-09)
 
