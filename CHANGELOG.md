@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.2.0"></a>
+## [3.2.0](https://www.github.com/JaCraig/Mecha/releases/tag/v3.2.0) (2025-11-13)
+
+### Features
+
+* **project:** update dependencies and target frameworks ([75771d3](https://www.github.com/JaCraig/Mecha/commit/75771d3cb8a01efb1d2c2213b9d7ef0671770d5f))
+
+### Other
+
+* Merge pull request #366 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-f8dc83ce5f ([153ecf9](https://www.github.com/JaCraig/Mecha/commit/153ecf9ec2311741fab02e4edf2a30f80f3b48f3))
+* Bump Microsoft.CodeAnalysis.NetAnalyzers and Microsoft.NET.Test.Sdk ([21f084e](https://www.github.com/JaCraig/Mecha/commit/21f084e31aa88e4041a72b136553552597fcbca2))
+
 <a name="3.1.24"></a>
 ## [3.1.24](https://www.github.com/JaCraig/Mecha/releases/tag/v3.1.24) (2025-10-15)
 
