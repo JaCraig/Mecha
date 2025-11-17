@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.2.3"></a>
+## [3.2.3](https://www.github.com/JaCraig/Mecha/releases/tag/v3.2.3) (2025-11-17)
+
+### Bug Fixes
+
+* Bump the dependencies group with 1 update ([70b8c33](https://www.github.com/JaCraig/Mecha/commit/70b8c339be765d1ce0517c11f6ac0fdad17b7162))
+
+### Other
+
+* Merge pull request #372 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-1a9afeca01 ([4b47cab](https://www.github.com/JaCraig/Mecha/commit/4b47cab4bfe919cc5226dae8a495a1579a92c2b3))
+* Specify languages for CodeQL analysis ([c0b6639](https://www.github.com/JaCraig/Mecha/commit/c0b663960663b95bb8580bf6d11dcdab3bca1e33))
+
 <a name="3.2.2"></a>
 ## [3.2.2](https://www.github.com/JaCraig/Mecha/releases/tag/v3.2.2) (2025-11-14)
 
