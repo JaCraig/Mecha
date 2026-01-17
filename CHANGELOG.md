@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.2.7"></a>
+## [3.2.7](https://www.github.com/JaCraig/Mecha/releases/tag/v3.2.7) (2026-01-17)
+
+### Bug Fixes
+
+* Bump the dependencies group with 3 updates ([0828111](https://www.github.com/JaCraig/Mecha/commit/08281118c11f442d24a5fb326e37fed637aa223f))
+
+### Other
+
+* Merge pull request #384 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-8098f0ec05 ([6970bcc](https://www.github.com/JaCraig/Mecha/commit/6970bcce874b0b13c8dc00f18b04b572594a4092))
+
 <a name="3.2.6"></a>
 ## [3.2.6](https://www.github.com/JaCraig/Mecha/releases/tag/v3.2.6) (2026-01-07)
 
