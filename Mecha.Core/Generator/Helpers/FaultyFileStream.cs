@@ -15,7 +15,7 @@ namespace Mecha.Core.Generator.Helpers
         /// Initializes a new instance of the <see cref="FaultyFileStream"/> class.
         /// </summary>
         public FaultyFileStream()
-            : base($"./Mecha/mock-{Guid.NewGuid()}.txt", FileMode.OpenOrCreate)
+            : base(new FileCurator.DirectoryInfo("./Mecha/").Create().Exists ? $"./Mecha/mock-{Guid.NewGuid()}.txt" : null, FileMode.OpenOrCreate)
         {
         }
 
