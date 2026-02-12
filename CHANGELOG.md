@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.3.1"></a>
+## [3.3.1](https://www.github.com/JaCraig/Mecha/releases/tag/v3.3.1) (2026-02-12)
+
+### Bug Fixes
+
+* **core:** improve FaultyFileStream constructor logic ([ae8b367](https://www.github.com/JaCraig/Mecha/commit/ae8b367e80e1034df8706f06e95bf5c308afe03b))
+
+### Other
+
+* merge ([ad5ffff](https://www.github.com/JaCraig/Mecha/commit/ad5ffff4b4c553c138d8e7e3411f52e7e82df509))
+* **runner/helpers:** add MethodInvoker unit tests ([efb3429](https://www.github.com/JaCraig/Mecha/commit/efb3429228eecc94f7ff22edef484a8e1a04880a))
+
 <a name="3.3.0"></a>
 ## [3.3.0](https://www.github.com/JaCraig/Mecha/releases/tag/v3.3.0) (2026-02-12)
 
