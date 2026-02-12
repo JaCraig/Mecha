@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.3.0"></a>
+## [3.3.0](https://www.github.com/JaCraig/Mecha/releases/tag/v3.3.0) (2026-02-12)
+
+### Features
+
+* **project:** add .NET 10.0 support and update Mirage ([253bf67](https://www.github.com/JaCraig/Mecha/commit/253bf67d722109983e54f11788b015d3247396c9))
+
 <a name="3.2.12"></a>
 ## [3.2.12](https://www.github.com/JaCraig/Mecha/releases/tag/v3.2.12) (2026-02-11)
 
