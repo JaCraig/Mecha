@@ -55,7 +55,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="FileCurator" Version="5.1.16" />
-    <PackageReference Include="Mirage" Version="5.0.14" />
+    <PackageReference Include="Mirage" Version="5.0.15" />
     <PackageReference Include="NSubstitute" Version="5.3.0" />
     <PackageReference Include="SecurityCodeScan.VS2019" Version="5.6.7">
       <PrivateAssets>all</PrivateAssets>
