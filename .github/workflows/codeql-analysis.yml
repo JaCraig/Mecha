@@ -12,12 +12,10 @@
 name: "CodeQL"
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
   schedule:
-    - cron: '37 18 * * 3'
+    - cron: "37 18 * * 3"
 
 permissions:
   actions: read

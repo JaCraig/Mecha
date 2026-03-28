@@ -8,7 +8,7 @@ updates:
   - package-ecosystem: "nuget" # See documentation for possible values
     directory: "/Mecha.Core/" # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: "weekly"
     commit-message:
       prefix: "fix"
     groups:
@@ -19,7 +19,7 @@ updates:
   - package-ecosystem: "nuget" # See documentation for possible values
     directory: "/Mecha.xUnit/" # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: "weekly"
     commit-message:
       prefix: "fix"
     groups:
@@ -30,7 +30,7 @@ updates:
   - package-ecosystem: "nuget" # See documentation for possible values
     directory: "/Mecha.Core.Tests/" # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: "weekly"
     commit-message:
       prefix: "chore"
     groups:
@@ -41,7 +41,7 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     commit-message:
       prefix: "chore"
     groups:
