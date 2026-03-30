@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.3.11"></a>
+## [3.3.11](https://www.github.com/JaCraig/Mecha/releases/tag/v3.3.11) (2026-03-30)
+
+### Bug Fixes
+
+* Bump the dependencies group with 2 updates ([7e194c8](https://www.github.com/JaCraig/Mecha/commit/7e194c8ada60a222d868e526978871d829726a13))
+
+### Other
+
+* Merge pull request #407 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-4bb5c90d9e ([a654aeb](https://www.github.com/JaCraig/Mecha/commit/a654aeb90463e5c154ae004f38b8418a95d44212))
+* Merge pull request #408 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-b79f3cb1a7 ([d47baed](https://www.github.com/JaCraig/Mecha/commit/d47baed35f4979271fb7a1580334b643071db89f))
+* Merge pull request #409 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-b79f3cb1a7 ([1550d47](https://www.github.com/JaCraig/Mecha/commit/1550d479f1074c84157db40b4f85c73440a837dc))
+* Bump the dependencies group with 2 updates ([5c26711](https://www.github.com/JaCraig/Mecha/commit/5c267116f49c79c1a41df0b11d72c0f767b30175))
+* Bump the dependencies group with 2 updates ([dfd2432](https://www.github.com/JaCraig/Mecha/commit/dfd24322dff8179ff557a1036bd17c9aade52b36))
+* **dependabot:** update schedule from daily to weekly ([cd3536f](https://www.github.com/JaCraig/Mecha/commit/cd3536f9c1dfec1bcb2e084ee557b5b0ea86ddff))
+
 <a name="3.3.10"></a>
 ## [3.3.10](https://www.github.com/JaCraig/Mecha/releases/tag/v3.3.10) (2026-03-16)
 
