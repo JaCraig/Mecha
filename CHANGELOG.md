@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="3.3.21"></a>
+## [3.3.21](https://www.github.com/JaCraig/Mecha/releases/tag/v3.3.21) (2026-05-28)
+
+### Bug Fixes
+
+* **workflows:** remove unnecessary secrets from workflows ([2b69e3c](https://www.github.com/JaCraig/Mecha/commit/2b69e3c8406d36944c3a5c4d3452426ce1cb89f2))
+
+### Other
+
+* Merge pull request #428 from JaCraig/dependabot/nuget/Mecha.Core.Tests/dependencies-6a9fb34456 ([367689c](https://www.github.com/JaCraig/Mecha/commit/367689c11f029229b6075fe97c24f2c54d51f0a8))
+* Merge pull request #429 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-2add325c2f ([304f402](https://www.github.com/JaCraig/Mecha/commit/304f402eb4e9e6ef3cb33f68944d612f21977024))
+* add Copilot instructions for commit messages ([d382e4f](https://www.github.com/JaCraig/Mecha/commit/d382e4f85694802cee71c70157d39e3e0ead0bac))
+* Bump the dependencies group with 1 update ([e4d1fb8](https://www.github.com/JaCraig/Mecha/commit/e4d1fb8242f2bd46537d7edef855934207f9ff3b))
+* Bump the dependencies group with 7 updates ([5edb602](https://www.github.com/JaCraig/Mecha/commit/5edb6023ee0ea62047a8c115a127ccc71f8f8295))
+
 <a name="3.3.20"></a>
 ## [3.3.20](https://www.github.com/JaCraig/Mecha/releases/tag/v3.3.20) (2026-05-19)
 
