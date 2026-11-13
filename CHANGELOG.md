@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [versionize](https://github.com/versionize/versionize) for commit guidelines.
 
+<a name="4.0.0"></a>
+## [4.0.0](https://www.github.com/JaCraig/Mecha/releases/tag/v4.0.0) (2026-11-13)
+
+### Features
+
+* **frameworks:** target .NET 10 and 11 ([afd1b79](https://www.github.com/JaCraig/Mecha/commit/afd1b79df644ea2ffb5c725fd4b17fa5f2be9196))
+
+### Bug Fixes
+
+* Bump FileCurator and Mirage ([6079192](https://www.github.com/JaCraig/Mecha/commit/6079192db2aadffee1eda1678527aa5051c87a69))
+
+### Breaking Changes
+
+* **frameworks:** target .NET 10 and 11 ([afd1b79](https://www.github.com/JaCraig/Mecha/commit/afd1b79df644ea2ffb5c725fd4b17fa5f2be9196))
+
+### Other
+
+* Merge pull request #464 from JaCraig/dependabot/nuget/Mecha.Core/dependencies-b0f009817c ([575ffaa](https://www.github.com/JaCraig/Mecha/commit/575ffaa22a2749fe1ee20207624b9b259721fb23))
+
 <a name="3.3.24"></a>
 ## [3.3.24](https://www.github.com/JaCraig/Mecha/releases/tag/v3.3.24) (2026-11-08)
 
